@@ -1,0 +1,224 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "docker",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "OS": {
+      "Family": "alpine",
+      "Name": "3.18.3"
+    },
+    "ImageID": "sha256:1dab0c1da22afec581cf1e31f16bdc24607039abeb71f6cc57d50c458f28f06c",
+    "DiffIDs": [
+      "sha256:4693057ce2364720d39e57e85a5b8e0bd9ac3573716237736d6470ec5b7b7230",
+      "sha256:ff476dc47777793ecb74f699a22b90cd9a0df823eaf7a478a86b3d3245ba69d7",
+      "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "sha256:e5af8ef278733900a0a2d72f0928b2279540dfd1205bdb1beb135a749ebef43b",
+      "sha256:b4a1b52abefdb8d94ac3fa9c0cfea868c93035d6342f77fc95cf55b6f468ebce",
+      "sha256:fec9f3153c61dd15673f637db49ffff8e47b23383deb18ef3362550773a62209",
+      "sha256:4c3d2878f7a37d4193dbcc1849c1227c7f077bda8aa3fc14c844ed60b081dcc0",
+      "sha256:9406443bfbbf4caf6c46e7d7f8026999b2041361e06b32607bf9373339b1f7bd",
+      "sha256:4c10742599ab7b07e65212b4f27f4a904f516021b3df7a26599d8aeb9401b587",
+      "sha256:70d05f19aeb642f21de1a8fdc6f46eb9714183a95da92848e26c509aac298b7e",
+      "sha256:e1c3a81f3d2cfc520fe20932c9233e7ab1e4653168253af3c48cbc10d5672b7b",
+      "sha256:645b5c9a229a38ed775cd20c6442650df52e5a506f0cdb443c508e282e5d9109",
+      "sha256:680c79695dfbab384f6cf23b2ff90d79c66b96ef9ccb97dd27676c9f9ca0c2a5",
+      "sha256:c651a8470c6e46b70b8ff272393164a0fe7bac26fdbac4a72b5b1f7dfa11fe73"
+    ],
+    "RepoTags": [
+      "docker:latest"
+    ],
+    "RepoDigests": [
+      "docker@sha256:020562d22f11c27997e00da910ed6b580d93094bc25841cb87aacab4ced4a882"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "created": "2023-07-24T16:17:39Z",
+      "history": [
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "/bin/sh -c #(nop) ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / "
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/sh\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "RUN /bin/sh -c apk add --no-cache \t\tca-certificates \t\topenssh-client # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "RUN /bin/sh -c [ -e /etc/nsswitch.conf ] \u0026\u0026 grep '^hosts: files dns' /etc/nsswitch.conf # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "ENV DOCKER_VERSION=24.0.5",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "RUN /bin/sh -c set -eux; \t\tapkArch=\"$(apk --print-arch)\"; \tcase \"$apkArch\" in \t\t'x86_64') \t\t\turl='https://download.docker.com/linux/static/stable/x86_64/docker-24.0.5.tgz'; \t\t\t;; \t\t'armhf') \t\t\turl='https://download.docker.com/linux/static/stable/armel/docker-24.0.5.tgz'; \t\t\t;; \t\t'armv7') \t\t\turl='https://download.docker.com/linux/static/stable/armhf/docker-24.0.5.tgz'; \t\t\t;; \t\t'aarch64') \t\t\turl='https://download.docker.com/linux/static/stable/aarch64/docker-24.0.5.tgz'; \t\t\t;; \t\t*) echo \u003e\u00262 \"error: unsupported 'docker.tgz' architecture ($apkArch)\"; exit 1 ;; \tesac; \t\twget -O 'docker.tgz' \"$url\"; \t\ttar --extract \t\t--file docker.tgz \t\t--strip-components 1 \t\t--directory /usr/local/bin/ \t\t--no-same-owner \t\t'docker/docker' \t; \trm docker.tgz; \t\tdocker --version # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "ENV DOCKER_BUILDX_VERSION=0.11.2",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "RUN /bin/sh -c set -eux; \t\tapkArch=\"$(apk --print-arch)\"; \tcase \"$apkArch\" in \t\t'x86_64') \t\t\turl='https://github.com/docker/buildx/releases/download/v0.11.2/buildx-v0.11.2.linux-amd64'; \t\t\tsha256='311568ee69715abc46163fd688e56c77ab0144ff32e116d0f293bfc3470e75b7'; \t\t\t;; \t\t'armhf') \t\t\turl='https://github.com/docker/buildx/releases/download/v0.11.2/buildx-v0.11.2.linux-arm-v6'; \t\t\tsha256='c1bab0c7374406d5069f60b291971d71161fbd3c00e8a8fb1b68b9053eda8a4e'; \t\t\t;; \t\t'armv7') \t\t\turl='https://github.com/docker/buildx/releases/download/v0.11.2/buildx-v0.11.2.linux-arm-v7'; \t\t\tsha256='4defdf463ca2516d3f58fef69a6f78cbbb8baf16d936cdfc54df4a4be0d48f7f'; \t\t\t;; \t\t'aarch64') \t\t\turl='https://github.com/docker/buildx/releases/download/v0.11.2/buildx-v0.11.2.linux-arm64'; \t\t\tsha256='565e36085a35bba5104f37365ba796c111338eea1a0902b3a7ff42e2e1248815'; \t\t\t;; \t\t'ppc64le') \t\t\turl='https://github.com/docker/buildx/releases/download/v0.11.2/buildx-v0.11.2.linux-ppc64le'; \t\t\tsha256='c5f5cb9957890873a537c7ff5c4eef36132339622baeabb37a4b9b7251ddf836'; \t\t\t;; \t\t'riscv64') \t\t\turl='https://github.com/docker/buildx/releases/download/v0.11.2/buildx-v0.11.2.linux-riscv64'; \t\t\tsha256='c0adc4b4625f7e3df7dcdec840568f918673f2ed4bcd03ca1e63ea2a5627ca35'; \t\t\t;; \t\t's390x') \t\t\turl='https://github.com/docker/buildx/releases/download/v0.11.2/buildx-v0.11.2.linux-s390x'; \t\t\tsha256='02916c76c3872fd0b3fa57e71403fee92b6be10f350b96a5ff99e7914dd277b8'; \t\t\t;; \t\t*) echo \u003e\u00262 \"warning: unsupported 'docker-buildx' architecture ($apkArch); skipping\"; exit 0 ;; \tesac; \t\twget -O 'docker-buildx' \"$url\"; \techo \"$sha256 *\"'docker-buildx' | sha256sum -c -; \t\tplugin='/usr/local/libexec/docker/cli-plugins/docker-buildx'; \tmkdir -p \"$(dirname \"$plugin\")\"; \tmv -vT 'docker-buildx' \"$plugin\"; \tchmod +x \"$plugin\"; \t\tdocker buildx version # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "ENV DOCKER_COMPOSE_VERSION=2.20.3",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "RUN /bin/sh -c set -eux; \t\tapkArch=\"$(apk --print-arch)\"; \tcase \"$apkArch\" in \t\t'x86_64') \t\t\turl='https://github.com/docker/compose/releases/download/v2.20.3/docker-compose-linux-x86_64'; \t\t\tsha256='f45e4cb687df8b48a57f656097ce7175fa8e8bef70be407b011e29ff663f475f'; \t\t\t;; \t\t'armhf') \t\t\turl='https://github.com/docker/compose/releases/download/v2.20.3/docker-compose-linux-armv6'; \t\t\tsha256='e2010f160f5077c6d4d777965d21147328dbfb29894e60a5fbbce716284fd3cf'; \t\t\t;; \t\t'armv7') \t\t\turl='https://github.com/docker/compose/releases/download/v2.20.3/docker-compose-linux-armv7'; \t\t\tsha256='f62e5fb2e1908152c5f3e250faa2057c3d3351207eedd4c042ff540bba5f7575'; \t\t\t;; \t\t'aarch64') \t\t\turl='https://github.com/docker/compose/releases/download/v2.20.3/docker-compose-linux-aarch64'; \t\t\tsha256='9d6a6396b7604a390977ffff78379090f7c6910160bbd3b9669e2fcc635633c5'; \t\t\t;; \t\t'ppc64le') \t\t\turl='https://github.com/docker/compose/releases/download/v2.20.3/docker-compose-linux-ppc64le'; \t\t\tsha256='463d3d220da0fe49c40605a1fc9e4ed7414f47c0ac028c80c55d2e758e99d7ee'; \t\t\t;; \t\t'riscv64') \t\t\turl='https://github.com/docker/compose/releases/download/v2.20.3/docker-compose-linux-riscv64'; \t\t\tsha256='03b0ec338482f61593074b62ffab482ae67ecdc5d868eb72bb8fe3f8a7680c91'; \t\t\t;; \t\t's390x') \t\t\turl='https://github.com/docker/compose/releases/download/v2.20.3/docker-compose-linux-s390x'; \t\t\tsha256='3b24ddd85e859757801a8b9a7e53b96882fa5fd18cc12ee8750770f43b6afa14'; \t\t\t;; \t\t*) echo \u003e\u00262 \"warning: unsupported 'docker-compose' architecture ($apkArch); skipping\"; exit 0 ;; \tesac; \t\twget -O 'docker-compose' \"$url\"; \techo \"$sha256 *\"'docker-compose' | sha256sum -c -; \t\tplugin='/usr/local/libexec/docker/cli-plugins/docker-compose'; \tmkdir -p \"$(dirname \"$plugin\")\"; \tmv -vT 'docker-compose' \"$plugin\"; \tchmod +x \"$plugin\"; \t\tln -sv \"$plugin\" /usr/local/bin/; \tdocker-compose --version; \tdocker compose version # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "COPY modprobe.sh /usr/local/bin/modprobe # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "COPY docker-entrypoint.sh /usr/local/bin/ # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "ENV DOCKER_TLS_CERTDIR=/certs",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "RUN /bin/sh -c mkdir /certs /certs/client \u0026\u0026 chmod 1777 /certs /certs/client # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "ENTRYPOINT [\"docker-entrypoint.sh\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "CMD [\"sh\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "RUN /bin/sh -c set -eux; \tapk add --no-cache \t\tbtrfs-progs \t\te2fsprogs \t\te2fsprogs-extra \t\tip6tables \t\tiptables \t\topenssl \t\tshadow-uidmap \t\txfsprogs \t\txz \t\tpigz \t; \tif zfs=\"$(apk info --no-cache --quiet zfs)\" \u0026\u0026 [ -n \"$zfs\" ]; then \t\tapk add --no-cache zfs; \tfi # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "RUN /bin/sh -c set -eux; \taddgroup -S dockremap; \tadduser -S -G dockremap dockremap; \techo 'dockremap:165536:65536' \u003e\u003e /etc/subuid; \techo 'dockremap:165536:65536' \u003e\u003e /etc/subgid # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "RUN /bin/sh -c set -eux; \t\tapkArch=\"$(apk --print-arch)\"; \tcase \"$apkArch\" in \t\t'x86_64') \t\t\turl='https://download.docker.com/linux/static/stable/x86_64/docker-24.0.5.tgz'; \t\t\t;; \t\t'armhf') \t\t\turl='https://download.docker.com/linux/static/stable/armel/docker-24.0.5.tgz'; \t\t\t;; \t\t'armv7') \t\t\turl='https://download.docker.com/linux/static/stable/armhf/docker-24.0.5.tgz'; \t\t\t;; \t\t'aarch64') \t\t\turl='https://download.docker.com/linux/static/stable/aarch64/docker-24.0.5.tgz'; \t\t\t;; \t\t*) echo \u003e\u00262 \"error: unsupported 'docker.tgz' architecture ($apkArch)\"; exit 1 ;; \tesac; \t\twget -O 'docker.tgz' \"$url\"; \t\ttar --extract \t\t--file docker.tgz \t\t--strip-components 1 \t\t--directory /usr/local/bin/ \t\t--no-same-owner \t\t--exclude 'docker/docker' \t; \trm docker.tgz; \t\tdockerd --version; \tcontainerd --version; \tctr --version; \trunc --version # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "ENV DIND_COMMIT=d58df1fc6c866447ce2cd129af10e5b507705624",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "RUN /bin/sh -c set -eux; \twget -O /usr/local/bin/dind \"https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind\"; \tchmod +x /usr/local/bin/dind # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "COPY dockerd-entrypoint.sh /usr/local/bin/ # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "VOLUME [/var/lib/docker]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "EXPOSE map[2375/tcp:{} 2376/tcp:{}]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "ENTRYPOINT [\"dockerd-entrypoint.sh\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-07-24T16:17:39Z",
+          "created_by": "CMD []",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:4693057ce2364720d39e57e85a5b8e0bd9ac3573716237736d6470ec5b7b7230",
+          "sha256:ff476dc47777793ecb74f699a22b90cd9a0df823eaf7a478a86b3d3245ba69d7",
+          "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "sha256:e5af8ef278733900a0a2d72f0928b2279540dfd1205bdb1beb135a749ebef43b",
+          "sha256:b4a1b52abefdb8d94ac3fa9c0cfea868c93035d6342f77fc95cf55b6f468ebce",
+          "sha256:fec9f3153c61dd15673f637db49ffff8e47b23383deb18ef3362550773a62209",
+          "sha256:4c3d2878f7a37d4193dbcc1849c1227c7f077bda8aa3fc14c844ed60b081dcc0",
+          "sha256:9406443bfbbf4caf6c46e7d7f8026999b2041361e06b32607bf9373339b1f7bd",
+          "sha256:4c10742599ab7b07e65212b4f27f4a904f516021b3df7a26599d8aeb9401b587",
+          "sha256:70d05f19aeb642f21de1a8fdc6f46eb9714183a95da92848e26c509aac298b7e",
+          "sha256:e1c3a81f3d2cfc520fe20932c9233e7ab1e4653168253af3c48cbc10d5672b7b",
+          "sha256:645b5c9a229a38ed775cd20c6442650df52e5a506f0cdb443c508e282e5d9109",
+          "sha256:680c79695dfbab384f6cf23b2ff90d79c66b96ef9ccb97dd27676c9f9ca0c2a5",
+          "sha256:c651a8470c6e46b70b8ff272393164a0fe7bac26fdbac4a72b5b1f7dfa11fe73"
+        ]
+      },
+      "config": {
+        "Entrypoint": [
+          "dockerd-entrypoint.sh"
+        ],
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "DOCKER_VERSION=24.0.5",
+          "DOCKER_BUILDX_VERSION=0.11.2",
+          "DOCKER_COMPOSE_VERSION=2.20.3",
+          "DOCKER_TLS_CERTDIR=/certs",
+          "DIND_COMMIT=d58df1fc6c866447ce2cd129af10e5b507705624"
+        ],
+        "Volumes": {
+          "/var/lib/docker": {}
+        },
+        "ArgsEscaped": true
+      }
+    }
+  },
+  "Results": [
+    {
+      "Target": "docker (alpine 3.18.3)",
+      "Class": "os-pkgs",
+      "Type": "alpine"
+    }
+  ]
+}

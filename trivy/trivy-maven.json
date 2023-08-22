@@ -1,0 +1,2725 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "maven",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "OS": {
+      "Family": "ubuntu",
+      "Name": "22.04"
+    },
+    "ImageID": "sha256:32b4c5c8a72194146cc25ff1fadaf8dad8bbb8f08e082d22816bd2bf2d6f9195",
+    "DiffIDs": [
+      "sha256:59c56aee1fb4dbaeb334aef06088b49902105d1ea0c15a9e5a2a9ce560fa4c5d",
+      "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121",
+      "sha256:1f79146ce601c7e7bd3fc676a2719381e339c7f94de2919885a6f3755042903c",
+      "sha256:6b170da64c94422c608f05c56f146cf27689725e66ff9b6c065f32217fd1eb7d",
+      "sha256:b3adb16c7cad4248d0d3d1aa2bd388d4945e047c03be8b29fc924d068e71be0f",
+      "sha256:459d026368c870d5a0b381c5b4c73f43d494d2de1b2940a816b05cf1671d2b54",
+      "sha256:9cf7e3d983bddc25e7bc07775ab3e3ed8ea9fc2745009ff5b0a0543c69ad9b87",
+      "sha256:a92bfe2dc2dc9ad4cf787fa8bb61012d235daa9f922eb5348010d7718ca92543",
+      "sha256:44412a423e149bbab4d4007067c8ebf8816fe1b632d978cdb7c3e811c05c8084",
+      "sha256:7333299df76bf255cb535fec12a7d00ac03692fcdb4248016bc97858d01d0bbc"
+    ],
+    "RepoTags": [
+      "maven:latest"
+    ],
+    "RepoDigests": [
+      "maven@sha256:de70becda2f183567e105530460b6cbedfc014b64f27c2003d36d7fc85bc222f"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "created": "2023-06-26T13:48:06Z",
+      "history": [
+        {
+          "created": "2023-06-28T08:37:40Z",
+          "created_by": "/bin/sh -c #(nop)  ARG RELEASE",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-06-28T08:37:40Z",
+          "created_by": "/bin/sh -c #(nop)  ARG LAUNCHPAD_BUILD_ARCH",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-06-28T08:37:40Z",
+          "created_by": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.ref.name=ubuntu",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-06-28T08:37:40Z",
+          "created_by": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.version=22.04",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-06-28T08:37:42Z",
+          "created_by": "/bin/sh -c #(nop) ADD file:140fb5108b4a2861b5718ad03b4a5174bba03589ea8d4c053e6a0b282f439ff3 in / "
+        },
+        {
+          "created": "2023-06-28T08:37:42Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/bash\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-07-04T20:33:49Z",
+          "created_by": "/bin/sh -c #(nop)  ENV JAVA_HOME=/opt/java/openjdk",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-07-04T20:33:49Z",
+          "created_by": "/bin/sh -c #(nop)  ENV PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-07-04T20:33:49Z",
+          "created_by": "/bin/sh -c #(nop)  ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-03T02:38:42Z",
+          "created_by": "/bin/sh -c apt-get update     \u0026\u0026 DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata curl wget ca-certificates fontconfig locales p11-kit binutils     \u0026\u0026 echo \"en_US.UTF-8 UTF-8\" \u003e\u003e /etc/locale.gen     \u0026\u0026 locale-gen en_US.UTF-8     \u0026\u0026 rm -rf /var/lib/apt/lists/*"
+        },
+        {
+          "created": "2023-08-03T02:38:42Z",
+          "created_by": "/bin/sh -c #(nop)  ENV JAVA_VERSION=jdk-20.0.2+9",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-03T02:38:53Z",
+          "created_by": "/bin/sh -c set -eux;     ARCH=\"$(dpkg --print-architecture)\";     case \"${ARCH}\" in        aarch64|arm64)          ESUM='b475bcc23db0bd618c815bb8f11d8e084dc58288ea3bcdf4e7f389ed41c89f56';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_aarch64_linux_hotspot_20.0.2_9.tar.gz';          ;;        amd64|i386:x86-64)          ESUM='3d91842e9c172967ac397076523249d05a82ead51b0006838f5f0315ad52222c';          BINARY_URL='https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.2%2B9/OpenJDK20U-jdk_x64_linux_hotspot_20.0.2_9.tar.gz';          ;;        *)          echo \"Unsupported arch: ${ARCH}\";          exit 1;          ;;     esac; \t  wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; \t  echo \"${ESUM} */tmp/openjdk.tar.gz\" | sha256sum -c -; \t  mkdir -p \"$JAVA_HOME\"; \t  tar --extract \t      --file /tmp/openjdk.tar.gz \t      --directory \"$JAVA_HOME\" \t      --strip-components 1 \t      --no-same-owner \t  ;     rm -f /tmp/openjdk.tar.gz ${JAVA_HOME}/lib/src.zip;     find \"$JAVA_HOME/lib\" -name '*.so' -exec dirname '{}' ';' | sort -u \u003e /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump;"
+        },
+        {
+          "created": "2023-08-03T02:38:55Z",
+          "created_by": "/bin/sh -c echo Verifying install ...     \u0026\u0026 fileEncoding=\"$(echo 'System.out.println(System.getProperty(\"file.encoding\"))' | jshell -s -)\"; [ \"$fileEncoding\" = 'UTF-8' ]; rm -rf ~/.java     \u0026\u0026 echo javac --version \u0026\u0026 javac --version     \u0026\u0026 echo java --version \u0026\u0026 java --version     \u0026\u0026 echo Complete."
+        },
+        {
+          "created": "2023-08-03T02:38:55Z",
+          "created_by": "/bin/sh -c #(nop) COPY file:0673fe0a4a716089bcd96321c8de60149aea8a94ae7c4ba827ecc4a74a9789a3 in / "
+        },
+        {
+          "created": "2023-08-03T02:38:55Z",
+          "created_by": "/bin/sh -c #(nop)  ENTRYPOINT [\"/entrypoint.sh\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-03T02:38:56Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"jshell\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-06-26T13:48:06Z",
+          "created_by": "RUN /bin/sh -c apt-get update   \u0026\u0026 apt-get install -y ca-certificates curl git --no-install-recommends   \u0026\u0026 rm -rf /var/lib/apt/lists/* # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-06-26T13:48:06Z",
+          "created_by": "ENV MAVEN_HOME=/usr/share/maven",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-06-26T13:48:06Z",
+          "created_by": "COPY /usr/share/maven /usr/share/maven # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-06-26T13:48:06Z",
+          "created_by": "COPY /usr/local/bin/mvn-entrypoint.sh /usr/local/bin/mvn-entrypoint.sh # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-06-26T13:48:06Z",
+          "created_by": "COPY /usr/share/maven/ref/settings-docker.xml /usr/share/maven/ref/settings-docker.xml # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-06-26T13:48:06Z",
+          "created_by": "RUN /bin/sh -c ln -s ${MAVEN_HOME}/bin/mvn /usr/bin/mvn # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-06-26T13:48:06Z",
+          "created_by": "ARG MAVEN_VERSION=3.9.3",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-06-26T13:48:06Z",
+          "created_by": "ARG USER_HOME_DIR=/root",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-06-26T13:48:06Z",
+          "created_by": "ENV MAVEN_CONFIG=/root/.m2",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-06-26T13:48:06Z",
+          "created_by": "ENTRYPOINT [\"/usr/local/bin/mvn-entrypoint.sh\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-06-26T13:48:06Z",
+          "created_by": "CMD [\"mvn\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:59c56aee1fb4dbaeb334aef06088b49902105d1ea0c15a9e5a2a9ce560fa4c5d",
+          "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121",
+          "sha256:1f79146ce601c7e7bd3fc676a2719381e339c7f94de2919885a6f3755042903c",
+          "sha256:6b170da64c94422c608f05c56f146cf27689725e66ff9b6c065f32217fd1eb7d",
+          "sha256:b3adb16c7cad4248d0d3d1aa2bd388d4945e047c03be8b29fc924d068e71be0f",
+          "sha256:459d026368c870d5a0b381c5b4c73f43d494d2de1b2940a816b05cf1671d2b54",
+          "sha256:9cf7e3d983bddc25e7bc07775ab3e3ed8ea9fc2745009ff5b0a0543c69ad9b87",
+          "sha256:a92bfe2dc2dc9ad4cf787fa8bb61012d235daa9f922eb5348010d7718ca92543",
+          "sha256:44412a423e149bbab4d4007067c8ebf8816fe1b632d978cdb7c3e811c05c8084",
+          "sha256:7333299df76bf255cb535fec12a7d00ac03692fcdb4248016bc97858d01d0bbc"
+        ]
+      },
+      "config": {
+        "Cmd": [
+          "mvn"
+        ],
+        "Entrypoint": [
+          "/usr/local/bin/mvn-entrypoint.sh"
+        ],
+        "Env": [
+          "PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "JAVA_HOME=/opt/java/openjdk",
+          "LANG=en_US.UTF-8",
+          "LANGUAGE=en_US:en",
+          "LC_ALL=en_US.UTF-8",
+          "JAVA_VERSION=jdk-20.0.2+9",
+          "MAVEN_HOME=/usr/share/maven",
+          "MAVEN_CONFIG=/root/.m2"
+        ],
+        "Labels": {
+          "org.opencontainers.image.ref.name": "ubuntu",
+          "org.opencontainers.image.version": "22.04"
+        },
+        "ArgsEscaped": true
+      }
+    }
+  },
+  "Results": [
+    {
+      "Target": "maven (ubuntu 22.04)",
+      "Class": "os-pkgs",
+      "Type": "ubuntu",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2022-3715",
+          "PkgID": "bash@5.1-6ubuntu1",
+          "PkgName": "bash",
+          "InstalledVersion": "5.1-6ubuntu1",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:59c56aee1fb4dbaeb334aef06088b49902105d1ea0c15a9e5a2a9ce560fa4c5d"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-3715",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "a heap-buffer-overflow in valid_parameter_transform",
+          "Description": "A flaw was found in the bash package, where a heap-buffer overflow can occur in valid parameter_transform. This issue may lead to memory problems.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:0340",
+            "https://access.redhat.com/security/cve/CVE-2022-3715",
+            "https://bugzilla.redhat.com/2126720",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2126720",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-3715",
+            "https://errata.almalinux.org/9/ALSA-2023-0340.html",
+            "https://errata.rockylinux.org/RLSA-2023:0340",
+            "https://linux.oracle.com/cve/CVE-2022-3715.html",
+            "https://linux.oracle.com/errata/ELSA-2023-0340.html",
+            "https://lists.gnu.org/archive/html/bug-bash/2022-08/msg00147.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-3715",
+            "https://www.cve.org/CVERecord?id=CVE-2022-3715"
+          ],
+          "PublishedDate": "2023-01-05T15:15:00Z",
+          "LastModifiedDate": "2023-02-24T18:38:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2017-13716",
+          "PkgID": "binutils@2.38-4ubuntu2.3",
+          "PkgName": "binutils",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2017-13716",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "binutils: Memory leak with the C++ symbol demangler routine in libiberty",
+          "Description": "The C++ symbol demangler routine in cplus-dem.c in libiberty, as distributed in GNU Binutils 2.29, allows remote attackers to cause a denial of service (excessive memory allocation and application crash) via a crafted file, as demonstrated by a call from the Binary File Descriptor (BFD) library (aka libbfd).",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:C",
+              "V3Vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V2Score": 7.1,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+              "V3Score": 3.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2017-13716",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13716",
+            "https://nvd.nist.gov/vuln/detail/CVE-2017-13716",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=22009",
+            "https://www.cve.org/CVERecord?id=CVE-2017-13716"
+          ],
+          "PublishedDate": "2017-08-28T21:29:00Z",
+          "LastModifiedDate": "2019-10-03T00:03:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2018-20657",
+          "PkgID": "binutils@2.38-4ubuntu2.3",
+          "PkgName": "binutils",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2018-20657",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "libiberty: Memory leak in demangle_template function resulting in a denial of service",
+          "Description": "The demangle_template function in cplus-dem.c in GNU libiberty, as distributed in GNU Binutils 2.31.1, has a memory leak via a crafted string, leading to a denial of service (memory consumption), as demonstrated by cxxfilt, a related issue to CVE-2018-12698.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-772"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+              "V3Score": 3.3
+            }
+          },
+          "References": [
+            "http://www.securityfocus.com/bid/106444",
+            "https://access.redhat.com/errata/RHSA-2019:3352",
+            "https://access.redhat.com/security/cve/CVE-2018-20657",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-20657",
+            "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=88539",
+            "https://linux.oracle.com/cve/CVE-2018-20657.html",
+            "https://linux.oracle.com/errata/ELSA-2019-3352.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2018-20657",
+            "https://support.f5.com/csp/article/K62602089",
+            "https://www.cve.org/CVERecord?id=CVE-2018-20657"
+          ],
+          "PublishedDate": "2019-01-02T14:29:00Z",
+          "LastModifiedDate": "2019-11-06T01:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2019-1010204",
+          "PkgID": "binutils@2.38-4ubuntu2.3",
+          "PkgName": "binutils",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1010204",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "binutils: Improper Input Validation, Signed/Unsigned Comparison, Out-of-bounds Read in gold/fileread.cc and elfcpp/elfcpp_file.h leads to denial of service",
+          "Description": "GNU binutils gold gold v1.11-v1.16 (GNU binutils v2.21-v2.31.1) is affected by: Improper Input Validation, Signed/Unsigned Comparison, Out-of-bounds Read. The impact is: Denial of service. The component is: gold/fileread.cc:497, elfcpp/elfcpp_file.h:644. The attack vector is: An ELF file with an invalid e_shoff header field must be opened.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-125",
+            "CWE-681"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V2Score": 4.3,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 4.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2019-1010204",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1010204",
+            "https://linux.oracle.com/cve/CVE-2019-1010204.html",
+            "https://linux.oracle.com/errata/ELSA-2020-1797.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2019-1010204",
+            "https://security.netapp.com/advisory/ntap-20190822-0001/",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=23765",
+            "https://support.f5.com/csp/article/K05032915?utm_source=f5support\u0026amp;utm_medium=RSS",
+            "https://ubuntu.com/security/notices/USN-5349-1",
+            "https://www.cve.org/CVERecord?id=CVE-2019-1010204"
+          ],
+          "PublishedDate": "2019-07-23T14:15:00Z",
+          "LastModifiedDate": "2022-04-18T17:02:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-27943",
+          "PkgID": "binutils@2.38-4ubuntu2.3",
+          "PkgName": "binutils",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-27943",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack exhaustion in demangle_const",
+          "Description": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack consumption in demangle_const, as demonstrated by nm-new.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-674"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V2Score": 4.3,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-27943",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27943",
+            "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105039",
+            "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=9234cdca6ee88badfc00297e72f13dac4e540c79",
+            "https://gcc.gnu.org/pipermail/gcc-patches/2022-March/592244.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/H424YXGW7OKXS2NCAP35OP6Y4P4AW6VG/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-27943",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=28995",
+            "https://www.cve.org/CVERecord?id=CVE-2022-27943"
+          ],
+          "PublishedDate": "2022-03-26T13:15:00Z",
+          "LastModifiedDate": "2023-08-08T14:22:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-4285",
+          "PkgID": "binutils@2.38-4ubuntu2.3",
+          "PkgName": "binutils",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-4285",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "NULL pointer dereference in _bfd_elf_get_symbol_version_string leads to segfault",
+          "Description": "An illegal memory access flaw was found in the binutils package. Parsing an ELF file containing corrupt symbol version information may result in a denial of service. This issue is the result of an incomplete fix for CVE-2020-16599.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:2873",
+            "https://access.redhat.com/security/cve/CVE-2022-4285",
+            "https://bugzilla.redhat.com/2150768",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2150768",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4285",
+            "https://errata.almalinux.org/8/ALSA-2023-2873.html",
+            "https://linux.oracle.com/cve/CVE-2022-4285.html",
+            "https://linux.oracle.com/errata/ELSA-2023-2873.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-4285",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=29699",
+            "https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=5c831a3c7f3ca98d6aba1200353311e1a1f84c70",
+            "https://www.cve.org/CVERecord?id=CVE-2022-4285"
+          ],
+          "PublishedDate": "2023-01-27T18:15:00Z",
+          "LastModifiedDate": "2023-05-16T11:03:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2017-13716",
+          "PkgID": "binutils-common@2.38-4ubuntu2.3",
+          "PkgName": "binutils-common",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2017-13716",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "binutils: Memory leak with the C++ symbol demangler routine in libiberty",
+          "Description": "The C++ symbol demangler routine in cplus-dem.c in libiberty, as distributed in GNU Binutils 2.29, allows remote attackers to cause a denial of service (excessive memory allocation and application crash) via a crafted file, as demonstrated by a call from the Binary File Descriptor (BFD) library (aka libbfd).",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:C",
+              "V3Vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V2Score": 7.1,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+              "V3Score": 3.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2017-13716",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13716",
+            "https://nvd.nist.gov/vuln/detail/CVE-2017-13716",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=22009",
+            "https://www.cve.org/CVERecord?id=CVE-2017-13716"
+          ],
+          "PublishedDate": "2017-08-28T21:29:00Z",
+          "LastModifiedDate": "2019-10-03T00:03:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2018-20657",
+          "PkgID": "binutils-common@2.38-4ubuntu2.3",
+          "PkgName": "binutils-common",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2018-20657",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "libiberty: Memory leak in demangle_template function resulting in a denial of service",
+          "Description": "The demangle_template function in cplus-dem.c in GNU libiberty, as distributed in GNU Binutils 2.31.1, has a memory leak via a crafted string, leading to a denial of service (memory consumption), as demonstrated by cxxfilt, a related issue to CVE-2018-12698.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-772"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+              "V3Score": 3.3
+            }
+          },
+          "References": [
+            "http://www.securityfocus.com/bid/106444",
+            "https://access.redhat.com/errata/RHSA-2019:3352",
+            "https://access.redhat.com/security/cve/CVE-2018-20657",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-20657",
+            "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=88539",
+            "https://linux.oracle.com/cve/CVE-2018-20657.html",
+            "https://linux.oracle.com/errata/ELSA-2019-3352.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2018-20657",
+            "https://support.f5.com/csp/article/K62602089",
+            "https://www.cve.org/CVERecord?id=CVE-2018-20657"
+          ],
+          "PublishedDate": "2019-01-02T14:29:00Z",
+          "LastModifiedDate": "2019-11-06T01:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2019-1010204",
+          "PkgID": "binutils-common@2.38-4ubuntu2.3",
+          "PkgName": "binutils-common",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1010204",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "binutils: Improper Input Validation, Signed/Unsigned Comparison, Out-of-bounds Read in gold/fileread.cc and elfcpp/elfcpp_file.h leads to denial of service",
+          "Description": "GNU binutils gold gold v1.11-v1.16 (GNU binutils v2.21-v2.31.1) is affected by: Improper Input Validation, Signed/Unsigned Comparison, Out-of-bounds Read. The impact is: Denial of service. The component is: gold/fileread.cc:497, elfcpp/elfcpp_file.h:644. The attack vector is: An ELF file with an invalid e_shoff header field must be opened.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-125",
+            "CWE-681"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V2Score": 4.3,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 4.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2019-1010204",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1010204",
+            "https://linux.oracle.com/cve/CVE-2019-1010204.html",
+            "https://linux.oracle.com/errata/ELSA-2020-1797.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2019-1010204",
+            "https://security.netapp.com/advisory/ntap-20190822-0001/",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=23765",
+            "https://support.f5.com/csp/article/K05032915?utm_source=f5support\u0026amp;utm_medium=RSS",
+            "https://ubuntu.com/security/notices/USN-5349-1",
+            "https://www.cve.org/CVERecord?id=CVE-2019-1010204"
+          ],
+          "PublishedDate": "2019-07-23T14:15:00Z",
+          "LastModifiedDate": "2022-04-18T17:02:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-27943",
+          "PkgID": "binutils-common@2.38-4ubuntu2.3",
+          "PkgName": "binutils-common",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-27943",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack exhaustion in demangle_const",
+          "Description": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack consumption in demangle_const, as demonstrated by nm-new.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-674"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V2Score": 4.3,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-27943",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27943",
+            "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105039",
+            "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=9234cdca6ee88badfc00297e72f13dac4e540c79",
+            "https://gcc.gnu.org/pipermail/gcc-patches/2022-March/592244.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/H424YXGW7OKXS2NCAP35OP6Y4P4AW6VG/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-27943",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=28995",
+            "https://www.cve.org/CVERecord?id=CVE-2022-27943"
+          ],
+          "PublishedDate": "2022-03-26T13:15:00Z",
+          "LastModifiedDate": "2023-08-08T14:22:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-4285",
+          "PkgID": "binutils-common@2.38-4ubuntu2.3",
+          "PkgName": "binutils-common",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-4285",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "NULL pointer dereference in _bfd_elf_get_symbol_version_string leads to segfault",
+          "Description": "An illegal memory access flaw was found in the binutils package. Parsing an ELF file containing corrupt symbol version information may result in a denial of service. This issue is the result of an incomplete fix for CVE-2020-16599.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:2873",
+            "https://access.redhat.com/security/cve/CVE-2022-4285",
+            "https://bugzilla.redhat.com/2150768",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2150768",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4285",
+            "https://errata.almalinux.org/8/ALSA-2023-2873.html",
+            "https://linux.oracle.com/cve/CVE-2022-4285.html",
+            "https://linux.oracle.com/errata/ELSA-2023-2873.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-4285",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=29699",
+            "https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=5c831a3c7f3ca98d6aba1200353311e1a1f84c70",
+            "https://www.cve.org/CVERecord?id=CVE-2022-4285"
+          ],
+          "PublishedDate": "2023-01-27T18:15:00Z",
+          "LastModifiedDate": "2023-05-16T11:03:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2017-13716",
+          "PkgID": "binutils-x86-64-linux-gnu@2.38-4ubuntu2.3",
+          "PkgName": "binutils-x86-64-linux-gnu",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2017-13716",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "binutils: Memory leak with the C++ symbol demangler routine in libiberty",
+          "Description": "The C++ symbol demangler routine in cplus-dem.c in libiberty, as distributed in GNU Binutils 2.29, allows remote attackers to cause a denial of service (excessive memory allocation and application crash) via a crafted file, as demonstrated by a call from the Binary File Descriptor (BFD) library (aka libbfd).",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:C",
+              "V3Vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V2Score": 7.1,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+              "V3Score": 3.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2017-13716",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13716",
+            "https://nvd.nist.gov/vuln/detail/CVE-2017-13716",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=22009",
+            "https://www.cve.org/CVERecord?id=CVE-2017-13716"
+          ],
+          "PublishedDate": "2017-08-28T21:29:00Z",
+          "LastModifiedDate": "2019-10-03T00:03:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2018-20657",
+          "PkgID": "binutils-x86-64-linux-gnu@2.38-4ubuntu2.3",
+          "PkgName": "binutils-x86-64-linux-gnu",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2018-20657",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "libiberty: Memory leak in demangle_template function resulting in a denial of service",
+          "Description": "The demangle_template function in cplus-dem.c in GNU libiberty, as distributed in GNU Binutils 2.31.1, has a memory leak via a crafted string, leading to a denial of service (memory consumption), as demonstrated by cxxfilt, a related issue to CVE-2018-12698.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-772"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+              "V3Score": 3.3
+            }
+          },
+          "References": [
+            "http://www.securityfocus.com/bid/106444",
+            "https://access.redhat.com/errata/RHSA-2019:3352",
+            "https://access.redhat.com/security/cve/CVE-2018-20657",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-20657",
+            "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=88539",
+            "https://linux.oracle.com/cve/CVE-2018-20657.html",
+            "https://linux.oracle.com/errata/ELSA-2019-3352.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2018-20657",
+            "https://support.f5.com/csp/article/K62602089",
+            "https://www.cve.org/CVERecord?id=CVE-2018-20657"
+          ],
+          "PublishedDate": "2019-01-02T14:29:00Z",
+          "LastModifiedDate": "2019-11-06T01:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2019-1010204",
+          "PkgID": "binutils-x86-64-linux-gnu@2.38-4ubuntu2.3",
+          "PkgName": "binutils-x86-64-linux-gnu",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1010204",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "binutils: Improper Input Validation, Signed/Unsigned Comparison, Out-of-bounds Read in gold/fileread.cc and elfcpp/elfcpp_file.h leads to denial of service",
+          "Description": "GNU binutils gold gold v1.11-v1.16 (GNU binutils v2.21-v2.31.1) is affected by: Improper Input Validation, Signed/Unsigned Comparison, Out-of-bounds Read. The impact is: Denial of service. The component is: gold/fileread.cc:497, elfcpp/elfcpp_file.h:644. The attack vector is: An ELF file with an invalid e_shoff header field must be opened.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-125",
+            "CWE-681"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V2Score": 4.3,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 4.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2019-1010204",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1010204",
+            "https://linux.oracle.com/cve/CVE-2019-1010204.html",
+            "https://linux.oracle.com/errata/ELSA-2020-1797.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2019-1010204",
+            "https://security.netapp.com/advisory/ntap-20190822-0001/",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=23765",
+            "https://support.f5.com/csp/article/K05032915?utm_source=f5support\u0026amp;utm_medium=RSS",
+            "https://ubuntu.com/security/notices/USN-5349-1",
+            "https://www.cve.org/CVERecord?id=CVE-2019-1010204"
+          ],
+          "PublishedDate": "2019-07-23T14:15:00Z",
+          "LastModifiedDate": "2022-04-18T17:02:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-27943",
+          "PkgID": "binutils-x86-64-linux-gnu@2.38-4ubuntu2.3",
+          "PkgName": "binutils-x86-64-linux-gnu",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-27943",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack exhaustion in demangle_const",
+          "Description": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack consumption in demangle_const, as demonstrated by nm-new.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-674"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V2Score": 4.3,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-27943",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27943",
+            "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105039",
+            "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=9234cdca6ee88badfc00297e72f13dac4e540c79",
+            "https://gcc.gnu.org/pipermail/gcc-patches/2022-March/592244.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/H424YXGW7OKXS2NCAP35OP6Y4P4AW6VG/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-27943",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=28995",
+            "https://www.cve.org/CVERecord?id=CVE-2022-27943"
+          ],
+          "PublishedDate": "2022-03-26T13:15:00Z",
+          "LastModifiedDate": "2023-08-08T14:22:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-4285",
+          "PkgID": "binutils-x86-64-linux-gnu@2.38-4ubuntu2.3",
+          "PkgName": "binutils-x86-64-linux-gnu",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-4285",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "NULL pointer dereference in _bfd_elf_get_symbol_version_string leads to segfault",
+          "Description": "An illegal memory access flaw was found in the binutils package. Parsing an ELF file containing corrupt symbol version information may result in a denial of service. This issue is the result of an incomplete fix for CVE-2020-16599.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:2873",
+            "https://access.redhat.com/security/cve/CVE-2022-4285",
+            "https://bugzilla.redhat.com/2150768",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2150768",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4285",
+            "https://errata.almalinux.org/8/ALSA-2023-2873.html",
+            "https://linux.oracle.com/cve/CVE-2022-4285.html",
+            "https://linux.oracle.com/errata/ELSA-2023-2873.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-4285",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=29699",
+            "https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=5c831a3c7f3ca98d6aba1200353311e1a1f84c70",
+            "https://www.cve.org/CVERecord?id=CVE-2022-4285"
+          ],
+          "PublishedDate": "2023-01-27T18:15:00Z",
+          "LastModifiedDate": "2023-05-16T11:03:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2016-2781",
+          "PkgID": "coreutils@8.32-4.1ubuntu1",
+          "PkgName": "coreutils",
+          "InstalledVersion": "8.32-4.1ubuntu1",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:59c56aee1fb4dbaeb334aef06088b49902105d1ea0c15a9e5a2a9ce560fa4c5d"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2016-2781",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "coreutils: Non-privileged session can escape to the parent session in chroot",
+          "Description": "chroot in GNU coreutils, when used with --userspec, allows local users to escape to the parent session via a crafted TIOCSTI ioctl call, which pushes characters to the terminal's input buffer.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-20"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:L/AC:L/Au:N/C:N/I:P/A:N",
+              "V3Vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:H/A:N",
+              "V2Score": 2.1,
+              "V3Score": 6.5
+            },
+            "redhat": {
+              "V2Vector": "AV:L/AC:H/Au:N/C:C/I:C/A:C",
+              "V3Vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+              "V2Score": 6.2,
+              "V3Score": 8.6
+            }
+          },
+          "References": [
+            "http://seclists.org/oss-sec/2016/q1/452",
+            "http://www.openwall.com/lists/oss-security/2016/02/28/2",
+            "http://www.openwall.com/lists/oss-security/2016/02/28/3",
+            "https://access.redhat.com/security/cve/CVE-2016-2781",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2781",
+            "https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E",
+            "https://lore.kernel.org/patchwork/patch/793178/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2016-2781",
+            "https://www.cve.org/CVERecord?id=CVE-2016-2781"
+          ],
+          "PublishedDate": "2017-02-07T15:59:00Z",
+          "LastModifiedDate": "2021-02-25T17:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2018-1000021",
+          "PkgID": "git@1:2.34.1-1ubuntu1.9",
+          "PkgName": "git",
+          "InstalledVersion": "1:2.34.1-1ubuntu1.9",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:459d026368c870d5a0b381c5b4c73f43d494d2de1b2940a816b05cf1671d2b54"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2018-1000021",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "git: client prints server-sent ANSI escape codes to the terminal, allowing for unverified messages to potentially execute arbitrary commands",
+          "Description": "GIT version 2.15.1 and earlier contains a Input Validation Error vulnerability in Client that can result in problems including messing up terminal configuration to RCE. This attack appear to be exploitable via The user must interact with a malicious git server, (or have their traffic modified in a MITM attack).",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-20"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V2Score": 6.8,
+              "V3Score": 8.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+              "V3Score": 5
+            }
+          },
+          "References": [
+            "http://www.batterystapl.es/2018/01/security-implications-of-ansi-escape.html",
+            "https://access.redhat.com/security/cve/CVE-2018-1000021",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1000021",
+            "https://nvd.nist.gov/vuln/detail/CVE-2018-1000021",
+            "https://www.cve.org/CVERecord?id=CVE-2018-1000021"
+          ],
+          "PublishedDate": "2018-02-09T23:29:00Z",
+          "LastModifiedDate": "2018-03-06T19:34:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2018-1000021",
+          "PkgID": "git-man@1:2.34.1-1ubuntu1.9",
+          "PkgName": "git-man",
+          "InstalledVersion": "1:2.34.1-1ubuntu1.9",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:459d026368c870d5a0b381c5b4c73f43d494d2de1b2940a816b05cf1671d2b54"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2018-1000021",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "git: client prints server-sent ANSI escape codes to the terminal, allowing for unverified messages to potentially execute arbitrary commands",
+          "Description": "GIT version 2.15.1 and earlier contains a Input Validation Error vulnerability in Client that can result in problems including messing up terminal configuration to RCE. This attack appear to be exploitable via The user must interact with a malicious git server, (or have their traffic modified in a MITM attack).",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-20"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V2Score": 6.8,
+              "V3Score": 8.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+              "V3Score": 5
+            }
+          },
+          "References": [
+            "http://www.batterystapl.es/2018/01/security-implications-of-ansi-escape.html",
+            "https://access.redhat.com/security/cve/CVE-2018-1000021",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1000021",
+            "https://nvd.nist.gov/vuln/detail/CVE-2018-1000021",
+            "https://www.cve.org/CVERecord?id=CVE-2018-1000021"
+          ],
+          "PublishedDate": "2018-02-09T23:29:00Z",
+          "LastModifiedDate": "2018-03-06T19:34:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-3219",
+          "PkgID": "gpgv@2.2.27-3ubuntu2.1",
+          "PkgName": "gpgv",
+          "InstalledVersion": "2.2.27-3ubuntu2.1",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:59c56aee1fb4dbaeb334aef06088b49902105d1ea0c15a9e5a2a9ce560fa4c5d"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-3219",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "denial of service issue (resource consumption) using compressed packets",
+          "Description": "GnuPG can be made to spin on a relatively small input by (for example) crafting a public key with thousands of signatures attached, compressed down to just a few KB.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 6.2
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-3219",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2127010",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-3219",
+            "https://dev.gnupg.org/D556",
+            "https://dev.gnupg.org/T5993",
+            "https://marc.info/?l=oss-security\u0026m=165696590211434\u0026w=4",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-3219",
+            "https://security.netapp.com/advisory/ntap-20230324-0001/",
+            "https://www.cve.org/CVERecord?id=CVE-2022-3219"
+          ],
+          "PublishedDate": "2023-02-23T20:15:00Z",
+          "LastModifiedDate": "2023-05-26T16:31:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2017-13716",
+          "PkgID": "libbinutils@2.38-4ubuntu2.3",
+          "PkgName": "libbinutils",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2017-13716",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "binutils: Memory leak with the C++ symbol demangler routine in libiberty",
+          "Description": "The C++ symbol demangler routine in cplus-dem.c in libiberty, as distributed in GNU Binutils 2.29, allows remote attackers to cause a denial of service (excessive memory allocation and application crash) via a crafted file, as demonstrated by a call from the Binary File Descriptor (BFD) library (aka libbfd).",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:C",
+              "V3Vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V2Score": 7.1,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+              "V3Score": 3.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2017-13716",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13716",
+            "https://nvd.nist.gov/vuln/detail/CVE-2017-13716",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=22009",
+            "https://www.cve.org/CVERecord?id=CVE-2017-13716"
+          ],
+          "PublishedDate": "2017-08-28T21:29:00Z",
+          "LastModifiedDate": "2019-10-03T00:03:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2018-20657",
+          "PkgID": "libbinutils@2.38-4ubuntu2.3",
+          "PkgName": "libbinutils",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2018-20657",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "libiberty: Memory leak in demangle_template function resulting in a denial of service",
+          "Description": "The demangle_template function in cplus-dem.c in GNU libiberty, as distributed in GNU Binutils 2.31.1, has a memory leak via a crafted string, leading to a denial of service (memory consumption), as demonstrated by cxxfilt, a related issue to CVE-2018-12698.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-772"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+              "V3Score": 3.3
+            }
+          },
+          "References": [
+            "http://www.securityfocus.com/bid/106444",
+            "https://access.redhat.com/errata/RHSA-2019:3352",
+            "https://access.redhat.com/security/cve/CVE-2018-20657",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-20657",
+            "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=88539",
+            "https://linux.oracle.com/cve/CVE-2018-20657.html",
+            "https://linux.oracle.com/errata/ELSA-2019-3352.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2018-20657",
+            "https://support.f5.com/csp/article/K62602089",
+            "https://www.cve.org/CVERecord?id=CVE-2018-20657"
+          ],
+          "PublishedDate": "2019-01-02T14:29:00Z",
+          "LastModifiedDate": "2019-11-06T01:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2019-1010204",
+          "PkgID": "libbinutils@2.38-4ubuntu2.3",
+          "PkgName": "libbinutils",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1010204",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "binutils: Improper Input Validation, Signed/Unsigned Comparison, Out-of-bounds Read in gold/fileread.cc and elfcpp/elfcpp_file.h leads to denial of service",
+          "Description": "GNU binutils gold gold v1.11-v1.16 (GNU binutils v2.21-v2.31.1) is affected by: Improper Input Validation, Signed/Unsigned Comparison, Out-of-bounds Read. The impact is: Denial of service. The component is: gold/fileread.cc:497, elfcpp/elfcpp_file.h:644. The attack vector is: An ELF file with an invalid e_shoff header field must be opened.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-125",
+            "CWE-681"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V2Score": 4.3,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 4.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2019-1010204",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1010204",
+            "https://linux.oracle.com/cve/CVE-2019-1010204.html",
+            "https://linux.oracle.com/errata/ELSA-2020-1797.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2019-1010204",
+            "https://security.netapp.com/advisory/ntap-20190822-0001/",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=23765",
+            "https://support.f5.com/csp/article/K05032915?utm_source=f5support\u0026amp;utm_medium=RSS",
+            "https://ubuntu.com/security/notices/USN-5349-1",
+            "https://www.cve.org/CVERecord?id=CVE-2019-1010204"
+          ],
+          "PublishedDate": "2019-07-23T14:15:00Z",
+          "LastModifiedDate": "2022-04-18T17:02:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-27943",
+          "PkgID": "libbinutils@2.38-4ubuntu2.3",
+          "PkgName": "libbinutils",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-27943",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack exhaustion in demangle_const",
+          "Description": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack consumption in demangle_const, as demonstrated by nm-new.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-674"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V2Score": 4.3,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-27943",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27943",
+            "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105039",
+            "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=9234cdca6ee88badfc00297e72f13dac4e540c79",
+            "https://gcc.gnu.org/pipermail/gcc-patches/2022-March/592244.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/H424YXGW7OKXS2NCAP35OP6Y4P4AW6VG/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-27943",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=28995",
+            "https://www.cve.org/CVERecord?id=CVE-2022-27943"
+          ],
+          "PublishedDate": "2022-03-26T13:15:00Z",
+          "LastModifiedDate": "2023-08-08T14:22:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-4285",
+          "PkgID": "libbinutils@2.38-4ubuntu2.3",
+          "PkgName": "libbinutils",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-4285",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "NULL pointer dereference in _bfd_elf_get_symbol_version_string leads to segfault",
+          "Description": "An illegal memory access flaw was found in the binutils package. Parsing an ELF file containing corrupt symbol version information may result in a denial of service. This issue is the result of an incomplete fix for CVE-2020-16599.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:2873",
+            "https://access.redhat.com/security/cve/CVE-2022-4285",
+            "https://bugzilla.redhat.com/2150768",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2150768",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4285",
+            "https://errata.almalinux.org/8/ALSA-2023-2873.html",
+            "https://linux.oracle.com/cve/CVE-2022-4285.html",
+            "https://linux.oracle.com/errata/ELSA-2023-2873.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-4285",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=29699",
+            "https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=5c831a3c7f3ca98d6aba1200353311e1a1f84c70",
+            "https://www.cve.org/CVERecord?id=CVE-2022-4285"
+          ],
+          "PublishedDate": "2023-01-27T18:15:00Z",
+          "LastModifiedDate": "2023-05-16T11:03:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2016-20013",
+          "PkgID": "libc-bin@2.35-0ubuntu3.1",
+          "PkgName": "libc-bin",
+          "InstalledVersion": "2.35-0ubuntu3.1",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:59c56aee1fb4dbaeb334aef06088b49902105d1ea0c15a9e5a2a9ce560fa4c5d"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2016-20013",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "sha256crypt and sha512crypt through 0.6 allow attackers to cause a denial of service (CPU consumption) because the algorithm's runtime is proportional to the square of the length of the password.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://akkadia.org/drepper/SHA-crypt.txt",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-20013",
+            "https://pthree.org/2018/05/23/do-not-use-sha256crypt-sha512crypt-theyre-dangerous/",
+            "https://twitter.com/solardiz/status/795601240151457793"
+          ],
+          "PublishedDate": "2022-02-19T05:15:00Z",
+          "LastModifiedDate": "2022-03-03T16:43:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2016-20013",
+          "PkgID": "libc6@2.35-0ubuntu3.1",
+          "PkgName": "libc6",
+          "InstalledVersion": "2.35-0ubuntu3.1",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:59c56aee1fb4dbaeb334aef06088b49902105d1ea0c15a9e5a2a9ce560fa4c5d"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2016-20013",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "sha256crypt and sha512crypt through 0.6 allow attackers to cause a denial of service (CPU consumption) because the algorithm's runtime is proportional to the square of the length of the password.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://akkadia.org/drepper/SHA-crypt.txt",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-20013",
+            "https://pthree.org/2018/05/23/do-not-use-sha256crypt-sha512crypt-theyre-dangerous/",
+            "https://twitter.com/solardiz/status/795601240151457793"
+          ],
+          "PublishedDate": "2022-02-19T05:15:00Z",
+          "LastModifiedDate": "2022-03-03T16:43:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2017-13716",
+          "PkgID": "libctf-nobfd0@2.38-4ubuntu2.3",
+          "PkgName": "libctf-nobfd0",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2017-13716",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "binutils: Memory leak with the C++ symbol demangler routine in libiberty",
+          "Description": "The C++ symbol demangler routine in cplus-dem.c in libiberty, as distributed in GNU Binutils 2.29, allows remote attackers to cause a denial of service (excessive memory allocation and application crash) via a crafted file, as demonstrated by a call from the Binary File Descriptor (BFD) library (aka libbfd).",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:C",
+              "V3Vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V2Score": 7.1,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+              "V3Score": 3.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2017-13716",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13716",
+            "https://nvd.nist.gov/vuln/detail/CVE-2017-13716",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=22009",
+            "https://www.cve.org/CVERecord?id=CVE-2017-13716"
+          ],
+          "PublishedDate": "2017-08-28T21:29:00Z",
+          "LastModifiedDate": "2019-10-03T00:03:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2018-20657",
+          "PkgID": "libctf-nobfd0@2.38-4ubuntu2.3",
+          "PkgName": "libctf-nobfd0",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2018-20657",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "libiberty: Memory leak in demangle_template function resulting in a denial of service",
+          "Description": "The demangle_template function in cplus-dem.c in GNU libiberty, as distributed in GNU Binutils 2.31.1, has a memory leak via a crafted string, leading to a denial of service (memory consumption), as demonstrated by cxxfilt, a related issue to CVE-2018-12698.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-772"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+              "V3Score": 3.3
+            }
+          },
+          "References": [
+            "http://www.securityfocus.com/bid/106444",
+            "https://access.redhat.com/errata/RHSA-2019:3352",
+            "https://access.redhat.com/security/cve/CVE-2018-20657",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-20657",
+            "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=88539",
+            "https://linux.oracle.com/cve/CVE-2018-20657.html",
+            "https://linux.oracle.com/errata/ELSA-2019-3352.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2018-20657",
+            "https://support.f5.com/csp/article/K62602089",
+            "https://www.cve.org/CVERecord?id=CVE-2018-20657"
+          ],
+          "PublishedDate": "2019-01-02T14:29:00Z",
+          "LastModifiedDate": "2019-11-06T01:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2019-1010204",
+          "PkgID": "libctf-nobfd0@2.38-4ubuntu2.3",
+          "PkgName": "libctf-nobfd0",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1010204",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "binutils: Improper Input Validation, Signed/Unsigned Comparison, Out-of-bounds Read in gold/fileread.cc and elfcpp/elfcpp_file.h leads to denial of service",
+          "Description": "GNU binutils gold gold v1.11-v1.16 (GNU binutils v2.21-v2.31.1) is affected by: Improper Input Validation, Signed/Unsigned Comparison, Out-of-bounds Read. The impact is: Denial of service. The component is: gold/fileread.cc:497, elfcpp/elfcpp_file.h:644. The attack vector is: An ELF file with an invalid e_shoff header field must be opened.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-125",
+            "CWE-681"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V2Score": 4.3,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 4.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2019-1010204",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1010204",
+            "https://linux.oracle.com/cve/CVE-2019-1010204.html",
+            "https://linux.oracle.com/errata/ELSA-2020-1797.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2019-1010204",
+            "https://security.netapp.com/advisory/ntap-20190822-0001/",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=23765",
+            "https://support.f5.com/csp/article/K05032915?utm_source=f5support\u0026amp;utm_medium=RSS",
+            "https://ubuntu.com/security/notices/USN-5349-1",
+            "https://www.cve.org/CVERecord?id=CVE-2019-1010204"
+          ],
+          "PublishedDate": "2019-07-23T14:15:00Z",
+          "LastModifiedDate": "2022-04-18T17:02:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-27943",
+          "PkgID": "libctf-nobfd0@2.38-4ubuntu2.3",
+          "PkgName": "libctf-nobfd0",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-27943",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack exhaustion in demangle_const",
+          "Description": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack consumption in demangle_const, as demonstrated by nm-new.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-674"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V2Score": 4.3,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-27943",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27943",
+            "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105039",
+            "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=9234cdca6ee88badfc00297e72f13dac4e540c79",
+            "https://gcc.gnu.org/pipermail/gcc-patches/2022-March/592244.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/H424YXGW7OKXS2NCAP35OP6Y4P4AW6VG/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-27943",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=28995",
+            "https://www.cve.org/CVERecord?id=CVE-2022-27943"
+          ],
+          "PublishedDate": "2022-03-26T13:15:00Z",
+          "LastModifiedDate": "2023-08-08T14:22:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-4285",
+          "PkgID": "libctf-nobfd0@2.38-4ubuntu2.3",
+          "PkgName": "libctf-nobfd0",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-4285",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "NULL pointer dereference in _bfd_elf_get_symbol_version_string leads to segfault",
+          "Description": "An illegal memory access flaw was found in the binutils package. Parsing an ELF file containing corrupt symbol version information may result in a denial of service. This issue is the result of an incomplete fix for CVE-2020-16599.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:2873",
+            "https://access.redhat.com/security/cve/CVE-2022-4285",
+            "https://bugzilla.redhat.com/2150768",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2150768",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4285",
+            "https://errata.almalinux.org/8/ALSA-2023-2873.html",
+            "https://linux.oracle.com/cve/CVE-2022-4285.html",
+            "https://linux.oracle.com/errata/ELSA-2023-2873.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-4285",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=29699",
+            "https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=5c831a3c7f3ca98d6aba1200353311e1a1f84c70",
+            "https://www.cve.org/CVERecord?id=CVE-2022-4285"
+          ],
+          "PublishedDate": "2023-01-27T18:15:00Z",
+          "LastModifiedDate": "2023-05-16T11:03:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2017-13716",
+          "PkgID": "libctf0@2.38-4ubuntu2.3",
+          "PkgName": "libctf0",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2017-13716",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "binutils: Memory leak with the C++ symbol demangler routine in libiberty",
+          "Description": "The C++ symbol demangler routine in cplus-dem.c in libiberty, as distributed in GNU Binutils 2.29, allows remote attackers to cause a denial of service (excessive memory allocation and application crash) via a crafted file, as demonstrated by a call from the Binary File Descriptor (BFD) library (aka libbfd).",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:C",
+              "V3Vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V2Score": 7.1,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+              "V3Score": 3.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2017-13716",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13716",
+            "https://nvd.nist.gov/vuln/detail/CVE-2017-13716",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=22009",
+            "https://www.cve.org/CVERecord?id=CVE-2017-13716"
+          ],
+          "PublishedDate": "2017-08-28T21:29:00Z",
+          "LastModifiedDate": "2019-10-03T00:03:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2018-20657",
+          "PkgID": "libctf0@2.38-4ubuntu2.3",
+          "PkgName": "libctf0",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2018-20657",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "libiberty: Memory leak in demangle_template function resulting in a denial of service",
+          "Description": "The demangle_template function in cplus-dem.c in GNU libiberty, as distributed in GNU Binutils 2.31.1, has a memory leak via a crafted string, leading to a denial of service (memory consumption), as demonstrated by cxxfilt, a related issue to CVE-2018-12698.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-772"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+              "V3Score": 3.3
+            }
+          },
+          "References": [
+            "http://www.securityfocus.com/bid/106444",
+            "https://access.redhat.com/errata/RHSA-2019:3352",
+            "https://access.redhat.com/security/cve/CVE-2018-20657",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-20657",
+            "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=88539",
+            "https://linux.oracle.com/cve/CVE-2018-20657.html",
+            "https://linux.oracle.com/errata/ELSA-2019-3352.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2018-20657",
+            "https://support.f5.com/csp/article/K62602089",
+            "https://www.cve.org/CVERecord?id=CVE-2018-20657"
+          ],
+          "PublishedDate": "2019-01-02T14:29:00Z",
+          "LastModifiedDate": "2019-11-06T01:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2019-1010204",
+          "PkgID": "libctf0@2.38-4ubuntu2.3",
+          "PkgName": "libctf0",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1010204",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "binutils: Improper Input Validation, Signed/Unsigned Comparison, Out-of-bounds Read in gold/fileread.cc and elfcpp/elfcpp_file.h leads to denial of service",
+          "Description": "GNU binutils gold gold v1.11-v1.16 (GNU binutils v2.21-v2.31.1) is affected by: Improper Input Validation, Signed/Unsigned Comparison, Out-of-bounds Read. The impact is: Denial of service. The component is: gold/fileread.cc:497, elfcpp/elfcpp_file.h:644. The attack vector is: An ELF file with an invalid e_shoff header field must be opened.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-125",
+            "CWE-681"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V2Score": 4.3,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 4.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2019-1010204",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1010204",
+            "https://linux.oracle.com/cve/CVE-2019-1010204.html",
+            "https://linux.oracle.com/errata/ELSA-2020-1797.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2019-1010204",
+            "https://security.netapp.com/advisory/ntap-20190822-0001/",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=23765",
+            "https://support.f5.com/csp/article/K05032915?utm_source=f5support\u0026amp;utm_medium=RSS",
+            "https://ubuntu.com/security/notices/USN-5349-1",
+            "https://www.cve.org/CVERecord?id=CVE-2019-1010204"
+          ],
+          "PublishedDate": "2019-07-23T14:15:00Z",
+          "LastModifiedDate": "2022-04-18T17:02:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-27943",
+          "PkgID": "libctf0@2.38-4ubuntu2.3",
+          "PkgName": "libctf0",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-27943",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack exhaustion in demangle_const",
+          "Description": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack consumption in demangle_const, as demonstrated by nm-new.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-674"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V2Score": 4.3,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-27943",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27943",
+            "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105039",
+            "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=9234cdca6ee88badfc00297e72f13dac4e540c79",
+            "https://gcc.gnu.org/pipermail/gcc-patches/2022-March/592244.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/H424YXGW7OKXS2NCAP35OP6Y4P4AW6VG/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-27943",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=28995",
+            "https://www.cve.org/CVERecord?id=CVE-2022-27943"
+          ],
+          "PublishedDate": "2022-03-26T13:15:00Z",
+          "LastModifiedDate": "2023-08-08T14:22:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-4285",
+          "PkgID": "libctf0@2.38-4ubuntu2.3",
+          "PkgName": "libctf0",
+          "InstalledVersion": "2.38-4ubuntu2.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-4285",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "NULL pointer dereference in _bfd_elf_get_symbol_version_string leads to segfault",
+          "Description": "An illegal memory access flaw was found in the binutils package. Parsing an ELF file containing corrupt symbol version information may result in a denial of service. This issue is the result of an incomplete fix for CVE-2020-16599.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:2873",
+            "https://access.redhat.com/security/cve/CVE-2022-4285",
+            "https://bugzilla.redhat.com/2150768",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2150768",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4285",
+            "https://errata.almalinux.org/8/ALSA-2023-2873.html",
+            "https://linux.oracle.com/cve/CVE-2022-4285.html",
+            "https://linux.oracle.com/errata/ELSA-2023-2873.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-4285",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=29699",
+            "https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=5c831a3c7f3ca98d6aba1200353311e1a1f84c70",
+            "https://www.cve.org/CVERecord?id=CVE-2022-4285"
+          ],
+          "PublishedDate": "2023-01-27T18:15:00Z",
+          "LastModifiedDate": "2023-05-16T11:03:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-36054",
+          "PkgID": "libgssapi-krb5-2@1.19.2-2ubuntu0.2",
+          "PkgName": "libgssapi-krb5-2",
+          "InstalledVersion": "1.19.2-2ubuntu0.2",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:59c56aee1fb4dbaeb334aef06088b49902105d1ea0c15a9e5a2a9ce560fa4c5d"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-36054",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "lib/kadm5/kadm_rpc_xdr.c in MIT Kerberos 5 (aka krb5) before 1.20.2 an ...",
+          "Description": "lib/kadm5/kadm_rpc_xdr.c in MIT Kerberos 5 (aka krb5) before 1.20.2 and 1.21.x before 1.21.1 frees an uninitialized pointer. A remote authenticated user can trigger a kadmind crash. This occurs because _xdr_kadm5_principal_ent_rec does not validate the relationship between n_key_data and the key_data array count.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-824"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-36054",
+            "https://github.com/krb5/krb5/commit/ef08b09c9459551aabbe7924fb176f1583053cdd",
+            "https://github.com/krb5/krb5/compare/krb5-1.20.1-final...krb5-1.20.2-final",
+            "https://github.com/krb5/krb5/compare/krb5-1.21-final...krb5-1.21.1-final",
+            "https://web.mit.edu/kerberos/www/advisories/"
+          ],
+          "PublishedDate": "2023-08-07T19:15:00Z",
+          "LastModifiedDate": "2023-08-15T17:57:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-36054",
+          "PkgID": "libk5crypto3@1.19.2-2ubuntu0.2",
+          "PkgName": "libk5crypto3",
+          "InstalledVersion": "1.19.2-2ubuntu0.2",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:59c56aee1fb4dbaeb334aef06088b49902105d1ea0c15a9e5a2a9ce560fa4c5d"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-36054",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "lib/kadm5/kadm_rpc_xdr.c in MIT Kerberos 5 (aka krb5) before 1.20.2 an ...",
+          "Description": "lib/kadm5/kadm_rpc_xdr.c in MIT Kerberos 5 (aka krb5) before 1.20.2 and 1.21.x before 1.21.1 frees an uninitialized pointer. A remote authenticated user can trigger a kadmind crash. This occurs because _xdr_kadm5_principal_ent_rec does not validate the relationship between n_key_data and the key_data array count.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-824"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-36054",
+            "https://github.com/krb5/krb5/commit/ef08b09c9459551aabbe7924fb176f1583053cdd",
+            "https://github.com/krb5/krb5/compare/krb5-1.20.1-final...krb5-1.20.2-final",
+            "https://github.com/krb5/krb5/compare/krb5-1.21-final...krb5-1.21.1-final",
+            "https://web.mit.edu/kerberos/www/advisories/"
+          ],
+          "PublishedDate": "2023-08-07T19:15:00Z",
+          "LastModifiedDate": "2023-08-15T17:57:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-36054",
+          "PkgID": "libkrb5-3@1.19.2-2ubuntu0.2",
+          "PkgName": "libkrb5-3",
+          "InstalledVersion": "1.19.2-2ubuntu0.2",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:59c56aee1fb4dbaeb334aef06088b49902105d1ea0c15a9e5a2a9ce560fa4c5d"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-36054",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "lib/kadm5/kadm_rpc_xdr.c in MIT Kerberos 5 (aka krb5) before 1.20.2 an ...",
+          "Description": "lib/kadm5/kadm_rpc_xdr.c in MIT Kerberos 5 (aka krb5) before 1.20.2 and 1.21.x before 1.21.1 frees an uninitialized pointer. A remote authenticated user can trigger a kadmind crash. This occurs because _xdr_kadm5_principal_ent_rec does not validate the relationship between n_key_data and the key_data array count.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-824"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-36054",
+            "https://github.com/krb5/krb5/commit/ef08b09c9459551aabbe7924fb176f1583053cdd",
+            "https://github.com/krb5/krb5/compare/krb5-1.20.1-final...krb5-1.20.2-final",
+            "https://github.com/krb5/krb5/compare/krb5-1.21-final...krb5-1.21.1-final",
+            "https://web.mit.edu/kerberos/www/advisories/"
+          ],
+          "PublishedDate": "2023-08-07T19:15:00Z",
+          "LastModifiedDate": "2023-08-15T17:57:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-36054",
+          "PkgID": "libkrb5support0@1.19.2-2ubuntu0.2",
+          "PkgName": "libkrb5support0",
+          "InstalledVersion": "1.19.2-2ubuntu0.2",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:59c56aee1fb4dbaeb334aef06088b49902105d1ea0c15a9e5a2a9ce560fa4c5d"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-36054",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "lib/kadm5/kadm_rpc_xdr.c in MIT Kerberos 5 (aka krb5) before 1.20.2 an ...",
+          "Description": "lib/kadm5/kadm_rpc_xdr.c in MIT Kerberos 5 (aka krb5) before 1.20.2 and 1.21.x before 1.21.1 frees an uninitialized pointer. A remote authenticated user can trigger a kadmind crash. This occurs because _xdr_kadm5_principal_ent_rec does not validate the relationship between n_key_data and the key_data array count.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-824"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-36054",
+            "https://github.com/krb5/krb5/commit/ef08b09c9459551aabbe7924fb176f1583053cdd",
+            "https://github.com/krb5/krb5/compare/krb5-1.20.1-final...krb5-1.20.2-final",
+            "https://github.com/krb5/krb5/compare/krb5-1.21-final...krb5-1.21.1-final",
+            "https://web.mit.edu/kerberos/www/advisories/"
+          ],
+          "PublishedDate": "2023-08-07T19:15:00Z",
+          "LastModifiedDate": "2023-08-15T17:57:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-2953",
+          "PkgID": "libldap-2.5-0@2.5.15+dfsg-0ubuntu0.22.04.1",
+          "PkgName": "libldap-2.5-0",
+          "InstalledVersion": "2.5.15+dfsg-0ubuntu0.22.04.1",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-2953",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "null pointer dereference in  ber_memalloc_x  function",
+          "Description": "A vulnerability was found in openldap. This security flaw causes a null pointer dereference in ber_memalloc_x() function.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:H",
+              "V3Score": 7.1
+            }
+          },
+          "References": [
+            "http://seclists.org/fulldisclosure/2023/Jul/47",
+            "http://seclists.org/fulldisclosure/2023/Jul/48",
+            "http://seclists.org/fulldisclosure/2023/Jul/52",
+            "https://access.redhat.com/security/cve/CVE-2023-2953",
+            "https://bugs.openldap.org/show_bug.cgi?id=9904",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-2953",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-2953",
+            "https://security.netapp.com/advisory/ntap-20230703-0005/",
+            "https://support.apple.com/kb/HT213843",
+            "https://support.apple.com/kb/HT213844",
+            "https://support.apple.com/kb/HT213845",
+            "https://ubuntu.com/security/notices/USN-6197-1",
+            "https://www.cve.org/CVERecord?id=CVE-2023-2953"
+          ],
+          "PublishedDate": "2023-05-30T22:15:00Z",
+          "LastModifiedDate": "2023-08-02T16:46:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2017-11164",
+          "PkgID": "libpcre3@2:8.39-13ubuntu0.22.04.1",
+          "PkgName": "libpcre3",
+          "InstalledVersion": "2:8.39-13ubuntu0.22.04.1",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:59c56aee1fb4dbaeb334aef06088b49902105d1ea0c15a9e5a2a9ce560fa4c5d"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2017-11164",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "pcre: OP_KETRMAX feature in the match function in pcre_exec.c",
+          "Description": "In PCRE 8.41, the OP_KETRMAX feature in the match function in pcre_exec.c allows stack exhaustion (uncontrolled recursion) when processing a crafted regular expression.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-674"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C",
+              "V3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 7.8,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+              "V3Score": 3.3
+            }
+          },
+          "References": [
+            "http://openwall.com/lists/oss-security/2017/07/11/3",
+            "http://www.openwall.com/lists/oss-security/2023/04/11/1",
+            "http://www.openwall.com/lists/oss-security/2023/04/12/1",
+            "http://www.securityfocus.com/bid/99575",
+            "https://access.redhat.com/security/cve/CVE-2017-11164",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-11164",
+            "https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E",
+            "https://nvd.nist.gov/vuln/detail/CVE-2017-11164",
+            "https://www.cve.org/CVERecord?id=CVE-2017-11164"
+          ],
+          "PublishedDate": "2017-07-11T03:29:00Z",
+          "LastModifiedDate": "2023-04-12T15:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-3857",
+          "PkgID": "libpng16-16@1.6.37-3build5",
+          "PkgName": "libpng16-16",
+          "InstalledVersion": "1.6.37-3build5",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-3857",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "Null pointer dereference leads to segmentation fault",
+          "Description": "A flaw was found in libpng 1.6.38. A crafted PNG image can lead to a segmentation fault and denial of service in png_setup_paeth_row() function.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-3857",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-3857",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-3857",
+            "https://security.netapp.com/advisory/ntap-20230406-0004/",
+            "https://sourceforge.net/p/libpng/bugs/300/",
+            "https://www.cve.org/CVERecord?id=CVE-2022-3857"
+          ],
+          "PublishedDate": "2023-03-06T23:15:00Z",
+          "LastModifiedDate": "2023-04-06T13:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-4016",
+          "PkgID": "libprocps8@2:3.3.17-6ubuntu2",
+          "PkgName": "libprocps8",
+          "InstalledVersion": "2:3.3.17-6ubuntu2",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:59c56aee1fb4dbaeb334aef06088b49902105d1ea0c15a9e5a2a9ce560fa4c5d"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-4016",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "ps buffer overflow",
+          "Description": "Under some circumstances, this weakness allows a user who has access to run the “ps” utility on a machine, the ability to write almost unlimited amounts of unfiltered data into the process heap.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 2.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2023-4016",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-4016",
+            "https://gitlab.com/procps-ng/procps",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SUETRRT24OFGPYK6ACPM5VUGHNKH5CQ5/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-4016",
+            "https://www.cve.org/CVERecord?id=CVE-2023-4016"
+          ],
+          "PublishedDate": "2023-08-02T05:15:00Z",
+          "LastModifiedDate": "2023-08-21T03:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-2975",
+          "PkgID": "libssl3@3.0.2-0ubuntu1.10",
+          "PkgName": "libssl3",
+          "InstalledVersion": "3.0.2-0ubuntu1.10",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:59c56aee1fb4dbaeb334aef06088b49902105d1ea0c15a9e5a2a9ce560fa4c5d"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-2975",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "AES-SIV cipher implementation contains a bug that causes it to ignore empty associated data entries",
+          "Description": "Issue summary: The AES-SIV cipher implementation contains a bug that causes\nit to ignore empty associated data entries which are unauthenticated as\na consequence.\n\nImpact summary: Applications that use the AES-SIV algorithm and want to\nauthenticate empty data entries as associated data can be mislead by removing\nadding or reordering such empty entries as these are ignored by the OpenSSL\nimplementation. We are currently unaware of any such applications.\n\nThe AES-SIV algorithm allows for authentication of multiple associated\ndata entries along with the encryption. To authenticate empty data the\napplication has to call EVP_EncryptUpdate() (or EVP_CipherUpdate()) with\nNULL pointer as the output buffer and 0 as the input buffer length.\nThe AES-SIV implementation in OpenSSL just returns success for such a call\ninstead of performing the associated data authentication operation.\nThe empty data thus will not be authenticated.\n\nAs this issue does not affect non-empty associated data authentication and\nwe expect it to be rare for an application to use empty associated data\nentries this is qualified as Low severity issue.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-287"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2023/07/15/1",
+            "http://www.openwall.com/lists/oss-security/2023/07/19/5",
+            "https://access.redhat.com/security/cve/CVE-2023-2975",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-2975",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=00e2f5eea29994d19293ec4e8c8775ba73678598",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=6a83f0c958811f07e0d11dfc6b5a6a98edfd5bdc",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-2975",
+            "https://security.netapp.com/advisory/ntap-20230725-0004/",
+            "https://www.cve.org/CVERecord?id=CVE-2023-2975",
+            "https://www.openssl.org/news/secadv/20230714.txt"
+          ],
+          "PublishedDate": "2023-07-14T12:15:00Z",
+          "LastModifiedDate": "2023-07-27T13:02:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-4899",
+          "PkgID": "libzstd1@1.4.8+dfsg-3build1",
+          "PkgName": "libzstd1",
+          "InstalledVersion": "1.4.8+dfsg-3build1",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:59c56aee1fb4dbaeb334aef06088b49902105d1ea0c15a9e5a2a9ce560fa4c5d"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-4899",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "buffer overrun in util.c",
+          "Description": "A vulnerability was found in zstd v1.4.10, where an attacker can supply empty string as an argument to the command line tool to cause buffer overrun.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-4899",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4899",
+            "https://github.com/advisories/GHSA-5c9c-6x87-f9vm",
+            "https://github.com/facebook/zstd/issues/3200",
+            "https://github.com/facebook/zstd/pull/3220",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/zstd/PYSEC-2023-121.yaml",
+            "https://github.com/sergey-dryabzhinsky/python-zstd/commit/c8a619aebdbd6b838fbfef6e19325a70f631a4c6",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-4899",
+            "https://security.netapp.com/advisory/ntap-20230725-0005/",
+            "https://www.cve.org/CVERecord?id=CVE-2022-4899"
+          ],
+          "PublishedDate": "2023-03-31T20:15:00Z",
+          "LastModifiedDate": "2023-07-25T15:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2016-20013",
+          "PkgID": "locales@2.35-0ubuntu3.1",
+          "PkgName": "locales",
+          "InstalledVersion": "2.35-0ubuntu3.1",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2016-20013",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "sha256crypt and sha512crypt through 0.6 allow attackers to cause a denial of service (CPU consumption) because the algorithm's runtime is proportional to the square of the length of the password.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://akkadia.org/drepper/SHA-crypt.txt",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-20013",
+            "https://pthree.org/2018/05/23/do-not-use-sha256crypt-sha512crypt-theyre-dangerous/",
+            "https://twitter.com/solardiz/status/795601240151457793"
+          ],
+          "PublishedDate": "2022-02-19T05:15:00Z",
+          "LastModifiedDate": "2022-03-03T16:43:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-29383",
+          "PkgID": "login@1:4.8.1-2ubuntu2.1",
+          "PkgName": "login",
+          "InstalledVersion": "1:4.8.1-2ubuntu2.1",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:59c56aee1fb4dbaeb334aef06088b49902105d1ea0c15a9e5a2a9ce560fa4c5d"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-29383",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "Improper input validation in shadow-utils package utility chfn",
+          "Description": "In Shadow 4.13, it is possible to inject control characters into fields provided to the SUID program chfn (change finger). Although it is not possible to exploit this directly (e.g., adding a new user fails because \\n is in the block list), it is possible to misrepresent the /etc/passwd file when viewed. Use of \\r manipulations and Unicode characters to work around blocking of the : character make it possible to give the impression that a new user has been added. In other words, an adversary may be able to convince a system administrator to take the system offline (an indirect, social-engineered denial of service) by demonstrating that \"cat /etc/passwd\" shows a rogue user account.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-74"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 3.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2023-29383",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-29383",
+            "https://github.com/shadow-maint/shadow/commit/e5905c4b84d4fb90aefcd96ee618411ebfac663d",
+            "https://github.com/shadow-maint/shadow/pull/687",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-29383",
+            "https://www.cve.org/CVERecord?id=CVE-2023-29383",
+            "https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/cve-2023-29383-abusing-linux-chfn-to-misrepresent-etc-passwd/",
+            "https://www.trustwave.com/en-us/resources/security-resources/security-advisories/?fid=31797"
+          ],
+          "PublishedDate": "2023-04-14T22:15:00Z",
+          "LastModifiedDate": "2023-04-24T18:05:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-2975",
+          "PkgID": "openssl@3.0.2-0ubuntu1.10",
+          "PkgName": "openssl",
+          "InstalledVersion": "3.0.2-0ubuntu1.10",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-2975",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "AES-SIV cipher implementation contains a bug that causes it to ignore empty associated data entries",
+          "Description": "Issue summary: The AES-SIV cipher implementation contains a bug that causes\nit to ignore empty associated data entries which are unauthenticated as\na consequence.\n\nImpact summary: Applications that use the AES-SIV algorithm and want to\nauthenticate empty data entries as associated data can be mislead by removing\nadding or reordering such empty entries as these are ignored by the OpenSSL\nimplementation. We are currently unaware of any such applications.\n\nThe AES-SIV algorithm allows for authentication of multiple associated\ndata entries along with the encryption. To authenticate empty data the\napplication has to call EVP_EncryptUpdate() (or EVP_CipherUpdate()) with\nNULL pointer as the output buffer and 0 as the input buffer length.\nThe AES-SIV implementation in OpenSSL just returns success for such a call\ninstead of performing the associated data authentication operation.\nThe empty data thus will not be authenticated.\n\nAs this issue does not affect non-empty associated data authentication and\nwe expect it to be rare for an application to use empty associated data\nentries this is qualified as Low severity issue.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-287"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2023/07/15/1",
+            "http://www.openwall.com/lists/oss-security/2023/07/19/5",
+            "https://access.redhat.com/security/cve/CVE-2023-2975",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-2975",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=00e2f5eea29994d19293ec4e8c8775ba73678598",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=6a83f0c958811f07e0d11dfc6b5a6a98edfd5bdc",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-2975",
+            "https://security.netapp.com/advisory/ntap-20230725-0004/",
+            "https://www.cve.org/CVERecord?id=CVE-2023-2975",
+            "https://www.openssl.org/news/secadv/20230714.txt"
+          ],
+          "PublishedDate": "2023-07-14T12:15:00Z",
+          "LastModifiedDate": "2023-07-27T13:02:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-29383",
+          "PkgID": "passwd@1:4.8.1-2ubuntu2.1",
+          "PkgName": "passwd",
+          "InstalledVersion": "1:4.8.1-2ubuntu2.1",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:59c56aee1fb4dbaeb334aef06088b49902105d1ea0c15a9e5a2a9ce560fa4c5d"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-29383",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "Improper input validation in shadow-utils package utility chfn",
+          "Description": "In Shadow 4.13, it is possible to inject control characters into fields provided to the SUID program chfn (change finger). Although it is not possible to exploit this directly (e.g., adding a new user fails because \\n is in the block list), it is possible to misrepresent the /etc/passwd file when viewed. Use of \\r manipulations and Unicode characters to work around blocking of the : character make it possible to give the impression that a new user has been added. In other words, an adversary may be able to convince a system administrator to take the system offline (an indirect, social-engineered denial of service) by demonstrating that \"cat /etc/passwd\" shows a rogue user account.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-74"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 3.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2023-29383",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-29383",
+            "https://github.com/shadow-maint/shadow/commit/e5905c4b84d4fb90aefcd96ee618411ebfac663d",
+            "https://github.com/shadow-maint/shadow/pull/687",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-29383",
+            "https://www.cve.org/CVERecord?id=CVE-2023-29383",
+            "https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/cve-2023-29383-abusing-linux-chfn-to-misrepresent-etc-passwd/",
+            "https://www.trustwave.com/en-us/resources/security-resources/security-advisories/?fid=31797"
+          ],
+          "PublishedDate": "2023-04-14T22:15:00Z",
+          "LastModifiedDate": "2023-04-24T18:05:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-4016",
+          "PkgID": "procps@2:3.3.17-6ubuntu2",
+          "PkgName": "procps",
+          "InstalledVersion": "2:3.3.17-6ubuntu2",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:59c56aee1fb4dbaeb334aef06088b49902105d1ea0c15a9e5a2a9ce560fa4c5d"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-4016",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "ps buffer overflow",
+          "Description": "Under some circumstances, this weakness allows a user who has access to run the “ps” utility on a machine, the ability to write almost unlimited amounts of unfiltered data into the process heap.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 2.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2023-4016",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-4016",
+            "https://gitlab.com/procps-ng/procps",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SUETRRT24OFGPYK6ACPM5VUGHNKH5CQ5/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-4016",
+            "https://www.cve.org/CVERecord?id=CVE-2023-4016"
+          ],
+          "PublishedDate": "2023-08-02T05:15:00Z",
+          "LastModifiedDate": "2023-08-21T03:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-31879",
+          "PkgID": "wget@1.21.2-2ubuntu1",
+          "PkgName": "wget",
+          "InstalledVersion": "1.21.2-2ubuntu1",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:981db337ecdca7a4025e82c18a4479505e7b76a778ebec7b679e89072d4db121"
+          },
+          "SeveritySource": "ubuntu",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-31879",
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Title": "wget: authorization header disclosure on redirect",
+          "Description": "GNU Wget through 1.21.1 does not omit the Authorization header upon a redirect to a different origin, a related issue to CVE-2018-1000007.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-601"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:P/I:P/A:N",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+              "V2Score": 5.8,
+              "V3Score": 6.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-31879",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-31879",
+            "https://mail.gnu.org/archive/html/bug-wget/2021-02/msg00002.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-31879",
+            "https://savannah.gnu.org/bugs/?56909",
+            "https://security.netapp.com/advisory/ntap-20210618-0002/",
+            "https://www.cve.org/CVERecord?id=CVE-2021-31879"
+          ],
+          "PublishedDate": "2021-04-29T05:15:00Z",
+          "LastModifiedDate": "2022-05-13T20:52:00Z"
+        }
+      ]
+    },
+    {
+      "Target": "Java",
+      "Class": "lang-pkgs",
+      "Type": "jar",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2023-2976",
+          "PkgName": "com.google.guava:guava",
+          "PkgPath": "usr/share/maven/lib/guava-31.1-jre.jar",
+          "InstalledVersion": "31.1-jre",
+          "FixedVersion": "32.0.0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cf7e3d983bddc25e7bc07775ab3e3ed8ea9fc2745009ff5b0a0543c69ad9b87"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-2976",
+          "DataSource": {
+            "ID": "glad",
+            "Name": "GitLab Advisory Database Community",
+            "URL": "https://gitlab.com/gitlab-org/advisories-community"
+          },
+          "Title": "insecure temporary directory creation",
+          "Description": "Use of Java's default temporary directory for file creation in `FileBackedOutputStream` in Google Guava versions 1.0 to 31.1 on Unix systems and Android Ice Cream Sandwich allows other users and apps on the machine with access to the default Java temporary directory to be able to access the files created by the class.\n\nEven though the security vulnerability is fixed in version 32.0.0, we recommend using version 32.0.1 as version 32.0.0 breaks some functionality under Windows.\n\n",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-552"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 5.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 4.4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2023-2976",
+            "https://github.com/advisories/GHSA-7g45-4rm6-3mm3",
+            "https://github.com/google/guava/commit/feb83a1c8fd2e7670b244d5afd23cba5aca43284",
+            "https://github.com/google/guava/issues/2575",
+            "https://github.com/google/guava/issues/6532",
+            "https://github.com/google/guava/releases/tag/v32.0.0",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-2976",
+            "https://security.netapp.com/advisory/ntap-20230818-0008/",
+            "https://www.cve.org/CVERecord?id=CVE-2023-2976"
+          ],
+          "PublishedDate": "2023-06-14T18:15:00Z",
+          "LastModifiedDate": "2023-08-18T14:15:00Z"
+        }
+      ]
+    }
+  ]
+}

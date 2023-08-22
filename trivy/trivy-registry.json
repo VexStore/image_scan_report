@@ -1,0 +1,111 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "registry",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "OS": {
+      "Family": "alpine",
+      "Name": "3.18.3"
+    },
+    "ImageID": "sha256:0030ba3d620c647159c935ee778991c68ef3e51a274703753b0bc530104ef5e5",
+    "DiffIDs": [
+      "sha256:4693057ce2364720d39e57e85a5b8e0bd9ac3573716237736d6470ec5b7b7230",
+      "sha256:f4285c49150951f9c722f249b50dda8d8148607a9a18c1f753a00bf02b718032",
+      "sha256:90d6ca1e837fafe61bc55e7bda750d2bff592d7f84fb986787fc7f4743f3bd3a",
+      "sha256:f79c4d8837b653dd867ca31bcc828c7400a823b5f641c54c3a932f0684256853",
+      "sha256:85f82aceeda3c5772bfbe299c5b2e9b8323f9d9426d136e046858dfeb0de59b0"
+    ],
+    "RepoTags": [
+      "registry:latest"
+    ],
+    "RepoDigests": [
+      "registry@sha256:e642e8604d305a3b82c8c1807b5df7a1a84cc650d57a60f9c5c2b78efec54b3f"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "container": "2f2f3c62a989a45659158f002b0fda2abf257aee9191ffcb258d3dd96d26274f",
+      "created": "2023-08-09T03:36:49.867156613Z",
+      "docker_version": "20.10.23",
+      "history": [
+        {
+          "created": "2023-08-07T19:20:20Z",
+          "created_by": "/bin/sh -c #(nop) ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / "
+        },
+        {
+          "created": "2023-08-07T19:20:20Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/sh\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-09T03:36:47Z",
+          "created_by": "/bin/sh -c apk add --no-cache ca-certificates"
+        },
+        {
+          "created": "2023-08-09T03:36:49Z",
+          "created_by": "/bin/sh -c set -eux; \tversion='2.8.2'; \tapkArch=\"$(apk --print-arch)\"; \tcase \"$apkArch\" in \t\tx86_64)  arch='amd64';   sha256='b68ffb849bcdb49639dc91ba97baba6618346f95fedc0fcc94871b31d515d205' ;; \t\taarch64) arch='arm64';   sha256='3d500cf4f7f21ade4bdfef28012aef8e1ec2b221d2d8d36d201d94dda84fa727' ;; \t\tarmhf)   arch='armv6';   sha256='e65aeccf69e779681f75b488c4e955f9d9b6aa1d7cf961a9307e8b6d40229373' ;; \t\tarmv7)   arch='armv7';   sha256='045154b2be7a6a3b5d35e14e9afcd29d01813f46ce7ea2ea40958048b621dfd0' ;; \t\tppc64le) arch='ppc64le'; sha256='21f5523bb0815af9b7e41b52824d422679309773a14a841e8e685e1f521c1ee0' ;; \t\ts390x)   arch='s390x';   sha256='2ec05870ffa8c47e764e8de08d00dd0748698cf36394e4b3a503a1339b93e251' ;; \t\t*) echo \u003e\u00262 \"error: unsupported architecture: $apkArch\"; exit 1 ;; \tesac; \twget -O registry.tar.gz \"https://github.com/distribution/distribution/releases/download/v${version}/registry_${version}_linux_${arch}.tar.gz\"; \techo \"$sha256 *registry.tar.gz\" | sha256sum -c -; \ttar --extract --verbose --file registry.tar.gz --directory /bin/ registry; \trm registry.tar.gz; \tregistry --version"
+        },
+        {
+          "created": "2023-08-09T03:36:49Z",
+          "created_by": "/bin/sh -c #(nop) COPY file:4544cc1555469403b322faecc1cf1ca584667c43a6a60b17300f97840c04196e in /etc/docker/registry/config.yml "
+        },
+        {
+          "created": "2023-08-09T03:36:49Z",
+          "created_by": "/bin/sh -c #(nop)  VOLUME [/var/lib/registry]",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-09T03:36:49Z",
+          "created_by": "/bin/sh -c #(nop)  EXPOSE 5000",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-09T03:36:49Z",
+          "created_by": "/bin/sh -c #(nop) COPY file:507caa54f88c1f3862e5876e09a108b2083630ba24c57ad124e356a2de861d62 in /entrypoint.sh "
+        },
+        {
+          "created": "2023-08-09T03:36:49Z",
+          "created_by": "/bin/sh -c #(nop)  ENTRYPOINT [\"/entrypoint.sh\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-09T03:36:49Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"/etc/docker/registry/config.yml\"]",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:4693057ce2364720d39e57e85a5b8e0bd9ac3573716237736d6470ec5b7b7230",
+          "sha256:f4285c49150951f9c722f249b50dda8d8148607a9a18c1f753a00bf02b718032",
+          "sha256:90d6ca1e837fafe61bc55e7bda750d2bff592d7f84fb986787fc7f4743f3bd3a",
+          "sha256:f79c4d8837b653dd867ca31bcc828c7400a823b5f641c54c3a932f0684256853",
+          "sha256:85f82aceeda3c5772bfbe299c5b2e9b8323f9d9426d136e046858dfeb0de59b0"
+        ]
+      },
+      "config": {
+        "Cmd": [
+          "/etc/docker/registry/config.yml"
+        ],
+        "Entrypoint": [
+          "/entrypoint.sh"
+        ],
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+        ],
+        "Image": "sha256:64a6b11c568920bc156614f2655490d218283fc35032b0d647a51e2bfac05ffd",
+        "Volumes": {
+          "/var/lib/registry": {}
+        }
+      }
+    }
+  },
+  "Results": [
+    {
+      "Target": "registry (alpine 3.18.3)",
+      "Class": "os-pkgs",
+      "Type": "alpine"
+    }
+  ]
+}

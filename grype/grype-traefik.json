@@ -1,0 +1,989 @@
+{
+ "matches": [
+  {
+   "vulnerability": {
+    "id": "GHSA-232p-vwff-86mp",
+    "dataSource": "https://github.com/advisories/GHSA-232p-vwff-86mp",
+    "namespace": "github:language:go",
+    "severity": "High",
+    "urls": [
+     "https://github.com/advisories/GHSA-232p-vwff-86mp"
+    ],
+    "description": "Docker Swarm encrypted overlay network may be unauthenticated",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N/A:L",
+      "metrics": {
+       "baseScore": 7.5,
+       "exploitabilityScore": 2.2,
+       "impactScore": 4.7
+      },
+      "vendorMetadata": {
+       "base_severity": "High",
+       "status": "N/A"
+      }
+     }
+    ],
+    "fix": {
+     "versions": [
+      "20.10.24"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2023-28840",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-28840",
+     "namespace": "nvd:cpe",
+     "severity": "High",
+     "urls": [
+      "https://github.com/moby/libnetwork/security/advisories/GHSA-gvm4-2qqg-m333",
+      "https://github.com/moby/moby/issues/43382",
+      "https://github.com/moby/moby/pull/45118",
+      "https://github.com/moby/moby/security/advisories/GHSA-232p-vwff-86mp",
+      "https://github.com/moby/moby/security/advisories/GHSA-33pg-m6jh-5237",
+      "https://github.com/moby/moby/security/advisories/GHSA-6wrf-mxfj-pf5p",
+      "https://github.com/moby/moby/security/advisories/GHSA-vwm3-crmr-xfxw"
+     ],
+     "description": "Moby is an open source container framework developed by Docker Inc. that is distributed as Docker, Mirantis Container Runtime, and various other downstream projects/products. The Moby daemon component (`dockerd`), which is developed as moby/moby, is commonly referred to as *Docker*. Swarm Mode, which is compiled in and delivered by default in dockerd and is thus present in most major Moby downstreams, is a simple, built-in container orchestrator that is implemented through a combination of SwarmKit and supporting network code. The overlay network driver is a core feature of Swarm Mode, providing isolated virtual LANs that allow communication between containers and services across the cluster. This driver is an implementation/user of VXLAN, which encapsulates link-layer (Ethernet) frames in UDP datagrams that tag the frame with a VXLAN Network ID (VNI) that identifies the originating overlay network. In addition, the overlay network driver supports an optional, off-by-default encrypted mode, which is especially useful when VXLAN packets traverses an untrusted network between nodes. Encrypted overlay networks function by encapsulating the VXLAN datagrams through the use of the IPsec Encapsulating Security Payload protocol in Transport mode. By deploying IPSec encapsulation, encrypted overlay networks gain the additional properties of source authentication through cryptographic proof, data integrity through check-summing, and confidentiality through encryption. When setting an endpoint up on an encrypted overlay network, Moby installs three iptables (Linux kernel firewall) rules that enforce both incoming and outgoing IPSec. These rules rely on the u32 iptables extension provided by the xt_u32 kernel module to directly filter on a VXLAN packet's VNI field, so that IPSec guarantees can be enforced on encrypted overlay networks without interfering with other overlay networks or other users of VXLAN. Two iptables rules serve to filter incoming VXLAN datagrams with a VNI that corresponds to an encrypted network and discards unencrypted datagrams. The rules are appended to the end of the INPUT filter chain, following any rules that have been previously set by the system administrator. Administrator-set rules take precedence over the rules Moby sets to discard unencrypted VXLAN datagrams, which can potentially admit unencrypted datagrams that should have been discarded. The injection of arbitrary Ethernet frames can enable a Denial of Service attack. A sophisticated attacker may be able to establish a UDP or TCP connection by way of the container’s outbound gateway that would otherwise be blocked by a stateful firewall, or carry out other escalations beyond simple injection by smuggling packets into the overlay network. Patches are available in Moby releases 23.0.3 and 20.10.24. As Mirantis Container Runtime's 20.10 releases are numbered differently, users of that platform should update to 20.10.16. Some workarounds are available. Close the VXLAN port (by default, UDP port 4789) to incoming traffic at the Internet boundary to prevent all VXLAN packet injection, and/or ensure that the `xt_u32` kernel module is available on all nodes of the Swarm cluster.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:H",
+       "metrics": {
+        "baseScore": 8.7,
+        "exploitabilityScore": 2.2,
+        "impactScore": 5.8
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "security-advisories@github.com",
+       "type": "Secondary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N/A:L",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 2.2,
+        "impactScore": 4.7
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "go-module-matcher",
+     "searchedBy": {
+      "language": "go",
+      "namespace": "github:language:go",
+      "package": {
+       "name": "github.com/docker/docker",
+       "version": "v20.10.21+incompatible"
+      }
+     },
+     "found": {
+      "versionConstraint": ">=1.12.0,<20.10.24 (unknown)",
+      "vulnerabilityID": "GHSA-232p-vwff-86mp"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "1fd29dd72e53b362",
+    "name": "github.com/docker/docker",
+    "version": "v20.10.21+incompatible",
+    "type": "go-module",
+    "locations": [
+     {
+      "path": "/usr/local/bin/traefik",
+      "layerID": "sha256:a12fcc22503848018516ce1d4e3ca97d1796864ae33b1f0b8861a7a474dd3421"
+     }
+    ],
+    "language": "go",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:docker:docker:v20.10.21+incompatible:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:golang/github.com/docker/docker@v20.10.21+incompatible",
+    "upstreams": [],
+    "metadataType": "GolangBinMetadata",
+    "metadata": {
+     "goCompiledVersion": "go1.20.6",
+     "architecture": "amd64",
+     "h1Digest": "h1:UTLdBmHk3bEY+w8qeO5KttOhy6OmXWsl/FEet9Uswog=",
+     "mainModule": "github.com/traefik/traefik/v2"
+    }
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-6wrf-mxfj-pf5p",
+    "dataSource": "https://github.com/advisories/GHSA-6wrf-mxfj-pf5p",
+    "namespace": "github:language:go",
+    "severity": "Medium",
+    "urls": [
+     "https://github.com/advisories/GHSA-6wrf-mxfj-pf5p"
+    ],
+    "description": "Docker Swarm encrypted overlay network with a single endpoint is unauthenticated",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:N",
+      "metrics": {
+       "baseScore": 6.8,
+       "exploitabilityScore": 2.2,
+       "impactScore": 4
+      },
+      "vendorMetadata": {
+       "base_severity": "Medium",
+       "status": "N/A"
+      }
+     }
+    ],
+    "fix": {
+     "versions": [
+      "20.10.24"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2023-28842",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-28842",
+     "namespace": "nvd:cpe",
+     "severity": "Medium",
+     "urls": [
+      "https://github.com/moby/libnetwork/security/advisories/GHSA-gvm4-2qqg-m333",
+      "https://github.com/moby/moby/security/advisories/GHSA-232p-vwff-86mp",
+      "https://github.com/moby/moby/security/advisories/GHSA-33pg-m6jh-5237",
+      "https://github.com/moby/moby/security/advisories/GHSA-6wrf-mxfj-pf5p",
+      "https://github.com/moby/moby/security/advisories/GHSA-vwm3-crmr-xfxw"
+     ],
+     "description": "Moby) is an open source container framework developed by Docker Inc. that is distributed as Docker, Mirantis Container Runtime, and various other downstream projects/products. The Moby daemon component (`dockerd`), which is developed as moby/moby is commonly referred to as *Docker*. Swarm Mode, which is compiled in and delivered by default in `dockerd` and is thus present in most major Moby downstreams, is a simple, built-in container orchestrator that is implemented through a combination of SwarmKit and supporting network code. The `overlay` network driver is a core feature of Swarm Mode, providing isolated virtual LANs that allow communication between containers and services across the cluster. This driver is an implementation/user of VXLAN, which encapsulates link-layer (Ethernet) frames in UDP datagrams that tag the frame with the VXLAN metadata, including a VXLAN Network ID (VNI) that identifies the originating overlay network. In addition, the overlay network driver supports an optional, off-by-default encrypted mode, which is especially useful when VXLAN packets traverses an untrusted network between nodes. Encrypted overlay networks function by encapsulating the VXLAN datagrams through the use of the IPsec Encapsulating Security Payload protocol in Transport mode. By deploying IPSec encapsulation, encrypted overlay networks gain the additional properties of source authentication through cryptographic proof, data integrity through check-summing, and confidentiality through encryption. When setting an endpoint up on an encrypted overlay network, Moby installs three iptables (Linux kernel firewall) rules that enforce both incoming and outgoing IPSec. These rules rely on the `u32` iptables extension provided by the `xt_u32` kernel module to directly filter on a VXLAN packet's VNI field, so that IPSec guarantees can be enforced on encrypted overlay networks without interfering with other overlay networks or other users of VXLAN. The `overlay` driver dynamically and lazily defines the kernel configuration for the VXLAN network on each node as containers are attached and detached. Routes and encryption parameters are only defined for destination nodes that participate in the network. The iptables rules that prevent encrypted overlay networks from accepting unencrypted packets are not created until a peer is available with which to communicate. Encrypted overlay networks silently accept cleartext VXLAN datagrams that are tagged with the VNI of an encrypted overlay network. As a result, it is possible to inject arbitrary Ethernet frames into the encrypted overlay network by encapsulating them in VXLAN datagrams. The implications of this can be quite dire, and GHSA-vwm3-crmr-xfxw should be referenced for a deeper exploration. Patches are available in Moby releases 23.0.3, and 20.10.24. As Mirantis Container Runtime's 20.10 releases are numbered differently, users of that platform should update to 20.10.16. Some workarounds are available. In multi-node clusters, deploy a global ‘pause’ container for each encrypted overlay network, on every node. For a single-node cluster, do not use overlay networks of any sort. Bridge networks provide the same connectivity on a single node and have no multi-node features. The Swarm ingress feature is implemented using an overlay network, but can be disabled by publishing ports in `host` mode instead of `ingress` mode (allowing the use of an external load balancer), and removing the `ingress` network. If encrypted overlay networks are in exclusive use, block UDP port 4789 from traffic that has not been validated by IPSec.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:N",
+       "metrics": {
+        "baseScore": 6.8,
+        "exploitabilityScore": 2.2,
+        "impactScore": 4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "security-advisories@github.com",
+       "type": "Secondary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:N",
+       "metrics": {
+        "baseScore": 6.8,
+        "exploitabilityScore": 2.2,
+        "impactScore": 4
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "go-module-matcher",
+     "searchedBy": {
+      "language": "go",
+      "namespace": "github:language:go",
+      "package": {
+       "name": "github.com/docker/docker",
+       "version": "v20.10.21+incompatible"
+      }
+     },
+     "found": {
+      "versionConstraint": ">=1.12.0,<20.10.24 (unknown)",
+      "vulnerabilityID": "GHSA-6wrf-mxfj-pf5p"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "1fd29dd72e53b362",
+    "name": "github.com/docker/docker",
+    "version": "v20.10.21+incompatible",
+    "type": "go-module",
+    "locations": [
+     {
+      "path": "/usr/local/bin/traefik",
+      "layerID": "sha256:a12fcc22503848018516ce1d4e3ca97d1796864ae33b1f0b8861a7a474dd3421"
+     }
+    ],
+    "language": "go",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:docker:docker:v20.10.21+incompatible:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:golang/github.com/docker/docker@v20.10.21+incompatible",
+    "upstreams": [],
+    "metadataType": "GolangBinMetadata",
+    "metadata": {
+     "goCompiledVersion": "go1.20.6",
+     "architecture": "amd64",
+     "h1Digest": "h1:UTLdBmHk3bEY+w8qeO5KttOhy6OmXWsl/FEet9Uswog=",
+     "mainModule": "github.com/traefik/traefik/v2"
+    }
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-33pg-m6jh-5237",
+    "dataSource": "https://github.com/advisories/GHSA-33pg-m6jh-5237",
+    "namespace": "github:language:go",
+    "severity": "Medium",
+    "urls": [
+     "https://github.com/advisories/GHSA-33pg-m6jh-5237"
+    ],
+    "description": "Docker Swarm encrypted overlay network traffic may be unencrypted",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N/A:N",
+      "metrics": {
+       "baseScore": 6.8,
+       "exploitabilityScore": 2.2,
+       "impactScore": 4
+      },
+      "vendorMetadata": {
+       "base_severity": "Medium",
+       "status": "N/A"
+      }
+     }
+    ],
+    "fix": {
+     "versions": [
+      "20.10.24"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2023-28841",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-28841",
+     "namespace": "nvd:cpe",
+     "severity": "Medium",
+     "urls": [
+      "https://github.com/moby/libnetwork/blob/d9fae4c73daf76c3b0f77e14b45b8bf612ba764d/drivers/overlay/encryption.go#L205-L207",
+      "https://github.com/moby/libnetwork/security/advisories/GHSA-gvm4-2qqg-m333",
+      "https://github.com/moby/moby/issues/43382",
+      "https://github.com/moby/moby/pull/45118",
+      "https://github.com/moby/moby/security/advisories/GHSA-232p-vwff-86mp",
+      "https://github.com/moby/moby/security/advisories/GHSA-33pg-m6jh-5237",
+      "https://github.com/moby/moby/security/advisories/GHSA-6wrf-mxfj-pf5p",
+      "https://github.com/moby/moby/security/advisories/GHSA-vwm3-crmr-xfxw"
+     ],
+     "description": "Moby is an open source container framework developed by Docker Inc. that is distributed as Docker, Mirantis Container Runtime, and various other downstream projects/products. The Moby daemon component (`dockerd`), which is developed as moby/moby is commonly referred to as *Docker*. Swarm Mode, which is compiled in and delivered by default in `dockerd` and is thus present in most major Moby downstreams, is a simple, built-in container orchestrator that is implemented through a combination of SwarmKit and supporting network code. The `overlay` network driver is a core feature of Swarm Mode, providing isolated virtual LANs that allow communication between containers and services across the cluster. This driver is an implementation/user of VXLAN, which encapsulates link-layer (Ethernet) frames in UDP datagrams that tag the frame with the VXLAN metadata, including a VXLAN Network ID (VNI) that identifies the originating overlay network. In addition, the overlay network driver supports an optional, off-by-default encrypted mode, which is especially useful when VXLAN packets traverses an untrusted network between nodes. Encrypted overlay networks function by encapsulating the VXLAN datagrams through the use of the IPsec Encapsulating Security Payload protocol in Transport mode. By deploying IPSec encapsulation, encrypted overlay networks gain the additional properties of source authentication through cryptographic proof, data integrity through check-summing, and confidentiality through encryption. When setting an endpoint up on an encrypted overlay network, Moby installs three iptables (Linux kernel firewall) rules that enforce both incoming and outgoing IPSec. These rules rely on the `u32` iptables extension provided by the `xt_u32` kernel module to directly filter on a VXLAN packet's VNI field, so that IPSec guarantees can be enforced on encrypted overlay networks without interfering with other overlay networks or other users of VXLAN. An iptables rule designates outgoing VXLAN datagrams with a VNI that corresponds to an encrypted overlay network for IPsec encapsulation. Encrypted overlay networks on affected platforms silently transmit unencrypted data. As a result, `overlay` networks may appear to be functional, passing traffic as expected, but without any of the expected confidentiality or data integrity guarantees. It is possible for an attacker sitting in a trusted position on the network to read all of the application traffic that is moving across the overlay network, resulting in unexpected secrets or user data disclosure. Thus, because many database protocols, internal APIs, etc. are not protected by a second layer of encryption, a user may use Swarm encrypted overlay networks to provide confidentiality, which due to this vulnerability this is no longer guaranteed. Patches are available in Moby releases 23.0.3, and 20.10.24. As Mirantis Container Runtime's 20.10 releases are numbered differently, users of that platform should update to 20.10.16. Some workarounds are available. Close the VXLAN port (by default, UDP port 4789) to outgoing traffic at the Internet boundary in order to prevent unintentionally leaking unencrypted traffic over the Internet, and/or ensure that the `xt_u32` kernel module is available on all nodes of the Swarm cluster.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N/A:N",
+       "metrics": {
+        "baseScore": 6.8,
+        "exploitabilityScore": 2.2,
+        "impactScore": 4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "security-advisories@github.com",
+       "type": "Secondary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N/A:N",
+       "metrics": {
+        "baseScore": 6.8,
+        "exploitabilityScore": 2.2,
+        "impactScore": 4
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "go-module-matcher",
+     "searchedBy": {
+      "language": "go",
+      "namespace": "github:language:go",
+      "package": {
+       "name": "github.com/docker/docker",
+       "version": "v20.10.21+incompatible"
+      }
+     },
+     "found": {
+      "versionConstraint": ">=1.12.0,<20.10.24 (unknown)",
+      "vulnerabilityID": "GHSA-33pg-m6jh-5237"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "1fd29dd72e53b362",
+    "name": "github.com/docker/docker",
+    "version": "v20.10.21+incompatible",
+    "type": "go-module",
+    "locations": [
+     {
+      "path": "/usr/local/bin/traefik",
+      "layerID": "sha256:a12fcc22503848018516ce1d4e3ca97d1796864ae33b1f0b8861a7a474dd3421"
+     }
+    ],
+    "language": "go",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:docker:docker:v20.10.21+incompatible:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:golang/github.com/docker/docker@v20.10.21+incompatible",
+    "upstreams": [],
+    "metadataType": "GolangBinMetadata",
+    "metadata": {
+     "goCompiledVersion": "go1.20.6",
+     "architecture": "amd64",
+     "h1Digest": "h1:UTLdBmHk3bEY+w8qeO5KttOhy6OmXWsl/FEet9Uswog=",
+     "mainModule": "github.com/traefik/traefik/v2"
+    }
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2021-41803",
+    "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2021-41803",
+    "namespace": "nvd:cpe",
+    "severity": "High",
+    "urls": [
+     "https://discuss.hashicorp.com/t/hcsec-2022-19-consul-auto-config-jwt-authorization-missing-input-validation/44627",
+     "https://www.hashicorp.com/blog/category/consul"
+    ],
+    "description": "HashiCorp Consul 1.8.1 up to 1.11.8, 1.12.4, and 1.13.1 do not properly validate the node or segment names prior to interpolation and usage in JWT claim assertions with the auto config RPC. Fixed in 1.11.9, 1.12.5, and 1.13.2.\"",
+    "cvss": [
+     {
+      "source": "nvd@nist.gov",
+      "type": "Primary",
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:H",
+      "metrics": {
+       "baseScore": 7.1,
+       "exploitabilityScore": 2.8,
+       "impactScore": 4.2
+      },
+      "vendorMetadata": {}
+     }
+    ],
+    "fix": {
+     "versions": [],
+     "state": "unknown"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [],
+   "matchDetails": [
+    {
+     "type": "cpe-match",
+     "matcher": "go-module-matcher",
+     "searchedBy": {
+      "namespace": "nvd:cpe",
+      "cpes": [
+       "cpe:2.3:a:hashicorp:consul:v1.10.12:*:*:*:*:*:*:*"
+      ],
+      "Package": {
+       "name": "github.com/hashicorp/consul",
+       "version": "v1.10.12"
+      }
+     },
+     "found": {
+      "vulnerabilityID": "CVE-2021-41803",
+      "versionConstraint": ">= 1.8.1, < 1.11.9 || >= 1.8.1, < 1.11.9 || = 1.12.4 || = 1.12.4 || = 1.13.1 || = 1.13.1 (unknown)",
+      "cpes": [
+       "cpe:2.3:a:hashicorp:consul:*:*:*:*:-:*:*:*",
+       "cpe:2.3:a:hashicorp:consul:*:*:*:*:enterprise:*:*:*"
+      ]
+     }
+    }
+   ],
+   "artifact": {
+    "id": "763864dc9b4d05bf",
+    "name": "github.com/hashicorp/consul",
+    "version": "v1.10.12",
+    "type": "go-module",
+    "locations": [
+     {
+      "path": "/usr/local/bin/traefik",
+      "layerID": "sha256:a12fcc22503848018516ce1d4e3ca97d1796864ae33b1f0b8861a7a474dd3421"
+     }
+    ],
+    "language": "go",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:hashicorp:consul:v1.10.12:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:golang/github.com/hashicorp/consul@v1.10.12",
+    "upstreams": [],
+    "metadataType": "GolangBinMetadata",
+    "metadata": {
+     "goCompiledVersion": "go1.20.6",
+     "architecture": "amd64",
+     "h1Digest": "h1:xMazys3KaH5JsZS4Ra6KEAXO0nAj20EsTpsDyhd/3Do=",
+     "mainModule": "github.com/traefik/traefik/v2"
+    }
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-m69r-9g56-7mv8",
+    "dataSource": "https://github.com/advisories/GHSA-m69r-9g56-7mv8",
+    "namespace": "github:language:go",
+    "severity": "Medium",
+    "urls": [
+     "https://github.com/advisories/GHSA-m69r-9g56-7mv8"
+    ],
+    "description": "HashiCorp Consul vulnerable to authorization bypass",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+      "metrics": {
+       "baseScore": 6.5,
+       "exploitabilityScore": 2.8,
+       "impactScore": 3.6
+      },
+      "vendorMetadata": {
+       "base_severity": "Medium",
+       "status": "N/A"
+      }
+     }
+    ],
+    "fix": {
+     "versions": [
+      "1.11.9"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-40716",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-40716",
+     "namespace": "nvd:cpe",
+     "severity": "Medium",
+     "urls": [
+      "https://discuss.hashicorp.com",
+      "https://discuss.hashicorp.com/t/hcsec-2022-20-consul-service-mesh-intention-bypass-with-malicious-certificate-signing-request/44628"
+     ],
+     "description": "HashiCorp Consul and Consul Enterprise up to 1.11.8, 1.12.4, and 1.13.1 do not check for multiple SAN URI values in a CSR on the internal RPC endpoint, enabling leverage of privileged access to bypass service mesh intentions. Fixed in 1.11.9, 1.12.5, and 1.13.2.\"",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+       "metrics": {
+        "baseScore": 6.5,
+        "exploitabilityScore": 2.8,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "go-module-matcher",
+     "searchedBy": {
+      "language": "go",
+      "namespace": "github:language:go",
+      "package": {
+       "name": "github.com/hashicorp/consul",
+       "version": "v1.10.12"
+      }
+     },
+     "found": {
+      "versionConstraint": "<1.11.9 (unknown)",
+      "vulnerabilityID": "GHSA-m69r-9g56-7mv8"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "763864dc9b4d05bf",
+    "name": "github.com/hashicorp/consul",
+    "version": "v1.10.12",
+    "type": "go-module",
+    "locations": [
+     {
+      "path": "/usr/local/bin/traefik",
+      "layerID": "sha256:a12fcc22503848018516ce1d4e3ca97d1796864ae33b1f0b8861a7a474dd3421"
+     }
+    ],
+    "language": "go",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:hashicorp:consul:v1.10.12:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:golang/github.com/hashicorp/consul@v1.10.12",
+    "upstreams": [],
+    "metadataType": "GolangBinMetadata",
+    "metadata": {
+     "goCompiledVersion": "go1.20.6",
+     "architecture": "amd64",
+     "h1Digest": "h1:xMazys3KaH5JsZS4Ra6KEAXO0nAj20EsTpsDyhd/3Do=",
+     "mainModule": "github.com/traefik/traefik/v2"
+    }
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-c57c-7hrj-6q6v",
+    "dataSource": "https://github.com/advisories/GHSA-c57c-7hrj-6q6v",
+    "namespace": "github:language:go",
+    "severity": "Medium",
+    "urls": [
+     "https://github.com/advisories/GHSA-c57c-7hrj-6q6v"
+    ],
+    "description": "Hashicorp Consul vulnerable to denial of service",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+      "metrics": {
+       "baseScore": 4.9,
+       "exploitabilityScore": 1.2,
+       "impactScore": 3.6
+      },
+      "vendorMetadata": {
+       "base_severity": "Medium",
+       "status": "N/A"
+      }
+     }
+    ],
+    "fix": {
+     "versions": [
+      "1.14.5"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2023-1297",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-1297",
+     "namespace": "nvd:cpe",
+     "severity": "High",
+     "urls": [
+      "https://discuss.hashicorp.com/t/hcsec-2023-15-consul-cluster-peering-can-result-in-denial-of-service/54515"
+     ],
+     "description": "Consul and Consul Enterprise's cluster peering implementation contained a flaw whereby a peer cluster with service of the same name as a local service could corrupt Consul state, resulting in denial of service. This vulnerability was resolved in Consul 1.14.5, and 1.15.3",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "security@hashicorp.com",
+       "type": "Secondary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 4.9,
+        "exploitabilityScore": 1.2,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "go-module-matcher",
+     "searchedBy": {
+      "language": "go",
+      "namespace": "github:language:go",
+      "package": {
+       "name": "github.com/hashicorp/consul",
+       "version": "v1.10.12"
+      }
+     },
+     "found": {
+      "versionConstraint": "<1.14.5 (unknown)",
+      "vulnerabilityID": "GHSA-c57c-7hrj-6q6v"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "763864dc9b4d05bf",
+    "name": "github.com/hashicorp/consul",
+    "version": "v1.10.12",
+    "type": "go-module",
+    "locations": [
+     {
+      "path": "/usr/local/bin/traefik",
+      "layerID": "sha256:a12fcc22503848018516ce1d4e3ca97d1796864ae33b1f0b8861a7a474dd3421"
+     }
+    ],
+    "language": "go",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:hashicorp:consul:v1.10.12:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:golang/github.com/hashicorp/consul@v1.10.12",
+    "upstreams": [],
+    "metadataType": "GolangBinMetadata",
+    "metadata": {
+     "goCompiledVersion": "go1.20.6",
+     "architecture": "amd64",
+     "h1Digest": "h1:xMazys3KaH5JsZS4Ra6KEAXO0nAj20EsTpsDyhd/3Do=",
+     "mainModule": "github.com/traefik/traefik/v2"
+    }
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2023-0845",
+    "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-0845",
+    "namespace": "nvd:cpe",
+    "severity": "Medium",
+    "urls": [
+     "https://discuss.hashicorp.com/t/hcsec-2023-06-consul-server-panic-when-ingress-and-api-gateways-configured-with-peering-connections/51197"
+    ],
+    "description": "Consul and Consul Enterprise allowed an authenticated user with service:write permissions to trigger a workflow that causes Consul server and client agents to crash under certain circumstances. This vulnerability was fixed in Consul 1.14.5.",
+    "cvss": [
+     {
+      "source": "nvd@nist.gov",
+      "type": "Primary",
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+      "metrics": {
+       "baseScore": 6.5,
+       "exploitabilityScore": 2.8,
+       "impactScore": 3.6
+      },
+      "vendorMetadata": {}
+     },
+     {
+      "source": "security@hashicorp.com",
+      "type": "Secondary",
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+      "metrics": {
+       "baseScore": 4.9,
+       "exploitabilityScore": 1.2,
+       "impactScore": 3.6
+      },
+      "vendorMetadata": {}
+     }
+    ],
+    "fix": {
+     "versions": [],
+     "state": "unknown"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [],
+   "matchDetails": [
+    {
+     "type": "cpe-match",
+     "matcher": "go-module-matcher",
+     "searchedBy": {
+      "namespace": "nvd:cpe",
+      "cpes": [
+       "cpe:2.3:a:hashicorp:consul:v1.10.12:*:*:*:*:*:*:*"
+      ],
+      "Package": {
+       "name": "github.com/hashicorp/consul",
+       "version": "v1.10.12"
+      }
+     },
+     "found": {
+      "vulnerabilityID": "CVE-2023-0845",
+      "versionConstraint": "< 1.14.5 (unknown)",
+      "cpes": [
+       "cpe:2.3:a:hashicorp:consul:*:*:*:*:-:*:*:*"
+      ]
+     }
+    }
+   ],
+   "artifact": {
+    "id": "763864dc9b4d05bf",
+    "name": "github.com/hashicorp/consul",
+    "version": "v1.10.12",
+    "type": "go-module",
+    "locations": [
+     {
+      "path": "/usr/local/bin/traefik",
+      "layerID": "sha256:a12fcc22503848018516ce1d4e3ca97d1796864ae33b1f0b8861a7a474dd3421"
+     }
+    ],
+    "language": "go",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:hashicorp:consul:v1.10.12:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:golang/github.com/hashicorp/consul@v1.10.12",
+    "upstreams": [],
+    "metadataType": "GolangBinMetadata",
+    "metadata": {
+     "goCompiledVersion": "go1.20.6",
+     "architecture": "amd64",
+     "h1Digest": "h1:xMazys3KaH5JsZS4Ra6KEAXO0nAj20EsTpsDyhd/3Do=",
+     "mainModule": "github.com/traefik/traefik/v2"
+    }
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-40716",
+    "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-40716",
+    "namespace": "nvd:cpe",
+    "severity": "Medium",
+    "urls": [
+     "https://discuss.hashicorp.com",
+     "https://discuss.hashicorp.com/t/hcsec-2022-20-consul-service-mesh-intention-bypass-with-malicious-certificate-signing-request/44628"
+    ],
+    "description": "HashiCorp Consul and Consul Enterprise up to 1.11.8, 1.12.4, and 1.13.1 do not check for multiple SAN URI values in a CSR on the internal RPC endpoint, enabling leverage of privileged access to bypass service mesh intentions. Fixed in 1.11.9, 1.12.5, and 1.13.2.\"",
+    "cvss": [
+     {
+      "source": "nvd@nist.gov",
+      "type": "Primary",
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+      "metrics": {
+       "baseScore": 6.5,
+       "exploitabilityScore": 2.8,
+       "impactScore": 3.6
+      },
+      "vendorMetadata": {}
+     }
+    ],
+    "fix": {
+     "versions": [],
+     "state": "unknown"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [],
+   "matchDetails": [
+    {
+     "type": "cpe-match",
+     "matcher": "go-module-matcher",
+     "searchedBy": {
+      "namespace": "nvd:cpe",
+      "cpes": [
+       "cpe:2.3:a:hashicorp:consul:v1.10.12:*:*:*:*:*:*:*"
+      ],
+      "Package": {
+       "name": "github.com/hashicorp/consul",
+       "version": "v1.10.12"
+      }
+     },
+     "found": {
+      "vulnerabilityID": "CVE-2022-40716",
+      "versionConstraint": "< 1.11.9 || < 1.11.9 || >= 1.12.0, < 1.12.5 || >= 1.12.0, < 1.12.5 || >= 1.13.0, < 1.13.2 || >= 1.13.0, < 1.13.2 (unknown)",
+      "cpes": [
+       "cpe:2.3:a:hashicorp:consul:*:*:*:*:-:*:*:*",
+       "cpe:2.3:a:hashicorp:consul:*:*:*:*:enterprise:*:*:*"
+      ]
+     }
+    }
+   ],
+   "artifact": {
+    "id": "763864dc9b4d05bf",
+    "name": "github.com/hashicorp/consul",
+    "version": "v1.10.12",
+    "type": "go-module",
+    "locations": [
+     {
+      "path": "/usr/local/bin/traefik",
+      "layerID": "sha256:a12fcc22503848018516ce1d4e3ca97d1796864ae33b1f0b8861a7a474dd3421"
+     }
+    ],
+    "language": "go",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:hashicorp:consul:v1.10.12:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:golang/github.com/hashicorp/consul@v1.10.12",
+    "upstreams": [],
+    "metadataType": "GolangBinMetadata",
+    "metadata": {
+     "goCompiledVersion": "go1.20.6",
+     "architecture": "amd64",
+     "h1Digest": "h1:xMazys3KaH5JsZS4Ra6KEAXO0nAj20EsTpsDyhd/3Do=",
+     "mainModule": "github.com/traefik/traefik/v2"
+    }
+   }
+  }
+ ],
+ "source": {
+  "type": "image",
+  "target": {
+   "userInput": "traefik",
+   "imageID": "sha256:2ae1addee1b2f3bd2ff67edf06e8cf028e1ca44f99a6fbf51dfb0b2eec546949",
+   "manifestDigest": "sha256:52db9a9fff3b43b1d1dfa9e5e1e7d3aa28f4e6c77c11c22c4fd732489cb61413",
+   "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+   "tags": [
+    "traefik:latest"
+   ],
+   "imageSize": 147438126,
+   "layers": [
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:4693057ce2364720d39e57e85a5b8e0bd9ac3573716237736d6470ec5b7b7230",
+     "size": 7330497
+    },
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:787ba02964cfb289285961d53bfa1b124a9e21fcbf171811c0a41b320f6a9dab",
+     "size": 1629642
+    },
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:a12fcc22503848018516ce1d4e3ca97d1796864ae33b1f0b8861a7a474dd3421",
+     "size": 138477568
+    },
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:8648850e96d4c76fc916669c6e81041491bd4f8638a2f2509dc73e1546f44165",
+     "size": 419
+    }
+   ],
+   "manifest": "eyJzY2hlbWFWZXJzaW9uIjoyLCJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmRpc3RyaWJ1dGlvbi5tYW5pZmVzdC52Mitqc29uIiwiY29uZmlnIjp7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuY29udGFpbmVyLmltYWdlLnYxK2pzb24iLCJzaXplIjo0NjAwLCJkaWdlc3QiOiJzaGEyNTY6MmFlMWFkZGVlMWIyZjNiZDJmZjY3ZWRmMDZlOGNmMDI4ZTFjYTQ0Zjk5YTZmYmY1MWRmYjBiMmVlYzU0Njk0OSJ9LCJsYXllcnMiOlt7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuaW1hZ2Uucm9vdGZzLmRpZmYudGFyLmd6aXAiLCJzaXplIjo3NjI1NzI4LCJkaWdlc3QiOiJzaGEyNTY6NDY5MzA1N2NlMjM2NDcyMGQzOWU1N2U4NWE1YjhlMGJkOWFjMzU3MzcxNjIzNzczNmQ2NDcwZWM1YjdiNzIzMCJ9LHsibWVkaWFUeXBlIjoiYXBwbGljYXRpb24vdm5kLmRvY2tlci5pbWFnZS5yb290ZnMuZGlmZi50YXIuZ3ppcCIsInNpemUiOjI3Mjc0MjQsImRpZ2VzdCI6InNoYTI1Njo3ODdiYTAyOTY0Y2ZiMjg5Mjg1OTYxZDUzYmZhMWIxMjRhOWUyMWZjYmYxNzE4MTFjMGE0MWIzMjBmNmE5ZGFiIn0seyJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmltYWdlLnJvb3Rmcy5kaWZmLnRhci5nemlwIiwic2l6ZSI6MTM4NDgxMTUyLCJkaWdlc3QiOiJzaGEyNTY6YTEyZmNjMjI1MDM4NDgwMTg1MTZjZTFkNGUzY2E5N2QxNzk2ODY0YWUzM2IxZjBiODg2MWE3YTQ3NGRkMzQyMSJ9LHsibWVkaWFUeXBlIjoiYXBwbGljYXRpb24vdm5kLmRvY2tlci5pbWFnZS5yb290ZnMuZGlmZi50YXIuZ3ppcCIsInNpemUiOjIwNDgsImRpZ2VzdCI6InNoYTI1Njo4NjQ4ODUwZTk2ZDRjNzZmYzkxNjY2OWM2ZTgxMDQxNDkxYmQ0Zjg2MzhhMmYyNTA5ZGM3M2UxNTQ2ZjQ0MTY1In1dfQ==",
+   "config": "eyJhcmNoaXRlY3R1cmUiOiJhbWQ2NCIsImNvbmZpZyI6eyJIb3N0bmFtZSI6IiIsIkRvbWFpbm5hbWUiOiIiLCJVc2VyIjoiIiwiQXR0YWNoU3RkaW4iOmZhbHNlLCJBdHRhY2hTdGRvdXQiOmZhbHNlLCJBdHRhY2hTdGRlcnIiOmZhbHNlLCJFeHBvc2VkUG9ydHMiOnsiODAvdGNwIjp7fX0sIlR0eSI6ZmFsc2UsIk9wZW5TdGRpbiI6ZmFsc2UsIlN0ZGluT25jZSI6ZmFsc2UsIkVudiI6WyJQQVRIPS91c3IvbG9jYWwvc2JpbjovdXNyL2xvY2FsL2JpbjovdXNyL3NiaW46L3Vzci9iaW46L3NiaW46L2JpbiJdLCJDbWQiOlsidHJhZWZpayJdLCJJbWFnZSI6InNoYTI1NjowZDA0Y2YzYzk0OTYxMGQ1ZWVhNjNiNzY1MmRhMTA5ZTQwNDQ0ODU4OTgwZDk1OGMwNjliNmZiNDAyOTllMWRhIiwiVm9sdW1lcyI6bnVsbCwiV29ya2luZ0RpciI6IiIsIkVudHJ5cG9pbnQiOlsiL2VudHJ5cG9pbnQuc2giXSwiT25CdWlsZCI6bnVsbCwiTGFiZWxzIjp7Im9yZy5vcGVuY29udGFpbmVycy5pbWFnZS5kZXNjcmlwdGlvbiI6IkEgbW9kZXJuIHJldmVyc2UtcHJveHkiLCJvcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2UuZG9jdW1lbnRhdGlvbiI6Imh0dHBzOi8vZG9jcy50cmFlZmlrLmlvIiwib3JnLm9wZW5jb250YWluZXJzLmltYWdlLnNvdXJjZSI6Imh0dHBzOi8vZ2l0aHViLmNvbS90cmFlZmlrL3RyYWVmaWsiLCJvcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2UudGl0bGUiOiJUcmFlZmlrIiwib3JnLm9wZW5jb250YWluZXJzLmltYWdlLnVybCI6Imh0dHBzOi8vdHJhZWZpay5pbyIsIm9yZy5vcGVuY29udGFpbmVycy5pbWFnZS52ZW5kb3IiOiJUcmFlZmlrIExhYnMiLCJvcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2UudmVyc2lvbiI6InYyLjEwLjQifX0sImNvbnRhaW5lciI6ImFjZjlmZmI3ZWU5NmJlZjM4ZmEyZjA2ZmQ0Nzc4MTcwZWU1YjM1NDY3ZmNiMTBkZjY5OTVkYWExNzI1OTRlZGQiLCJjb250YWluZXJfY29uZmlnIjp7Ikhvc3RuYW1lIjoiYWNmOWZmYjdlZTk2IiwiRG9tYWlubmFtZSI6IiIsIlVzZXIiOiIiLCJBdHRhY2hTdGRpbiI6ZmFsc2UsIkF0dGFjaFN0ZG91dCI6ZmFsc2UsIkF0dGFjaFN0ZGVyciI6ZmFsc2UsIkV4cG9zZWRQb3J0cyI6eyI4MC90Y3AiOnt9fSwiVHR5IjpmYWxzZSwiT3BlblN0ZGluIjpmYWxzZSwiU3RkaW5PbmNlIjpmYWxzZSwiRW52IjpbIlBBVEg9L3Vzci9sb2NhbC9zYmluOi91c3IvbG9jYWwvYmluOi91c3Ivc2JpbjovdXNyL2Jpbjovc2JpbjovYmluIl0sIkNtZCI6WyIvYmluL3NoIiwiLWMiLCIjKG5vcCkgIiwiTEFCRUwgb3JnLm9wZW5jb250YWluZXJzLmltYWdlLnZlbmRvcj1UcmFlZmlrIExhYnMgb3JnLm9wZW5jb250YWluZXJzLmltYWdlLnVybD1odHRwczovL3RyYWVmaWsuaW8gb3JnLm9wZW5jb250YWluZXJzLmltYWdlLnNvdXJjZT1odHRwczovL2dpdGh1Yi5jb20vdHJhZWZpay90cmFlZmlrIG9yZy5vcGVuY29udGFpbmVycy5pbWFnZS50aXRsZT1UcmFlZmlrIG9yZy5vcGVuY29udGFpbmVycy5pbWFnZS5kZXNjcmlwdGlvbj1BIG1vZGVybiByZXZlcnNlLXByb3h5IG9yZy5vcGVuY29udGFpbmVycy5pbWFnZS52ZXJzaW9uPXYyLjEwLjQgb3JnLm9wZW5jb250YWluZXJzLmltYWdlLmRvY3VtZW50YXRpb249aHR0cHM6Ly9kb2NzLnRyYWVmaWsuaW8iXSwiSW1hZ2UiOiJzaGEyNTY6MGQwNGNmM2M5NDk2MTBkNWVlYTYzYjc2NTJkYTEwOWU0MDQ0NDg1ODk4MGQ5NThjMDY5YjZmYjQwMjk5ZTFkYSIsIlZvbHVtZXMiOm51bGwsIldvcmtpbmdEaXIiOiIiLCJFbnRyeXBvaW50IjpbIi9lbnRyeXBvaW50LnNoIl0sIk9uQnVpbGQiOm51bGwsIkxhYmVscyI6eyJvcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2UuZGVzY3JpcHRpb24iOiJBIG1vZGVybiByZXZlcnNlLXByb3h5Iiwib3JnLm9wZW5jb250YWluZXJzLmltYWdlLmRvY3VtZW50YXRpb24iOiJodHRwczovL2RvY3MudHJhZWZpay5pbyIsIm9yZy5vcGVuY29udGFpbmVycy5pbWFnZS5zb3VyY2UiOiJodHRwczovL2dpdGh1Yi5jb20vdHJhZWZpay90cmFlZmlrIiwib3JnLm9wZW5jb250YWluZXJzLmltYWdlLnRpdGxlIjoiVHJhZWZpayIsIm9yZy5vcGVuY29udGFpbmVycy5pbWFnZS51cmwiOiJodHRwczovL3RyYWVmaWsuaW8iLCJvcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2UudmVuZG9yIjoiVHJhZWZpayBMYWJzIiwib3JnLm9wZW5jb250YWluZXJzLmltYWdlLnZlcnNpb24iOiJ2Mi4xMC40In19LCJjcmVhdGVkIjoiMjAyMy0wOC0wOVQwNDowNjozNi42NTM0MDk5MDNaIiwiZG9ja2VyX3ZlcnNpb24iOiIyMC4xMC4yMyIsImhpc3RvcnkiOlt7ImNyZWF0ZWQiOiIyMDIzLTA4LTA3VDE5OjIwOjIwLjcxODk0OTg0WiIsImNyZWF0ZWRfYnkiOiIvYmluL3NoIC1jICMobm9wKSBBREQgZmlsZTozMmZmNWU3YTc4Yjg5MDk5NmVlNDY4MWNjMGEyNjE4NWQzZTlhY2RiNGViMWUyYWFjY2IyNDExZjkyMmZlZDZiIGluIC8gIn0seyJjcmVhdGVkIjoiMjAyMy0wOC0wN1QxOToyMDoyMC44OTQxNDA2MjNaIiwiY3JlYXRlZF9ieSI6Ii9iaW4vc2ggLWMgIyhub3ApICBDTUQgW1wiL2Jpbi9zaFwiXSIsImVtcHR5X2xheWVyIjp0cnVlfSx7ImNyZWF0ZWQiOiIyMDIzLTA4LTA5VDA0OjA2OjI0LjgxODIyMjQ4OVoiLCJjcmVhdGVkX2J5IjoiL2Jpbi9zaCAtYyBhcGsgLS1uby1jYWNoZSBhZGQgY2EtY2VydGlmaWNhdGVzIHR6ZGF0YSJ9LHsiY3JlYXRlZCI6IjIwMjMtMDgtMDlUMDQ6MDY6MzYuMDEzODIzNTJaIiwiY3JlYXRlZF9ieSI6Ii9iaW4vc2ggLWMgc2V0IC1leDsgXHRhcGtBcmNoPVwiJChhcGsgLS1wcmludC1hcmNoKVwiOyBcdGNhc2UgXCIkYXBrQXJjaFwiIGluIFx0XHRhcm1oZikgYXJjaD0nYXJtdjYnIDs7IFx0XHRhYXJjaDY0KSBhcmNoPSdhcm02NCcgOzsgXHRcdHg4Nl82NCkgYXJjaD0nYW1kNjQnIDs7IFx0XHRzMzkweCkgYXJjaD0nczM5MHgnIDs7IFx0XHQqKSBlY2hvIFx1MDAzZVx1MDAyNjIgXCJlcnJvcjogdW5zdXBwb3J0ZWQgYXJjaGl0ZWN0dXJlOiAkYXBrQXJjaFwiOyBleGl0IDEgOzsgXHRlc2FjOyBcdHdnZXQgLS1xdWlldCAtTyAvdG1wL3RyYWVmaWsudGFyLmd6IFwiaHR0cHM6Ly9naXRodWIuY29tL3RyYWVmaWsvdHJhZWZpay9yZWxlYXNlcy9kb3dubG9hZC92Mi4xMC40L3RyYWVmaWtfdjIuMTAuNF9saW51eF8kYXJjaC50YXIuZ3pcIjsgXHR0YXIgeHp2ZiAvdG1wL3RyYWVmaWsudGFyLmd6IC1DIC91c3IvbG9jYWwvYmluIHRyYWVmaWs7IFx0cm0gLWYgL3RtcC90cmFlZmlrLnRhci5nejsgXHRjaG1vZCAreCAvdXNyL2xvY2FsL2Jpbi90cmFlZmlrIn0seyJjcmVhdGVkIjoiMjAyMy0wOC0wOVQwNDowNjozNi4zMzIxMTU3NzFaIiwiY3JlYXRlZF9ieSI6Ii9iaW4vc2ggLWMgIyhub3ApIENPUFkgZmlsZTo1OWEyMTlhMWZiN2E5ZGM4OTRhN2E5YTQ3MThmYTk3ZmQyNGFkYjBhNGE2NDU1MjQwZWMyYWIwMTgzZGE3OTZlIGluIC8gIn0seyJjcmVhdGVkIjoiMjAyMy0wOC0wOVQwNDowNjozNi40MDgyNjQwODdaIiwiY3JlYXRlZF9ieSI6Ii9iaW4vc2ggLWMgIyhub3ApICBFWFBPU0UgODAiLCJlbXB0eV9sYXllciI6dHJ1ZX0seyJjcmVhdGVkIjoiMjAyMy0wOC0wOVQwNDowNjozNi40ODg2NjQ1NjVaIiwiY3JlYXRlZF9ieSI6Ii9iaW4vc2ggLWMgIyhub3ApICBFTlRSWVBPSU5UIFtcIi9lbnRyeXBvaW50LnNoXCJdIiwiZW1wdHlfbGF5ZXIiOnRydWV9LHsiY3JlYXRlZCI6IjIwMjMtMDgtMDlUMDQ6MDY6MzYuNTY4OTE4NDg1WiIsImNyZWF0ZWRfYnkiOiIvYmluL3NoIC1jICMobm9wKSAgQ01EIFtcInRyYWVmaWtcIl0iLCJlbXB0eV9sYXllciI6dHJ1ZX0seyJjcmVhdGVkIjoiMjAyMy0wOC0wOVQwNDowNjozNi42NTM0MDk5MDNaIiwiY3JlYXRlZF9ieSI6Ii9iaW4vc2ggLWMgIyhub3ApICBMQUJFTCBvcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2UudmVuZG9yPVRyYWVmaWsgTGFicyBvcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2UudXJsPWh0dHBzOi8vdHJhZWZpay5pbyBvcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2Uuc291cmNlPWh0dHBzOi8vZ2l0aHViLmNvbS90cmFlZmlrL3RyYWVmaWsgb3JnLm9wZW5jb250YWluZXJzLmltYWdlLnRpdGxlPVRyYWVmaWsgb3JnLm9wZW5jb250YWluZXJzLmltYWdlLmRlc2NyaXB0aW9uPUEgbW9kZXJuIHJldmVyc2UtcHJveHkgb3JnLm9wZW5jb250YWluZXJzLmltYWdlLnZlcnNpb249djIuMTAuNCBvcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2UuZG9jdW1lbnRhdGlvbj1odHRwczovL2RvY3MudHJhZWZpay5pbyIsImVtcHR5X2xheWVyIjp0cnVlfV0sIm9zIjoibGludXgiLCJyb290ZnMiOnsidHlwZSI6ImxheWVycyIsImRpZmZfaWRzIjpbInNoYTI1Njo0NjkzMDU3Y2UyMzY0NzIwZDM5ZTU3ZTg1YTViOGUwYmQ5YWMzNTczNzE2MjM3NzM2ZDY0NzBlYzViN2I3MjMwIiwic2hhMjU2Ojc4N2JhMDI5NjRjZmIyODkyODU5NjFkNTNiZmExYjEyNGE5ZTIxZmNiZjE3MTgxMWMwYTQxYjMyMGY2YTlkYWIiLCJzaGEyNTY6YTEyZmNjMjI1MDM4NDgwMTg1MTZjZTFkNGUzY2E5N2QxNzk2ODY0YWUzM2IxZjBiODg2MWE3YTQ3NGRkMzQyMSIsInNoYTI1Njo4NjQ4ODUwZTk2ZDRjNzZmYzkxNjY2OWM2ZTgxMDQxNDkxYmQ0Zjg2MzhhMmYyNTA5ZGM3M2UxNTQ2ZjQ0MTY1Il19fQ==",
+   "repoDigests": [
+    "traefik@sha256:429f3398a3cd1aa7436aa4f59d809040d3903506a9d83bee61688bb1429c7693"
+   ],
+   "architecture": "amd64",
+   "os": "linux"
+  }
+ },
+ "distro": {
+  "name": "alpine",
+  "version": "3.18.3",
+  "idLike": []
+ },
+ "descriptor": {
+  "name": "grype",
+  "version": "0.65.2",
+  "configuration": {
+   "configPath": "",
+   "verbosity": 0,
+   "output": [
+    "json"
+   ],
+   "file": "/tmp/grype-646628900.json",
+   "distro": "",
+   "add-cpes-if-none": true,
+   "output-template-file": "",
+   "quiet": true,
+   "check-for-app-update": true,
+   "only-fixed": false,
+   "only-notfixed": false,
+   "platform": "",
+   "search": {
+    "scope": "AllLayers",
+    "unindexed-archives": false,
+    "indexed-archives": true
+   },
+   "ignore": null,
+   "exclude": [],
+   "db": {
+    "cache-dir": "/home/codespace/.cache/grype/db",
+    "update-url": "https://toolbox-data.anchore.io/grype/databases/listing.json",
+    "ca-cert": "",
+    "auto-update": true,
+    "validate-by-hash-on-start": false,
+    "validate-age": true,
+    "max-allowed-built-age": 432000000000000
+   },
+   "externalSources": {
+    "enable": false,
+    "maven": {
+     "searchUpstreamBySha1": true,
+     "baseUrl": "https://search.maven.org/solrsearch/select"
+    }
+   },
+   "match": {
+    "java": {
+     "using-cpes": true
+    },
+    "dotnet": {
+     "using-cpes": true
+    },
+    "golang": {
+     "using-cpes": true
+    },
+    "javascript": {
+     "using-cpes": false
+    },
+    "python": {
+     "using-cpes": true
+    },
+    "ruby": {
+     "using-cpes": true
+    },
+    "stock": {
+     "using-cpes": true
+    }
+   },
+   "dev": {
+    "profile-cpu": false,
+    "profile-mem": false
+   },
+   "fail-on-severity": "",
+   "registry": {
+    "insecure-skip-tls-verify": false,
+    "insecure-use-http": false,
+    "auth": []
+   },
+   "log": {
+    "structured": false,
+    "level": "",
+    "file": ""
+   },
+   "show-suppressed": false,
+   "by-cve": false,
+   "name": "",
+   "default-image-pull-source": ""
+  },
+  "db": {
+   "built": "2023-08-22T01:27:17Z",
+   "schemaVersion": 5,
+   "location": "/home/codespace/.cache/grype/db/5",
+   "checksum": "sha256:3f9e5487d50a65483aabb892c936a81c9d58b5986c81ac090c845c8dc3b941e0",
+   "error": null
+  },
+  "timestamp": "2023-08-22T10:04:06.3079307Z"
+ }
+}

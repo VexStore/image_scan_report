@@ -1,0 +1,121 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "eclipse-mosquitto",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "OS": {
+      "Family": "alpine",
+      "Name": "3.18.3"
+    },
+    "ImageID": "sha256:97ac6de756a3bd84d0c722a7ab10c884888ea82521bba7d89593528c98af5121",
+    "DiffIDs": [
+      "sha256:4693057ce2364720d39e57e85a5b8e0bd9ac3573716237736d6470ec5b7b7230",
+      "sha256:bd4f9ee1592ac32458d4d74f564e7252622f74db7e40646b199b8001e251c6f6",
+      "sha256:a8966ffb6c0b0d1b273458629af6d9f97047d35bd9ee586fdde58e4f728d5def"
+    ],
+    "RepoTags": [
+      "eclipse-mosquitto:latest"
+    ],
+    "RepoDigests": [
+      "eclipse-mosquitto@sha256:85fea0cb6a49bdde547908d321149dd40621579ca1f6412f9dafd430e9dd8031"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "container": "65ad01a9d782f7eb06823812e4b7aa2f1ac225833b076f21bf337f11888ee530",
+      "created": "2023-08-17T09:46:14.267543742Z",
+      "docker_version": "20.10.23",
+      "history": [
+        {
+          "created": "2023-08-07T19:20:20Z",
+          "created_by": "/bin/sh -c #(nop) ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / "
+        },
+        {
+          "created": "2023-08-07T19:20:20Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/sh\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-08T23:34:38Z",
+          "created_by": "/bin/sh -c #(nop)  LABEL maintainer=Roger Light \u003croger@atchoo.org\u003e description=Eclipse Mosquitto MQTT Broker",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-17T09:45:45Z",
+          "created_by": "/bin/sh -c #(nop)  ENV VERSION=2.0.16 DOWNLOAD_SHA256=638db9e43e89d243ea98d10d66e76ff376131217780decd01abaffacc66d8035 GPG_KEYS=A0D6EEA1DCAE49A635A3B2F0779B22DFB3E717B7 LWS_VERSION=4.2.1 LWS_SHA256=842da21f73ccba2be59e680de10a8cce7928313048750eb6ad73b6fa50763c51",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-17T09:46:13Z",
+          "created_by": "/bin/sh -c set -x \u0026\u0026     apk --no-cache add --virtual build-deps         build-base         cmake         cjson-dev         gnupg         libressl-dev         linux-headers         util-linux-dev \u0026\u0026     wget https://github.com/warmcat/libwebsockets/archive/v${LWS_VERSION}.tar.gz -O /tmp/lws.tar.gz \u0026\u0026     echo \"$LWS_SHA256  /tmp/lws.tar.gz\" | sha256sum -c - \u0026\u0026     mkdir -p /build/lws \u0026\u0026     tar --strip=1 -xf /tmp/lws.tar.gz -C /build/lws \u0026\u0026     rm /tmp/lws.tar.gz \u0026\u0026     cd /build/lws \u0026\u0026     cmake .         -DCMAKE_BUILD_TYPE=MinSizeRel         -DCMAKE_INSTALL_PREFIX=/usr         -DDISABLE_WERROR=ON         -DLWS_IPV6=ON         -DLWS_WITHOUT_BUILTIN_GETIFADDRS=ON         -DLWS_WITHOUT_CLIENT=ON         -DLWS_WITHOUT_EXTENSIONS=ON         -DLWS_WITHOUT_TESTAPPS=ON         -DLWS_WITH_EXTERNAL_POLL=ON         -DLWS_WITH_HTTP2=OFF         -DLWS_WITH_SHARED=OFF         -DLWS_WITH_ZIP_FOPS=OFF         -DLWS_WITH_ZLIB=OFF \u0026\u0026     make -j \"$(nproc)\" \u0026\u0026     rm -rf /root/.cmake \u0026\u0026     wget https://mosquitto.org/files/source/mosquitto-${VERSION}.tar.gz -O /tmp/mosq.tar.gz \u0026\u0026     echo \"$DOWNLOAD_SHA256  /tmp/mosq.tar.gz\" | sha256sum -c - \u0026\u0026     wget https://mosquitto.org/files/source/mosquitto-${VERSION}.tar.gz.asc -O /tmp/mosq.tar.gz.asc \u0026\u0026     export GNUPGHOME=\"$(mktemp -d)\" \u0026\u0026     found='';     for server in         hkps://keys.openpgp.org         hkp://keyserver.ubuntu.com:80         pgp.mit.edu     ; do         echo \"Fetching GPG key $GPG_KEYS from $server\";         gpg --keyserver \"$server\" --keyserver-options timeout=10 --recv-keys \"$GPG_KEYS\" \u0026\u0026 found=yes \u0026\u0026 break;     done;     test -z \"$found\" \u0026\u0026 echo \u003e\u00262 \"error: failed to fetch GPG key $GPG_KEYS\" \u0026\u0026 exit 1;     gpg --batch --verify /tmp/mosq.tar.gz.asc /tmp/mosq.tar.gz \u0026\u0026     gpgconf --kill all \u0026\u0026     rm -rf \"$GNUPGHOME\" /tmp/mosq.tar.gz.asc \u0026\u0026     mkdir -p /build/mosq \u0026\u0026     tar --strip=1 -xf /tmp/mosq.tar.gz -C /build/mosq \u0026\u0026     rm /tmp/mosq.tar.gz \u0026\u0026     make -C /build/mosq -j \"$(nproc)\"         CFLAGS=\"-Wall -O2 -I/build/lws/include -I/build\"         LDFLAGS=\"-L/build/lws/lib\"         WITH_ADNS=no         WITH_DOCS=no         WITH_SHARED_LIBRARIES=yes         WITH_SRV=no         WITH_STRIP=yes         WITH_TLS_PSK=no         WITH_WEBSOCKETS=yes         prefix=/usr         binary \u0026\u0026     addgroup -S -g 1883 mosquitto 2\u003e/dev/null \u0026\u0026     adduser -S -u 1883 -D -H -h /var/empty -s /sbin/nologin -G mosquitto -g mosquitto mosquitto 2\u003e/dev/null \u0026\u0026     mkdir -p /mosquitto/config /mosquitto/data /mosquitto/log \u0026\u0026     install -d /usr/sbin/ \u0026\u0026     install -s -m755 /build/mosq/client/mosquitto_pub /usr/bin/mosquitto_pub \u0026\u0026     install -s -m755 /build/mosq/client/mosquitto_rr /usr/bin/mosquitto_rr \u0026\u0026     install -s -m755 /build/mosq/client/mosquitto_sub /usr/bin/mosquitto_sub \u0026\u0026     install -s -m644 /build/mosq/lib/libmosquitto.so.1 /usr/lib/libmosquitto.so.1 \u0026\u0026     install -s -m755 /build/mosq/src/mosquitto /usr/sbin/mosquitto \u0026\u0026     install -s -m755 /build/mosq/apps/mosquitto_ctrl/mosquitto_ctrl /usr/bin/mosquitto_ctrl \u0026\u0026     install -s -m755 /build/mosq/apps/mosquitto_passwd/mosquitto_passwd /usr/bin/mosquitto_passwd \u0026\u0026     install -s -m755 /build/mosq/plugins/dynamic-security/mosquitto_dynamic_security.so /usr/lib/mosquitto_dynamic_security.so \u0026\u0026     install -m644 /build/mosq/mosquitto.conf /mosquitto/config/mosquitto.conf \u0026\u0026     install -Dm644 /build/lws/LICENSE /usr/share/licenses/libwebsockets/LICENSE \u0026\u0026     install -Dm644 /build/mosq/epl-v20 /usr/share/licenses/mosquitto/epl-v20 \u0026\u0026     install -Dm644 /build/mosq/edl-v10 /usr/share/licenses/mosquitto/edl-v10 \u0026\u0026     chown -R mosquitto:mosquitto /mosquitto \u0026\u0026     apk --no-cache add         ca-certificates         cjson         libressl \u0026\u0026     apk del build-deps \u0026\u0026     rm -rf /build"
+        },
+        {
+          "created": "2023-08-17T09:46:13Z",
+          "created_by": "/bin/sh -c #(nop)  VOLUME [/mosquitto/data /mosquitto/log]",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-17T09:46:14Z",
+          "created_by": "/bin/sh -c #(nop) COPY multi:f828fb0704e6f46a450b717895e8dada966524fb8a3bd947f3ac0bd7ae28f571 in / "
+        },
+        {
+          "created": "2023-08-17T09:46:14Z",
+          "created_by": "/bin/sh -c #(nop)  EXPOSE 1883",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-17T09:46:14Z",
+          "created_by": "/bin/sh -c #(nop)  ENTRYPOINT [\"/docker-entrypoint.sh\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-17T09:46:14Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"/usr/sbin/mosquitto\" \"-c\" \"/mosquitto/config/mosquitto.conf\"]",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:4693057ce2364720d39e57e85a5b8e0bd9ac3573716237736d6470ec5b7b7230",
+          "sha256:bd4f9ee1592ac32458d4d74f564e7252622f74db7e40646b199b8001e251c6f6",
+          "sha256:a8966ffb6c0b0d1b273458629af6d9f97047d35bd9ee586fdde58e4f728d5def"
+        ]
+      },
+      "config": {
+        "Cmd": [
+          "/usr/sbin/mosquitto",
+          "-c",
+          "/mosquitto/config/mosquitto.conf"
+        ],
+        "Entrypoint": [
+          "/docker-entrypoint.sh"
+        ],
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "VERSION=2.0.16",
+          "DOWNLOAD_SHA256=638db9e43e89d243ea98d10d66e76ff376131217780decd01abaffacc66d8035",
+          "GPG_KEYS=A0D6EEA1DCAE49A635A3B2F0779B22DFB3E717B7",
+          "LWS_VERSION=4.2.1",
+          "LWS_SHA256=842da21f73ccba2be59e680de10a8cce7928313048750eb6ad73b6fa50763c51"
+        ],
+        "Image": "sha256:c5ae4dc68d6d97dfa921701716c6d44adb15867321a00ff49850fcd6486639bd",
+        "Labels": {
+          "description": "Eclipse Mosquitto MQTT Broker",
+          "maintainer": "Roger Light \u003croger@atchoo.org\u003e"
+        },
+        "Volumes": {
+          "/mosquitto/data": {},
+          "/mosquitto/log": {}
+        }
+      }
+    }
+  },
+  "Results": [
+    {
+      "Target": "eclipse-mosquitto (alpine 3.18.3)",
+      "Class": "os-pkgs",
+      "Type": "alpine"
+    }
+  ]
+}

@@ -1,0 +1,362 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "traefik",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "OS": {
+      "Family": "alpine",
+      "Name": "3.18.3"
+    },
+    "ImageID": "sha256:2ae1addee1b2f3bd2ff67edf06e8cf028e1ca44f99a6fbf51dfb0b2eec546949",
+    "DiffIDs": [
+      "sha256:4693057ce2364720d39e57e85a5b8e0bd9ac3573716237736d6470ec5b7b7230",
+      "sha256:787ba02964cfb289285961d53bfa1b124a9e21fcbf171811c0a41b320f6a9dab",
+      "sha256:a12fcc22503848018516ce1d4e3ca97d1796864ae33b1f0b8861a7a474dd3421",
+      "sha256:8648850e96d4c76fc916669c6e81041491bd4f8638a2f2509dc73e1546f44165"
+    ],
+    "RepoTags": [
+      "traefik:latest"
+    ],
+    "RepoDigests": [
+      "traefik@sha256:429f3398a3cd1aa7436aa4f59d809040d3903506a9d83bee61688bb1429c7693"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "container": "acf9ffb7ee96bef38fa2f06fd4778170ee5b35467fcb10df6995daa172594edd",
+      "created": "2023-08-09T04:06:36.653409903Z",
+      "docker_version": "20.10.23",
+      "history": [
+        {
+          "created": "2023-08-07T19:20:20Z",
+          "created_by": "/bin/sh -c #(nop) ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / "
+        },
+        {
+          "created": "2023-08-07T19:20:20Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/sh\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-09T04:06:24Z",
+          "created_by": "/bin/sh -c apk --no-cache add ca-certificates tzdata"
+        },
+        {
+          "created": "2023-08-09T04:06:36Z",
+          "created_by": "/bin/sh -c set -ex; \tapkArch=\"$(apk --print-arch)\"; \tcase \"$apkArch\" in \t\tarmhf) arch='armv6' ;; \t\taarch64) arch='arm64' ;; \t\tx86_64) arch='amd64' ;; \t\ts390x) arch='s390x' ;; \t\t*) echo \u003e\u00262 \"error: unsupported architecture: $apkArch\"; exit 1 ;; \tesac; \twget --quiet -O /tmp/traefik.tar.gz \"https://github.com/traefik/traefik/releases/download/v2.10.4/traefik_v2.10.4_linux_$arch.tar.gz\"; \ttar xzvf /tmp/traefik.tar.gz -C /usr/local/bin traefik; \trm -f /tmp/traefik.tar.gz; \tchmod +x /usr/local/bin/traefik"
+        },
+        {
+          "created": "2023-08-09T04:06:36Z",
+          "created_by": "/bin/sh -c #(nop) COPY file:59a219a1fb7a9dc894a7a9a4718fa97fd24adb0a4a6455240ec2ab0183da796e in / "
+        },
+        {
+          "created": "2023-08-09T04:06:36Z",
+          "created_by": "/bin/sh -c #(nop)  EXPOSE 80",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-09T04:06:36Z",
+          "created_by": "/bin/sh -c #(nop)  ENTRYPOINT [\"/entrypoint.sh\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-09T04:06:36Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"traefik\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-09T04:06:36Z",
+          "created_by": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.vendor=Traefik Labs org.opencontainers.image.url=https://traefik.io org.opencontainers.image.source=https://github.com/traefik/traefik org.opencontainers.image.title=Traefik org.opencontainers.image.description=A modern reverse-proxy org.opencontainers.image.version=v2.10.4 org.opencontainers.image.documentation=https://docs.traefik.io",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:4693057ce2364720d39e57e85a5b8e0bd9ac3573716237736d6470ec5b7b7230",
+          "sha256:787ba02964cfb289285961d53bfa1b124a9e21fcbf171811c0a41b320f6a9dab",
+          "sha256:a12fcc22503848018516ce1d4e3ca97d1796864ae33b1f0b8861a7a474dd3421",
+          "sha256:8648850e96d4c76fc916669c6e81041491bd4f8638a2f2509dc73e1546f44165"
+        ]
+      },
+      "config": {
+        "Cmd": [
+          "traefik"
+        ],
+        "Entrypoint": [
+          "/entrypoint.sh"
+        ],
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+        ],
+        "Image": "sha256:0d04cf3c949610d5eea63b7652da109e40444858980d958c069b6fb40299e1da",
+        "Labels": {
+          "org.opencontainers.image.description": "A modern reverse-proxy",
+          "org.opencontainers.image.documentation": "https://docs.traefik.io",
+          "org.opencontainers.image.source": "https://github.com/traefik/traefik",
+          "org.opencontainers.image.title": "Traefik",
+          "org.opencontainers.image.url": "https://traefik.io",
+          "org.opencontainers.image.vendor": "Traefik Labs",
+          "org.opencontainers.image.version": "v2.10.4"
+        }
+      }
+    }
+  },
+  "Results": [
+    {
+      "Target": "traefik (alpine 3.18.3)",
+      "Class": "os-pkgs",
+      "Type": "alpine"
+    },
+    {
+      "Target": "usr/local/bin/traefik",
+      "Class": "lang-pkgs",
+      "Type": "gobinary",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2023-28840",
+          "PkgName": "github.com/docker/docker",
+          "InstalledVersion": "v20.10.21+incompatible",
+          "FixedVersion": "23.0.3, 20.10.24",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:a12fcc22503848018516ce1d4e3ca97d1796864ae33b1f0b8861a7a474dd3421"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-28840",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Go",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago"
+          },
+          "Title": "Encrypted overlay network may be unauthenticated",
+          "Description": "Moby is an open source container framework developed by Docker Inc. that is distributed as Docker, Mirantis Container Runtime, and various other downstream projects/products. The Moby daemon component (`dockerd`), which is developed as moby/moby, is commonly referred to as *Docker*. Swarm Mode, which is compiled in and delivered by default in dockerd and is thus present in most major Moby downstreams, is a simple, built-in container orchestrator that is implemented through a combination of SwarmKit and supporting network code. The overlay network driver is a core feature of Swarm Mode, providing isolated virtual LANs that allow communication between containers and services across the cluster. This driver is an implementation/user of VXLAN, which encapsulates link-layer (Ethernet) frames in UDP datagrams that tag the frame with a VXLAN Network ID (VNI) that identifies the originating overlay network. In addition, the overlay network driver supports an optional, off-by-default encrypted mode, which is especially useful when VXLAN packets traverses an untrusted network between nodes. Encrypted overlay networks function by encapsulating the VXLAN datagrams through the use of the IPsec Encapsulating Security Payload protocol in Transport mode. By deploying IPSec encapsulation, encrypted overlay networks gain the additional properties of source authentication through cryptographic proof, data integrity through check-summing, and confidentiality through encryption. When setting an endpoint up on an encrypted overlay network, Moby installs three iptables (Linux kernel firewall) rules that enforce both incoming and outgoing IPSec. These rules rely on the u32 iptables extension provided by the xt_u32 kernel module to directly filter on a VXLAN packet's VNI field, so that IPSec guarantees can be enforced on encrypted overlay networks without interfering with other overlay networks or other users of VXLAN. Two iptables rules serve to filter incoming VXLAN datagrams with a VNI that corresponds to an encrypted network and discards unencrypted datagrams. The rules are appended to the end of the INPUT filter chain, following any rules that have been previously set by the system administrator. Administrator-set rules take precedence over the rules Moby sets to discard unencrypted VXLAN datagrams, which can potentially admit unencrypted datagrams that should have been discarded. The injection of arbitrary Ethernet frames can enable a Denial of Service attack. A sophisticated attacker may be able to establish a UDP or TCP connection by way of the container’s outbound gateway that would otherwise be blocked by a stateful firewall, or carry out other escalations beyond simple injection by smuggling packets into the overlay network. Patches are available in Moby releases 23.0.3 and 20.10.24. As Mirantis Container Runtime's 20.10 releases are numbered differently, users of that platform should update to 20.10.16. Some workarounds are available. Close the VXLAN port (by default, UDP port 4789) to incoming traffic at the Internet boundary to prevent all VXLAN packet injection, and/or ensure that the `xt_u32` kernel module is available on all nodes of the Swarm cluster.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-203",
+            "CWE-755"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N/A:L",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:H",
+              "V3Score": 8.7
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:H",
+              "V3Score": 8.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2023-28840",
+            "https://github.com/advisories/GHSA-232p-vwff-86mp",
+            "https://github.com/moby/libnetwork/security/advisories/GHSA-gvm4-2qqg-m333",
+            "https://github.com/moby/moby/issues/43382",
+            "https://github.com/moby/moby/pull/45118",
+            "https://github.com/moby/moby/security/advisories/GHSA-232p-vwff-86mp",
+            "https://github.com/moby/moby/security/advisories/GHSA-33pg-m6jh-5237",
+            "https://github.com/moby/moby/security/advisories/GHSA-6wrf-mxfj-pf5p",
+            "https://github.com/moby/moby/security/advisories/GHSA-vwm3-crmr-xfxw",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-28840",
+            "https://www.cve.org/CVERecord?id=CVE-2023-28840"
+          ],
+          "PublishedDate": "2023-04-04T22:15:00Z",
+          "LastModifiedDate": "2023-04-14T15:23:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-28841",
+          "PkgName": "github.com/docker/docker",
+          "InstalledVersion": "v20.10.21+incompatible",
+          "FixedVersion": "23.0.3, 20.10.24",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:a12fcc22503848018516ce1d4e3ca97d1796864ae33b1f0b8861a7a474dd3421"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-28841",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Go",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago"
+          },
+          "Title": "Encrypted overlay network traffic may be unencrypted",
+          "Description": "Moby is an open source container framework developed by Docker Inc. that is distributed as Docker, Mirantis Container Runtime, and various other downstream projects/products. The Moby daemon component (`dockerd`), which is developed as moby/moby is commonly referred to as *Docker*. Swarm Mode, which is compiled in and delivered by default in `dockerd` and is thus present in most major Moby downstreams, is a simple, built-in container orchestrator that is implemented through a combination of SwarmKit and supporting network code. The `overlay` network driver is a core feature of Swarm Mode, providing isolated virtual LANs that allow communication between containers and services across the cluster. This driver is an implementation/user of VXLAN, which encapsulates link-layer (Ethernet) frames in UDP datagrams that tag the frame with the VXLAN metadata, including a VXLAN Network ID (VNI) that identifies the originating overlay network. In addition, the overlay network driver supports an optional, off-by-default encrypted mode, which is especially useful when VXLAN packets traverses an untrusted network between nodes. Encrypted overlay networks function by encapsulating the VXLAN datagrams through the use of the IPsec Encapsulating Security Payload protocol in Transport mode. By deploying IPSec encapsulation, encrypted overlay networks gain the additional properties of source authentication through cryptographic proof, data integrity through check-summing, and confidentiality through encryption. When setting an endpoint up on an encrypted overlay network, Moby installs three iptables (Linux kernel firewall) rules that enforce both incoming and outgoing IPSec. These rules rely on the `u32` iptables extension provided by the `xt_u32` kernel module to directly filter on a VXLAN packet's VNI field, so that IPSec guarantees can be enforced on encrypted overlay networks without interfering with other overlay networks or other users of VXLAN. An iptables rule designates outgoing VXLAN datagrams with a VNI that corresponds to an encrypted overlay network for IPsec encapsulation. Encrypted overlay networks on affected platforms silently transmit unencrypted data. As a result, `overlay` networks may appear to be functional, passing traffic as expected, but without any of the expected confidentiality or data integrity guarantees. It is possible for an attacker sitting in a trusted position on the network to read all of the application traffic that is moving across the overlay network, resulting in unexpected secrets or user data disclosure. Thus, because many database protocols, internal APIs, etc. are not protected by a second layer of encryption, a user may use Swarm encrypted overlay networks to provide confidentiality, which due to this vulnerability this is no longer guaranteed. Patches are available in Moby releases 23.0.3, and 20.10.24. As Mirantis Container Runtime's 20.10 releases are numbered differently, users of that platform should update to 20.10.16. Some workarounds are available. Close the VXLAN port (by default, UDP port 4789) to outgoing traffic at the Internet boundary in order to prevent unintentionally leaking unencrypted traffic over the Internet, and/or ensure that the `xt_u32` kernel module is available on all nodes of the Swarm cluster.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-311",
+            "CWE-755"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N/A:N",
+              "V3Score": 6.8
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N/A:N",
+              "V3Score": 6.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N/A:N",
+              "V3Score": 6.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2023-28841",
+            "https://github.com/advisories/GHSA-33pg-m6jh-5237",
+            "https://github.com/moby/libnetwork/blob/d9fae4c73daf76c3b0f77e14b45b8bf612ba764d/drivers/overlay/encryption.go#L205-L207",
+            "https://github.com/moby/libnetwork/security/advisories/GHSA-gvm4-2qqg-m333",
+            "https://github.com/moby/moby/issues/43382",
+            "https://github.com/moby/moby/pull/45118",
+            "https://github.com/moby/moby/security/advisories/GHSA-232p-vwff-86mp",
+            "https://github.com/moby/moby/security/advisories/GHSA-33pg-m6jh-5237",
+            "https://github.com/moby/moby/security/advisories/GHSA-6wrf-mxfj-pf5p",
+            "https://github.com/moby/moby/security/advisories/GHSA-vwm3-crmr-xfxw",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-28841",
+            "https://www.cve.org/CVERecord?id=CVE-2023-28841"
+          ],
+          "PublishedDate": "2023-04-04T22:15:00Z",
+          "LastModifiedDate": "2023-04-14T15:46:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-28842",
+          "PkgName": "github.com/docker/docker",
+          "InstalledVersion": "v20.10.21+incompatible",
+          "FixedVersion": "23.0.3, 20.10.24",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:a12fcc22503848018516ce1d4e3ca97d1796864ae33b1f0b8861a7a474dd3421"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-28842",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Go",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago"
+          },
+          "Title": "Encrypted overlay network with a single endpoint is unauthenticated",
+          "Description": "Moby) is an open source container framework developed by Docker Inc. that is distributed as Docker, Mirantis Container Runtime, and various other downstream projects/products. The Moby daemon component (`dockerd`), which is developed as moby/moby is commonly referred to as *Docker*. Swarm Mode, which is compiled in and delivered by default in `dockerd` and is thus present in most major Moby downstreams, is a simple, built-in container orchestrator that is implemented through a combination of SwarmKit and supporting network code. The `overlay` network driver is a core feature of Swarm Mode, providing isolated virtual LANs that allow communication between containers and services across the cluster. This driver is an implementation/user of VXLAN, which encapsulates link-layer (Ethernet) frames in UDP datagrams that tag the frame with the VXLAN metadata, including a VXLAN Network ID (VNI) that identifies the originating overlay network. In addition, the overlay network driver supports an optional, off-by-default encrypted mode, which is especially useful when VXLAN packets traverses an untrusted network between nodes. Encrypted overlay networks function by encapsulating the VXLAN datagrams through the use of the IPsec Encapsulating Security Payload protocol in Transport mode. By deploying IPSec encapsulation, encrypted overlay networks gain the additional properties of source authentication through cryptographic proof, data integrity through check-summing, and confidentiality through encryption. When setting an endpoint up on an encrypted overlay network, Moby installs three iptables (Linux kernel firewall) rules that enforce both incoming and outgoing IPSec. These rules rely on the `u32` iptables extension provided by the `xt_u32` kernel module to directly filter on a VXLAN packet's VNI field, so that IPSec guarantees can be enforced on encrypted overlay networks without interfering with other overlay networks or other users of VXLAN. The `overlay` driver dynamically and lazily defines the kernel configuration for the VXLAN network on each node as containers are attached and detached. Routes and encryption parameters are only defined for destination nodes that participate in the network. The iptables rules that prevent encrypted overlay networks from accepting unencrypted packets are not created until a peer is available with which to communicate. Encrypted overlay networks silently accept cleartext VXLAN datagrams that are tagged with the VNI of an encrypted overlay network. As a result, it is possible to inject arbitrary Ethernet frames into the encrypted overlay network by encapsulating them in VXLAN datagrams. The implications of this can be quite dire, and GHSA-vwm3-crmr-xfxw should be referenced for a deeper exploration. Patches are available in Moby releases 23.0.3, and 20.10.24. As Mirantis Container Runtime's 20.10 releases are numbered differently, users of that platform should update to 20.10.16. Some workarounds are available. In multi-node clusters, deploy a global ‘pause’ container for each encrypted overlay network, on every node. For a single-node cluster, do not use overlay networks of any sort. Bridge networks provide the same connectivity on a single node and have no multi-node features. The Swarm ingress feature is implemented using an overlay network, but can be disabled by publishing ports in `host` mode instead of `ingress` mode (allowing the use of an external load balancer), and removing the `ingress` network. If encrypted overlay networks are in exclusive use, block UDP port 4789 from traffic that has not been validated by IPSec.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-755"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:N",
+              "V3Score": 6.8
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:N",
+              "V3Score": 6.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:N",
+              "V3Score": 6.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2023-28842",
+            "https://github.com/advisories/GHSA-6wrf-mxfj-pf5p",
+            "https://github.com/moby/libnetwork/security/advisories/GHSA-gvm4-2qqg-m333",
+            "https://github.com/moby/moby/security/advisories/GHSA-232p-vwff-86mp",
+            "https://github.com/moby/moby/security/advisories/GHSA-33pg-m6jh-5237",
+            "https://github.com/moby/moby/security/advisories/GHSA-6wrf-mxfj-pf5p",
+            "https://github.com/moby/moby/security/advisories/GHSA-vwm3-crmr-xfxw",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-28842",
+            "https://www.cve.org/CVERecord?id=CVE-2023-28842"
+          ],
+          "PublishedDate": "2023-04-04T22:15:00Z",
+          "LastModifiedDate": "2023-04-14T15:55:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-40716",
+          "PkgName": "github.com/hashicorp/consul",
+          "InstalledVersion": "v1.10.12",
+          "FixedVersion": "1.13.2, 1.12.5, 1.11.9",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:a12fcc22503848018516ce1d4e3ca97d1796864ae33b1f0b8861a7a474dd3421"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-40716",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Go",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago"
+          },
+          "Title": "Consul Service Mesh Intention Bypass with Malicious Certificate Signing Request",
+          "Description": "HashiCorp Consul and Consul Enterprise up to 1.11.8, 1.12.4, and 1.13.1 do not check for multiple SAN URI values in a CSR on the internal RPC endpoint, enabling leverage of privileged access to bypass service mesh intentions. Fixed in 1.11.9, 1.12.5, and 1.13.2.\"",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-252"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 6.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-40716",
+            "https://discuss.hashicorp.com",
+            "https://discuss.hashicorp.com/t/hcsec-2022-20-consul-service-mesh-intention-bypass-with-malicious-certificate-signing-request/44628",
+            "https://discuss.hashicorp.com/t/hcsec-2022-20-consul-service-mesh-intention-bypass-with-malicious-certificate-signing-request/44628/1",
+            "https://github.com/advisories/GHSA-m69r-9g56-7mv8",
+            "https://github.com/hashicorp/consul/commit/8f6fb4f6fe9488b8ec37da71ac503081d7d3760b",
+            "https://github.com/hashicorp/consul/pull/14579",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-40716",
+            "https://www.cve.org/CVERecord?id=CVE-2022-40716"
+          ],
+          "PublishedDate": "2022-09-23T12:15:00Z",
+          "LastModifiedDate": "2022-09-26T16:50:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-1297",
+          "PkgName": "github.com/hashicorp/consul",
+          "InstalledVersion": "v1.10.12",
+          "FixedVersion": "1.15.3, 1.14.5",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:a12fcc22503848018516ce1d4e3ca97d1796864ae33b1f0b8861a7a474dd3421"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-1297",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Go",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago"
+          },
+          "Title": "Hashicorp Consul vulnerable to denial of service",
+          "Description": "Consul and Consul Enterprise's cluster peering implementation contained a flaw whereby a peer cluster with service of the same name as a local service could corrupt Consul state, resulting in denial of service. This vulnerability was resolved in Consul 1.14.5, and 1.15.3",
+          "Severity": "MEDIUM",
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 4.9
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://discuss.hashicorp.com/t/hcsec-2023-15-consul-cluster-peering-can-result-in-denial-of-service/54515",
+            "https://github.com/advisories/GHSA-c57c-7hrj-6q6v",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-1297"
+          ],
+          "PublishedDate": "2023-06-02T23:15:00Z",
+          "LastModifiedDate": "2023-06-12T16:10:00Z"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2149 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "openjdk",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "OS": {
+      "Family": "oracle",
+      "Name": "8.7"
+    },
+    "ImageID": "sha256:71260f256d19f4ae5c762601e5301418d2516ca591103b1376f063be0b7ba056",
+    "DiffIDs": [
+      "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8",
+      "sha256:077bff59ce5723e3c7d78bdf4fd8b10d72f6f8474b97cdb9323816aa5d8314a6",
+      "sha256:56285d9a776094205dc0b66078bf0719f50c734a00754292e6fcbd13b17f5155"
+    ],
+    "RepoTags": [
+      "openjdk:latest"
+    ],
+    "RepoDigests": [
+      "openjdk@sha256:9b448de897d211c9e0ec635a485650aed6e28d4eca1efbc34940560a480b3f1f"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "container": "7cb9d6257345f1d39107682b018491eb5d3f38dbe81b79c7a9b4cd1ae90de638",
+      "created": "2023-02-08T19:46:03.323166355Z",
+      "docker_version": "20.10.12",
+      "history": [
+        {
+          "created": "2023-02-08T19:27:31Z",
+          "created_by": "/bin/sh -c #(nop) ADD file:6a3fb962576ab4237e9335cfcf419249f08417e28cfbb633d7cc6f26f1f85287 in / "
+        },
+        {
+          "created": "2023-02-08T19:27:32Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/bash\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-08T19:44:53Z",
+          "created_by": "/bin/sh -c set -eux; \tmicrodnf install \t\tgzip \t\ttar \t\t\t\tbinutils \t\tfreetype fontconfig \t; \tmicrodnf clean all"
+        },
+        {
+          "created": "2023-02-08T19:45:52Z",
+          "created_by": "/bin/sh -c #(nop)  ENV JAVA_HOME=/usr/java/openjdk-18",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-08T19:45:52Z",
+          "created_by": "/bin/sh -c #(nop)  ENV PATH=/usr/java/openjdk-18/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-08T19:45:52Z",
+          "created_by": "/bin/sh -c #(nop)  ENV LANG=C.UTF-8",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-08T19:45:52Z",
+          "created_by": "/bin/sh -c #(nop)  ENV JAVA_VERSION=18.0.2.1",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-08T19:46:02Z",
+          "created_by": "/bin/sh -c set -eux; \t\tarch=\"$(objdump=\"$(command -v objdump)\" \u0026\u0026 objdump --file-headers \"$objdump\" | awk -F '[:,]+[[:space:]]+' '$1 == \"architecture\" { print $2 }')\"; \tcase \"$arch\" in \t\t'i386:x86-64') \t\t\tdownloadUrl='https://download.java.net/java/GA/jdk18.0.2.1/db379da656dc47308e138f21b33976fa/1/GPL/openjdk-18.0.2.1_linux-x64_bin.tar.gz'; \t\t\tdownloadSha256='3bfdb59fc38884672677cebca9a216902d87fe867563182ae8bc3373a65a2ebd'; \t\t\t;; \t\t'aarch64') \t\t\tdownloadUrl='https://download.java.net/java/GA/jdk18.0.2.1/db379da656dc47308e138f21b33976fa/1/GPL/openjdk-18.0.2.1_linux-aarch64_bin.tar.gz'; \t\t\tdownloadSha256='79900237a5912045f8c9f1065b5204a474803cbbb4d075ab9620650fb75dfc1b'; \t\t\t;; \t\t*) echo \u003e\u00262 \"error: unsupported architecture: '$arch'\"; exit 1 ;; \tesac; \t\tcurl -fL -o openjdk.tgz \"$downloadUrl\"; \techo \"$downloadSha256 *openjdk.tgz\" | sha256sum --strict --check -; \t\tmkdir -p \"$JAVA_HOME\"; \ttar --extract \t\t--file openjdk.tgz \t\t--directory \"$JAVA_HOME\" \t\t--strip-components 1 \t\t--no-same-owner \t; \trm openjdk.tgz*; \t\trm -rf \"$JAVA_HOME/lib/security/cacerts\"; \tln -sT /etc/pki/ca-trust/extracted/java/cacerts \"$JAVA_HOME/lib/security/cacerts\"; \t\tln -sfT \"$JAVA_HOME\" /usr/java/default; \tln -sfT \"$JAVA_HOME\" /usr/java/latest; \tfor bin in \"$JAVA_HOME/bin/\"*; do \t\tbase=\"$(basename \"$bin\")\"; \t\t[ ! -e \"/usr/bin/$base\" ]; \t\talternatives --install \"/usr/bin/$base\" \"$base\" \"$bin\" 20000; \tdone; \t\tjava -Xshare:dump; \t\tfileEncoding=\"$(echo 'System.out.println(System.getProperty(\"file.encoding\"))' | jshell -s -)\"; [ \"$fileEncoding\" = 'UTF-8' ]; rm -rf ~/.java; \tjavac --version; \tjava --version"
+        },
+        {
+          "created": "2023-02-08T19:46:03Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"jshell\"]",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8",
+          "sha256:077bff59ce5723e3c7d78bdf4fd8b10d72f6f8474b97cdb9323816aa5d8314a6",
+          "sha256:56285d9a776094205dc0b66078bf0719f50c734a00754292e6fcbd13b17f5155"
+        ]
+      },
+      "config": {
+        "Cmd": [
+          "jshell"
+        ],
+        "Env": [
+          "PATH=/usr/java/openjdk-18/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "JAVA_HOME=/usr/java/openjdk-18",
+          "LANG=C.UTF-8",
+          "JAVA_VERSION=18.0.2.1"
+        ],
+        "Image": "sha256:ac2e438abda50fce392b0843eb4e5436188c82e2ed3384069d21795bf6c200c0"
+      }
+    }
+  },
+  "Results": [
+    {
+      "Target": "openjdk (oracle 8.7)",
+      "Class": "os-pkgs",
+      "Type": "oracle",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2023-23916",
+          "PkgID": "curl@7.61.1-25.el8_7.1.x86_64",
+          "PkgName": "curl",
+          "InstalledVersion": "7.61.1-25.el8_7.1",
+          "FixedVersion": "7.61.1-25.el8_7.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-23916",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "HTTP multi-header compression denial of service",
+          "Description": "An allocation of resources without limits or throttling vulnerability exists in curl \u003cv7.88.0 based on the \"chained\" HTTP compression algorithms, meaning that a server response can be compressed multiple times and potentially with differentalgorithms. The number of acceptable \"links\" in this \"decompression chain\" wascapped, but the cap was implemented on a per-header basis allowing a maliciousserver to insert a virtually unlimited number of compression steps simply byusing many headers. The use of such a decompression chain could result in a \"malloc bomb\", making curl end up spending enormous amounts of allocated heap memory, or trying to and returning out of memory errors.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:1701",
+            "https://access.redhat.com/security/cve/CVE-2023-23916",
+            "https://bugzilla.redhat.com/2167815",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2167815",
+            "https://curl.se/docs/CVE-2023-23916.html",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-23916",
+            "https://errata.almalinux.org/9/ALSA-2023-1701.html",
+            "https://errata.rockylinux.org/RLSA-2023:1140",
+            "https://hackerone.com/reports/1826048",
+            "https://linux.oracle.com/cve/CVE-2023-23916.html",
+            "https://linux.oracle.com/errata/ELSA-2023-1701.html",
+            "https://lists.debian.org/debian-lts-announce/2023/02/msg00035.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BQKE6TXYDHOTFHLTBZ5X73GTKI7II5KO/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-23916",
+            "https://security.netapp.com/advisory/ntap-20230309-0006/",
+            "https://ubuntu.com/security/notices/USN-5891-1",
+            "https://www.cve.org/CVERecord?id=CVE-2023-23916",
+            "https://www.debian.org/security/2023/dsa-5365"
+          ],
+          "PublishedDate": "2023-02-23T20:15:00Z",
+          "LastModifiedDate": "2023-04-18T16:49:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-27535",
+          "PkgID": "curl@7.61.1-25.el8_7.1.x86_64",
+          "PkgName": "curl",
+          "InstalledVersion": "7.61.1-25.el8_7.1",
+          "FixedVersion": "7.61.1-30.el8_8.2",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-27535",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "FTP too eager connection reuse",
+          "Description": "An authentication bypass vulnerability exists in libcurl \u003c8.0.0 in the FTP connection reuse feature that can result in wrong credentials being used during subsequent transfers. Previously created connections are kept in a connection pool for reuse if they match the current setup. However, certain FTP settings such as CURLOPT_FTP_ACCOUNT, CURLOPT_FTP_ALTERNATIVE_TO_USER, CURLOPT_FTP_SSL_CCC, and CURLOPT_USE_SSL were not included in the configuration match checks, causing them to match too easily. This could lead to libcurl using the wrong credentials when performing a transfer, potentially allowing unauthorized access to sensitive information.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-287"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 5.9
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:2650",
+            "https://access.redhat.com/security/cve/CVE-2023-27535",
+            "https://bugzilla.redhat.com/2179073",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2179073",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2188029",
+            "https://curl.se/docs/CVE-2023-27535.html",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-27535",
+            "https://errata.almalinux.org/9/ALSA-2023-2650.html",
+            "https://errata.rockylinux.org/RLSA-2023:3106",
+            "https://hackerone.com/reports/1892780",
+            "https://linux.oracle.com/cve/CVE-2023-27535.html",
+            "https://linux.oracle.com/errata/ELSA-2023-3106.html",
+            "https://lists.debian.org/debian-lts-announce/2023/04/msg00025.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/36NBD5YLJXXEDZLDGNFCERWRYJQ6LAQW/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-27535",
+            "https://security.netapp.com/advisory/ntap-20230420-0010/",
+            "https://ubuntu.com/security/notices/USN-5964-1",
+            "https://ubuntu.com/security/notices/USN-5964-2",
+            "https://www.cve.org/CVERecord?id=CVE-2023-27535"
+          ],
+          "PublishedDate": "2023-03-30T20:15:00Z",
+          "LastModifiedDate": "2023-06-29T19:29:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-27536",
+          "PkgID": "curl@7.61.1-25.el8_7.1.x86_64",
+          "PkgName": "curl",
+          "InstalledVersion": "7.61.1-25.el8_7.1",
+          "FixedVersion": "7.61.1-30.el8_8.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-27536",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "GSS delegation too eager connection re-use",
+          "Description": "An authentication bypass vulnerability exists libcurl \u003c8.0.0 in the connection reuse feature which can reuse previously established connections with incorrect user permissions due to a failure to check for changes in the CURLOPT_GSSAPI_DELEGATION option. This vulnerability affects krb5/kerberos/negotiate/GSSAPI transfers and could potentially result in unauthorized access to sensitive information. The safest option is to not reuse connections if the CURLOPT_GSSAPI_DELEGATION option has been changed.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-287"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 5.9
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:4523",
+            "https://access.redhat.com/security/cve/CVE-2023-27536",
+            "https://bugzilla.redhat.com/2179092",
+            "https://bugzilla.redhat.com/2196786",
+            "https://curl.se/docs/CVE-2023-27536.html",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-27536",
+            "https://errata.almalinux.org/8/ALSA-2023-4523.html",
+            "https://hackerone.com/reports/1895135",
+            "https://linux.oracle.com/cve/CVE-2023-27536.html",
+            "https://linux.oracle.com/errata/ELSA-2023-4523.html",
+            "https://lists.debian.org/debian-lts-announce/2023/04/msg00025.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/36NBD5YLJXXEDZLDGNFCERWRYJQ6LAQW/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-27536",
+            "https://security.netapp.com/advisory/ntap-20230420-0010/",
+            "https://ubuntu.com/security/notices/USN-5964-1",
+            "https://ubuntu.com/security/notices/USN-5964-2",
+            "https://www.cve.org/CVERecord?id=CVE-2023-27536"
+          ],
+          "PublishedDate": "2023-03-30T20:15:00Z",
+          "LastModifiedDate": "2023-06-06T20:34:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-28321",
+          "PkgID": "curl@7.61.1-25.el8_7.1.x86_64",
+          "PkgName": "curl",
+          "InstalledVersion": "7.61.1-25.el8_7.1",
+          "FixedVersion": "7.61.1-30.el8_8.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-28321",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "IDN wildcard match may lead to Improper Cerificate Validation",
+          "Description": "An improper certificate validation vulnerability exists in curl \u003cv8.1.0 in the way it supports matching of wildcard patterns when listed as \"Subject Alternative Name\" in TLS server certificates. curl can be built to use its own name matching function for TLS rather than one provided by a TLS library. This private wildcard matching function would match IDN (International Domain Name) hosts incorrectly and could as a result accept patterns that otherwise should mismatch. IDN hostnames are converted to puny code before used for certificate checks. Puny coded names always start with `xn--` and should not be allowed to pattern match, but the wildcard check in curl could still check for `x*`, which would match even though the IDN name most likely contained nothing even resembling an `x`.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-295"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 5.9
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "http://seclists.org/fulldisclosure/2023/Jul/47",
+            "http://seclists.org/fulldisclosure/2023/Jul/48",
+            "http://seclists.org/fulldisclosure/2023/Jul/52",
+            "https://access.redhat.com/errata/RHSA-2023:4354",
+            "https://access.redhat.com/security/cve/CVE-2023-28321",
+            "https://bugzilla.redhat.com/2196786",
+            "https://bugzilla.redhat.com/2196793",
+            "https://curl.se/docs/CVE-2023-28321.html",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-28321",
+            "https://errata.almalinux.org/9/ALSA-2023-4354.html",
+            "https://hackerone.com/reports/1950627",
+            "https://linux.oracle.com/cve/CVE-2023-28321.html",
+            "https://linux.oracle.com/errata/ELSA-2023-4523.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/F4I75RDGX5ULSSCBE5BF3P5I5SFO7ULQ/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Z2LIWHWKOVH24COGGBCVOWDXXIUPKOMK/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-28321",
+            "https://security.netapp.com/advisory/ntap-20230609-0009/",
+            "https://support.apple.com/kb/HT213843",
+            "https://support.apple.com/kb/HT213844",
+            "https://support.apple.com/kb/HT213845",
+            "https://ubuntu.com/security/notices/USN-6237-1",
+            "https://www.cve.org/CVERecord?id=CVE-2023-28321"
+          ],
+          "PublishedDate": "2023-05-26T21:15:00Z",
+          "LastModifiedDate": "2023-08-02T16:46:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-35252",
+          "PkgID": "curl@7.61.1-25.el8_7.1.x86_64",
+          "PkgName": "curl",
+          "InstalledVersion": "7.61.1-25.el8_7.1",
+          "FixedVersion": "7.61.1-30.el8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-35252",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "Incorrect handling of control code characters in cookies",
+          "Description": "When curl is used to retrieve and parse cookies from a HTTP(S) server, itaccepts cookies using control codes that when later are sent back to a HTTPserver might make the server return 400 responses. Effectively allowing a\"sister site\" to deny service to all siblings.",
+          "Severity": "LOW",
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.7
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:L",
+              "V3Score": 3.1
+            }
+          },
+          "References": [
+            "http://seclists.org/fulldisclosure/2023/Jan/20",
+            "http://seclists.org/fulldisclosure/2023/Jan/21",
+            "https://access.redhat.com/errata/RHSA-2023:2478",
+            "https://access.redhat.com/security/cve/CVE-2022-35252",
+            "https://bugzilla.redhat.com/2120718",
+            "https://bugzilla.redhat.com/2152652",
+            "https://curl.se/docs/CVE-2022-35252.html",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-35252",
+            "https://errata.almalinux.org/9/ALSA-2023-2478.html",
+            "https://hackerone.com/reports/1613943",
+            "https://linux.oracle.com/cve/CVE-2022-35252.html",
+            "https://linux.oracle.com/errata/ELSA-2023-2963.html",
+            "https://lists.debian.org/debian-lts-announce/2023/01/msg00028.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-35252",
+            "https://security.gentoo.org/glsa/202212-01",
+            "https://security.netapp.com/advisory/ntap-20220930-0005/",
+            "https://support.apple.com/kb/HT213603",
+            "https://support.apple.com/kb/HT213604",
+            "https://ubuntu.com/security/notices/USN-5587-1",
+            "https://www.cve.org/CVERecord?id=CVE-2022-35252",
+            "https://www.openwall.com/lists/oss-security/2022/08/31/2"
+          ],
+          "PublishedDate": "2022-09-23T14:15:00Z",
+          "LastModifiedDate": "2023-03-01T18:09:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-43552",
+          "PkgID": "curl@7.61.1-25.el8_7.1.x86_64",
+          "PkgName": "curl",
+          "InstalledVersion": "7.61.1-25.el8_7.1",
+          "FixedVersion": "7.61.1-30.el8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-43552",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "Use-after-free triggered by an HTTP proxy deny response",
+          "Description": "A use after free vulnerability exists in curl \u003c7.87.0. Curl can be asked to *tunnel* virtually all protocols it supports through an HTTP proxy. HTTP proxies can (and often do) deny such tunnel operations. When getting denied to tunnel the specific protocols SMB or TELNET, curl would use a heap-allocated struct after it had been freed, in its transfer shutdown code path.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "http://seclists.org/fulldisclosure/2023/Mar/17",
+            "https://access.redhat.com/errata/RHSA-2023:2478",
+            "https://access.redhat.com/security/cve/CVE-2022-43552",
+            "https://bugzilla.redhat.com/2120718",
+            "https://bugzilla.redhat.com/2152652",
+            "https://curl.se/docs/CVE-2022-43552.html",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-43552",
+            "https://errata.almalinux.org/9/ALSA-2023-2478.html",
+            "https://hackerone.com/reports/1764858",
+            "https://linux.oracle.com/cve/CVE-2022-43552.html",
+            "https://linux.oracle.com/errata/ELSA-2023-2963.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-43552",
+            "https://security.netapp.com/advisory/ntap-20230214-0002/",
+            "https://support.apple.com/kb/HT213670",
+            "https://ubuntu.com/security/notices/USN-5788-1",
+            "https://ubuntu.com/security/notices/USN-5894-1",
+            "https://www.cve.org/CVERecord?id=CVE-2022-43552"
+          ],
+          "PublishedDate": "2023-02-09T20:15:00Z",
+          "LastModifiedDate": "2023-03-28T05:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-20231",
+          "PkgID": "gnutls@3.6.16-5.el8_6.x86_64",
+          "PkgName": "gnutls",
+          "InstalledVersion": "3.6.16-5.el8_6",
+          "FixedVersion": "10:3.6.16-4.0.1.el8_fips",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-20231",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "gnutls: Use after free in client key_share extension",
+          "Description": "A flaw was found in gnutls. A use after free issue in client sending key_share extension may lead to memory corruption and other consequences.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-20231",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1776250",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1908110",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1908334",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1922275",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1922276",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1965445",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1967983",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20231",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20232",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3580",
+            "https://errata.almalinux.org/8/ALSA-2021-4451.html",
+            "https://errata.rockylinux.org/RLSA-2021:4451",
+            "https://gitlab.com/gnutls/gnutls/-/issues/1151",
+            "https://linux.oracle.com/cve/CVE-2021-20231.html",
+            "https://linux.oracle.com/errata/ELSA-2022-9221.html",
+            "https://lists.apache.org/thread.html/r50661d6f0082709aad9a584431b59ec364f9974b63b07e0800230168@%3Cissues.spark.apache.org%3E",
+            "https://lists.apache.org/thread.html/r5d4001031e7790d8c6396c499522b4ed2aab782da87b1a14184793bb@%3Cissues.spark.apache.org%3E",
+            "https://lists.apache.org/thread.html/r5f88bed447742fcc5c47bf1c7be965ef450131914a6e1f85feba2779@%3Cissues.spark.apache.org%3E",
+            "https://lists.apache.org/thread.html/r6ac143ba6dd98bd4bf6bf010d46e56e254056459721ba18822d611f7@%3Cissues.spark.apache.org%3E",
+            "https://lists.apache.org/thread.html/r9cbc69e57276413788e90a6ee16c7c034ea4258d31935b70db2bd158@%3Cissues.spark.apache.org%3E",
+            "https://lists.apache.org/thread.html/rcd70a4c88a47a75fd2d5f3ffb7cee8c2a18c713320bd90fdcb57495f@%3Cissues.spark.apache.org%3E",
+            "https://lists.apache.org/thread.html/rf5e1256d870193def4a82ad89ab95e63943a313b5ff0d81aa87e4532@%3Cissues.spark.apache.org%3E",
+            "https://lists.apache.org/thread.html/rfd5273d72d244178441e6904a2f2b41a3268f569e8092ea0b3b2bb20@%3Cissues.spark.apache.org%3E",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/OSLAE6PP33A7VYRYMYMUVB3U6B26GZER/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-20231",
+            "https://security.netapp.com/advisory/ntap-20210416-0005/",
+            "https://ubuntu.com/security/notices/USN-5029-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-20231",
+            "https://www.gnutls.org/security-new.html#GNUTLS-SA-2021-03-10"
+          ],
+          "PublishedDate": "2021-03-12T19:15:00Z",
+          "LastModifiedDate": "2021-06-01T14:07:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-20232",
+          "PkgID": "gnutls@3.6.16-5.el8_6.x86_64",
+          "PkgName": "gnutls",
+          "InstalledVersion": "3.6.16-5.el8_6",
+          "FixedVersion": "10:3.6.16-4.0.1.el8_fips",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-20232",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "gnutls: Use after free in client_send_params in lib/ext/pre_shared_key.c",
+          "Description": "A flaw was found in gnutls. A use after free issue in client_send_params in lib/ext/pre_shared_key.c may lead to memory corruption and other potential consequences.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-20232",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1776250",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1908110",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1908334",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1922275",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1922276",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1965445",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1967983",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20231",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20232",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3580",
+            "https://errata.almalinux.org/8/ALSA-2021-4451.html",
+            "https://errata.rockylinux.org/RLSA-2021:4451",
+            "https://gitlab.com/gnutls/gnutls/-/issues/1151",
+            "https://linux.oracle.com/cve/CVE-2021-20232.html",
+            "https://linux.oracle.com/errata/ELSA-2022-9221.html",
+            "https://lists.apache.org/thread.html/r50661d6f0082709aad9a584431b59ec364f9974b63b07e0800230168@%3Cissues.spark.apache.org%3E",
+            "https://lists.apache.org/thread.html/r5d4001031e7790d8c6396c499522b4ed2aab782da87b1a14184793bb@%3Cissues.spark.apache.org%3E",
+            "https://lists.apache.org/thread.html/r5f88bed447742fcc5c47bf1c7be965ef450131914a6e1f85feba2779@%3Cissues.spark.apache.org%3E",
+            "https://lists.apache.org/thread.html/r6ac143ba6dd98bd4bf6bf010d46e56e254056459721ba18822d611f7@%3Cissues.spark.apache.org%3E",
+            "https://lists.apache.org/thread.html/r9cbc69e57276413788e90a6ee16c7c034ea4258d31935b70db2bd158@%3Cissues.spark.apache.org%3E",
+            "https://lists.apache.org/thread.html/rcd70a4c88a47a75fd2d5f3ffb7cee8c2a18c713320bd90fdcb57495f@%3Cissues.spark.apache.org%3E",
+            "https://lists.apache.org/thread.html/rf5e1256d870193def4a82ad89ab95e63943a313b5ff0d81aa87e4532@%3Cissues.spark.apache.org%3E",
+            "https://lists.apache.org/thread.html/rfd5273d72d244178441e6904a2f2b41a3268f569e8092ea0b3b2bb20@%3Cissues.spark.apache.org%3E",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/OSLAE6PP33A7VYRYMYMUVB3U6B26GZER/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-20232",
+            "https://security.netapp.com/advisory/ntap-20210416-0005/",
+            "https://ubuntu.com/security/notices/USN-5029-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-20232",
+            "https://www.gnutls.org/security-new.html#GNUTLS-SA-2021-03-10"
+          ],
+          "PublishedDate": "2021-03-12T19:15:00Z",
+          "LastModifiedDate": "2021-05-17T14:30:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-3580",
+          "PkgID": "gnutls@3.6.16-5.el8_6.x86_64",
+          "PkgName": "gnutls",
+          "InstalledVersion": "3.6.16-5.el8_6",
+          "FixedVersion": "10:3.6.16-4.0.1.el8_fips",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-3580",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "nettle: Remote crash in RSA decryption via manipulated ciphertext",
+          "Description": "A flaw was found in the way nettle's RSA decryption functions handled specially crafted ciphertext. An attacker could use this flaw to provide a manipulated ciphertext leading to application crash and denial of service.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-20"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-3580",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1776250",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1908110",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1908334",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1922275",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1922276",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1965445",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1967983",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20231",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20232",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3580",
+            "https://errata.almalinux.org/8/ALSA-2021-4451.html",
+            "https://errata.rockylinux.org/RLSA-2021:4451",
+            "https://linux.oracle.com/cve/CVE-2021-3580.html",
+            "https://linux.oracle.com/errata/ELSA-2022-9221.html",
+            "https://lists.debian.org/debian-lts-announce/2021/09/msg00008.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-3580",
+            "https://security.netapp.com/advisory/ntap-20211104-0006/",
+            "https://ubuntu.com/security/notices/USN-4990-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-3580"
+          ],
+          "PublishedDate": "2021-08-05T21:15:00Z",
+          "LastModifiedDate": "2021-11-26T21:06:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-0361",
+          "PkgID": "gnutls@3.6.16-5.el8_6.x86_64",
+          "PkgName": "gnutls",
+          "InstalledVersion": "3.6.16-5.el8_6",
+          "FixedVersion": "3.6.16-6.el8_7",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-0361",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "timing side-channel in the TLS RSA key exchange code",
+          "Description": "A timing side-channel in the handling of RSA ClientKeyExchange messages was discovered in GnuTLS. This side-channel can be sufficient to recover the key encrypted in the RSA ciphertext across a network in a Bleichenbacher style attack. To achieve a successful decryption the attacker would need to send a large amount of specially crafted messages to the vulnerable server. By recovering the secret from the ClientKeyExchange message, the attacker would be able to decrypt the application data exchanged over that connection.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-203"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.4
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:1141",
+            "https://access.redhat.com/security/cve/CVE-2023-0361",
+            "https://bugzilla.redhat.com/2162596",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2131152",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2162596",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0361",
+            "https://errata.almalinux.org/9/ALSA-2023-1141.html",
+            "https://errata.rockylinux.org/RLSA-2023:1569",
+            "https://github.com/tlsfuzzer/tlsfuzzer/pull/679",
+            "https://gitlab.com/gnutls/gnutls/-/issues/1050",
+            "https://gnutls.org/security-new.html#GNUTLS-SA-2020-07-14",
+            "https://linux.oracle.com/cve/CVE-2023-0361.html",
+            "https://linux.oracle.com/errata/ELSA-2023-1569.html",
+            "https://lists.debian.org/debian-lts-announce/2023/02/msg00015.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UFIA3X4IZ3CW7SRQ2UHNHNPMRIAWF2FI/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WS4KVDOG6QTALWHC2QE4Y7VPDRMLTRWQ/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Z634YBXAJ5VLDI62IOPBVP5K6YFHAWCY/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-0361",
+            "https://security.netapp.com/advisory/ntap-20230324-0005/",
+            "https://security.netapp.com/advisory/ntap-20230725-0005/",
+            "https://ubuntu.com/security/notices/USN-5901-1",
+            "https://www.cve.org/CVERecord?id=CVE-2023-0361"
+          ],
+          "PublishedDate": "2023-02-15T18:15:00Z",
+          "LastModifiedDate": "2023-07-25T15:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-36227",
+          "PkgID": "libarchive@3.3.3-4.el8.x86_64",
+          "PkgName": "libarchive",
+          "InstalledVersion": "3.3.3-4.el8",
+          "FixedVersion": "3.3.3-5.el8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-36227",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "NULL pointer dereference in archive_write.c",
+          "Description": "In libarchive before 3.6.2, the software does not check for an error after calling calloc function that can return with a NULL pointer if the function fails, which leads to a resultant NULL pointer dereference. NOTE: the discoverer cites this CWE-476 remark but third parties dispute the code-execution impact: \"In rare circumstances, when NULL is equivalent to the 0x0 memory address and privileged code can access it, then writing or reading memory is possible, which may lead to code execution.\"",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:2532",
+            "https://access.redhat.com/security/cve/CVE-2022-36227",
+            "https://bugs.gentoo.org/882521",
+            "https://bugzilla.redhat.com/2144972",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-36227",
+            "https://errata.almalinux.org/9/ALSA-2023-2532.html",
+            "https://github.com/libarchive/libarchive/blob/v3.0.0a/libarchive/archive_write.c#L215",
+            "https://github.com/libarchive/libarchive/issues/1754",
+            "https://github.com/libarchive/libarchive/pull/1759",
+            "https://linux.oracle.com/cve/CVE-2022-36227.html",
+            "https://linux.oracle.com/errata/ELSA-2023-3018.html",
+            "https://lists.debian.org/debian-lts-announce/2023/01/msg00034.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/V67OO2UUQAUJS3IK4JZPF6F3LUCBU6IS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-36227",
+            "https://www.cve.org/CVERecord?id=CVE-2022-36227"
+          ],
+          "PublishedDate": "2022-11-22T02:15:00Z",
+          "LastModifiedDate": "2023-02-06T14:31:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-2602",
+          "PkgID": "libcap@2.48-4.el8.x86_64",
+          "PkgName": "libcap",
+          "InstalledVersion": "2.48-4.el8",
+          "FixedVersion": "2.48-5.el8_8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-2602",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "Memory Leak on pthread_create() Error",
+          "Description": "A vulnerability was found in the pthread_create() function in libcap. This issue may allow a malicious actor to use cause __real_pthread_create() to return an error, which can exhaust the process memory.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-401"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:4524",
+            "https://access.redhat.com/security/cve/CVE-2023-2602",
+            "https://bugzilla.redhat.com/2209113",
+            "https://bugzilla.redhat.com/2209114",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2209114",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-2602",
+            "https://errata.almalinux.org/8/ALSA-2023-4524.html",
+            "https://linux.oracle.com/cve/CVE-2023-2602.html",
+            "https://linux.oracle.com/errata/ELSA-2023-4524.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-2602",
+            "https://sites.google.com/site/fullycapable/release-notes-for-libcap#h.iuvg7sbjg8pe",
+            "https://ubuntu.com/security/notices/USN-6166-1",
+            "https://www.cve.org/CVERecord?id=CVE-2023-2602",
+            "https://www.openwall.com/lists/oss-security/2023/05/15/4",
+            "https://www.x41-dsec.de/static/reports/X41-libcap-Code-Review-2023-OSTIF-Final-Report.pdf"
+          ],
+          "PublishedDate": "2023-06-06T20:15:00Z",
+          "LastModifiedDate": "2023-06-14T18:07:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-2603",
+          "PkgID": "libcap@2.48-4.el8.x86_64",
+          "PkgName": "libcap",
+          "InstalledVersion": "2.48-4.el8",
+          "FixedVersion": "2.48-5.el8_8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-2603",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "Integer Overflow in _libcap_strdup()",
+          "Description": "A vulnerability was found in libcap. This issue occurs in the _libcap_strdup() function and can lead to an integer overflow if the input string is close to 4GiB.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:H",
+              "V3Score": 7.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:4524",
+            "https://access.redhat.com/security/cve/CVE-2023-2603",
+            "https://bugzilla.redhat.com/2209113",
+            "https://bugzilla.redhat.com/2209114",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2209113",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-2603",
+            "https://errata.almalinux.org/8/ALSA-2023-4524.html",
+            "https://linux.oracle.com/cve/CVE-2023-2603.html",
+            "https://linux.oracle.com/errata/ELSA-2023-4524.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-2603",
+            "https://sites.google.com/site/fullycapable/release-notes-for-libcap#h.iuvg7sbjg8pe",
+            "https://ubuntu.com/security/notices/USN-6166-1",
+            "https://ubuntu.com/security/notices/USN-6166-2",
+            "https://www.cve.org/CVERecord?id=CVE-2023-2603",
+            "https://www.openwall.com/lists/oss-security/2023/05/15/4",
+            "https://www.x41-dsec.de/static/reports/X41-libcap-Code-Review-2023-OSTIF-Final-Report.pdf"
+          ],
+          "PublishedDate": "2023-06-06T20:15:00Z",
+          "LastModifiedDate": "2023-06-21T19:02:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-23916",
+          "PkgID": "libcurl@7.61.1-25.el8_7.1.x86_64",
+          "PkgName": "libcurl",
+          "InstalledVersion": "7.61.1-25.el8_7.1",
+          "FixedVersion": "7.61.1-25.el8_7.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-23916",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "HTTP multi-header compression denial of service",
+          "Description": "An allocation of resources without limits or throttling vulnerability exists in curl \u003cv7.88.0 based on the \"chained\" HTTP compression algorithms, meaning that a server response can be compressed multiple times and potentially with differentalgorithms. The number of acceptable \"links\" in this \"decompression chain\" wascapped, but the cap was implemented on a per-header basis allowing a maliciousserver to insert a virtually unlimited number of compression steps simply byusing many headers. The use of such a decompression chain could result in a \"malloc bomb\", making curl end up spending enormous amounts of allocated heap memory, or trying to and returning out of memory errors.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:1701",
+            "https://access.redhat.com/security/cve/CVE-2023-23916",
+            "https://bugzilla.redhat.com/2167815",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2167815",
+            "https://curl.se/docs/CVE-2023-23916.html",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-23916",
+            "https://errata.almalinux.org/9/ALSA-2023-1701.html",
+            "https://errata.rockylinux.org/RLSA-2023:1140",
+            "https://hackerone.com/reports/1826048",
+            "https://linux.oracle.com/cve/CVE-2023-23916.html",
+            "https://linux.oracle.com/errata/ELSA-2023-1701.html",
+            "https://lists.debian.org/debian-lts-announce/2023/02/msg00035.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BQKE6TXYDHOTFHLTBZ5X73GTKI7II5KO/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-23916",
+            "https://security.netapp.com/advisory/ntap-20230309-0006/",
+            "https://ubuntu.com/security/notices/USN-5891-1",
+            "https://www.cve.org/CVERecord?id=CVE-2023-23916",
+            "https://www.debian.org/security/2023/dsa-5365"
+          ],
+          "PublishedDate": "2023-02-23T20:15:00Z",
+          "LastModifiedDate": "2023-04-18T16:49:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-27535",
+          "PkgID": "libcurl@7.61.1-25.el8_7.1.x86_64",
+          "PkgName": "libcurl",
+          "InstalledVersion": "7.61.1-25.el8_7.1",
+          "FixedVersion": "7.61.1-30.el8_8.2",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-27535",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "FTP too eager connection reuse",
+          "Description": "An authentication bypass vulnerability exists in libcurl \u003c8.0.0 in the FTP connection reuse feature that can result in wrong credentials being used during subsequent transfers. Previously created connections are kept in a connection pool for reuse if they match the current setup. However, certain FTP settings such as CURLOPT_FTP_ACCOUNT, CURLOPT_FTP_ALTERNATIVE_TO_USER, CURLOPT_FTP_SSL_CCC, and CURLOPT_USE_SSL were not included in the configuration match checks, causing them to match too easily. This could lead to libcurl using the wrong credentials when performing a transfer, potentially allowing unauthorized access to sensitive information.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-287"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 5.9
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:2650",
+            "https://access.redhat.com/security/cve/CVE-2023-27535",
+            "https://bugzilla.redhat.com/2179073",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2179073",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2188029",
+            "https://curl.se/docs/CVE-2023-27535.html",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-27535",
+            "https://errata.almalinux.org/9/ALSA-2023-2650.html",
+            "https://errata.rockylinux.org/RLSA-2023:3106",
+            "https://hackerone.com/reports/1892780",
+            "https://linux.oracle.com/cve/CVE-2023-27535.html",
+            "https://linux.oracle.com/errata/ELSA-2023-3106.html",
+            "https://lists.debian.org/debian-lts-announce/2023/04/msg00025.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/36NBD5YLJXXEDZLDGNFCERWRYJQ6LAQW/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-27535",
+            "https://security.netapp.com/advisory/ntap-20230420-0010/",
+            "https://ubuntu.com/security/notices/USN-5964-1",
+            "https://ubuntu.com/security/notices/USN-5964-2",
+            "https://www.cve.org/CVERecord?id=CVE-2023-27535"
+          ],
+          "PublishedDate": "2023-03-30T20:15:00Z",
+          "LastModifiedDate": "2023-06-29T19:29:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-27536",
+          "PkgID": "libcurl@7.61.1-25.el8_7.1.x86_64",
+          "PkgName": "libcurl",
+          "InstalledVersion": "7.61.1-25.el8_7.1",
+          "FixedVersion": "7.61.1-30.el8_8.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-27536",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "GSS delegation too eager connection re-use",
+          "Description": "An authentication bypass vulnerability exists libcurl \u003c8.0.0 in the connection reuse feature which can reuse previously established connections with incorrect user permissions due to a failure to check for changes in the CURLOPT_GSSAPI_DELEGATION option. This vulnerability affects krb5/kerberos/negotiate/GSSAPI transfers and could potentially result in unauthorized access to sensitive information. The safest option is to not reuse connections if the CURLOPT_GSSAPI_DELEGATION option has been changed.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-287"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 5.9
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:4523",
+            "https://access.redhat.com/security/cve/CVE-2023-27536",
+            "https://bugzilla.redhat.com/2179092",
+            "https://bugzilla.redhat.com/2196786",
+            "https://curl.se/docs/CVE-2023-27536.html",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-27536",
+            "https://errata.almalinux.org/8/ALSA-2023-4523.html",
+            "https://hackerone.com/reports/1895135",
+            "https://linux.oracle.com/cve/CVE-2023-27536.html",
+            "https://linux.oracle.com/errata/ELSA-2023-4523.html",
+            "https://lists.debian.org/debian-lts-announce/2023/04/msg00025.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/36NBD5YLJXXEDZLDGNFCERWRYJQ6LAQW/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-27536",
+            "https://security.netapp.com/advisory/ntap-20230420-0010/",
+            "https://ubuntu.com/security/notices/USN-5964-1",
+            "https://ubuntu.com/security/notices/USN-5964-2",
+            "https://www.cve.org/CVERecord?id=CVE-2023-27536"
+          ],
+          "PublishedDate": "2023-03-30T20:15:00Z",
+          "LastModifiedDate": "2023-06-06T20:34:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-28321",
+          "PkgID": "libcurl@7.61.1-25.el8_7.1.x86_64",
+          "PkgName": "libcurl",
+          "InstalledVersion": "7.61.1-25.el8_7.1",
+          "FixedVersion": "7.61.1-30.el8_8.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-28321",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "IDN wildcard match may lead to Improper Cerificate Validation",
+          "Description": "An improper certificate validation vulnerability exists in curl \u003cv8.1.0 in the way it supports matching of wildcard patterns when listed as \"Subject Alternative Name\" in TLS server certificates. curl can be built to use its own name matching function for TLS rather than one provided by a TLS library. This private wildcard matching function would match IDN (International Domain Name) hosts incorrectly and could as a result accept patterns that otherwise should mismatch. IDN hostnames are converted to puny code before used for certificate checks. Puny coded names always start with `xn--` and should not be allowed to pattern match, but the wildcard check in curl could still check for `x*`, which would match even though the IDN name most likely contained nothing even resembling an `x`.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-295"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 5.9
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "http://seclists.org/fulldisclosure/2023/Jul/47",
+            "http://seclists.org/fulldisclosure/2023/Jul/48",
+            "http://seclists.org/fulldisclosure/2023/Jul/52",
+            "https://access.redhat.com/errata/RHSA-2023:4354",
+            "https://access.redhat.com/security/cve/CVE-2023-28321",
+            "https://bugzilla.redhat.com/2196786",
+            "https://bugzilla.redhat.com/2196793",
+            "https://curl.se/docs/CVE-2023-28321.html",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-28321",
+            "https://errata.almalinux.org/9/ALSA-2023-4354.html",
+            "https://hackerone.com/reports/1950627",
+            "https://linux.oracle.com/cve/CVE-2023-28321.html",
+            "https://linux.oracle.com/errata/ELSA-2023-4523.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/F4I75RDGX5ULSSCBE5BF3P5I5SFO7ULQ/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Z2LIWHWKOVH24COGGBCVOWDXXIUPKOMK/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-28321",
+            "https://security.netapp.com/advisory/ntap-20230609-0009/",
+            "https://support.apple.com/kb/HT213843",
+            "https://support.apple.com/kb/HT213844",
+            "https://support.apple.com/kb/HT213845",
+            "https://ubuntu.com/security/notices/USN-6237-1",
+            "https://www.cve.org/CVERecord?id=CVE-2023-28321"
+          ],
+          "PublishedDate": "2023-05-26T21:15:00Z",
+          "LastModifiedDate": "2023-08-02T16:46:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-35252",
+          "PkgID": "libcurl@7.61.1-25.el8_7.1.x86_64",
+          "PkgName": "libcurl",
+          "InstalledVersion": "7.61.1-25.el8_7.1",
+          "FixedVersion": "7.61.1-30.el8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-35252",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "Incorrect handling of control code characters in cookies",
+          "Description": "When curl is used to retrieve and parse cookies from a HTTP(S) server, itaccepts cookies using control codes that when later are sent back to a HTTPserver might make the server return 400 responses. Effectively allowing a\"sister site\" to deny service to all siblings.",
+          "Severity": "LOW",
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.7
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:L",
+              "V3Score": 3.1
+            }
+          },
+          "References": [
+            "http://seclists.org/fulldisclosure/2023/Jan/20",
+            "http://seclists.org/fulldisclosure/2023/Jan/21",
+            "https://access.redhat.com/errata/RHSA-2023:2478",
+            "https://access.redhat.com/security/cve/CVE-2022-35252",
+            "https://bugzilla.redhat.com/2120718",
+            "https://bugzilla.redhat.com/2152652",
+            "https://curl.se/docs/CVE-2022-35252.html",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-35252",
+            "https://errata.almalinux.org/9/ALSA-2023-2478.html",
+            "https://hackerone.com/reports/1613943",
+            "https://linux.oracle.com/cve/CVE-2022-35252.html",
+            "https://linux.oracle.com/errata/ELSA-2023-2963.html",
+            "https://lists.debian.org/debian-lts-announce/2023/01/msg00028.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-35252",
+            "https://security.gentoo.org/glsa/202212-01",
+            "https://security.netapp.com/advisory/ntap-20220930-0005/",
+            "https://support.apple.com/kb/HT213603",
+            "https://support.apple.com/kb/HT213604",
+            "https://ubuntu.com/security/notices/USN-5587-1",
+            "https://www.cve.org/CVERecord?id=CVE-2022-35252",
+            "https://www.openwall.com/lists/oss-security/2022/08/31/2"
+          ],
+          "PublishedDate": "2022-09-23T14:15:00Z",
+          "LastModifiedDate": "2023-03-01T18:09:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-43552",
+          "PkgID": "libcurl@7.61.1-25.el8_7.1.x86_64",
+          "PkgName": "libcurl",
+          "InstalledVersion": "7.61.1-25.el8_7.1",
+          "FixedVersion": "7.61.1-30.el8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-43552",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "Use-after-free triggered by an HTTP proxy deny response",
+          "Description": "A use after free vulnerability exists in curl \u003c7.87.0. Curl can be asked to *tunnel* virtually all protocols it supports through an HTTP proxy. HTTP proxies can (and often do) deny such tunnel operations. When getting denied to tunnel the specific protocols SMB or TELNET, curl would use a heap-allocated struct after it had been freed, in its transfer shutdown code path.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "http://seclists.org/fulldisclosure/2023/Mar/17",
+            "https://access.redhat.com/errata/RHSA-2023:2478",
+            "https://access.redhat.com/security/cve/CVE-2022-43552",
+            "https://bugzilla.redhat.com/2120718",
+            "https://bugzilla.redhat.com/2152652",
+            "https://curl.se/docs/CVE-2022-43552.html",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-43552",
+            "https://errata.almalinux.org/9/ALSA-2023-2478.html",
+            "https://hackerone.com/reports/1764858",
+            "https://linux.oracle.com/cve/CVE-2022-43552.html",
+            "https://linux.oracle.com/errata/ELSA-2023-2963.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-43552",
+            "https://security.netapp.com/advisory/ntap-20230214-0002/",
+            "https://support.apple.com/kb/HT213670",
+            "https://ubuntu.com/security/notices/USN-5788-1",
+            "https://ubuntu.com/security/notices/USN-5894-1",
+            "https://www.cve.org/CVERecord?id=CVE-2022-43552"
+          ],
+          "PublishedDate": "2023-02-09T20:15:00Z",
+          "LastModifiedDate": "2023-03-28T05:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-40528",
+          "PkgID": "libgcrypt@1.8.5-7.el8_6.x86_64",
+          "PkgName": "libgcrypt",
+          "InstalledVersion": "1.8.5-7.el8_6",
+          "FixedVersion": "10:1.8.5-7.el8_6_fips",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-40528",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "ElGamal implementation allows plaintext recovery",
+          "Description": "The ElGamal implementation in Libgcrypt before 1.9.4 allows plaintext recovery because, during interaction between two cryptographic libraries, a certain dangerous combination of the prime defined by the receiver's public key, the generator defined by the receiver's public key, and the sender's ephemeral exponents can lead to a cross-configuration attack against OpenPGP.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-327"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:H/Au:N/C:P/I:N/A:N",
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V2Score": 2.6,
+              "V3Score": 5.9
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2022:5311",
+            "https://access.redhat.com/security/cve/CVE-2021-40528",
+            "https://bugzilla.redhat.com/2002816",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2002816",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-40528",
+            "https://dev.gnupg.org/rCb118681ebc4c9ea4b9da79b0f9541405a64f4c13",
+            "https://eprint.iacr.org/2021/923",
+            "https://errata.almalinux.org/8/ALSA-2022-5311.html",
+            "https://errata.rockylinux.org/RLSA-2022:5311",
+            "https://git.gnupg.org/cgi-bin/gitweb.cgi?p=libgcrypt.git;a=commit;h=3462280f2e23e16adf3ed5176e0f2413d8861320",
+            "https://ibm.github.io/system-security-research-updates/2021/07/20/insecurity-elgamal-pt1",
+            "https://ibm.github.io/system-security-research-updates/2021/09/06/insecurity-elgamal-pt2",
+            "https://linux.oracle.com/cve/CVE-2021-40528.html",
+            "https://linux.oracle.com/errata/ELSA-2022-9564.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-40528",
+            "https://security.gentoo.org/glsa/202210-13",
+            "https://ubuntu.com/security/notices/USN-5080-1",
+            "https://ubuntu.com/security/notices/USN-5080-2",
+            "https://www.cve.org/CVERecord?id=CVE-2021-40528"
+          ],
+          "PublishedDate": "2021-09-06T19:15:00Z",
+          "LastModifiedDate": "2022-12-07T01:36:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-33560",
+          "PkgID": "libgcrypt@1.8.5-7.el8_6.x86_64",
+          "PkgName": "libgcrypt",
+          "InstalledVersion": "1.8.5-7.el8_6",
+          "FixedVersion": "10:1.8.5-6.el8_fips",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-33560",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "libgcrypt: mishandles ElGamal encryption because it lacks exponent blinding to address a side-channel attack against mpi_powm",
+          "Description": "Libgcrypt before 1.8.8 and 1.9.x before 1.9.3 mishandles ElGamal encryption because it lacks exponent blinding to address a side-channel attack against mpi_powm, and the window size is not chosen appropriately. This, for example, affects use of ElGamal in OpenPGP.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-203"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-33560.json",
+            "https://access.redhat.com/security/cve/CVE-2021-33560",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33560",
+            "https://dev.gnupg.org/T5305",
+            "https://dev.gnupg.org/T5328",
+            "https://dev.gnupg.org/T5466",
+            "https://dev.gnupg.org/rCe8b7f10be275bcedb5fc05ed4837a89bfd605c61",
+            "https://eprint.iacr.org/2021/923",
+            "https://errata.almalinux.org/8/ALSA-2021-4409.html",
+            "https://linux.oracle.com/cve/CVE-2021-33560.html",
+            "https://linux.oracle.com/errata/ELSA-2022-9263.html",
+            "https://lists.debian.org/debian-lts-announce/2021/06/msg00021.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BKKTOIGFW2SGN3DO2UHHVZ7MJSYN4AAB/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/R7OAPCUGPF3VLA7QAJUQSL255D4ITVTL/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-33560",
+            "https://security.gentoo.org/glsa/202210-13",
+            "https://ubuntu.com/security/notices/USN-5080-1",
+            "https://ubuntu.com/security/notices/USN-5080-2",
+            "https://www.cve.org/CVERecord?id=CVE-2021-33560",
+            "https://www.oracle.com/security-alerts/cpuapr2022.html",
+            "https://www.oracle.com/security-alerts/cpujan2022.html",
+            "https://www.oracle.com/security-alerts/cpujul2022.html",
+            "https://www.oracle.com/security-alerts/cpuoct2021.html"
+          ],
+          "PublishedDate": "2021-06-08T11:15:00Z",
+          "LastModifiedDate": "2022-12-07T01:20:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-1667",
+          "PkgID": "libssh@0.9.6-3.el8.x86_64",
+          "PkgName": "libssh",
+          "InstalledVersion": "0.9.6-3.el8",
+          "FixedVersion": "0.9.6-10.el8_8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-1667",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "NULL pointer dereference during rekeying with algorithm guessing",
+          "Description": "A NULL pointer dereference was found In libssh during re-keying with algorithm guessing. This issue may allow an authenticated client to cause a denial of service.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 4.3
+            }
+          },
+          "References": [
+            "http://www.libssh.org/security/advisories/CVE-2023-1667.txt",
+            "https://access.redhat.com/errata/RHSA-2023:3839",
+            "https://access.redhat.com/security/cve/CVE-2023-1667",
+            "https://bugzilla.redhat.com/2182199",
+            "https://bugzilla.redhat.com/2189736",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2182199",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2189736",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-1667",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-2283",
+            "https://errata.almalinux.org/8/ALSA-2023-3839.html",
+            "https://errata.rockylinux.org/RLSA-2023:3839",
+            "https://linux.oracle.com/cve/CVE-2023-1667.html",
+            "https://linux.oracle.com/errata/ELSA-2023-3839.html",
+            "https://lists.debian.org/debian-lts-announce/2023/05/msg00029.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/27PD44ALQTZXX7K6JAM3BXBUHYA6DFFN/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-1667",
+            "https://ubuntu.com/security/notices/USN-6138-1",
+            "https://www.cve.org/CVERecord?id=CVE-2023-1667",
+            "https://www.libssh.org/security/advisories/CVE-2023-1667.txt"
+          ],
+          "PublishedDate": "2023-05-26T18:15:00Z",
+          "LastModifiedDate": "2023-06-06T15:02:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-2283",
+          "PkgID": "libssh@0.9.6-3.el8.x86_64",
+          "PkgName": "libssh",
+          "InstalledVersion": "0.9.6-3.el8",
+          "FixedVersion": "0.9.6-10.el8_8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-2283",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "authorization bypass in pki_verify_data_signature",
+          "Description": "A vulnerability was found in libssh, where the authentication check of the connecting client can be bypassed in the`pki_verify_data_signature` function in memory allocation problems. This issue may happen if there is insufficient memory or the memory usage is limited. The problem is caused by the return value `rc,` which is initialized to SSH_ERROR and later rewritten to save the return value of the function call `pki_key_check_hash_compatible.` The value of the variable is not changed between this point and the cryptographic verification. Therefore any error between them calls `goto error` returning SSH_OK.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-287"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 4.8
+            }
+          },
+          "References": [
+            "http://packetstormsecurity.com/files/172861/libssh-0.9.6-0.10.4-pki_verify_data_signature-Authorization-Bypass.html",
+            "https://access.redhat.com/errata/RHSA-2023:3839",
+            "https://access.redhat.com/security/cve/CVE-2023-2283",
+            "https://bugzilla.redhat.com/2182199",
+            "https://bugzilla.redhat.com/2189736",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2182199",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2189736",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-1667",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-2283",
+            "https://errata.almalinux.org/8/ALSA-2023-3839.html",
+            "https://errata.rockylinux.org/RLSA-2023:3839",
+            "https://linux.oracle.com/cve/CVE-2023-2283.html",
+            "https://linux.oracle.com/errata/ELSA-2023-3839.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/27PD44ALQTZXX7K6JAM3BXBUHYA6DFFN/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-2283",
+            "https://ubuntu.com/security/notices/USN-6138-1",
+            "https://www.cve.org/CVERecord?id=CVE-2023-2283",
+            "https://www.libssh.org/security/advisories/CVE-2023-2283.txt"
+          ],
+          "PublishedDate": "2023-05-26T18:15:00Z",
+          "LastModifiedDate": "2023-06-12T07:17:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-1667",
+          "PkgID": "libssh-config@0.9.6-3.el8.noarch",
+          "PkgName": "libssh-config",
+          "InstalledVersion": "0.9.6-3.el8",
+          "FixedVersion": "0.9.6-10.el8_8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-1667",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "NULL pointer dereference during rekeying with algorithm guessing",
+          "Description": "A NULL pointer dereference was found In libssh during re-keying with algorithm guessing. This issue may allow an authenticated client to cause a denial of service.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 4.3
+            }
+          },
+          "References": [
+            "http://www.libssh.org/security/advisories/CVE-2023-1667.txt",
+            "https://access.redhat.com/errata/RHSA-2023:3839",
+            "https://access.redhat.com/security/cve/CVE-2023-1667",
+            "https://bugzilla.redhat.com/2182199",
+            "https://bugzilla.redhat.com/2189736",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2182199",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2189736",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-1667",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-2283",
+            "https://errata.almalinux.org/8/ALSA-2023-3839.html",
+            "https://errata.rockylinux.org/RLSA-2023:3839",
+            "https://linux.oracle.com/cve/CVE-2023-1667.html",
+            "https://linux.oracle.com/errata/ELSA-2023-3839.html",
+            "https://lists.debian.org/debian-lts-announce/2023/05/msg00029.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/27PD44ALQTZXX7K6JAM3BXBUHYA6DFFN/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-1667",
+            "https://ubuntu.com/security/notices/USN-6138-1",
+            "https://www.cve.org/CVERecord?id=CVE-2023-1667",
+            "https://www.libssh.org/security/advisories/CVE-2023-1667.txt"
+          ],
+          "PublishedDate": "2023-05-26T18:15:00Z",
+          "LastModifiedDate": "2023-06-06T15:02:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-2283",
+          "PkgID": "libssh-config@0.9.6-3.el8.noarch",
+          "PkgName": "libssh-config",
+          "InstalledVersion": "0.9.6-3.el8",
+          "FixedVersion": "0.9.6-10.el8_8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-2283",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "authorization bypass in pki_verify_data_signature",
+          "Description": "A vulnerability was found in libssh, where the authentication check of the connecting client can be bypassed in the`pki_verify_data_signature` function in memory allocation problems. This issue may happen if there is insufficient memory or the memory usage is limited. The problem is caused by the return value `rc,` which is initialized to SSH_ERROR and later rewritten to save the return value of the function call `pki_key_check_hash_compatible.` The value of the variable is not changed between this point and the cryptographic verification. Therefore any error between them calls `goto error` returning SSH_OK.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-287"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 4.8
+            }
+          },
+          "References": [
+            "http://packetstormsecurity.com/files/172861/libssh-0.9.6-0.10.4-pki_verify_data_signature-Authorization-Bypass.html",
+            "https://access.redhat.com/errata/RHSA-2023:3839",
+            "https://access.redhat.com/security/cve/CVE-2023-2283",
+            "https://bugzilla.redhat.com/2182199",
+            "https://bugzilla.redhat.com/2189736",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2182199",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2189736",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-1667",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-2283",
+            "https://errata.almalinux.org/8/ALSA-2023-3839.html",
+            "https://errata.rockylinux.org/RLSA-2023:3839",
+            "https://linux.oracle.com/cve/CVE-2023-2283.html",
+            "https://linux.oracle.com/errata/ELSA-2023-3839.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/27PD44ALQTZXX7K6JAM3BXBUHYA6DFFN/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-2283",
+            "https://ubuntu.com/security/notices/USN-6138-1",
+            "https://www.cve.org/CVERecord?id=CVE-2023-2283",
+            "https://www.libssh.org/security/advisories/CVE-2023-2283.txt"
+          ],
+          "PublishedDate": "2023-05-26T18:15:00Z",
+          "LastModifiedDate": "2023-06-12T07:17:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-28484",
+          "PkgID": "libxml2@2.9.7-15.el8_7.1.x86_64",
+          "PkgName": "libxml2",
+          "InstalledVersion": "2.9.7-15.el8_7.1",
+          "FixedVersion": "2.9.7-16.el8_8.1",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-28484",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "NULL dereference in xmlSchemaFixupComplexType",
+          "Description": "In libxml2 before 2.10.4, parsing of certain invalid XSD schemas can lead to a NULL pointer dereference and subsequently a segfault. This occurs in xmlSchemaFixupComplexType in xmlschemas.c.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:4349",
+            "https://access.redhat.com/security/cve/CVE-2023-28484",
+            "https://bugzilla.redhat.com/2185984",
+            "https://bugzilla.redhat.com/2185994",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-28484",
+            "https://errata.almalinux.org/9/ALSA-2023-4349.html",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/commit/4c6922f763ad958c48ff66f82823ae21f2e92ee6",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/commit/647e072ea0a2f12687fa05c172f4c4713fdb0c4f",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/issues/491",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/releases/v2.10.4",
+            "https://linux.oracle.com/cve/CVE-2023-28484.html",
+            "https://linux.oracle.com/errata/ELSA-2023-4529.html",
+            "https://lists.debian.org/debian-lts-announce/2023/04/msg00031.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-28484",
+            "https://security.netapp.com/advisory/ntap-20230601-0006/",
+            "https://ubuntu.com/security/notices/USN-6028-1",
+            "https://www.cve.org/CVERecord?id=CVE-2023-28484"
+          ],
+          "PublishedDate": "2023-04-24T21:15:00Z",
+          "LastModifiedDate": "2023-06-01T14:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-29469",
+          "PkgID": "libxml2@2.9.7-15.el8_7.1.x86_64",
+          "PkgName": "libxml2",
+          "InstalledVersion": "2.9.7-15.el8_7.1",
+          "FixedVersion": "2.9.7-16.el8_8.1",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-29469",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "Hashing of empty dict strings isn't deterministic",
+          "Description": "An issue was discovered in libxml2 before 2.10.4. When hashing empty dict strings in a crafted XML document, xmlDictComputeFastKey in dict.c can produce non-deterministic values, leading to various logic and memory errors, such as a double free. This behavior occurs because there is an attempt to use the first byte of an empty string, and any value is possible (not solely the '\\0' value).",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-415"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:4349",
+            "https://access.redhat.com/security/cve/CVE-2023-29469",
+            "https://bugzilla.redhat.com/2185984",
+            "https://bugzilla.redhat.com/2185994",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-29469",
+            "https://errata.almalinux.org/9/ALSA-2023-4349.html",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/commit/09a2dd453007f9c7205274623acdd73747c22d64",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/issues/510",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/releases/v2.10.4",
+            "https://linux.oracle.com/cve/CVE-2023-29469.html",
+            "https://linux.oracle.com/errata/ELSA-2023-4529.html",
+            "https://lists.debian.org/debian-lts-announce/2023/04/msg00031.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-29469",
+            "https://security.netapp.com/advisory/ntap-20230601-0006/",
+            "https://ubuntu.com/security/notices/USN-6028-1",
+            "https://www.cve.org/CVERecord?id=CVE-2023-29469"
+          ],
+          "PublishedDate": "2023-04-24T21:15:00Z",
+          "LastModifiedDate": "2023-06-01T14:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-4304",
+          "PkgID": "openssl-libs@1.1.1k-7.el8_6.x86_64",
+          "PkgName": "openssl-libs",
+          "InstalledVersion": "1:1.1.1k-7.el8_6",
+          "FixedVersion": "1:1.1.1k-9.el8_7",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-4304",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "timing attack in RSA Decryption implementation",
+          "Description": "A timing based side channel exists in the OpenSSL RSA Decryption implementation which could be sufficient to recover a plaintext across a network in a Bleichenbacher style attack. To achieve a successful decryption an attacker would have to be able to send a very large number of trial messages for decryption. The vulnerability affects all RSA padding modes: PKCS#1 v1.5, RSA-OEAP and RSASVE. For example, in a TLS connection, RSA is commonly used by a client to send an encrypted pre-master secret to the server. An attacker that had observed a genuine connection between a client and a server could use this flaw to send trial messages to the server and record the time taken to process them. After a sufficiently large number of messages the attacker could recover the pre-master secret used for the original connection and thus be able to decrypt the application data sent over that connection.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-203"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 5.9
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 5.9
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:2165",
+            "https://access.redhat.com/security/cve/CVE-2022-4304",
+            "https://bugzilla.redhat.com/1960321",
+            "https://bugzilla.redhat.com/2164440",
+            "https://bugzilla.redhat.com/2164487",
+            "https://bugzilla.redhat.com/2164492",
+            "https://bugzilla.redhat.com/2164494",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164440",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164487",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164492",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164494",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4304",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4450",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0215",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0286",
+            "https://errata.almalinux.org/9/ALSA-2023-2165.html",
+            "https://errata.rockylinux.org/RLSA-2023:1405",
+            "https://github.com/advisories/GHSA-p52g-cm5j-mjv4",
+            "https://linux.oracle.com/cve/CVE-2022-4304.html",
+            "https://linux.oracle.com/errata/ELSA-2023-2932.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-4304",
+            "https://rustsec.org/advisories/RUSTSEC-2023-0007.html",
+            "https://ubuntu.com/security/notices/USN-5844-1",
+            "https://www.cve.org/CVERecord?id=CVE-2022-4304",
+            "https://www.openssl.org/news/secadv/20230207.txt"
+          ],
+          "PublishedDate": "2023-02-08T20:15:00Z",
+          "LastModifiedDate": "2023-08-08T14:22:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-4450",
+          "PkgID": "openssl-libs@1.1.1k-7.el8_6.x86_64",
+          "PkgName": "openssl-libs",
+          "InstalledVersion": "1:1.1.1k-7.el8_6",
+          "FixedVersion": "1:1.1.1k-9.el8_7",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-4450",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "double free after calling PEM_read_bio_ex",
+          "Description": "The function PEM_read_bio_ex() reads a PEM file from a BIO and parses and decodes the \"name\" (e.g. \"CERTIFICATE\"), any header data and the payload data. If the function succeeds then the \"name_out\", \"header\" and \"data\" arguments are populated with pointers to buffers containing the relevant decoded data. The caller is responsible for freeing those buffers. It is possible to construct a PEM file that results in 0 bytes of payload data. In this case PEM_read_bio_ex() will return a failure code but will populate the header argument with a pointer to a buffer that has already been freed. If the caller also frees this buffer then a double free will occur. This will most likely lead to a crash. This could be exploited by an attacker who has the ability to supply malicious PEM files for parsing to achieve a denial of service attack. The functions PEM_read_bio() and PEM_read() are simple wrappers around PEM_read_bio_ex() and therefore these functions are also directly affected. These functions are also called indirectly by a number of other OpenSSL functions including PEM_X509_INFO_read_bio_ex() and SSL_CTX_use_serverinfo_file() which are also vulnerable. Some OpenSSL internal uses of these functions are not vulnerable because the caller does not free the header argument if PEM_read_bio_ex() returns a failure code. These locations include the PEM_read_bio_TYPE() functions as well as the decoders introduced in OpenSSL 3.0. The OpenSSL asn1parse command line application is also impacted by this issue.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-415"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:2165",
+            "https://access.redhat.com/security/cve/CVE-2022-4450",
+            "https://bugzilla.redhat.com/1960321",
+            "https://bugzilla.redhat.com/2164440",
+            "https://bugzilla.redhat.com/2164487",
+            "https://bugzilla.redhat.com/2164492",
+            "https://bugzilla.redhat.com/2164494",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164440",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164487",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164492",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164494",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4304",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4450",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0215",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0286",
+            "https://errata.almalinux.org/9/ALSA-2023-2165.html",
+            "https://errata.rockylinux.org/RLSA-2023:1405",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=63bcf189be73a9cc1264059bed6f57974be74a83",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=bbcf509bd046b34cca19c766bbddc31683d0858b",
+            "https://github.com/advisories/GHSA-v5w6-wcm8-jm4q",
+            "https://linux.oracle.com/cve/CVE-2022-4450.html",
+            "https://linux.oracle.com/errata/ELSA-2023-2932.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-4450",
+            "https://rustsec.org/advisories/RUSTSEC-2023-0010.html",
+            "https://ubuntu.com/security/notices/USN-5844-1",
+            "https://www.cve.org/CVERecord?id=CVE-2022-4450",
+            "https://www.openssl.org/news/secadv/20230207.txt"
+          ],
+          "PublishedDate": "2023-02-08T20:15:00Z",
+          "LastModifiedDate": "2023-07-19T00:57:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-0215",
+          "PkgID": "openssl-libs@1.1.1k-7.el8_6.x86_64",
+          "PkgName": "openssl-libs",
+          "InstalledVersion": "1:1.1.1k-7.el8_6",
+          "FixedVersion": "1:1.1.1k-9.el8_7",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-0215",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "use-after-free following BIO_new_NDEF",
+          "Description": "The public API function BIO_new_NDEF is a helper function used for streaming\nASN.1 data via a BIO. It is primarily used internally to OpenSSL to support the\nSMIME, CMS and PKCS7 streaming capabilities, but may also be called directly by\nend user applications.\n\nThe function receives a BIO from the caller, prepends a new BIO_f_asn1 filter\nBIO onto the front of it to form a BIO chain, and then returns the new head of\nthe BIO chain to the caller. Under certain conditions, for example if a CMS\nrecipient public key is invalid, the new filter BIO is freed and the function\nreturns a NULL result indicating a failure. However, in this case, the BIO chain\nis not properly cleaned up and the BIO passed by the caller still retains\ninternal pointers to the previously freed filter BIO. If the caller then goes on\nto call BIO_pop() on the BIO then a use-after-free will occur. This will most\nlikely result in a crash.\n\n\n\nThis scenario occurs directly in the internal function B64_write_ASN1() which\nmay cause BIO_new_NDEF() to be called and will subsequently call BIO_pop() on\nthe BIO. This internal function is in turn called by the public API functions\nPEM_write_bio_ASN1_stream, PEM_write_bio_CMS_stream, PEM_write_bio_PKCS7_stream,\nSMIME_write_ASN1, SMIME_write_CMS and SMIME_write_PKCS7.\n\nOther public API functions that may be impacted by this include\ni2d_ASN1_bio_stream, BIO_new_CMS, BIO_new_PKCS7, i2d_CMS_bio_stream and\ni2d_PKCS7_bio_stream.\n\nThe OpenSSL cms and smime command line applications are similarly affected.\n\n\n\n",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:2165",
+            "https://access.redhat.com/security/cve/CVE-2023-0215",
+            "https://bugzilla.redhat.com/1960321",
+            "https://bugzilla.redhat.com/2164440",
+            "https://bugzilla.redhat.com/2164487",
+            "https://bugzilla.redhat.com/2164492",
+            "https://bugzilla.redhat.com/2164494",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164440",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164487",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164492",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164494",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4304",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4450",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0215",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0286",
+            "https://errata.almalinux.org/9/ALSA-2023-2165.html",
+            "https://errata.rockylinux.org/RLSA-2023:1405",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=8818064ce3c3c0f1b740a5aaba2a987e75bfbafd",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=9816136fe31d92ace4037d5da5257f763aeeb4eb",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=c3829dd8825c654652201e16f8a0a0c46ee3f344",
+            "https://github.com/advisories/GHSA-r7jw-wp68-3xch",
+            "https://linux.oracle.com/cve/CVE-2023-0215.html",
+            "https://linux.oracle.com/errata/ELSA-2023-2932.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-0215",
+            "https://rustsec.org/advisories/RUSTSEC-2023-0009.html",
+            "https://security.netapp.com/advisory/ntap-20230427-0007/",
+            "https://security.netapp.com/advisory/ntap-20230427-0009/",
+            "https://ubuntu.com/security/notices/USN-5844-1",
+            "https://ubuntu.com/security/notices/USN-5845-1",
+            "https://ubuntu.com/security/notices/USN-5845-2",
+            "https://www.cve.org/CVERecord?id=CVE-2023-0215",
+            "https://www.openssl.org/news/secadv/20230207.txt"
+          ],
+          "PublishedDate": "2023-02-08T20:15:00Z",
+          "LastModifiedDate": "2023-07-19T00:55:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-0286",
+          "PkgID": "openssl-libs@1.1.1k-7.el8_6.x86_64",
+          "PkgName": "openssl-libs",
+          "InstalledVersion": "1:1.1.1k-7.el8_6",
+          "FixedVersion": "1:1.1.1k-9.el8_7",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-0286",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "X.400 address type confusion in X.509 GeneralName",
+          "Description": "There is a type confusion vulnerability relating to X.400 address processing inside an X.509 GeneralName. X.400 addresses were parsed as an ASN1_STRING but the public structure definition for GENERAL_NAME incorrectly specified the type of the x400Address field as ASN1_TYPE. This field is subsequently interpreted by the OpenSSL function GENERAL_NAME_cmp as an ASN1_TYPE rather than an ASN1_STRING. When CRL checking is enabled (i.e. the application sets the X509_V_FLAG_CRL_CHECK flag), this vulnerability may allow an attacker to pass arbitrary pointers to a memcmp call, enabling them to read memory contents or enact a denial of service. In most cases, the attack requires the attacker to provide both the certificate chain and CRL, neither of which need to have a valid signature. If the attacker only controls one of these inputs, the other input must already contain an X.400 address as a CRL distribution point, which is uncommon. As such, this vulnerability is most likely to only affect applications which have implemented their own functionality for retrieving CRLs over a network.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-843"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V3Score": 7.4
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V3Score": 7.4
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:2165",
+            "https://access.redhat.com/security/cve/CVE-2023-0286",
+            "https://access.redhat.com/security/cve/cve-2023-0286",
+            "https://bugzilla.redhat.com/1960321",
+            "https://bugzilla.redhat.com/2164440",
+            "https://bugzilla.redhat.com/2164487",
+            "https://bugzilla.redhat.com/2164492",
+            "https://bugzilla.redhat.com/2164494",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164440",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164487",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164492",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164494",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4304",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4450",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0215",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0286",
+            "https://errata.almalinux.org/9/ALSA-2023-2165.html",
+            "https://errata.rockylinux.org/RLSA-2023:1405",
+            "https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.6.2-relnotes.txt",
+            "https://ftp.openbsd.org/pub/OpenBSD/patches/7.2/common/018_x509.patch.sig",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2c6c9d439b484e1ba9830d8454a34fa4f80fdfe9",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2f7530077e0ef79d98718138716bc51ca0cad658",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=fd2af07dc083a350c959147097003a14a5e8ac4d",
+            "https://github.com/advisories/GHSA-x4qr-2fvf-3mr5",
+            "https://github.com/pyca/cryptography/security/advisories/GHSA-x4qr-2fvf-3mr5",
+            "https://linux.oracle.com/cve/CVE-2023-0286.html",
+            "https://linux.oracle.com/errata/ELSA-2023-2932.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-0286",
+            "https://rustsec.org/advisories/RUSTSEC-2023-0006.html",
+            "https://ubuntu.com/security/notices/USN-5844-1",
+            "https://ubuntu.com/security/notices/USN-5845-1",
+            "https://ubuntu.com/security/notices/USN-5845-2",
+            "https://www.cve.org/CVERecord?id=CVE-2023-0286",
+            "https://www.openssl.org/news/secadv/20230207.txt"
+          ],
+          "PublishedDate": "2023-02-08T20:15:00Z",
+          "LastModifiedDate": "2023-07-19T00:54:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2020-24736",
+          "PkgID": "sqlite-libs@3.26.0-17.el8_7.x86_64",
+          "PkgName": "sqlite-libs",
+          "InstalledVersion": "3.26.0-17.el8_7",
+          "FixedVersion": "3.26.0-18.0.1.el8_8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2020-24736",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "Crash due to misuse of window functions.",
+          "Description": "Buffer Overflow vulnerability found in SQLite3 v.3.27.1 and before allows a local attacker to cause a denial of service via a crafted script.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-120"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 6.2
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:3840",
+            "https://access.redhat.com/security/cve/CVE-2020-24736",
+            "https://bugzilla.redhat.com/2186385",
+            "https://errata.almalinux.org/8/ALSA-2023-3840.html",
+            "https://linux.oracle.com/cve/CVE-2020-24736.html",
+            "https://linux.oracle.com/errata/ELSA-2023-3840.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-24736",
+            "https://security.netapp.com/advisory/ntap-20230526-0005/",
+            "https://www.cve.org/CVERecord?id=CVE-2020-24736",
+            "https://www.sqlite.org/src/info/4feb3159c6bc3f7e33959"
+          ],
+          "PublishedDate": "2023-04-11T18:15:00Z",
+          "LastModifiedDate": "2023-05-26T20:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-4415",
+          "PkgID": "systemd-libs@239-68.0.2.el8_7.2.x86_64",
+          "PkgName": "systemd-libs",
+          "InstalledVersion": "239-68.0.2.el8_7.2",
+          "FixedVersion": "239-68.0.2.el8_7.4",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-4415",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "systemd: local information leak due to systemd-coredump not respecting fs.suid_dumpable kernel setting",
+          "Description": "A vulnerability was found in systemd. This security flaw can cause a local information leak due to systemd-coredump not respecting the fs.suid_dumpable kernel setting.",
+          "Severity": "MEDIUM",
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:0954",
+            "https://access.redhat.com/security/cve/CVE-2022-4415",
+            "https://bugzilla.redhat.com/2149063",
+            "https://bugzilla.redhat.com/2155515",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2155515",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2164049",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4415",
+            "https://errata.almalinux.org/9/ALSA-2023-0954.html",
+            "https://errata.rockylinux.org/RLSA-2023:0837",
+            "https://github.com/systemd/systemd/commit/b7641425659243c09473cd8fb3aef2c0d4a3eb9c",
+            "https://linux.oracle.com/cve/CVE-2022-4415.html",
+            "https://linux.oracle.com/errata/ELSA-2023-0954.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-4415",
+            "https://ubuntu.com/security/notices/USN-5928-1",
+            "https://www.cve.org/CVERecord?id=CVE-2022-4415",
+            "https://www.openwall.com/lists/oss-security/2022/12/21/3"
+          ],
+          "PublishedDate": "2023-01-11T15:15:00Z",
+          "LastModifiedDate": "2023-02-02T16:19:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-26604",
+          "PkgID": "systemd-libs@239-68.0.2.el8_7.2.x86_64",
+          "PkgName": "systemd-libs",
+          "InstalledVersion": "239-68.0.2.el8_7.2",
+          "FixedVersion": "239-74.0.4.el8_8.2",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-26604",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "privilege escalation via the less pager",
+          "Description": "systemd before 247 does not adequately block local privilege escalation for some Sudo configurations, e.g., plausible sudoers files in which the \"systemctl status\" command may be executed. Specifically, systemd does not set LESSSECURE to 1, and thus other programs may be launched from the less program. This presents a substantial security risk when running systemctl from Sudo, because less executes as root when the terminal size is too small to show the complete systemctl output.",
+          "Severity": "MEDIUM",
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
+              "V3Score": 7.1
+            }
+          },
+          "References": [
+            "http://packetstormsecurity.com/files/174130/systemd-246-Local-Root-Privilege-Escalation.html",
+            "https://access.redhat.com/errata/RHSA-2023:3837",
+            "https://access.redhat.com/security/cve/CVE-2023-26604",
+            "https://blog.compass-security.com/2012/10/dangerous-sudoers-entries-part-2-insecure-functionality/",
+            "https://bugzilla.redhat.com/2175611",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-26604",
+            "https://errata.almalinux.org/8/ALSA-2023-3837.html",
+            "https://github.com/systemd/systemd/blob/main/NEWS#L4335-L4340",
+            "https://github.com/systemd/systemd/issues/5666",
+            "https://linux.oracle.com/cve/CVE-2023-26604.html",
+            "https://linux.oracle.com/errata/ELSA-2023-3837.html",
+            "https://lists.debian.org/debian-lts-announce/2023/03/msg00032.html",
+            "https://medium.com/@zenmoviefornotification/saidov-maxim-cve-2023-26604-c1232a526ba7",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-26604",
+            "https://security.netapp.com/advisory/ntap-20230505-0009/",
+            "https://www.cve.org/CVERecord?id=CVE-2023-26604"
+          ],
+          "PublishedDate": "2023-03-03T16:15:00Z",
+          "LastModifiedDate": "2023-08-11T15:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-48303",
+          "PkgID": "tar@1.30-6.el8.x86_64",
+          "PkgName": "tar",
+          "InstalledVersion": "2:1.30-6.el8",
+          "FixedVersion": "2:1.30-6.el8_7.1",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8"
+          },
+          "SeveritySource": "oracle-oval",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-48303",
+          "DataSource": {
+            "ID": "oracle-oval",
+            "Name": "Oracle Linux OVAL definitions",
+            "URL": "https://linux.oracle.com/security/oval/"
+          },
+          "Title": "heap buffer overflow at from_header() in list.c via specially crafted checksum",
+          "Description": "GNU Tar through 1.34 has a one-byte out-of-bounds read that results in use of uninitialized memory for a conditional jump. Exploitation to change the flow of control has not been demonstrated. The issue occurs in from_header in list.c via a V7 archive in which mtime has approximately 11 whitespace characters.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:0959",
+            "https://access.redhat.com/security/cve/CVE-2022-48303",
+            "https://bugzilla.redhat.com/2149722",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2149722",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-48303",
+            "https://errata.almalinux.org/9/ALSA-2023-0959.html",
+            "https://errata.rockylinux.org/RLSA-2023:0842",
+            "https://linux.oracle.com/cve/CVE-2022-48303.html",
+            "https://linux.oracle.com/errata/ELSA-2023-0959.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/CRY7VEL4AIG3GLIEVCTOXRZNSVYDYYUD/",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/X5VQYCO52Z7GAVCLRYUITN7KXHLRZQS4/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-48303",
+            "https://savannah.gnu.org/bugs/?62387",
+            "https://savannah.gnu.org/patch/?10307",
+            "https://ubuntu.com/security/notices/USN-5900-1",
+            "https://ubuntu.com/security/notices/USN-5900-2",
+            "https://www.cve.org/CVERecord?id=CVE-2022-48303"
+          ],
+          "PublishedDate": "2023-01-30T04:15:00Z",
+          "LastModifiedDate": "2023-05-30T17:16:00Z"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "caddy",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "OS": {
+      "Family": "alpine",
+      "Name": "3.18.3"
+    },
+    "ImageID": "sha256:e1e1b7ae170b7d7d7e524717fe978e0090023cc82a7d9ffe48e344b0351a3ee1",
+    "DiffIDs": [
+      "sha256:4693057ce2364720d39e57e85a5b8e0bd9ac3573716237736d6470ec5b7b7230",
+      "sha256:45988bac1c4c12dc5d0d8f16c0e679859e88d9e07185676c7bed242d3dfa1784",
+      "sha256:b3ddf922e85fe7375f7ac0316bdcd286c4d4aa5c95f4364f3819338c30a57ffc",
+      "sha256:2aac85e55e5be96d92defae77dc5497c5c97b782d3b42de93d27184c08161b3a"
+    ],
+    "RepoTags": [
+      "caddy:latest"
+    ],
+    "RepoDigests": [
+      "caddy@sha256:2332c4ebc4ae778b9697043d3fa3aaef6879dd17abc03200285af9d315353008"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "container": "bc4167ef5144bc41a9943459f42cc56079882c9fe2df1b132d845125eee89f6d",
+      "created": "2023-08-17T22:19:42.702127207Z",
+      "docker_version": "20.10.23",
+      "history": [
+        {
+          "created": "2023-08-07T19:20:20Z",
+          "created_by": "/bin/sh -c #(nop) ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / "
+        },
+        {
+          "created": "2023-08-07T19:20:20Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/sh\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-07T20:09:18Z",
+          "created_by": "/bin/sh -c apk add --no-cache \tca-certificates \tlibcap \tmailcap"
+        },
+        {
+          "created": "2023-08-14T18:20:14Z",
+          "created_by": "/bin/sh -c set -eux; \tmkdir -p \t\t/config/caddy \t\t/data/caddy \t\t/etc/caddy \t\t/usr/share/caddy \t; \twget -O /etc/caddy/Caddyfile \"https://github.com/caddyserver/dist/raw/0c7fa00a87c65a6ef47ed36d841cd223682a2a2c/config/Caddyfile\"; \twget -O /usr/share/caddy/index.html \"https://github.com/caddyserver/dist/raw/0c7fa00a87c65a6ef47ed36d841cd223682a2a2c/welcome/index.html\""
+        },
+        {
+          "created": "2023-08-17T22:19:38Z",
+          "created_by": "/bin/sh -c #(nop)  ENV CADDY_VERSION=v2.7.4",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-17T22:19:41Z",
+          "created_by": "/bin/sh -c set -eux; \tapkArch=\"$(apk --print-arch)\"; \tcase \"$apkArch\" in \t\tx86_64)  binArch='amd64'; checksum='68cc53c79b88da5f1a33f5a1e1da7fbac5ad041380e91e27663b44e0cb2d8e07e08690295e86e9e65a37472b52f7d95f84f383ee0b8f3d5e1bd4b755d3990e6a' ;; \t\tarmhf)   binArch='armv6'; checksum='e6db35a9a2d78a8375d287bb1e4dc37f21eeadd5e41ad0c4adc2e35d3f80e061602d3e9c498ac4a4956754ad7be8c5f0489395db2c9729782906d771e528c898' ;; \t\tarmv7)   binArch='armv7'; checksum='5e94a538e9f9d62da2cdfae04294e943800ced348a66fad13ab6c99aa8184485a1ceba2dbcf13d996f4a4bad1a49e2774b880182b0edcf1a112b1001c552e424' ;; \t\taarch64) binArch='arm64'; checksum='eb9be2b3d09351d97843a4e2b73f36a4d36d3cb689dd580b5706b243fb66d0dc8a04460fd4a87dea772442c9fe7a1cddb0022e085be663f3d1e12127e3295d9d' ;; \t\tppc64el|ppc64le) binArch='ppc64le'; checksum='3accb7bbfe23d33057bf023951b3ccddd4cf1708314adad71aa2f298581da293af1bc817ff346248c895499908de7ced661f64a4d115b41657630e14cc8f62a7' ;; \t\ts390x)   binArch='s390x'; checksum='73c4961582ddc4a0d013c7af85642cf68a7bb0069e04aabba28ff3270f86853b394277d90b7b971695b949087e8d3fb50661da03953e632705e3f63c6e7acdb8' ;; \t\t*) echo \u003e\u00262 \"error: unsupported architecture ($apkArch)\"; exit 1 ;;\tesac; \twget -O /tmp/caddy.tar.gz \"https://github.com/caddyserver/caddy/releases/download/v2.7.4/caddy_2.7.4_linux_${binArch}.tar.gz\"; \techo \"$checksum  /tmp/caddy.tar.gz\" | sha512sum -c; \ttar x -z -f /tmp/caddy.tar.gz -C /usr/bin caddy; \trm -f /tmp/caddy.tar.gz; \tsetcap cap_net_bind_service=+ep /usr/bin/caddy; \tchmod +x /usr/bin/caddy; \tcaddy version"
+        },
+        {
+          "created": "2023-08-17T22:19:41Z",
+          "created_by": "/bin/sh -c #(nop)  ENV XDG_CONFIG_HOME=/config",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-17T22:19:41Z",
+          "created_by": "/bin/sh -c #(nop)  ENV XDG_DATA_HOME=/data",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-17T22:19:41Z",
+          "created_by": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.version=v2.7.4",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-17T22:19:41Z",
+          "created_by": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.title=Caddy",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-17T22:19:41Z",
+          "created_by": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.description=a powerful, enterprise-ready, open source web server with automatic HTTPS written in Go",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-17T22:19:41Z",
+          "created_by": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.url=https://caddyserver.com",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-17T22:19:41Z",
+          "created_by": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.documentation=https://caddyserver.com/docs",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-17T22:19:41Z",
+          "created_by": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.vendor=Light Code Labs",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-17T22:19:42Z",
+          "created_by": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.licenses=Apache-2.0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-17T22:19:42Z",
+          "created_by": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.source=https://github.com/caddyserver/caddy-docker",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-17T22:19:42Z",
+          "created_by": "/bin/sh -c #(nop)  EXPOSE 80",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-17T22:19:42Z",
+          "created_by": "/bin/sh -c #(nop)  EXPOSE 443",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-17T22:19:42Z",
+          "created_by": "/bin/sh -c #(nop)  EXPOSE 443/udp",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-17T22:19:42Z",
+          "created_by": "/bin/sh -c #(nop)  EXPOSE 2019",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-17T22:19:42Z",
+          "created_by": "/bin/sh -c #(nop) WORKDIR /srv",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-17T22:19:42Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"caddy\" \"run\" \"--config\" \"/etc/caddy/Caddyfile\" \"--adapter\" \"caddyfile\"]",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:4693057ce2364720d39e57e85a5b8e0bd9ac3573716237736d6470ec5b7b7230",
+          "sha256:45988bac1c4c12dc5d0d8f16c0e679859e88d9e07185676c7bed242d3dfa1784",
+          "sha256:b3ddf922e85fe7375f7ac0316bdcd286c4d4aa5c95f4364f3819338c30a57ffc",
+          "sha256:2aac85e55e5be96d92defae77dc5497c5c97b782d3b42de93d27184c08161b3a"
+        ]
+      },
+      "config": {
+        "Cmd": [
+          "caddy",
+          "run",
+          "--config",
+          "/etc/caddy/Caddyfile",
+          "--adapter",
+          "caddyfile"
+        ],
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "CADDY_VERSION=v2.7.4",
+          "XDG_CONFIG_HOME=/config",
+          "XDG_DATA_HOME=/data"
+        ],
+        "Image": "sha256:9d32ba2f326a7f963fde3cd9576927989aa228d5dd2e338454863551f8f8b036",
+        "Labels": {
+          "org.opencontainers.image.description": "a powerful, enterprise-ready, open source web server with automatic HTTPS written in Go",
+          "org.opencontainers.image.documentation": "https://caddyserver.com/docs",
+          "org.opencontainers.image.licenses": "Apache-2.0",
+          "org.opencontainers.image.source": "https://github.com/caddyserver/caddy-docker",
+          "org.opencontainers.image.title": "Caddy",
+          "org.opencontainers.image.url": "https://caddyserver.com",
+          "org.opencontainers.image.vendor": "Light Code Labs",
+          "org.opencontainers.image.version": "v2.7.4"
+        },
+        "WorkingDir": "/srv"
+      }
+    }
+  },
+  "Results": [
+    {
+      "Target": "caddy (alpine 3.18.3)",
+      "Class": "os-pkgs",
+      "Type": "alpine"
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "vulnerabilities": [],
+  "ok": true,
+  "dependencyCount": 70,
+  "org": "sbs2001-bmm",
+  "policy": "# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.\nversion: v1.25.1\nignore: {}\npatch: {}\n",
+  "isPrivate": true,
+  "licensesPolicy": {
+    "severities": {},
+    "orgLicenseRules": {
+      "AGPL-1.0": {
+        "licenseType": "AGPL-1.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "AGPL-3.0": {
+        "licenseType": "AGPL-3.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "Artistic-1.0": {
+        "licenseType": "Artistic-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "Artistic-2.0": {
+        "licenseType": "Artistic-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "CDDL-1.0": {
+        "licenseType": "CDDL-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "CPOL-1.02": {
+        "licenseType": "CPOL-1.02",
+        "severity": "high",
+        "instructions": ""
+      },
+      "EPL-1.0": {
+        "licenseType": "EPL-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "GPL-2.0": {
+        "licenseType": "GPL-2.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "GPL-3.0": {
+        "licenseType": "GPL-3.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "LGPL-2.0": {
+        "licenseType": "LGPL-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "LGPL-2.1": {
+        "licenseType": "LGPL-2.1",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "LGPL-3.0": {
+        "licenseType": "LGPL-3.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MPL-1.1": {
+        "licenseType": "MPL-1.1",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MPL-2.0": {
+        "licenseType": "MPL-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MS-RL": {
+        "licenseType": "MS-RL",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "SimPL-2.0": {
+        "licenseType": "SimPL-2.0",
+        "severity": "high",
+        "instructions": ""
+      }
+    }
+  },
+  "packageManager": "apk",
+  "ignoreSettings": {
+    "adminOnly": false,
+    "reasonRequired": false,
+    "disregardFilesystemIgnores": false
+  },
+  "docker": {
+    "baseImage": "alpine:3.18.2",
+    "baseImageRemediation": {
+      "code": "REMEDIATION_AVAILABLE",
+      "advice": [
+        {
+          "message": "Base Image     Vulnerabilities  Severity\nalpine:3.18.2  3                0 critical, 0 high, 3 medium, 0 low\n"
+        },
+        {
+          "message": "Recommendations for base image upgrade:\n",
+          "bold": true
+        },
+        {
+          "message": "Minor upgrades",
+          "bold": true
+        },
+        {
+          "message": "Base Image     Vulnerabilities  Severity\nalpine:3.18.3  0                0 critical, 0 high, 0 medium, 0 low\n"
+        }
+      ]
+    }
+  },
+  "summary": "No known operating system vulnerabilities",
+  "filesystemPolicy": false,
+  "uniqueCount": 0,
+  "projectName": "docker-image|hashicorp/consul",
+  "platform": "linux/amd64",
+  "hasUnknownVersions": false,
+  "path": "hashicorp/consul/consul",
+  "applications": [
+    {
+      "vulnerabilities": [],
+      "ok": true,
+      "dependencyCount": 1136,
+      "org": "sbs2001-bmm",
+      "policy": "# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.\nversion: v1.25.1\nignore: {}\npatch: {}\n",
+      "isPrivate": true,
+      "licensesPolicy": {
+        "severities": {},
+        "orgLicenseRules": {
+          "AGPL-1.0": {
+            "licenseType": "AGPL-1.0",
+            "severity": "high",
+            "instructions": ""
+          },
+          "AGPL-3.0": {
+            "licenseType": "AGPL-3.0",
+            "severity": "high",
+            "instructions": ""
+          },
+          "Artistic-1.0": {
+            "licenseType": "Artistic-1.0",
+            "severity": "medium",
+            "instructions": ""
+          },
+          "Artistic-2.0": {
+            "licenseType": "Artistic-2.0",
+            "severity": "medium",
+            "instructions": ""
+          },
+          "CDDL-1.0": {
+            "licenseType": "CDDL-1.0",
+            "severity": "medium",
+            "instructions": ""
+          },
+          "CPOL-1.02": {
+            "licenseType": "CPOL-1.02",
+            "severity": "high",
+            "instructions": ""
+          },
+          "EPL-1.0": {
+            "licenseType": "EPL-1.0",
+            "severity": "medium",
+            "instructions": ""
+          },
+          "GPL-2.0": {
+            "licenseType": "GPL-2.0",
+            "severity": "high",
+            "instructions": ""
+          },
+          "GPL-3.0": {
+            "licenseType": "GPL-3.0",
+            "severity": "high",
+            "instructions": ""
+          },
+          "LGPL-2.0": {
+            "licenseType": "LGPL-2.0",
+            "severity": "medium",
+            "instructions": ""
+          },
+          "LGPL-2.1": {
+            "licenseType": "LGPL-2.1",
+            "severity": "medium",
+            "instructions": ""
+          },
+          "LGPL-3.0": {
+            "licenseType": "LGPL-3.0",
+            "severity": "medium",
+            "instructions": ""
+          },
+          "MPL-1.1": {
+            "licenseType": "MPL-1.1",
+            "severity": "medium",
+            "instructions": ""
+          },
+          "MPL-2.0": {
+            "licenseType": "MPL-2.0",
+            "severity": "medium",
+            "instructions": ""
+          },
+          "MS-RL": {
+            "licenseType": "MS-RL",
+            "severity": "medium",
+            "instructions": ""
+          },
+          "SimPL-2.0": {
+            "licenseType": "SimPL-2.0",
+            "severity": "high",
+            "instructions": ""
+          }
+        }
+      },
+      "packageManager": "gomodules",
+      "ignoreSettings": {
+        "adminOnly": false,
+        "reasonRequired": false,
+        "disregardFilesystemIgnores": false
+      },
+      "docker": {},
+      "summary": "No known vulnerabilities",
+      "filesystemPolicy": false,
+      "uniqueCount": 0,
+      "targetFile": "/bin/consul",
+      "projectName": "github.com/hashicorp/consul",
+      "displayTargetFile": "/bin/consul",
+      "hasUnknownVersions": false,
+      "path": "hashicorp/consul/hashicorp/consul"
+    }
+  ]
+}

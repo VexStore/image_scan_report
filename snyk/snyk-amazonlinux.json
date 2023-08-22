@@ -1,0 +1,397 @@
+{
+  "vulnerabilities": [
+    {
+      "id": "SNYK-AMZN2023-LIBNGHTTP2-5836702",
+      "cpes": [],
+      "title": "Resource Exhaustion",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "credit": [
+        ""
+      ],
+      "semver": {
+        "vulnerable": [
+          "<0:1.55.1-1.amzn2023.0.1"
+        ]
+      },
+      "exploit": "Not Defined",
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "linux",
+      "severity": "high",
+      "cvssScore": 7.5,
+      "malicious": false,
+      "isDisputed": false,
+      "references": [
+        {
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-35945",
+          "title": "CVE-2023-35945"
+        },
+        {
+          "url": "https://github.com/envoyproxy/envoy/security/advisories/GHSA-jfxv-29pc-x22r",
+          "title": "security-advisories@github.com"
+        },
+        {
+          "url": "https://github.com/nghttp2/nghttp2/blob/e7f59406556c80904b81b593d38508591bb7523a/lib/nghttp2_session.c%23L3346",
+          "title": "security-advisories@github.com"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 7.5,
+          "modificationTime": "2023-07-14T13:32:08.527368Z"
+        },
+        {
+          "assigner": "NVD",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 7.5,
+          "modificationTime": "2023-07-26T01:12:41.233561Z"
+        }
+      ],
+      "description": "## NVD Description\n**_Note:_** _Versions mentioned in the description apply only to the upstream `libnghttp2` package and not the `libnghttp2` package as distributed by `Amazon-Linux:2023`._\n_See `How to fix?` for `Amazon-Linux:2023` relevant fixed versions and status._\n\nEnvoy is a cloud-native high-performance edge/middle/service proxy. Envoy’s HTTP/2 codec may leak a header map and bookkeeping structures upon receiving `RST_STREAM` immediately followed by the `GOAWAY` frames from an upstream server. In nghttp2, cleanup of pending requests due to receipt of the `GOAWAY` frame skips de-allocation of the bookkeeping structure and pending compressed header. The error return [code path] is taken if connection is already marked for not sending more requests due to `GOAWAY` frame. The clean-up code is right after the return statement, causing memory leak. Denial of service through memory exhaustion. This vulnerability was patched in versions(s) 1.26.3, 1.25.8, 1.24.9, 1.23.11.\n## Remediation\nUpgrade `Amazon-Linux:2023` `libnghttp2` to version 0:1.55.1-1.amzn2023.0.1 or higher.  \nThis issue was patched in `ALAS2023-2023-278`.\n## References\n- [CVE-2023-35945](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-35945)\n- [security-advisories@github.com](https://github.com/envoyproxy/envoy/security/advisories/GHSA-jfxv-29pc-x22r)\n- [security-advisories@github.com](https://github.com/nghttp2/nghttp2/blob/e7f59406556c80904b81b593d38508591bb7523a/lib/nghttp2_session.c#L3346)\n",
+      "epssDetails": {
+        "percentile": "0.14002",
+        "probability": "0.00046",
+        "modelVersion": "v2023.03.01"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2023-35945"
+        ],
+        "CWE": [
+          "CWE-400"
+        ],
+        "ALAS2023": [
+          "ALAS2023-2023-278"
+        ],
+        "ALTERNATIVE": []
+      },
+      "nvdSeverity": "high",
+      "packageName": "libnghttp2",
+      "creationTime": "2023-08-10T06:45:12.518827Z",
+      "disclosureTime": "2023-07-13T21:15:08.880000Z",
+      "packageManager": "amzn:2023",
+      "publicationTime": "2023-08-10T06:44:33.527727Z",
+      "modificationTime": "2023-08-10T06:45:12.518838Z",
+      "socialTrendAlert": false,
+      "relativeImportance": "Important",
+      "severityWithCritical": "high",
+      "from": [
+        "docker-image|amazonlinux@latest",
+        "libnghttp2@1.51.0-1.amzn2023"
+      ],
+      "upgradePath": [
+        false,
+        "libnghttp2@0:1.55.1-1.amzn2023.0.1"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "libnghttp2",
+      "version": "1.51.0-1.amzn2023",
+      "nearestFixedInVersion": "0:1.55.1-1.amzn2023.0.1"
+    },
+    {
+      "id": "SNYK-AMZN2023-PCRE2-5836763",
+      "cpes": [],
+      "title": "Integer Overflow or Wraparound",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "credit": [
+        ""
+      ],
+      "semver": {
+        "vulnerable": [
+          "<0:10.40-1.amzn2023.0.3"
+        ]
+      },
+      "exploit": "Not Defined",
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "linux",
+      "severity": "low",
+      "cvssScore": 7.5,
+      "malicious": false,
+      "isDisputed": false,
+      "references": [
+        {
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41409",
+          "title": "CVE-2022-41409"
+        },
+        {
+          "url": "https://github.com/PCRE2Project/pcre2/commit/94e1c001761373b7d9450768aa15d04c25547a35",
+          "title": "cve@mitre.org"
+        },
+        {
+          "url": "https://github.com/PCRE2Project/pcre2/issues/141",
+          "title": "cve@mitre.org"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "NVD",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 7.5,
+          "modificationTime": "2023-07-27T13:11:01.751024Z"
+        },
+        {
+          "assigner": "SUSE",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 5.9,
+          "modificationTime": "2023-08-17T11:02:09.723696Z"
+        }
+      ],
+      "description": "## NVD Description\n**_Note:_** _Versions mentioned in the description apply only to the upstream `pcre2` package and not the `pcre2` package as distributed by `Amazon-Linux:2023`._\n_See `How to fix?` for `Amazon-Linux:2023` relevant fixed versions and status._\n\nInteger overflow vulnerability in pcre2test before 10.41 allows attackers to cause a denial of service or other unspecified impacts via negative input.\n## Remediation\nUpgrade `Amazon-Linux:2023` `pcre2` to version 0:10.40-1.amzn2023.0.3 or higher.  \nThis issue was patched in `ALAS2023-2023-286`.\n## References\n- [CVE-2022-41409](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41409)\n- [cve@mitre.org](https://github.com/PCRE2Project/pcre2/commit/94e1c001761373b7d9450768aa15d04c25547a35)\n- [cve@mitre.org](https://github.com/PCRE2Project/pcre2/issues/141)\n",
+      "epssDetails": {
+        "percentile": "0.14028",
+        "probability": "0.00046",
+        "modelVersion": "v2023.03.01"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2022-41409"
+        ],
+        "CWE": [
+          "CWE-190"
+        ],
+        "ALAS2023": [
+          "ALAS2023-2023-286"
+        ],
+        "ALTERNATIVE": []
+      },
+      "nvdSeverity": "high",
+      "packageName": "pcre2",
+      "creationTime": "2023-08-10T06:45:49.633045Z",
+      "disclosureTime": "2023-07-18T14:15:12.197000Z",
+      "packageManager": "amzn:2023",
+      "publicationTime": "2023-08-10T06:45:45.719535Z",
+      "modificationTime": "2023-08-17T11:02:09.723696Z",
+      "socialTrendAlert": false,
+      "relativeImportance": "Low",
+      "severityWithCritical": "low",
+      "from": [
+        "docker-image|amazonlinux@latest",
+        "pcre2@10.40-1.amzn2023.0.2"
+      ],
+      "upgradePath": [
+        false,
+        "pcre2@0:10.40-1.amzn2023.0.3"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "pcre2",
+      "version": "10.40-1.amzn2023.0.2",
+      "nearestFixedInVersion": "0:10.40-1.amzn2023.0.3"
+    },
+    {
+      "id": "SNYK-AMZN2023-PCRE2SYNTAX-5836761",
+      "cpes": [],
+      "title": "Integer Overflow or Wraparound",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "credit": [
+        ""
+      ],
+      "semver": {
+        "vulnerable": [
+          "<0:10.40-1.amzn2023.0.3"
+        ]
+      },
+      "exploit": "Not Defined",
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "linux",
+      "severity": "low",
+      "cvssScore": 7.5,
+      "malicious": false,
+      "isDisputed": false,
+      "references": [
+        {
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41409",
+          "title": "CVE-2022-41409"
+        },
+        {
+          "url": "https://github.com/PCRE2Project/pcre2/commit/94e1c001761373b7d9450768aa15d04c25547a35",
+          "title": "cve@mitre.org"
+        },
+        {
+          "url": "https://github.com/PCRE2Project/pcre2/issues/141",
+          "title": "cve@mitre.org"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "NVD",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 7.5,
+          "modificationTime": "2023-07-27T13:11:01.751024Z"
+        },
+        {
+          "assigner": "SUSE",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 5.9,
+          "modificationTime": "2023-08-17T11:02:09.723696Z"
+        }
+      ],
+      "description": "## NVD Description\n**_Note:_** _Versions mentioned in the description apply only to the upstream `pcre2-syntax` package and not the `pcre2-syntax` package as distributed by `Amazon-Linux:2023`._\n_See `How to fix?` for `Amazon-Linux:2023` relevant fixed versions and status._\n\nInteger overflow vulnerability in pcre2test before 10.41 allows attackers to cause a denial of service or other unspecified impacts via negative input.\n## Remediation\nUpgrade `Amazon-Linux:2023` `pcre2-syntax` to version 0:10.40-1.amzn2023.0.3 or higher.  \nThis issue was patched in `ALAS2023-2023-286`.\n## References\n- [CVE-2022-41409](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41409)\n- [cve@mitre.org](https://github.com/PCRE2Project/pcre2/commit/94e1c001761373b7d9450768aa15d04c25547a35)\n- [cve@mitre.org](https://github.com/PCRE2Project/pcre2/issues/141)\n",
+      "epssDetails": {
+        "percentile": "0.14028",
+        "probability": "0.00046",
+        "modelVersion": "v2023.03.01"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2022-41409"
+        ],
+        "CWE": [
+          "CWE-190"
+        ],
+        "ALAS2023": [
+          "ALAS2023-2023-286"
+        ],
+        "ALTERNATIVE": []
+      },
+      "nvdSeverity": "high",
+      "packageName": "pcre2-syntax",
+      "creationTime": "2023-08-10T06:45:47.031466Z",
+      "disclosureTime": "2023-07-18T14:15:12.197000Z",
+      "packageManager": "amzn:2023",
+      "publicationTime": "2023-08-10T06:45:45.719535Z",
+      "modificationTime": "2023-08-17T11:02:09.723696Z",
+      "socialTrendAlert": false,
+      "relativeImportance": "Low",
+      "severityWithCritical": "low",
+      "from": [
+        "docker-image|amazonlinux@latest",
+        "pcre2-syntax@10.40-1.amzn2023.0.2"
+      ],
+      "upgradePath": [
+        false,
+        "pcre2-syntax@0:10.40-1.amzn2023.0.3"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "pcre2-syntax",
+      "version": "10.40-1.amzn2023.0.2",
+      "nearestFixedInVersion": "0:10.40-1.amzn2023.0.3"
+    }
+  ],
+  "ok": false,
+  "dependencyCount": 103,
+  "org": "sbs2001-bmm",
+  "policy": "# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.\nversion: v1.25.1\nignore: {}\npatch: {}\n",
+  "isPrivate": true,
+  "licensesPolicy": {
+    "severities": {},
+    "orgLicenseRules": {
+      "AGPL-1.0": {
+        "licenseType": "AGPL-1.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "AGPL-3.0": {
+        "licenseType": "AGPL-3.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "Artistic-1.0": {
+        "licenseType": "Artistic-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "Artistic-2.0": {
+        "licenseType": "Artistic-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "CDDL-1.0": {
+        "licenseType": "CDDL-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "CPOL-1.02": {
+        "licenseType": "CPOL-1.02",
+        "severity": "high",
+        "instructions": ""
+      },
+      "EPL-1.0": {
+        "licenseType": "EPL-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "GPL-2.0": {
+        "licenseType": "GPL-2.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "GPL-3.0": {
+        "licenseType": "GPL-3.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "LGPL-2.0": {
+        "licenseType": "LGPL-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "LGPL-2.1": {
+        "licenseType": "LGPL-2.1",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "LGPL-3.0": {
+        "licenseType": "LGPL-3.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MPL-1.1": {
+        "licenseType": "MPL-1.1",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MPL-2.0": {
+        "licenseType": "MPL-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MS-RL": {
+        "licenseType": "MS-RL",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "SimPL-2.0": {
+        "licenseType": "SimPL-2.0",
+        "severity": "high",
+        "instructions": ""
+      }
+    }
+  },
+  "packageManager": "rpm",
+  "ignoreSettings": {
+    "adminOnly": false,
+    "reasonRequired": false,
+    "disregardFilesystemIgnores": false
+  },
+  "docker": {},
+  "summary": "3 vulnerable dependency paths",
+  "filesystemPolicy": false,
+  "filtered": {
+    "ignore": [],
+    "patch": []
+  },
+  "uniqueCount": 3,
+  "projectName": "docker-image|amazonlinux",
+  "platform": "linux/amd64",
+  "hasUnknownVersions": false,
+  "path": "amazonlinux"
+}

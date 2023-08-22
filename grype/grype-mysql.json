@@ -1,0 +1,2267 @@
+{
+ "matches": [
+  {
+   "vulnerability": {
+    "id": "GHSA-xqr8-7jwr-rhp7",
+    "dataSource": "https://github.com/advisories/GHSA-xqr8-7jwr-rhp7",
+    "namespace": "github:language:python",
+    "severity": "High",
+    "urls": [
+     "https://github.com/advisories/GHSA-xqr8-7jwr-rhp7"
+    ],
+    "description": "Removal of e-Tugra root certificate",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "metrics": {
+       "baseScore": 7.5,
+       "exploitabilityScore": 3.9,
+       "impactScore": 3.6
+      },
+      "vendorMetadata": {
+       "base_severity": "High",
+       "status": "N/A"
+      }
+     }
+    ],
+    "fix": {
+     "versions": [
+      "2023.7.22"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2023-37920",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-37920",
+     "namespace": "nvd:cpe",
+     "severity": "Critical",
+     "urls": [
+      "https://github.com/certifi/python-certifi/commit/8fb96ed81f71e7097ed11bc4d9b19afd7ea5c909",
+      "https://github.com/certifi/python-certifi/security/advisories/GHSA-xqr8-7jwr-rhp7",
+      "https://groups.google.com/a/mozilla.org/g/dev-security-policy/c/C-HrP1SEq1A",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5EX6NG7WUFNUKGFHLM35KHHU3GAKXRTG/"
+     ],
+     "description": "Certifi is a curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts. Certifi prior to version 2023.07.22 recognizes \"e-Tugra\" root certificates. e-Tugra's root certificates were subject to an investigation prompted by reporting of security issues in their systems. Certifi 2023.07.22 removes root certificates from \"e-Tugra\" from the root store.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 9.8,
+        "exploitabilityScore": 3.9,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "security-advisories@github.com",
+       "type": "Secondary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "python-matcher",
+     "searchedBy": {
+      "language": "python",
+      "namespace": "github:language:python",
+      "package": {
+       "name": "certifi",
+       "version": "2022.12.7"
+      }
+     },
+     "found": {
+      "versionConstraint": ">=2015.4.28,<2023.7.22 (python)",
+      "vulnerabilityID": "GHSA-xqr8-7jwr-rhp7"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "4935876df79aebc8",
+    "name": "certifi",
+    "version": "2022.12.7",
+    "type": "python",
+    "locations": [
+     {
+      "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/certifi-2022.12.7.dist-info/METADATA",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/certifi-2022.12.7.dist-info/RECORD",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/certifi-2022.12.7.dist-info/direct_url.json",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/certifi-2022.12.7.dist-info/top_level.txt",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     }
+    ],
+    "language": "python",
+    "licenses": [
+     "MPL-2.0"
+    ],
+    "cpes": [
+     "cpe:2.3:a:kenneth_reitz_project:python-certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitz_project:python_certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitzproject:python-certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitzproject:python_certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitz_project:certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-certifi:python-certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-certifi:python_certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_certifi:python-certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_certifi:python_certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitz:python-certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitz:python_certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitzproject:certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:me_project:python-certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:me_project:python_certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:meproject:python-certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:meproject:python_certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:certifi:python-certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:certifi:python_certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-certifi:certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_certifi:certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitz:certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python-certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python_certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:me_project:certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:me:python-certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:me:python_certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:meproject:certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:certifi:certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:me:certifi:2022.12.7:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:pypi/certifi@2022.12.7",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-43fp-rhv2-5gv8",
+    "dataSource": "https://github.com/advisories/GHSA-43fp-rhv2-5gv8",
+    "namespace": "github:language:python",
+    "severity": "Medium",
+    "urls": [
+     "https://github.com/advisories/GHSA-43fp-rhv2-5gv8"
+    ],
+    "description": "Certifi removing TrustCor root certificate",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:N/I:H/A:N",
+      "metrics": {
+       "baseScore": 6.8,
+       "exploitabilityScore": 2.3,
+       "impactScore": 4
+      },
+      "vendorMetadata": {
+       "base_severity": "Medium",
+       "status": "N/A"
+      }
+     }
+    ],
+    "fix": {
+     "versions": [
+      "2022.12.07"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-23491",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-23491",
+     "namespace": "nvd:cpe",
+     "severity": "High",
+     "urls": [
+      "https://github.com/certifi/python-certifi/security/advisories/GHSA-43fp-rhv2-5gv8",
+      "https://groups.google.com/a/mozilla.org/g/dev-security-policy/c/oxX69KFvsm4/m/yLohoVqtCgAJ"
+     ],
+     "description": "Certifi is a curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts. Certifi 2022.12.07 removes root certificates from \"TrustCor\" from the root store. These are in the process of being removed from Mozilla's trust store. TrustCor's root certificates are being removed pursuant to an investigation prompted by media reporting that TrustCor's ownership also operated a business that produced spyware. Conclusions of Mozilla's investigation can be found in the linked google group discussion.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "security-advisories@github.com",
+       "type": "Secondary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:N/I:H/A:N",
+       "metrics": {
+        "baseScore": 6.8,
+        "exploitabilityScore": 2.3,
+        "impactScore": 4
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "python-matcher",
+     "searchedBy": {
+      "language": "python",
+      "namespace": "github:language:python",
+      "package": {
+       "name": "certifi",
+       "version": "2022.12.7"
+      }
+     },
+     "found": {
+      "versionConstraint": ">=2017.11.05,<2022.12.07 (python)",
+      "vulnerabilityID": "GHSA-43fp-rhv2-5gv8"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "4935876df79aebc8",
+    "name": "certifi",
+    "version": "2022.12.7",
+    "type": "python",
+    "locations": [
+     {
+      "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/certifi-2022.12.7.dist-info/METADATA",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/certifi-2022.12.7.dist-info/RECORD",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/certifi-2022.12.7.dist-info/direct_url.json",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/certifi-2022.12.7.dist-info/top_level.txt",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     }
+    ],
+    "language": "python",
+    "licenses": [
+     "MPL-2.0"
+    ],
+    "cpes": [
+     "cpe:2.3:a:kenneth_reitz_project:python-certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitz_project:python_certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitzproject:python-certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitzproject:python_certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitz_project:certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-certifi:python-certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-certifi:python_certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_certifi:python-certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_certifi:python_certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitz:python-certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitz:python_certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitzproject:certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:me_project:python-certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:me_project:python_certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:meproject:python-certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:meproject:python_certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:certifi:python-certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:certifi:python_certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-certifi:certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_certifi:certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitz:certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python-certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python_certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:me_project:certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:me:python-certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:me:python_certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:meproject:certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:certifi:certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:certifi:2022.12.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:me:certifi:2022.12.7:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:pypi/certifi@2022.12.7",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-jm77-qphf-c4w8",
+    "dataSource": "https://github.com/advisories/GHSA-jm77-qphf-c4w8",
+    "namespace": "github:language:python",
+    "severity": "Low",
+    "urls": [
+     "https://github.com/advisories/GHSA-jm77-qphf-c4w8"
+    ],
+    "description": "pyca/cryptography's wheels include vulnerable OpenSSL",
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "41.0.3"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "python-matcher",
+     "searchedBy": {
+      "language": "python",
+      "namespace": "github:language:python",
+      "package": {
+       "name": "cryptography",
+       "version": "39.0.2"
+      }
+     },
+     "found": {
+      "versionConstraint": ">=0.8,<41.0.3 (python)",
+      "vulnerabilityID": "GHSA-jm77-qphf-c4w8"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "8f740d875c43d953",
+    "name": "cryptography",
+    "version": "39.0.2",
+    "type": "python",
+    "locations": [
+     {
+      "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/cryptography-39.0.2.dist-info/METADATA",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/cryptography-39.0.2.dist-info/RECORD",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/cryptography-39.0.2.dist-info/direct_url.json",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/cryptography-39.0.2.dist-info/top_level.txt",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     }
+    ],
+    "language": "python",
+    "licenses": [
+     "(Apache-2.0 OR BSD-3-Clause) AND PSF-2.0"
+    ],
+    "cpes": [
+     "cpe:2.3:a:python-cryptography_project:python-cryptography:39.0.2:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:pypi/cryptography@39.0.2",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-5cpq-8wj7-hf2v",
+    "dataSource": "https://github.com/advisories/GHSA-5cpq-8wj7-hf2v",
+    "namespace": "github:language:python",
+    "severity": "Low",
+    "urls": [
+     "https://github.com/advisories/GHSA-5cpq-8wj7-hf2v"
+    ],
+    "description": "Vulnerable OpenSSL included in cryptography wheels",
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "41.0.0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "python-matcher",
+     "searchedBy": {
+      "language": "python",
+      "namespace": "github:language:python",
+      "package": {
+       "name": "cryptography",
+       "version": "39.0.2"
+      }
+     },
+     "found": {
+      "versionConstraint": ">=0.5,<=40.0.2 (python)",
+      "vulnerabilityID": "GHSA-5cpq-8wj7-hf2v"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "8f740d875c43d953",
+    "name": "cryptography",
+    "version": "39.0.2",
+    "type": "python",
+    "locations": [
+     {
+      "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/cryptography-39.0.2.dist-info/METADATA",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/cryptography-39.0.2.dist-info/RECORD",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/cryptography-39.0.2.dist-info/direct_url.json",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/usr/lib/mysqlsh/lib/python3.9/site-packages/cryptography-39.0.2.dist-info/top_level.txt",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     }
+    ],
+    "language": "python",
+    "licenses": [
+     "(Apache-2.0 OR BSD-3-Clause) AND PSF-2.0"
+    ],
+    "cpes": [
+     "cpe:2.3:a:python-cryptography_project:python-cryptography:39.0.2:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:pypi/cryptography@39.0.2",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-vpvm-3wq2-2wvm",
+    "dataSource": "https://github.com/advisories/GHSA-vpvm-3wq2-2wvm",
+    "namespace": "github:language:go",
+    "severity": "High",
+    "urls": [
+     "https://github.com/advisories/GHSA-vpvm-3wq2-2wvm"
+    ],
+    "description": "Opencontainers runc Incorrect Authorization vulnerability",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "metrics": {
+       "baseScore": 7,
+       "exploitabilityScore": 1,
+       "impactScore": 5.9
+      },
+      "vendorMetadata": {
+       "base_severity": "High",
+       "status": "N/A"
+      }
+     }
+    ],
+    "fix": {
+     "versions": [
+      "1.1.5"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2023-27561",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-27561",
+     "namespace": "nvd:cpe",
+     "severity": "High",
+     "urls": [
+      "https://gist.github.com/LiveOverflow/c937820b688922eb127fb760ce06dab9",
+      "https://github.com/opencontainers/runc/issues/2197#issuecomment-1437617334",
+      "https://github.com/opencontainers/runc/issues/3751",
+      "https://lists.debian.org/debian-lts-announce/2023/03/msg00023.html",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ANUGDBJ7NBUMSUFZUSKU3ZMQYZ2Z3STN/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DHGVGGMKGZSJ7YO67TGGPFEHBYMS63VF/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/FNB2UEDIIJCRQW4WJLZOPQJZXCVSXMLD/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/FYVE3GB4OG3BNT5DLQHYO4M5SXX33AQ5/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/I6BF24VCZRFTYBTT3T7HDZUOTKOTNPLZ/"
+     ],
+     "description": "runc through 1.1.4 has Incorrect Access Control leading to Escalation of Privileges, related to libcontainer/rootfs_linux.go. To exploit this, an attacker must be able to spawn two containers with custom volume-mount configurations, and be able to run custom images. NOTE: this issue exists because of a CVE-2019-19921 regression.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 7,
+        "exploitabilityScore": 1,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "go-module-matcher",
+     "searchedBy": {
+      "language": "go",
+      "namespace": "github:language:go",
+      "package": {
+       "name": "github.com/opencontainers/runc",
+       "version": "v1.1.0"
+      }
+     },
+     "found": {
+      "versionConstraint": ">=1.0.0-rc95,<1.1.5 (unknown)",
+      "vulnerabilityID": "GHSA-vpvm-3wq2-2wvm"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "acbe2d30b51946b3",
+    "name": "github.com/opencontainers/runc",
+    "version": "v1.1.0",
+    "type": "go-module",
+    "locations": [
+     {
+      "path": "/usr/local/bin/gosu",
+      "layerID": "sha256:2b2a936e5f6b2ce8926ac90c3e371238dda0641a480789765b78af33220190d1"
+     }
+    ],
+    "language": "go",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:opencontainers:runc:v1.1.0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:golang/github.com/opencontainers/runc@v1.1.0",
+    "upstreams": [],
+    "metadataType": "GolangBinMetadata",
+    "metadata": {
+     "goCompiledVersion": "go1.18.2",
+     "architecture": "amd64",
+     "h1Digest": "h1:O9+X96OcDjkmmZyfaG996kV7yq8HsoU2h1XRRQcefG8=",
+     "mainModule": "github.com/tianon/gosu"
+    }
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-g2j6-57v7-gm8c",
+    "dataSource": "https://github.com/advisories/GHSA-g2j6-57v7-gm8c",
+    "namespace": "github:language:go",
+    "severity": "Medium",
+    "urls": [
+     "https://github.com/advisories/GHSA-g2j6-57v7-gm8c"
+    ],
+    "description": "runc AppArmor bypass with symlinked /proc",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L",
+      "metrics": {
+       "baseScore": 6.1,
+       "exploitabilityScore": 1.8,
+       "impactScore": 3.7
+      },
+      "vendorMetadata": {
+       "base_severity": "Medium",
+       "status": "N/A"
+      }
+     }
+    ],
+    "fix": {
+     "versions": [
+      "1.1.5"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2023-28642",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-28642",
+     "namespace": "nvd:cpe",
+     "severity": "High",
+     "urls": [
+      "https://github.com/opencontainers/runc/pull/3785",
+      "https://github.com/opencontainers/runc/security/advisories/GHSA-g2j6-57v7-gm8c"
+     ],
+     "description": "runc is a CLI tool for spawning and running containers according to the OCI specification. It was found that AppArmor can be bypassed when `/proc` inside the container is symlinked with a specific mount configuration. This issue has been fixed in runc version 1.1.5, by prohibiting symlinked `/proc`. See PR #3785 for details. users are advised to upgrade. Users unable to upgrade should avoid using an untrusted container image.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 7.8,
+        "exploitabilityScore": 1.8,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "security-advisories@github.com",
+       "type": "Secondary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L",
+       "metrics": {
+        "baseScore": 6.1,
+        "exploitabilityScore": 1.8,
+        "impactScore": 3.7
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "go-module-matcher",
+     "searchedBy": {
+      "language": "go",
+      "namespace": "github:language:go",
+      "package": {
+       "name": "github.com/opencontainers/runc",
+       "version": "v1.1.0"
+      }
+     },
+     "found": {
+      "versionConstraint": "<1.1.5 (unknown)",
+      "vulnerabilityID": "GHSA-g2j6-57v7-gm8c"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "acbe2d30b51946b3",
+    "name": "github.com/opencontainers/runc",
+    "version": "v1.1.0",
+    "type": "go-module",
+    "locations": [
+     {
+      "path": "/usr/local/bin/gosu",
+      "layerID": "sha256:2b2a936e5f6b2ce8926ac90c3e371238dda0641a480789765b78af33220190d1"
+     }
+    ],
+    "language": "go",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:opencontainers:runc:v1.1.0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:golang/github.com/opencontainers/runc@v1.1.0",
+    "upstreams": [],
+    "metadataType": "GolangBinMetadata",
+    "metadata": {
+     "goCompiledVersion": "go1.18.2",
+     "architecture": "amd64",
+     "h1Digest": "h1:O9+X96OcDjkmmZyfaG996kV7yq8HsoU2h1XRRQcefG8=",
+     "mainModule": "github.com/tianon/gosu"
+    }
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-f3fp-gc8g-vw66",
+    "dataSource": "https://github.com/advisories/GHSA-f3fp-gc8g-vw66",
+    "namespace": "github:language:go",
+    "severity": "Medium",
+    "urls": [
+     "https://github.com/advisories/GHSA-f3fp-gc8g-vw66"
+    ],
+    "description": "Default inheritable capabilities for linux container should be empty",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "metrics": {
+       "baseScore": 5.9,
+       "exploitabilityScore": 2.5,
+       "impactScore": 3.4
+      },
+      "vendorMetadata": {
+       "base_severity": "Medium",
+       "status": "N/A"
+      }
+     }
+    ],
+    "fix": {
+     "versions": [
+      "1.1.2"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-29162",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-29162",
+     "namespace": "nvd:cpe",
+     "severity": "High",
+     "urls": [
+      "https://github.com/opencontainers/runc/commit/d04de3a9b72d7a2455c1885fc75eb36d02cd17b5",
+      "https://github.com/opencontainers/runc/releases/tag/v1.1.2",
+      "https://github.com/opencontainers/runc/security/advisories/GHSA-f3fp-gc8g-vw66",
+      "https://lists.debian.org/debian-lts-announce/2023/03/msg00023.html",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/AVPZBV7ISA7QKRPTC7ZXWKMIQI2HZEBB/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/D77CKD3AXPMU4PMQIQI5Q74SI4JATNND/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/GPQU4YC4AAY54JDXGDQHJEYKSXXG5T2Y/"
+     ],
+     "description": "runc is a CLI tool for spawning and running containers on Linux according to the OCI specification. A bug was found in runc prior to version 1.1.2 where `runc exec --cap` created processes with non-empty inheritable Linux process capabilities, creating an atypical Linux environment and enabling programs with inheritable file capabilities to elevate those capabilities to the permitted set during execve(2). This bug did not affect the container security sandbox as the inheritable set never contained more capabilities than were included in the container's bounding set. This bug has been fixed in runc 1.1.2. This fix changes `runc exec --cap` behavior such that the additional capabilities granted to the process being executed (as specified via `--cap` arguments) do not include inheritable capabilities. In addition, `runc spec` is changed to not set any inheritable capabilities in the created example OCI spec (`config.json`) file.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "2.0",
+       "vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 4.6,
+        "exploitabilityScore": 3.9,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 7.8,
+        "exploitabilityScore": 1.8,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "security-advisories@github.com",
+       "type": "Secondary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+       "metrics": {
+        "baseScore": 5.9,
+        "exploitabilityScore": 2.5,
+        "impactScore": 3.4
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "go-module-matcher",
+     "searchedBy": {
+      "language": "go",
+      "namespace": "github:language:go",
+      "package": {
+       "name": "github.com/opencontainers/runc",
+       "version": "v1.1.0"
+      }
+     },
+     "found": {
+      "versionConstraint": "<1.1.2 (unknown)",
+      "vulnerabilityID": "GHSA-f3fp-gc8g-vw66"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "acbe2d30b51946b3",
+    "name": "github.com/opencontainers/runc",
+    "version": "v1.1.0",
+    "type": "go-module",
+    "locations": [
+     {
+      "path": "/usr/local/bin/gosu",
+      "layerID": "sha256:2b2a936e5f6b2ce8926ac90c3e371238dda0641a480789765b78af33220190d1"
+     }
+    ],
+    "language": "go",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:opencontainers:runc:v1.1.0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:golang/github.com/opencontainers/runc@v1.1.0",
+    "upstreams": [],
+    "metadataType": "GolangBinMetadata",
+    "metadata": {
+     "goCompiledVersion": "go1.18.2",
+     "architecture": "amd64",
+     "h1Digest": "h1:O9+X96OcDjkmmZyfaG996kV7yq8HsoU2h1XRRQcefG8=",
+     "mainModule": "github.com/tianon/gosu"
+    }
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-m8cg-xc2p-r3fc",
+    "dataSource": "https://github.com/advisories/GHSA-m8cg-xc2p-r3fc",
+    "namespace": "github:language:go",
+    "severity": "Low",
+    "urls": [
+     "https://github.com/advisories/GHSA-m8cg-xc2p-r3fc"
+    ],
+    "description": "rootless: `/sys/fs/cgroup` is writable when cgroupns isn't unshared in runc",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:C/C:N/I:N/A:L",
+      "metrics": {
+       "baseScore": 2.5,
+       "exploitabilityScore": 0.8,
+       "impactScore": 1.4
+      },
+      "vendorMetadata": {
+       "base_severity": "Low",
+       "status": "N/A"
+      }
+     }
+    ],
+    "fix": {
+     "versions": [
+      "1.1.5"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2023-25809",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-25809",
+     "namespace": "nvd:cpe",
+     "severity": "Medium",
+     "urls": [
+      "https://github.com/opencontainers/runc/commit/0d62b950e60f6980b54fe3bafd9a9c608dc1df17",
+      "https://github.com/opencontainers/runc/security/advisories/GHSA-m8cg-xc2p-r3fc"
+     ],
+     "description": "runc is a CLI tool for spawning and running containers according to the OCI specification. In affected versions it was found that rootless runc makes `/sys/fs/cgroup` writable in following conditons: 1. when runc is executed inside the user namespace, and the `config.json` does not specify the cgroup namespace to be unshared (e.g.., `(docker|podman|nerdctl) run --cgroupns=host`, with Rootless Docker/Podman/nerdctl) or 2. when runc is executed outside the user namespace, and `/sys` is mounted with `rbind, ro` (e.g., `runc spec --rootless`; this condition is very rare). A container may gain the write access to user-owned cgroup hierarchy `/sys/fs/cgroup/user.slice/...` on the host . Other users's cgroup hierarchies are not affected. Users are advised to upgrade to version 1.1.5. Users unable to upgrade may unshare the cgroup namespace (`(docker|podman|nerdctl) run --cgroupns=private)`. This is the default behavior of Docker/Podman/nerdctl on cgroup v2 hosts. or add `/sys/fs/cgroup` to `maskedPaths`.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:L",
+       "metrics": {
+        "baseScore": 6.3,
+        "exploitabilityScore": 2,
+        "impactScore": 3.7
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "security-advisories@github.com",
+       "type": "Secondary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:C/C:L/I:L/A:L",
+       "metrics": {
+        "baseScore": 5,
+        "exploitabilityScore": 0.8,
+        "impactScore": 3.7
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "go-module-matcher",
+     "searchedBy": {
+      "language": "go",
+      "namespace": "github:language:go",
+      "package": {
+       "name": "github.com/opencontainers/runc",
+       "version": "v1.1.0"
+      }
+     },
+     "found": {
+      "versionConstraint": "<1.1.5 (unknown)",
+      "vulnerabilityID": "GHSA-m8cg-xc2p-r3fc"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "acbe2d30b51946b3",
+    "name": "github.com/opencontainers/runc",
+    "version": "v1.1.0",
+    "type": "go-module",
+    "locations": [
+     {
+      "path": "/usr/local/bin/gosu",
+      "layerID": "sha256:2b2a936e5f6b2ce8926ac90c3e371238dda0641a480789765b78af33220190d1"
+     }
+    ],
+    "language": "go",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:opencontainers:runc:v1.1.0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:golang/github.com/opencontainers/runc@v1.1.0",
+    "upstreams": [],
+    "metadataType": "GolangBinMetadata",
+    "metadata": {
+     "goCompiledVersion": "go1.18.2",
+     "architecture": "amd64",
+     "h1Digest": "h1:O9+X96OcDjkmmZyfaG996kV7yq8HsoU2h1XRRQcefG8=",
+     "mainModule": "github.com/tianon/gosu"
+    }
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "ELSA-2022-9221",
+    "dataSource": "https://linux.oracle.com/errata/ELSA-2022-9221.html",
+    "namespace": "oracle:distro:oraclelinux:8",
+    "severity": "Medium",
+    "urls": [
+     "https://linux.oracle.com/errata/ELSA-2022-9221.html",
+     "https://linux.oracle.com/cve/CVE-2021-20232.html",
+     "https://linux.oracle.com/cve/CVE-2021-3580.html",
+     "https://linux.oracle.com/cve/CVE-2021-20231.html"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "10:3.6.16-4.0.1.el8_fips"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2021-20232",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2021-20232",
+     "namespace": "nvd:cpe",
+     "severity": "Critical",
+     "urls": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=1922275",
+      "https://lists.apache.org/thread.html/r50661d6f0082709aad9a584431b59ec364f9974b63b07e0800230168@%3Cissues.spark.apache.org%3E",
+      "https://lists.apache.org/thread.html/r5d4001031e7790d8c6396c499522b4ed2aab782da87b1a14184793bb@%3Cissues.spark.apache.org%3E",
+      "https://lists.apache.org/thread.html/r5f88bed447742fcc5c47bf1c7be965ef450131914a6e1f85feba2779@%3Cissues.spark.apache.org%3E",
+      "https://lists.apache.org/thread.html/r6ac143ba6dd98bd4bf6bf010d46e56e254056459721ba18822d611f7@%3Cissues.spark.apache.org%3E",
+      "https://lists.apache.org/thread.html/r9cbc69e57276413788e90a6ee16c7c034ea4258d31935b70db2bd158@%3Cissues.spark.apache.org%3E",
+      "https://lists.apache.org/thread.html/rcd70a4c88a47a75fd2d5f3ffb7cee8c2a18c713320bd90fdcb57495f@%3Cissues.spark.apache.org%3E",
+      "https://lists.apache.org/thread.html/rf5e1256d870193def4a82ad89ab95e63943a313b5ff0d81aa87e4532@%3Cissues.spark.apache.org%3E",
+      "https://lists.apache.org/thread.html/rfd5273d72d244178441e6904a2f2b41a3268f569e8092ea0b3b2bb20@%3Cissues.spark.apache.org%3E",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/OSLAE6PP33A7VYRYMYMUVB3U6B26GZER/",
+      "https://security.netapp.com/advisory/ntap-20210416-0005/",
+      "https://www.gnutls.org/security-new.html#GNUTLS-SA-2021-03-10"
+     ],
+     "description": "A flaw was found in gnutls. A use after free issue in client_send_params in lib/ext/pre_shared_key.c may lead to memory corruption and other potential consequences.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 10,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 9.8,
+        "exploitabilityScore": 3.9,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    },
+    {
+     "id": "CVE-2021-3580",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2021-3580",
+     "namespace": "nvd:cpe",
+     "severity": "High",
+     "urls": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=1967983",
+      "https://lists.debian.org/debian-lts-announce/2021/09/msg00008.html",
+      "https://security.netapp.com/advisory/ntap-20211104-0006/"
+     ],
+     "description": "A flaw was found in the way nettle's RSA decryption functions handled specially crafted ciphertext. An attacker could use this flaw to provide a manipulated ciphertext leading to application crash and denial of service.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+       "metrics": {
+        "baseScore": 5,
+        "exploitabilityScore": 10,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    },
+    {
+     "id": "CVE-2021-20231",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2021-20231",
+     "namespace": "nvd:cpe",
+     "severity": "Critical",
+     "urls": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=1922276",
+      "https://lists.apache.org/thread.html/r50661d6f0082709aad9a584431b59ec364f9974b63b07e0800230168@%3Cissues.spark.apache.org%3E",
+      "https://lists.apache.org/thread.html/r5d4001031e7790d8c6396c499522b4ed2aab782da87b1a14184793bb@%3Cissues.spark.apache.org%3E",
+      "https://lists.apache.org/thread.html/r5f88bed447742fcc5c47bf1c7be965ef450131914a6e1f85feba2779@%3Cissues.spark.apache.org%3E",
+      "https://lists.apache.org/thread.html/r6ac143ba6dd98bd4bf6bf010d46e56e254056459721ba18822d611f7@%3Cissues.spark.apache.org%3E",
+      "https://lists.apache.org/thread.html/r9cbc69e57276413788e90a6ee16c7c034ea4258d31935b70db2bd158@%3Cissues.spark.apache.org%3E",
+      "https://lists.apache.org/thread.html/rcd70a4c88a47a75fd2d5f3ffb7cee8c2a18c713320bd90fdcb57495f@%3Cissues.spark.apache.org%3E",
+      "https://lists.apache.org/thread.html/rf5e1256d870193def4a82ad89ab95e63943a313b5ff0d81aa87e4532@%3Cissues.spark.apache.org%3E",
+      "https://lists.apache.org/thread.html/rfd5273d72d244178441e6904a2f2b41a3268f569e8092ea0b3b2bb20@%3Cissues.spark.apache.org%3E",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/OSLAE6PP33A7VYRYMYMUVB3U6B26GZER/",
+      "https://security.netapp.com/advisory/ntap-20210416-0005/",
+      "https://www.gnutls.org/security-new.html#GNUTLS-SA-2021-03-10"
+     ],
+     "description": "A flaw was found in gnutls. A use after free issue in client sending key_share extension may lead to memory corruption and other consequences.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 10,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 9.8,
+        "exploitabilityScore": 3.9,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "rpm-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "oraclelinux",
+       "version": "8.8"
+      },
+      "namespace": "oracle:distro:oraclelinux:8",
+      "package": {
+       "name": "gnutls",
+       "version": "0:3.6.16-6.el8_7"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 10:3.6.16-4.0.1.el8_fips (rpm)",
+      "vulnerabilityID": "ELSA-2022-9221"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "e7ebf1417039d5c1",
+    "name": "gnutls",
+    "version": "3.6.16-6.el8_7",
+    "type": "rpm",
+    "locations": [
+     {
+      "path": "/var/lib/rpm/Packages",
+      "layerID": "sha256:3bf99074f96df6af6ec205f8df88af239fc48ff936c75e3af9a6a1626f22a567"
+     },
+     {
+      "path": "/var/lib/rpm/Packages",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/var/lib/rpm/Packages",
+      "layerID": "sha256:a8eacdf3660db3c6e04e4005fa05916d30057095a4fe19003c3728c048aff980"
+     },
+     {
+      "path": "/var/lib/rpm/Packages",
+      "layerID": "sha256:d2824b70095b271bb1ea21613044e801b841ae1fa027fb68db3404ddca1677e0"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GPLv3+ and LGPLv2+"
+    ],
+    "cpes": [
+     "cpe:2.3:a:oracleamerica:gnutls:3.6.16-6.el8_7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:gnutls:gnutls:3.6.16-6.el8_7:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:rpm/ol/gnutls@3.6.16-6.el8_7?arch=x86_64&upstream=gnutls-3.6.16-6.el8_7.src.rpm&distro=ol-8.8",
+    "upstreams": [],
+    "metadataType": "RpmMetadata",
+    "metadata": {
+     "epoch": null,
+     "modularityLabel": ""
+    }
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "ELSA-2022-9564",
+    "dataSource": "https://linux.oracle.com/errata/ELSA-2022-9564.html",
+    "namespace": "oracle:distro:oraclelinux:8",
+    "severity": "High",
+    "urls": [
+     "https://linux.oracle.com/errata/ELSA-2022-9564.html",
+     "https://linux.oracle.com/cve/CVE-2021-40528.html"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "10:1.8.5-7.el8_6_fips"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2021-40528",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2021-40528",
+     "namespace": "nvd:cpe",
+     "severity": "Medium",
+     "urls": [
+      "https://eprint.iacr.org/2021/923",
+      "https://git.gnupg.org/cgi-bin/gitweb.cgi?p=libgcrypt.git;a=commit;h=3462280f2e23e16adf3ed5176e0f2413d8861320",
+      "https://ibm.github.io/system-security-research-updates/2021/07/20/insecurity-elgamal-pt1",
+      "https://ibm.github.io/system-security-research-updates/2021/09/06/insecurity-elgamal-pt2",
+      "https://security.gentoo.org/glsa/202210-13"
+     ],
+     "description": "The ElGamal implementation in Libgcrypt before 1.9.4 allows plaintext recovery because, during interaction between two cryptographic libraries, a certain dangerous combination of the prime defined by the receiver's public key, the generator defined by the receiver's public key, and the sender's ephemeral exponents can lead to a cross-configuration attack against OpenPGP.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "2.0",
+       "vector": "AV:N/AC:H/Au:N/C:P/I:N/A:N",
+       "metrics": {
+        "baseScore": 2.6,
+        "exploitabilityScore": 4.9,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+       "metrics": {
+        "baseScore": 5.9,
+        "exploitabilityScore": 2.2,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "rpm-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "oraclelinux",
+       "version": "8.8"
+      },
+      "namespace": "oracle:distro:oraclelinux:8",
+      "package": {
+       "name": "libgcrypt",
+       "version": "0:1.8.5-7.el8_6"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 10:1.8.5-7.el8_6_fips (rpm)",
+      "vulnerabilityID": "ELSA-2022-9564"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "9cd70fe643bb7058",
+    "name": "libgcrypt",
+    "version": "1.8.5-7.el8_6",
+    "type": "rpm",
+    "locations": [
+     {
+      "path": "/var/lib/rpm/Packages",
+      "layerID": "sha256:3bf99074f96df6af6ec205f8df88af239fc48ff936c75e3af9a6a1626f22a567"
+     },
+     {
+      "path": "/var/lib/rpm/Packages",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/var/lib/rpm/Packages",
+      "layerID": "sha256:a8eacdf3660db3c6e04e4005fa05916d30057095a4fe19003c3728c048aff980"
+     },
+     {
+      "path": "/var/lib/rpm/Packages",
+      "layerID": "sha256:d2824b70095b271bb1ea21613044e801b841ae1fa027fb68db3404ddca1677e0"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "LGPLv2+"
+    ],
+    "cpes": [
+     "cpe:2.3:a:oracleamerica:libgcrypt:1.8.5-7.el8_6:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libgcrypt:libgcrypt:1.8.5-7.el8_6:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:rpm/ol/libgcrypt@1.8.5-7.el8_6?arch=x86_64&upstream=libgcrypt-1.8.5-7.el8_6.src.rpm&distro=ol-8.8",
+    "upstreams": [],
+    "metadataType": "RpmMetadata",
+    "metadata": {
+     "epoch": null,
+     "modularityLabel": ""
+    }
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "ELSA-2022-9263",
+    "dataSource": "https://linux.oracle.com/errata/ELSA-2022-9263.html",
+    "namespace": "oracle:distro:oraclelinux:8",
+    "severity": "Medium",
+    "urls": [
+     "https://linux.oracle.com/errata/ELSA-2022-9263.html",
+     "https://linux.oracle.com/cve/CVE-2021-33560.html"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "10:1.8.5-6.el8_fips"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2021-33560",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2021-33560",
+     "namespace": "nvd:cpe",
+     "severity": "High",
+     "urls": [
+      "https://dev.gnupg.org/T5305",
+      "https://dev.gnupg.org/T5328",
+      "https://dev.gnupg.org/T5466",
+      "https://dev.gnupg.org/rCe8b7f10be275bcedb5fc05ed4837a89bfd605c61",
+      "https://lists.debian.org/debian-lts-announce/2021/06/msg00021.html",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BKKTOIGFW2SGN3DO2UHHVZ7MJSYN4AAB/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/R7OAPCUGPF3VLA7QAJUQSL255D4ITVTL/",
+      "https://security.gentoo.org/glsa/202210-13",
+      "https://www.oracle.com/security-alerts/cpuapr2022.html",
+      "https://www.oracle.com/security-alerts/cpujan2022.html",
+      "https://www.oracle.com/security-alerts/cpujul2022.html",
+      "https://www.oracle.com/security-alerts/cpuoct2021.html"
+     ],
+     "description": "Libgcrypt before 1.8.8 and 1.9.x before 1.9.3 mishandles ElGamal encryption because it lacks exponent blinding to address a side-channel attack against mpi_powm, and the window size is not chosen appropriately. This, for example, affects use of ElGamal in OpenPGP.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+       "metrics": {
+        "baseScore": 5,
+        "exploitabilityScore": 10,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "rpm-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "oraclelinux",
+       "version": "8.8"
+      },
+      "namespace": "oracle:distro:oraclelinux:8",
+      "package": {
+       "name": "libgcrypt",
+       "version": "0:1.8.5-7.el8_6"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 10:1.8.5-6.el8_fips (rpm)",
+      "vulnerabilityID": "ELSA-2022-9263"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "9cd70fe643bb7058",
+    "name": "libgcrypt",
+    "version": "1.8.5-7.el8_6",
+    "type": "rpm",
+    "locations": [
+     {
+      "path": "/var/lib/rpm/Packages",
+      "layerID": "sha256:3bf99074f96df6af6ec205f8df88af239fc48ff936c75e3af9a6a1626f22a567"
+     },
+     {
+      "path": "/var/lib/rpm/Packages",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/var/lib/rpm/Packages",
+      "layerID": "sha256:a8eacdf3660db3c6e04e4005fa05916d30057095a4fe19003c3728c048aff980"
+     },
+     {
+      "path": "/var/lib/rpm/Packages",
+      "layerID": "sha256:d2824b70095b271bb1ea21613044e801b841ae1fa027fb68db3404ddca1677e0"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "LGPLv2+"
+    ],
+    "cpes": [
+     "cpe:2.3:a:oracleamerica:libgcrypt:1.8.5-7.el8_6:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libgcrypt:libgcrypt:1.8.5-7.el8_6:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:rpm/ol/libgcrypt@1.8.5-7.el8_6?arch=x86_64&upstream=libgcrypt-1.8.5-7.el8_6.src.rpm&distro=ol-8.8",
+    "upstreams": [],
+    "metadataType": "RpmMetadata",
+    "metadata": {
+     "epoch": null,
+     "modularityLabel": ""
+    }
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2018-20225",
+    "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2018-20225",
+    "namespace": "nvd:cpe",
+    "severity": "High",
+    "urls": [
+     "https://bugzilla.redhat.com/show_bug.cgi?id=1835736",
+     "https://cowlicks.website/posts/arbitrary-code-execution-from-pips-extra-index-url.html",
+     "https://lists.apache.org/thread.html/rb1adce798445facd032870d644eb39c4baaf9c4a7dd5477d12bb6ab2@%3Cgithub.arrow.apache.org%3E",
+     "https://pip.pypa.io/en/stable/news/"
+    ],
+    "description": "** DISPUTED ** An issue was discovered in pip (all versions) because it installs the version with the highest version number, even if the user had intended to obtain a private package from a private index. This only affects use of the --extra-index-url option, and exploitation requires that the package does not already exist in the public index (and thus the attacker can put the package there with an arbitrary version number). NOTE: it has been reported that this is intended functionality and the user is responsible for using --extra-index-url securely.",
+    "cvss": [
+     {
+      "source": "nvd@nist.gov",
+      "type": "Primary",
+      "version": "2.0",
+      "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+      "metrics": {
+       "baseScore": 6.8,
+       "exploitabilityScore": 8.6,
+       "impactScore": 6.4
+      },
+      "vendorMetadata": {}
+     },
+     {
+      "source": "nvd@nist.gov",
+      "type": "Primary",
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "metrics": {
+       "baseScore": 7.8,
+       "exploitabilityScore": 1.8,
+       "impactScore": 5.9
+      },
+      "vendorMetadata": {}
+     }
+    ],
+    "fix": {
+     "versions": [],
+     "state": "unknown"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [],
+   "matchDetails": [
+    {
+     "type": "cpe-match",
+     "matcher": "python-matcher",
+     "searchedBy": {
+      "namespace": "nvd:cpe",
+      "cpes": [
+       "cpe:2.3:a:pypa:pip:20.2.4:*:*:*:*:*:*:*"
+      ],
+      "Package": {
+       "name": "pip",
+       "version": "20.2.4"
+      }
+     },
+     "found": {
+      "vulnerabilityID": "CVE-2018-20225",
+      "versionConstraint": "none (unknown)",
+      "cpes": [
+       "cpe:2.3:a:pypa:pip:*:*:*:*:*:*:*:*"
+      ]
+     }
+    }
+   ],
+   "artifact": {
+    "id": "10c8f3754d3b2ce1",
+    "name": "pip",
+    "version": "20.2.4",
+    "type": "python",
+    "locations": [
+     {
+      "path": "/usr/lib/python3.9/site-packages/pip-20.2.4.dist-info/METADATA",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/usr/lib/python3.9/site-packages/pip-20.2.4.dist-info/RECORD",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/usr/lib/python3.9/site-packages/pip-20.2.4.dist-info/top_level.txt",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     }
+    ],
+    "language": "python",
+    "licenses": [
+     "MIT"
+    ],
+    "cpes": [
+     "cpe:2.3:a:pip_developers_project:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developers_project:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig_project:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig_project:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developersproject:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developersproject:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sigproject:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sigproject:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developers_project:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig_project:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developers:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developers:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developersproject:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils-sig:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils-sig:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sigproject:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-pip:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-pip:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_pip:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_pip:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developers:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils-sig:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pypa:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pypa:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-pip:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_pip:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pypa:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip:pip:20.2.4:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:pypi/pip@20.2.4",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-5xp3-jfq3-5q8x",
+    "dataSource": "https://github.com/advisories/GHSA-5xp3-jfq3-5q8x",
+    "namespace": "github:language:python",
+    "severity": "Medium",
+    "urls": [
+     "https://github.com/advisories/GHSA-5xp3-jfq3-5q8x"
+    ],
+    "description": "Improper Input Validation in pip",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:H/A:N",
+      "metrics": {
+       "baseScore": 5.7,
+       "exploitabilityScore": 2.1,
+       "impactScore": 3.6
+      },
+      "vendorMetadata": {
+       "base_severity": "Medium",
+       "status": "N/A"
+      }
+     }
+    ],
+    "fix": {
+     "versions": [
+      "21.1"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2021-3572",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2021-3572",
+     "namespace": "nvd:cpe",
+     "severity": "Medium",
+     "urls": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=1962856",
+      "https://www.oracle.com/security-alerts/cpuapr2022.html",
+      "https://www.oracle.com/security-alerts/cpujul2022.html"
+     ],
+     "description": "A flaw was found in python-pip in the way it handled Unicode separators in git references. A remote attacker could possibly use this issue to install a different revision on a repository. The highest threat from this vulnerability is to data integrity. This is fixed in python-pip version 21.1.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "2.0",
+       "vector": "AV:N/AC:M/Au:S/C:N/I:P/A:N",
+       "metrics": {
+        "baseScore": 3.5,
+        "exploitabilityScore": 6.8,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:H/A:N",
+       "metrics": {
+        "baseScore": 5.7,
+        "exploitabilityScore": 2.1,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "python-matcher",
+     "searchedBy": {
+      "language": "python",
+      "namespace": "github:language:python",
+      "package": {
+       "name": "pip",
+       "version": "20.2.4"
+      }
+     },
+     "found": {
+      "versionConstraint": "<21.1 (python)",
+      "vulnerabilityID": "GHSA-5xp3-jfq3-5q8x"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "10c8f3754d3b2ce1",
+    "name": "pip",
+    "version": "20.2.4",
+    "type": "python",
+    "locations": [
+     {
+      "path": "/usr/lib/python3.9/site-packages/pip-20.2.4.dist-info/METADATA",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/usr/lib/python3.9/site-packages/pip-20.2.4.dist-info/RECORD",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/usr/lib/python3.9/site-packages/pip-20.2.4.dist-info/top_level.txt",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     }
+    ],
+    "language": "python",
+    "licenses": [
+     "MIT"
+    ],
+    "cpes": [
+     "cpe:2.3:a:pip_developers_project:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developers_project:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig_project:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig_project:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developersproject:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developersproject:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sigproject:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sigproject:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developers_project:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig_project:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developers:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developers:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developersproject:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils-sig:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils-sig:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sigproject:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-pip:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-pip:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_pip:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_pip:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developers:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils-sig:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pypa:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pypa:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-pip:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_pip:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pypa:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip:pip:20.2.4:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:pypi/pip@20.2.4",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2021-3572",
+    "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2021-3572",
+    "namespace": "nvd:cpe",
+    "severity": "Medium",
+    "urls": [
+     "https://bugzilla.redhat.com/show_bug.cgi?id=1962856",
+     "https://www.oracle.com/security-alerts/cpuapr2022.html",
+     "https://www.oracle.com/security-alerts/cpujul2022.html"
+    ],
+    "description": "A flaw was found in python-pip in the way it handled Unicode separators in git references. A remote attacker could possibly use this issue to install a different revision on a repository. The highest threat from this vulnerability is to data integrity. This is fixed in python-pip version 21.1.",
+    "cvss": [
+     {
+      "source": "nvd@nist.gov",
+      "type": "Primary",
+      "version": "2.0",
+      "vector": "AV:N/AC:M/Au:S/C:N/I:P/A:N",
+      "metrics": {
+       "baseScore": 3.5,
+       "exploitabilityScore": 6.8,
+       "impactScore": 2.9
+      },
+      "vendorMetadata": {}
+     },
+     {
+      "source": "nvd@nist.gov",
+      "type": "Primary",
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:H/A:N",
+      "metrics": {
+       "baseScore": 5.7,
+       "exploitabilityScore": 2.1,
+       "impactScore": 3.6
+      },
+      "vendorMetadata": {}
+     }
+    ],
+    "fix": {
+     "versions": [],
+     "state": "unknown"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [],
+   "matchDetails": [
+    {
+     "type": "cpe-match",
+     "matcher": "python-matcher",
+     "searchedBy": {
+      "namespace": "nvd:cpe",
+      "cpes": [
+       "cpe:2.3:a:pypa:pip:20.2.4:*:*:*:*:*:*:*"
+      ],
+      "Package": {
+       "name": "pip",
+       "version": "20.2.4"
+      }
+     },
+     "found": {
+      "vulnerabilityID": "CVE-2021-3572",
+      "versionConstraint": "< 21.1 (unknown)",
+      "cpes": [
+       "cpe:2.3:a:pypa:pip:*:*:*:*:*:*:*:*"
+      ]
+     }
+    }
+   ],
+   "artifact": {
+    "id": "10c8f3754d3b2ce1",
+    "name": "pip",
+    "version": "20.2.4",
+    "type": "python",
+    "locations": [
+     {
+      "path": "/usr/lib/python3.9/site-packages/pip-20.2.4.dist-info/METADATA",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/usr/lib/python3.9/site-packages/pip-20.2.4.dist-info/RECORD",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/usr/lib/python3.9/site-packages/pip-20.2.4.dist-info/top_level.txt",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     }
+    ],
+    "language": "python",
+    "licenses": [
+     "MIT"
+    ],
+    "cpes": [
+     "cpe:2.3:a:pip_developers_project:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developers_project:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig_project:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig_project:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developersproject:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developersproject:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sigproject:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sigproject:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developers_project:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig_project:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developers:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developers:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developersproject:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils-sig:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils-sig:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sigproject:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-pip:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-pip:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_pip:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_pip:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip_developers:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils-sig:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pypa:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pypa:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip:python-pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip:python_pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-pip:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_pip:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pypa:pip:20.2.4:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pip:pip:20.2.4:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:pypi/pip@20.2.4",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-r9hx-vwmv-q579",
+    "dataSource": "https://github.com/advisories/GHSA-r9hx-vwmv-q579",
+    "namespace": "github:language:python",
+    "severity": "High",
+    "urls": [
+     "https://github.com/advisories/GHSA-r9hx-vwmv-q579"
+    ],
+    "description": "pypa/setuptools vulnerable to Regular Expression Denial of Service (ReDoS)",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "metrics": {
+       "baseScore": 7.5,
+       "exploitabilityScore": 3.9,
+       "impactScore": 3.6
+      },
+      "vendorMetadata": {
+       "base_severity": "High",
+       "status": "N/A"
+      }
+     }
+    ],
+    "fix": {
+     "versions": [
+      "65.5.1"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-40897",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-40897",
+     "namespace": "nvd:cpe",
+     "severity": "Medium",
+     "urls": [
+      "https://github.com/pypa/setuptools/blob/fe8a98e696241487ba6ac9f91faa38ade939ec5d/setuptools/package_index.py#L200",
+      "https://github.com/pypa/setuptools/commit/43a9c9bfa6aa626ec2a22540bea28d2ca77964be",
+      "https://github.com/pypa/setuptools/compare/v65.5.0...v65.5.1",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ADES3NLOE5QJKBLGNZNI2RGVOSQXA37R/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/YNA2BAH2ACBZ4TVJZKFLCR7L23BG5C3H/",
+      "https://pyup.io/posts/pyup-discovers-redos-vulnerabilities-in-top-python-packages/",
+      "https://pyup.io/vulnerabilities/CVE-2022-40897/52495/",
+      "https://security.netapp.com/advisory/ntap-20230214-0001/"
+     ],
+     "description": "Python Packaging Authority (PyPA) setuptools before 65.5.1 allows remote attackers to cause a denial of service via HTML in a crafted package or custom PackageIndex page. There is a Regular Expression Denial of Service (ReDoS) in package_index.py.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 5.9,
+        "exploitabilityScore": 2.2,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "python-matcher",
+     "searchedBy": {
+      "language": "python",
+      "namespace": "github:language:python",
+      "package": {
+       "name": "setuptools",
+       "version": "50.3.2"
+      }
+     },
+     "found": {
+      "versionConstraint": "<65.5.1 (python)",
+      "vulnerabilityID": "GHSA-r9hx-vwmv-q579"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "edf3578639dd1c64",
+    "name": "setuptools",
+    "version": "50.3.2",
+    "type": "python",
+    "locations": [
+     {
+      "path": "/usr/lib/python3.9/site-packages/setuptools-50.3.2.dist-info/METADATA",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/usr/lib/python3.9/site-packages/setuptools-50.3.2.dist-info/RECORD",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/usr/lib/python3.9/site-packages/setuptools-50.3.2.dist-info/top_level.txt",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     }
+    ],
+    "language": "python",
+    "licenses": [
+     "UNKNOWN"
+    ],
+    "cpes": [
+     "cpe:2.3:a:python_packaging_authority_project:python-setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_packaging_authority_project:python_setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_packaging_authorityproject:python-setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_packaging_authorityproject:python_setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_packaging_authority_project:setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_packaging_authority:python-setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_packaging_authority:python_setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_packaging_authorityproject:setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig_project:python-setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig_project:python_setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sigproject:python-setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sigproject:python_setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_packaging_authority:setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-setuptools:python-setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-setuptools:python_setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_setuptools:python-setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_setuptools:python_setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig_project:setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils-sig:python-setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils-sig:python_setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig:python-setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig:python_setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sigproject:setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-setuptools:setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_setuptools:setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:setuptools:python-setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:setuptools:python_setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils-sig:setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig:setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python-setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python_setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:setuptools:setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:setuptools:50.3.2:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:pypi/setuptools@50.3.2",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-40897",
+    "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-40897",
+    "namespace": "nvd:cpe",
+    "severity": "Medium",
+    "urls": [
+     "https://github.com/pypa/setuptools/blob/fe8a98e696241487ba6ac9f91faa38ade939ec5d/setuptools/package_index.py#L200",
+     "https://github.com/pypa/setuptools/commit/43a9c9bfa6aa626ec2a22540bea28d2ca77964be",
+     "https://github.com/pypa/setuptools/compare/v65.5.0...v65.5.1",
+     "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ADES3NLOE5QJKBLGNZNI2RGVOSQXA37R/",
+     "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/YNA2BAH2ACBZ4TVJZKFLCR7L23BG5C3H/",
+     "https://pyup.io/posts/pyup-discovers-redos-vulnerabilities-in-top-python-packages/",
+     "https://pyup.io/vulnerabilities/CVE-2022-40897/52495/",
+     "https://security.netapp.com/advisory/ntap-20230214-0001/"
+    ],
+    "description": "Python Packaging Authority (PyPA) setuptools before 65.5.1 allows remote attackers to cause a denial of service via HTML in a crafted package or custom PackageIndex page. There is a Regular Expression Denial of Service (ReDoS) in package_index.py.",
+    "cvss": [
+     {
+      "source": "nvd@nist.gov",
+      "type": "Primary",
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "metrics": {
+       "baseScore": 5.9,
+       "exploitabilityScore": 2.2,
+       "impactScore": 3.6
+      },
+      "vendorMetadata": {}
+     }
+    ],
+    "fix": {
+     "versions": [],
+     "state": "unknown"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [],
+   "matchDetails": [
+    {
+     "type": "cpe-match",
+     "matcher": "python-matcher",
+     "searchedBy": {
+      "namespace": "nvd:cpe",
+      "cpes": [
+       "cpe:2.3:a:python:setuptools:50.3.2:*:*:*:*:*:*:*"
+      ],
+      "Package": {
+       "name": "setuptools",
+       "version": "50.3.2"
+      }
+     },
+     "found": {
+      "vulnerabilityID": "CVE-2022-40897",
+      "versionConstraint": "< 65.5.1 (unknown)",
+      "cpes": [
+       "cpe:2.3:a:python:setuptools:*:*:*:*:*:*:*:*"
+      ]
+     }
+    }
+   ],
+   "artifact": {
+    "id": "edf3578639dd1c64",
+    "name": "setuptools",
+    "version": "50.3.2",
+    "type": "python",
+    "locations": [
+     {
+      "path": "/usr/lib/python3.9/site-packages/setuptools-50.3.2.dist-info/METADATA",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/usr/lib/python3.9/site-packages/setuptools-50.3.2.dist-info/RECORD",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     },
+     {
+      "path": "/usr/lib/python3.9/site-packages/setuptools-50.3.2.dist-info/top_level.txt",
+      "layerID": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e"
+     }
+    ],
+    "language": "python",
+    "licenses": [
+     "UNKNOWN"
+    ],
+    "cpes": [
+     "cpe:2.3:a:python_packaging_authority_project:python-setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_packaging_authority_project:python_setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_packaging_authorityproject:python-setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_packaging_authorityproject:python_setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_packaging_authority_project:setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_packaging_authority:python-setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_packaging_authority:python_setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_packaging_authorityproject:setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig_project:python-setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig_project:python_setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sigproject:python-setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sigproject:python_setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_packaging_authority:setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-setuptools:python-setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-setuptools:python_setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_setuptools:python-setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_setuptools:python_setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig_project:setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils-sig:python-setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils-sig:python_setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig:python-setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig:python_setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sigproject:setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-setuptools:setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_setuptools:setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:setuptools:python-setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:setuptools:python_setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils-sig:setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:distutils_sig:setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python-setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python_setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:setuptools:setuptools:50.3.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:setuptools:50.3.2:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:pypi/setuptools@50.3.2",
+    "upstreams": []
+   }
+  }
+ ],
+ "source": {
+  "type": "image",
+  "target": {
+   "userInput": "mysql",
+   "imageID": "sha256:99afc808f15be15cd1d9890394123034a79d1f3204d5b417d8558990cdf30167",
+   "manifestDigest": "sha256:106bbaa141c127194283e933466191aa63effea40648936afdcbc65f647c0058",
+   "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+   "tags": [
+    "mysql:latest"
+   ],
+   "imageSize": 577339236,
+   "layers": [
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:3bf99074f96df6af6ec205f8df88af239fc48ff936c75e3af9a6a1626f22a567",
+     "size": 109978624
+    },
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:a133db6378005647674f793d78d6f67c0a79a924c62428bded8b97fa272a6c54",
+     "size": 2768
+    },
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:2b2a936e5f6b2ce8926ac90c3e371238dda0641a480789765b78af33220190d1",
+     "size": 2355690
+    },
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:a8eacdf3660db3c6e04e4005fa05916d30057095a4fe19003c3728c048aff980",
+     "size": 13609257
+    },
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:b178ed0b6170b17b2f2be18a58b0d63c8645a0944da05bddac98d49e0cbb66af",
+     "size": 3175
+    },
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:d70c0493c2e690c2284ccd62b567f2cefbea1f8ce4f8750d49bbb4228db85c50",
+     "size": 246
+    },
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:d2824b70095b271bb1ea21613044e801b841ae1fa027fb68db3404ddca1677e0",
+     "size": 185893013
+    },
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:09e67ed0546e1ac29f8e49ad502b47e2e807d143e1f8fb72558696f285aa0305",
+     "size": 215
+    },
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:8ded1ae2a06f1211a657867d0778919d83138fce47cd77be33a6a9c7e443bf0e",
+     "size": 265482059
+    },
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:db7ab85bf57476c8ce0d0bea4cb2a9647e5224e6df0d6e012c2ec9cbf7528519",
+     "size": 14189
+    }
+   ],
+   "manifest": "eyJzY2hlbWFWZXJzaW9uIjoyLCJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmRpc3RyaWJ1dGlvbi5tYW5pZmVzdC52Mitqc29uIiwiY29uZmlnIjp7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuY29udGFpbmVyLmltYWdlLnYxK2pzb24iLCJzaXplIjo3MjgzLCJkaWdlc3QiOiJzaGEyNTY6OTlhZmM4MDhmMTViZTE1Y2QxZDk4OTAzOTQxMjMwMzRhNzlkMWYzMjA0ZDViNDE3ZDg1NTg5OTBjZGYzMDE2NyJ9LCJsYXllcnMiOlt7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuaW1hZ2Uucm9vdGZzLmRpZmYudGFyLmd6aXAiLCJzaXplIjoxMTI3OTA1MjgsImRpZ2VzdCI6InNoYTI1NjozYmY5OTA3NGY5NmRmNmFmNmVjMjA1ZjhkZjg4YWYyMzlmYzQ4ZmY5MzZjNzVlM2FmOWE2YTE2MjZmMjJhNTY3In0seyJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmltYWdlLnJvb3Rmcy5kaWZmLnRhci5nemlwIiwic2l6ZSI6MTEyNjQsImRpZ2VzdCI6InNoYTI1NjphMTMzZGI2Mzc4MDA1NjQ3Njc0Zjc5M2Q3OGQ2ZjY3YzBhNzlhOTI0YzYyNDI4YmRlZDhiOTdmYTI3MmE2YzU0In0seyJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmltYWdlLnJvb3Rmcy5kaWZmLnRhci5nemlwIiwic2l6ZSI6MjM1OTI5NiwiZGlnZXN0Ijoic2hhMjU2OjJiMmE5MzZlNWY2YjJjZTg5MjZhYzkwYzNlMzcxMjM4ZGRhMDY0MWE0ODA3ODk3NjViNzhhZjMzMjIwMTkwZDEifSx7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuaW1hZ2Uucm9vdGZzLmRpZmYudGFyLmd6aXAiLCJzaXplIjoxMzk0MTI0OCwiZGlnZXN0Ijoic2hhMjU2OmE4ZWFjZGYzNjYwZGIzYzZlMDRlNDAwNWZhMDU5MTZkMzAwNTcwOTVhNGZlMTkwMDNjMzcyOGMwNDhhZmY5ODAifSx7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuaW1hZ2Uucm9vdGZzLmRpZmYudGFyLmd6aXAiLCJzaXplIjo3MTY4LCJkaWdlc3QiOiJzaGEyNTY6YjE3OGVkMGI2MTcwYjE3YjJmMmJlMThhNThiMGQ2M2M4NjQ1YTA5NDRkYTA1YmRkYWM5OGQ0OWUwY2JiNjZhZiJ9LHsibWVkaWFUeXBlIjoiYXBwbGljYXRpb24vdm5kLmRvY2tlci5pbWFnZS5yb290ZnMuZGlmZi50YXIuZ3ppcCIsInNpemUiOjMwNzIsImRpZ2VzdCI6InNoYTI1NjpkNzBjMDQ5M2MyZTY5MGMyMjg0Y2NkNjJiNTY3ZjJjZWZiZWExZjhjZTRmODc1MGQ0OWJiYjQyMjhkYjg1YzUwIn0seyJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmltYWdlLnJvb3Rmcy5kaWZmLnRhci5nemlwIiwic2l6ZSI6MTg2MTMyOTkyLCJkaWdlc3QiOiJzaGEyNTY6ZDI4MjRiNzAwOTViMjcxYmIxZWEyMTYxMzA0NGU4MDFiODQxYWUxZmEwMjdmYjY4ZGIzNDA0ZGRjYTE2NzdlMCJ9LHsibWVkaWFUeXBlIjoiYXBwbGljYXRpb24vdm5kLmRvY2tlci5pbWFnZS5yb290ZnMuZGlmZi50YXIuZ3ppcCIsInNpemUiOjMwNzIsImRpZ2VzdCI6InNoYTI1NjowOWU2N2VkMDU0NmUxYWMyOWY4ZTQ5YWQ1MDJiNDdlMmU4MDdkMTQzZTFmOGZiNzI1NTg2OTZmMjg1YWEwMzA1In0seyJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmltYWdlLnJvb3Rmcy5kaWZmLnRhci5nemlwIiwic2l6ZSI6Mjc3NDE2NDQ4LCJkaWdlc3QiOiJzaGEyNTY6OGRlZDFhZTJhMDZmMTIxMWE2NTc4NjdkMDc3ODkxOWQ4MzEzOGZjZTQ3Y2Q3N2JlMzNhNmE5YzdlNDQzYmYwZSJ9LHsibWVkaWFUeXBlIjoiYXBwbGljYXRpb24vdm5kLmRvY2tlci5pbWFnZS5yb290ZnMuZGlmZi50YXIuZ3ppcCIsInNpemUiOjE3NDA4LCJkaWdlc3QiOiJzaGEyNTY6ZGI3YWI4NWJmNTc0NzZjOGNlMGQwYmVhNGNiMmE5NjQ3ZTUyMjRlNmRmMGQ2ZTAxMmMyZWM5Y2JmNzUyODUxOSJ9XX0=",
+   "config": "eyJhcmNoaXRlY3R1cmUiOiJhbWQ2NCIsImNvbmZpZyI6eyJIb3N0bmFtZSI6IiIsIkRvbWFpbm5hbWUiOiIiLCJVc2VyIjoiIiwiQXR0YWNoU3RkaW4iOmZhbHNlLCJBdHRhY2hTdGRvdXQiOmZhbHNlLCJBdHRhY2hTdGRlcnIiOmZhbHNlLCJFeHBvc2VkUG9ydHMiOnsiMzMwNi90Y3AiOnt9LCIzMzA2MC90Y3AiOnt9fSwiVHR5IjpmYWxzZSwiT3BlblN0ZGluIjpmYWxzZSwiU3RkaW5PbmNlIjpmYWxzZSwiRW52IjpbIlBBVEg9L3Vzci9sb2NhbC9zYmluOi91c3IvbG9jYWwvYmluOi91c3Ivc2JpbjovdXNyL2Jpbjovc2JpbjovYmluIiwiR09TVV9WRVJTSU9OPTEuMTYiLCJNWVNRTF9NQUpPUj1pbm5vdmF0aW9uIiwiTVlTUUxfVkVSU0lPTj04LjEuMC0xLmVsOCIsIk1ZU1FMX1NIRUxMX1ZFUlNJT049OC4wLjM0LTEuZWw4Il0sIkNtZCI6WyJteXNxbGQiXSwiSW1hZ2UiOiJzaGEyNTY6NTNlMjIyNzBhMjQ2ZTU2MDNlMzBjZGQzMWRhMDY4MDAwZGQyZWY5ZDA4YjE0ZjEwOTYwY2RmYjk5NzQ5NmJmOCIsIlZvbHVtZXMiOnsiL3Zhci9saWIvbXlzcWwiOnt9fSwiV29ya2luZ0RpciI6IiIsIkVudHJ5cG9pbnQiOlsiZG9ja2VyLWVudHJ5cG9pbnQuc2giXSwiT25CdWlsZCI6bnVsbCwiTGFiZWxzIjpudWxsfSwiY29udGFpbmVyIjoiMTRhZTJiMjBhNjJmNjdmNWU2ZWE0Y2U2NmFjYWRkYTBjZjgzZGQ0OWViZDkzMmRkMmY1NzA1MTA3NGViZDIyZiIsImNvbnRhaW5lcl9jb25maWciOnsiSG9zdG5hbWUiOiIxNGFlMmIyMGE2MmYiLCJEb21haW5uYW1lIjoiIiwiVXNlciI6IiIsIkF0dGFjaFN0ZGluIjpmYWxzZSwiQXR0YWNoU3Rkb3V0IjpmYWxzZSwiQXR0YWNoU3RkZXJyIjpmYWxzZSwiRXhwb3NlZFBvcnRzIjp7IjMzMDYvdGNwIjp7fSwiMzMwNjAvdGNwIjp7fX0sIlR0eSI6ZmFsc2UsIk9wZW5TdGRpbiI6ZmFsc2UsIlN0ZGluT25jZSI6ZmFsc2UsIkVudiI6WyJQQVRIPS91c3IvbG9jYWwvc2JpbjovdXNyL2xvY2FsL2JpbjovdXNyL3NiaW46L3Vzci9iaW46L3NiaW46L2JpbiIsIkdPU1VfVkVSU0lPTj0xLjE2IiwiTVlTUUxfTUFKT1I9aW5ub3ZhdGlvbiIsIk1ZU1FMX1ZFUlNJT049OC4xLjAtMS5lbDgiLCJNWVNRTF9TSEVMTF9WRVJTSU9OPTguMC4zNC0xLmVsOCJdLCJDbWQiOlsiL2Jpbi9zaCIsIi1jIiwiIyhub3ApICIsIkNNRCBbXCJteXNxbGRcIl0iXSwiSW1hZ2UiOiJzaGEyNTY6NTNlMjIyNzBhMjQ2ZTU2MDNlMzBjZGQzMWRhMDY4MDAwZGQyZWY5ZDA4YjE0ZjEwOTYwY2RmYjk5NzQ5NmJmOCIsIlZvbHVtZXMiOnsiL3Zhci9saWIvbXlzcWwiOnt9fSwiV29ya2luZ0RpciI6IiIsIkVudHJ5cG9pbnQiOlsiZG9ja2VyLWVudHJ5cG9pbnQuc2giXSwiT25CdWlsZCI6bnVsbCwiTGFiZWxzIjp7fX0sImNyZWF0ZWQiOiIyMDIzLTA4LTExVDAxOjM5OjAwLjUyMzg4MTEyNFoiLCJkb2NrZXJfdmVyc2lvbiI6IjIwLjEwLjIzIiwiaGlzdG9yeSI6W3siY3JlYXRlZCI6IjIwMjMtMDgtMTFUMDE6MjA6MzYuNTM0ODQwNjU5WiIsImNyZWF0ZWRfYnkiOiIvYmluL3NoIC1jICMobm9wKSBBREQgZmlsZToxOTYxMTVjNjI4MWEwYTU2ODU0MDY2YmUyNzY2ZWIwZGM5ZGE0NTJmNjBhMDYwYjkwYmJlNjgxZTZiOGZmYzExIGluIC8gIn0seyJjcmVhdGVkIjoiMjAyMy0wOC0xMVQwMToyMDozNi45MDMyNTcxOTVaIiwiY3JlYXRlZF9ieSI6Ii9iaW4vc2ggLWMgIyhub3ApICBDTUQgW1wiL2Jpbi9iYXNoXCJdIiwiZW1wdHlfbGF5ZXIiOnRydWV9LHsiY3JlYXRlZCI6IjIwMjMtMDgtMTFUMDE6Mzc6MTUuNzQwNjcyMDY1WiIsImNyZWF0ZWRfYnkiOiIvYmluL3NoIC1jIHNldCAtZXV4OyBcdGdyb3VwYWRkIC0tc3lzdGVtIC0tZ2lkIDk5OSBteXNxbDsgXHR1c2VyYWRkIC0tc3lzdGVtIC0tdWlkIDk5OSAtLWdpZCA5OTkgLS1ob21lLWRpciAvdmFyL2xpYi9teXNxbCAtLW5vLWNyZWF0ZS1ob21lIG15c3FsIn0seyJjcmVhdGVkIjoiMjAyMy0wOC0xMVQwMTozNzoxNS44MjA2MzQ5MDVaIiwiY3JlYXRlZF9ieSI6Ii9iaW4vc2ggLWMgIyhub3ApICBFTlYgR09TVV9WRVJTSU9OPTEuMTYiLCJlbXB0eV9sYXllciI6dHJ1ZX0seyJjcmVhdGVkIjoiMjAyMy0wOC0xMVQwMTozNzoxOS43NDIwMDEzMDlaIiwiY3JlYXRlZF9ieSI6Ii9iaW4vc2ggLWMgc2V0IC1ldXg7IFx0YXJjaD1cIiQodW5hbWUgLW0pXCI7IFx0Y2FzZSBcIiRhcmNoXCIgaW4gXHRcdGFhcmNoNjQpIGdvc3VBcmNoPSdhcm02NCcgOzsgXHRcdHg4Nl82NCkgZ29zdUFyY2g9J2FtZDY0JyA7OyBcdFx0KikgZWNobyBcdTAwM2VcdTAwMjYyIFwiZXJyb3I6IHVuc3VwcG9ydGVkIGFyY2hpdGVjdHVyZTogJyRhcmNoJ1wiOyBleGl0IDEgOzsgXHRlc2FjOyBcdGN1cmwgLWZMIC1vIC91c3IvbG9jYWwvYmluL2dvc3UuYXNjIFwiaHR0cHM6Ly9naXRodWIuY29tL3RpYW5vbi9nb3N1L3JlbGVhc2VzL2Rvd25sb2FkLyRHT1NVX1ZFUlNJT04vZ29zdS0kZ29zdUFyY2guYXNjXCI7IFx0Y3VybCAtZkwgLW8gL3Vzci9sb2NhbC9iaW4vZ29zdSBcImh0dHBzOi8vZ2l0aHViLmNvbS90aWFub24vZ29zdS9yZWxlYXNlcy9kb3dubG9hZC8kR09TVV9WRVJTSU9OL2dvc3UtJGdvc3VBcmNoXCI7IFx0ZXhwb3J0IEdOVVBHSE9NRT1cIiQobWt0ZW1wIC1kKVwiOyBcdGdwZyAtLWJhdGNoIC0ta2V5c2VydmVyIGhrcHM6Ly9rZXlzLm9wZW5wZ3Aub3JnIC0tcmVjdi1rZXlzIEI0MkY2ODE5MDA3RjAwRjg4RTM2NEZENDAzNkE5QzI1QkYzNTdERDQ7IFx0Z3BnIC0tYmF0Y2ggLS12ZXJpZnkgL3Vzci9sb2NhbC9iaW4vZ29zdS5hc2MgL3Vzci9sb2NhbC9iaW4vZ29zdTsgXHRybSAtcmYgXCIkR05VUEdIT01FXCIgL3Vzci9sb2NhbC9iaW4vZ29zdS5hc2M7IFx0Y2htb2QgK3ggL3Vzci9sb2NhbC9iaW4vZ29zdTsgXHRnb3N1IC0tdmVyc2lvbjsgXHRnb3N1IG5vYm9keSB0cnVlIn0seyJjcmVhdGVkIjoiMjAyMy0wOC0xMVQwMTozNzo0Ni4wNjk3MDQ3MDhaIiwiY3JlYXRlZF9ieSI6Ii9iaW4vc2ggLWMgc2V0IC1ldXg7IFx0bWljcm9kbmYgaW5zdGFsbCAteSBcdFx0YnppcDIgXHRcdGd6aXAgXHRcdG9wZW5zc2wgXHRcdHh6IFx0XHR6c3RkIFx0XHRmaW5kdXRpbHMgXHQ7IFx0bWljcm9kbmYgY2xlYW4gYWxsIn0seyJjcmVhdGVkIjoiMjAyMy0wOC0xMVQwMTozNzo0Ny4xNjk0NDIzMjJaIiwiY3JlYXRlZF9ieSI6Ii9iaW4vc2ggLWMgc2V0IC1ldXg7IFx0a2V5PSc4NTlCRThEN0M1ODZGNTM4NDMwQjE5QzI0NjdCOTQyRDNBNzlCRDI5JzsgXHRleHBvcnQgR05VUEdIT01FPVwiJChta3RlbXAgLWQpXCI7IFx0Z3BnIC0tYmF0Y2ggLS1rZXlzZXJ2ZXIga2V5c2VydmVyLnVidW50dS5jb20gLS1yZWN2LWtleXMgXCIka2V5XCI7IFx0Z3BnIC0tYmF0Y2ggLS1leHBvcnQgLS1hcm1vciBcIiRrZXlcIiBcdTAwM2UgL2V0Yy9wa2kvcnBtLWdwZy9SUE0tR1BHLUtFWS1teXNxbDsgXHRybSAtcmYgXCIkR05VUEdIT01FXCIifSx7ImNyZWF0ZWQiOiIyMDIzLTA4LTExVDAxOjM3OjQ3LjI1NTI1NzcxOVoiLCJjcmVhdGVkX2J5IjoiL2Jpbi9zaCAtYyAjKG5vcCkgIEVOViBNWVNRTF9NQUpPUj1pbm5vdmF0aW9uIiwiZW1wdHlfbGF5ZXIiOnRydWV9LHsiY3JlYXRlZCI6IjIwMjMtMDgtMTFUMDE6Mzc6NDcuMzQxNTEyMTc3WiIsImNyZWF0ZWRfYnkiOiIvYmluL3NoIC1jICMobm9wKSAgRU5WIE1ZU1FMX1ZFUlNJT049OC4xLjAtMS5lbDgiLCJlbXB0eV9sYXllciI6dHJ1ZX0seyJjcmVhdGVkIjoiMjAyMy0wOC0xMVQwMTozNzo0Ny44NjQ2MzMyNzNaIiwiY3JlYXRlZF9ieSI6Ii9iaW4vc2ggLWMgc2V0IC1ldTsgXHQuIC9ldGMvb3MtcmVsZWFzZTsgXHR7IFx0XHRlY2hvICdbbXlzcWxpbm5vdmF0aW9uLXNlcnZlci1taW5pbWFsXSc7IFx0XHRlY2hvICduYW1lPU15U1FMIGlubm92YXRpb24gU2VydmVyIE1pbmltYWwnOyBcdFx0ZWNobyAnZW5hYmxlZD0xJzsgXHRcdGVjaG8gXCJiYXNldXJsPWh0dHBzOi8vcmVwby5teXNxbC5jb20veXVtL215c3FsLWlubm92YXRpb24tY29tbXVuaXR5L2RvY2tlci9lbC8ke1ZFUlNJT05fSUQlJVsuLV0qfS9cXCRiYXNlYXJjaC9cIjsgXHRcdGVjaG8gJ2dwZ2NoZWNrPTEnOyBcdFx0ZWNobyAnZ3Bna2V5PWZpbGU6Ly8vZXRjL3BraS9ycG0tZ3BnL1JQTS1HUEctS0VZLW15c3FsJzsgXHRcdGVjaG8gJ21vZHVsZV9ob3RmaXhlcz10cnVlJzsgXHR9IHwgdGVlIC9ldGMveXVtLnJlcG9zLmQvbXlzcWwtY29tbXVuaXR5LW1pbmltYWwucmVwbyJ9LHsiY3JlYXRlZCI6IjIwMjMtMDgtMTFUMDE6Mzg6MjAuOTczOTQyNDQ4WiIsImNyZWF0ZWRfYnkiOiIvYmluL3NoIC1jIHNldCAtZXV4OyBcdG1pY3JvZG5mIGluc3RhbGwgLXkgXCJteXNxbC1jb21tdW5pdHktc2VydmVyLW1pbmltYWwtJE1ZU1FMX1ZFUlNJT05cIjsgXHRtaWNyb2RuZiBjbGVhbiBhbGw7IFx0Z3JlcCAtRiAnc29ja2V0PS92YXIvbGliL215c3FsL215c3FsLnNvY2snIC9ldGMvbXkuY25mOyBcdHNlZCAtaSAncyFec29ja2V0PS4qIXNvY2tldD0vdmFyL3J1bi9teXNxbGQvbXlzcWxkLnNvY2shJyAvZXRjL215LmNuZjsgXHRncmVwIC1GICdzb2NrZXQ9L3Zhci9ydW4vbXlzcWxkL215c3FsZC5zb2NrJyAvZXRjL215LmNuZjsgXHR7IGVjaG8gJ1tjbGllbnRdJzsgZWNobyAnc29ja2V0PS92YXIvcnVuL215c3FsZC9teXNxbGQuc29jayc7IH0gXHUwMDNlXHUwMDNlIC9ldGMvbXkuY25mOyBcdFx0ISBncmVwIC1GICchaW5jbHVkZWRpcicgL2V0Yy9teS5jbmY7IFx0eyBlY2hvOyBlY2hvICchaW5jbHVkZWRpciAvZXRjL215c3FsL2NvbmYuZC8nOyB9IFx1MDAzZVx1MDAzZSAvZXRjL215LmNuZjsgXHRta2RpciAtcCAvZXRjL215c3FsL2NvbmYuZDsgXHRta2RpciAtcCAvdmFyL2xpYi9teXNxbCAvdmFyL3J1bi9teXNxbGQ7IFx0Y2hvd24gbXlzcWw6bXlzcWwgL3Zhci9saWIvbXlzcWwgL3Zhci9ydW4vbXlzcWxkOyBcdGNobW9kIDE3NzcgL3Zhci9saWIvbXlzcWwgL3Zhci9ydW4vbXlzcWxkOyBcdFx0bWtkaXIgL2RvY2tlci1lbnRyeXBvaW50LWluaXRkYi5kOyBcdFx0bXlzcWxkIC0tdmVyc2lvbjsgXHRteXNxbCAtLXZlcnNpb24ifSx7ImNyZWF0ZWQiOiIyMDIzLTA4LTExVDAxOjM4OjIxLjgxMDkwMjc2WiIsImNyZWF0ZWRfYnkiOiIvYmluL3NoIC1jIHNldCAtZXU7IFx0LiAvZXRjL29zLXJlbGVhc2U7IFx0eyBcdFx0ZWNobyAnW215c3FsLXRvb2xzLWNvbW11bml0eV0nOyBcdFx0ZWNobyAnbmFtZT1NeVNRTCBUb29scyBDb21tdW5pdHknOyBcdFx0ZWNobyBcImJhc2V1cmw9aHR0cHM6Ly9yZXBvLm15c3FsLmNvbS95dW0vbXlzcWwtdG9vbHMtY29tbXVuaXR5L2VsLyR7VkVSU0lPTl9JRCUlWy4tXSp9L1xcJGJhc2VhcmNoL1wiOyBcdFx0ZWNobyAnZW5hYmxlZD0xJzsgXHRcdGVjaG8gJ2dwZ2NoZWNrPTEnOyBcdFx0ZWNobyAnZ3Bna2V5PWZpbGU6Ly8vZXRjL3BraS9ycG0tZ3BnL1JQTS1HUEctS0VZLW15c3FsJzsgXHRcdGVjaG8gJ21vZHVsZV9ob3RmaXhlcz10cnVlJzsgXHR9IHwgdGVlIC9ldGMveXVtLnJlcG9zLmQvbXlzcWwtY29tbXVuaXR5LXRvb2xzLnJlcG8ifSx7ImNyZWF0ZWQiOiIyMDIzLTA4LTExVDAxOjM4OjIxLjkwMDI2ODQwM1oiLCJjcmVhdGVkX2J5IjoiL2Jpbi9zaCAtYyAjKG5vcCkgIEVOViBNWVNRTF9TSEVMTF9WRVJTSU9OPTguMC4zNC0xLmVsOCIsImVtcHR5X2xheWVyIjp0cnVlfSx7ImNyZWF0ZWQiOiIyMDIzLTA4LTExVDAxOjM4OjU5LjM0Mzk4MTc4M1oiLCJjcmVhdGVkX2J5IjoiL2Jpbi9zaCAtYyBzZXQgLWV1eDsgXHRtaWNyb2RuZiBpbnN0YWxsIC15IFwibXlzcWwtc2hlbGwtJE1ZU1FMX1NIRUxMX1ZFUlNJT05cIjsgXHRtaWNyb2RuZiBjbGVhbiBhbGw7IFx0XHRteXNxbHNoIC0tdmVyc2lvbiJ9LHsiY3JlYXRlZCI6IjIwMjMtMDgtMTFUMDE6Mzk6MDAuMTg0NDUyMTE2WiIsImNyZWF0ZWRfYnkiOiIvYmluL3NoIC1jICMobm9wKSAgVk9MVU1FIFsvdmFyL2xpYi9teXNxbF0iLCJlbXB0eV9sYXllciI6dHJ1ZX0seyJjcmVhdGVkIjoiMjAyMy0wOC0xMVQwMTozOTowMC4yNzUzODIyNjFaIiwiY3JlYXRlZF9ieSI6Ii9iaW4vc2ggLWMgIyhub3ApIENPUFkgZmlsZTplOWMyMjM1M2ExMTMzYjg5YzViY2EyNGVjYWNkMzQ4YWNkMDk0ZTUwZTVlNWM0NTM3NWE5OTdjNmIxZjA3MTkyIGluIC91c3IvbG9jYWwvYmluLyAifSx7ImNyZWF0ZWQiOiIyMDIzLTA4LTExVDAxOjM5OjAwLjM1ODAwMDQwNloiLCJjcmVhdGVkX2J5IjoiL2Jpbi9zaCAtYyAjKG5vcCkgIEVOVFJZUE9JTlQgW1wiZG9ja2VyLWVudHJ5cG9pbnQuc2hcIl0iLCJlbXB0eV9sYXllciI6dHJ1ZX0seyJjcmVhdGVkIjoiMjAyMy0wOC0xMVQwMTozOTowMC40Mzk2NjEwODdaIiwiY3JlYXRlZF9ieSI6Ii9iaW4vc2ggLWMgIyhub3ApICBFWFBPU0UgMzMwNiAzMzA2MCIsImVtcHR5X2xheWVyIjp0cnVlfSx7ImNyZWF0ZWQiOiIyMDIzLTA4LTExVDAxOjM5OjAwLjUyMzg4MTEyNFoiLCJjcmVhdGVkX2J5IjoiL2Jpbi9zaCAtYyAjKG5vcCkgIENNRCBbXCJteXNxbGRcIl0iLCJlbXB0eV9sYXllciI6dHJ1ZX1dLCJvcyI6ImxpbnV4Iiwicm9vdGZzIjp7InR5cGUiOiJsYXllcnMiLCJkaWZmX2lkcyI6WyJzaGEyNTY6M2JmOTkwNzRmOTZkZjZhZjZlYzIwNWY4ZGY4OGFmMjM5ZmM0OGZmOTM2Yzc1ZTNhZjlhNmExNjI2ZjIyYTU2NyIsInNoYTI1NjphMTMzZGI2Mzc4MDA1NjQ3Njc0Zjc5M2Q3OGQ2ZjY3YzBhNzlhOTI0YzYyNDI4YmRlZDhiOTdmYTI3MmE2YzU0Iiwic2hhMjU2OjJiMmE5MzZlNWY2YjJjZTg5MjZhYzkwYzNlMzcxMjM4ZGRhMDY0MWE0ODA3ODk3NjViNzhhZjMzMjIwMTkwZDEiLCJzaGEyNTY6YThlYWNkZjM2NjBkYjNjNmUwNGU0MDA1ZmEwNTkxNmQzMDA1NzA5NWE0ZmUxOTAwM2MzNzI4YzA0OGFmZjk4MCIsInNoYTI1NjpiMTc4ZWQwYjYxNzBiMTdiMmYyYmUxOGE1OGIwZDYzYzg2NDVhMDk0NGRhMDViZGRhYzk4ZDQ5ZTBjYmI2NmFmIiwic2hhMjU2OmQ3MGMwNDkzYzJlNjkwYzIyODRjY2Q2MmI1NjdmMmNlZmJlYTFmOGNlNGY4NzUwZDQ5YmJiNDIyOGRiODVjNTAiLCJzaGEyNTY6ZDI4MjRiNzAwOTViMjcxYmIxZWEyMTYxMzA0NGU4MDFiODQxYWUxZmEwMjdmYjY4ZGIzNDA0ZGRjYTE2NzdlMCIsInNoYTI1NjowOWU2N2VkMDU0NmUxYWMyOWY4ZTQ5YWQ1MDJiNDdlMmU4MDdkMTQzZTFmOGZiNzI1NTg2OTZmMjg1YWEwMzA1Iiwic2hhMjU2OjhkZWQxYWUyYTA2ZjEyMTFhNjU3ODY3ZDA3Nzg5MTlkODMxMzhmY2U0N2NkNzdiZTMzYTZhOWM3ZTQ0M2JmMGUiLCJzaGEyNTY6ZGI3YWI4NWJmNTc0NzZjOGNlMGQwYmVhNGNiMmE5NjQ3ZTUyMjRlNmRmMGQ2ZTAxMmMyZWM5Y2JmNzUyODUxOSJdfX0=",
+   "repoDigests": [
+    "mysql@sha256:c0455ac041844b5e65cd08571387fa5b50ab2a6179557fd938298cab13acf0dd"
+   ],
+   "architecture": "amd64",
+   "os": "linux"
+  }
+ },
+ "distro": {
+  "name": "oraclelinux",
+  "version": "8.8",
+  "idLike": [
+   "fedora"
+  ]
+ },
+ "descriptor": {
+  "name": "grype",
+  "version": "0.65.2",
+  "configuration": {
+   "configPath": "",
+   "verbosity": 0,
+   "output": [
+    "json"
+   ],
+   "file": "/tmp/grype-25379700.json",
+   "distro": "",
+   "add-cpes-if-none": true,
+   "output-template-file": "",
+   "quiet": true,
+   "check-for-app-update": true,
+   "only-fixed": false,
+   "only-notfixed": false,
+   "platform": "",
+   "search": {
+    "scope": "AllLayers",
+    "unindexed-archives": false,
+    "indexed-archives": true
+   },
+   "ignore": null,
+   "exclude": [],
+   "db": {
+    "cache-dir": "/home/codespace/.cache/grype/db",
+    "update-url": "https://toolbox-data.anchore.io/grype/databases/listing.json",
+    "ca-cert": "",
+    "auto-update": true,
+    "validate-by-hash-on-start": false,
+    "validate-age": true,
+    "max-allowed-built-age": 432000000000000
+   },
+   "externalSources": {
+    "enable": false,
+    "maven": {
+     "searchUpstreamBySha1": true,
+     "baseUrl": "https://search.maven.org/solrsearch/select"
+    }
+   },
+   "match": {
+    "java": {
+     "using-cpes": true
+    },
+    "dotnet": {
+     "using-cpes": true
+    },
+    "golang": {
+     "using-cpes": true
+    },
+    "javascript": {
+     "using-cpes": false
+    },
+    "python": {
+     "using-cpes": true
+    },
+    "ruby": {
+     "using-cpes": true
+    },
+    "stock": {
+     "using-cpes": true
+    }
+   },
+   "dev": {
+    "profile-cpu": false,
+    "profile-mem": false
+   },
+   "fail-on-severity": "",
+   "registry": {
+    "insecure-skip-tls-verify": false,
+    "insecure-use-http": false,
+    "auth": []
+   },
+   "log": {
+    "structured": false,
+    "level": "",
+    "file": ""
+   },
+   "show-suppressed": false,
+   "by-cve": false,
+   "name": "",
+   "default-image-pull-source": ""
+  },
+  "db": {
+   "built": "2023-08-22T01:27:17Z",
+   "schemaVersion": 5,
+   "location": "/home/codespace/.cache/grype/db/5",
+   "checksum": "sha256:3f9e5487d50a65483aabb892c936a81c9d58b5986c81ac090c845c8dc3b941e0",
+   "error": null
+  },
+  "timestamp": "2023-08-22T10:02:47.7154589Z"
+ }
+}

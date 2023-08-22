@@ -1,0 +1,214 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "hashicorp/consul",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "OS": {
+      "Family": "alpine",
+      "Name": "3.18.2"
+    },
+    "ImageID": "sha256:fb04ae6e4bc33020689d6611b218d215c93a5097a28eef221413f203eb597767",
+    "DiffIDs": [
+      "sha256:78a822fe2a2d2c84f3de4a403188c45f623017d6a4521d23047c9fbb0801794c",
+      "sha256:7e364bec139cecd49c98c7bb05ec2657a67c267ec9224002eaeef9617b642568",
+      "sha256:ca340b2bf059a3d337adb1ca0ee533bba0b1e702d79443bf0710facb75f54e3a",
+      "sha256:87940aaaf022c623ea4d543692acb6d1964389d6528482d55f24ba047d368375",
+      "sha256:1271ac21e96473e78fbdc6637ff02f11f14475ea12a42c53ba9f6efab821c8c5",
+      "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "sha256:1f0bdb144150c1a1e091148895baa98309269cd26abfe6cb283df0da2b4886b0",
+      "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    ],
+    "RepoTags": [
+      "hashicorp/consul:latest"
+    ],
+    "RepoDigests": [
+      "hashicorp/consul@sha256:8a163661acf3a07a5bc69d156b4e345e14342756fe1fe3833d14070e8d67b088"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "created": "2023-08-05T22:10:55.230319441Z",
+      "history": [
+        {
+          "created": "2023-06-14T20:41:58Z",
+          "created_by": "/bin/sh -c #(nop) ADD file:1da756d12551a0e3e793e02ef87432d69d4968937bd11bed0af215db19dd94cd in / "
+        },
+        {
+          "created": "2023-06-14T20:41:59Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/sh\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-05T22:10:52Z",
+          "created_by": "ARG PRODUCT_VERSION",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-05T22:10:52Z",
+          "created_by": "ARG BIN_NAME",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-05T22:10:52Z",
+          "created_by": "ENV BIN_NAME=consul",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-05T22:10:52Z",
+          "created_by": "ENV PRODUCT_VERSION=1.16.1",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-05T22:10:52Z",
+          "created_by": "ARG PRODUCT_REVISION",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-05T22:10:52Z",
+          "created_by": "ARG PRODUCT_NAME=consul",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-05T22:10:52Z",
+          "created_by": "ARG TARGETOS TARGETARCH",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-05T22:10:52Z",
+          "created_by": "LABEL org.opencontainers.image.authors=Consul Team \u003cconsul@hashicorp.com\u003e org.opencontainers.image.url=https://www.consul.io/ org.opencontainers.image.documentation=https://www.consul.io/docs org.opencontainers.image.source=https://github.com/hashicorp/consul org.opencontainers.image.version=1.16.1 org.opencontainers.image.vendor=HashiCorp org.opencontainers.image.title=consul org.opencontainers.image.description=Consul is a datacenter runtime that provides service discovery, configuration, and orchestration. version=1.16.1",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-05T22:10:52Z",
+          "created_by": "RUN |6 PRODUCT_VERSION=1.16.1 BIN_NAME=consul PRODUCT_REVISION=e0ab4d29fc4482fbdddd9811b2b4c4a0a38f38fc PRODUCT_NAME=consul TARGETOS=linux TARGETARCH=amd64 /bin/sh -c apk add -v --no-cache \t\tdumb-init \t\tlibc6-compat \t\tiptables \t\ttzdata \t\tcurl \t\tca-certificates \t\tgnupg \t\tiputils \t\tlibcap \t\topenssl \t\tsu-exec \t\tjq # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-08-05T22:10:53Z",
+          "created_by": "RUN |6 PRODUCT_VERSION=1.16.1 BIN_NAME=consul PRODUCT_REVISION=e0ab4d29fc4482fbdddd9811b2b4c4a0a38f38fc PRODUCT_NAME=consul TARGETOS=linux TARGETARCH=amd64 /bin/sh -c addgroup $BIN_NAME \u0026\u0026     adduser -S -G $BIN_NAME $BIN_NAME # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-08-05T22:10:55Z",
+          "created_by": "COPY dist/linux/amd64/consul /bin/ # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-08-05T22:10:55Z",
+          "created_by": "RUN |6 PRODUCT_VERSION=1.16.1 BIN_NAME=consul PRODUCT_REVISION=e0ab4d29fc4482fbdddd9811b2b4c4a0a38f38fc PRODUCT_NAME=consul TARGETOS=linux TARGETARCH=amd64 /bin/sh -c mkdir -p /consul/data \u0026\u0026     mkdir -p /consul/config \u0026\u0026     chown -R consul:consul /consul # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-08-05T22:10:55Z",
+          "created_by": "RUN |6 PRODUCT_VERSION=1.16.1 BIN_NAME=consul PRODUCT_REVISION=e0ab4d29fc4482fbdddd9811b2b4c4a0a38f38fc PRODUCT_NAME=consul TARGETOS=linux TARGETARCH=amd64 /bin/sh -c test -e /etc/nsswitch.conf || echo 'hosts: files dns' \u003e /etc/nsswitch.conf # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-08-05T22:10:55Z",
+          "created_by": "VOLUME [/consul/data]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-05T22:10:55Z",
+          "created_by": "EXPOSE map[8300/tcp:{}]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-05T22:10:55Z",
+          "created_by": "EXPOSE map[8301/tcp:{} 8301/udp:{} 8302/tcp:{} 8302/udp:{}]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-05T22:10:55Z",
+          "created_by": "EXPOSE map[8500/tcp:{} 8600/tcp:{} 8600/udp:{}]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-05T22:10:55Z",
+          "created_by": "COPY .release/docker/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-08-05T22:10:55Z",
+          "created_by": "RUN |6 PRODUCT_VERSION=1.16.1 BIN_NAME=consul PRODUCT_REVISION=e0ab4d29fc4482fbdddd9811b2b4c4a0a38f38fc PRODUCT_NAME=consul TARGETOS=linux TARGETARCH=amd64 /bin/sh -c chmod +x /usr/local/bin/docker-entrypoint.sh # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-08-05T22:10:55Z",
+          "created_by": "ENTRYPOINT [\"docker-entrypoint.sh\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-08-05T22:10:55Z",
+          "created_by": "CMD [\"agent\" \"-dev\" \"-client\" \"0.0.0.0\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:78a822fe2a2d2c84f3de4a403188c45f623017d6a4521d23047c9fbb0801794c",
+          "sha256:7e364bec139cecd49c98c7bb05ec2657a67c267ec9224002eaeef9617b642568",
+          "sha256:ca340b2bf059a3d337adb1ca0ee533bba0b1e702d79443bf0710facb75f54e3a",
+          "sha256:87940aaaf022c623ea4d543692acb6d1964389d6528482d55f24ba047d368375",
+          "sha256:1271ac21e96473e78fbdc6637ff02f11f14475ea12a42c53ba9f6efab821c8c5",
+          "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "sha256:1f0bdb144150c1a1e091148895baa98309269cd26abfe6cb283df0da2b4886b0",
+          "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+        ]
+      },
+      "config": {
+        "Cmd": [
+          "agent",
+          "-dev",
+          "-client",
+          "0.0.0.0"
+        ],
+        "Entrypoint": [
+          "docker-entrypoint.sh"
+        ],
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "BIN_NAME=consul",
+          "PRODUCT_VERSION=1.16.1"
+        ],
+        "Labels": {
+          "org.opencontainers.image.authors": "Consul Team \u003cconsul@hashicorp.com\u003e",
+          "org.opencontainers.image.description": "Consul is a datacenter runtime that provides service discovery, configuration, and orchestration.",
+          "org.opencontainers.image.documentation": "https://www.consul.io/docs",
+          "org.opencontainers.image.source": "https://github.com/hashicorp/consul",
+          "org.opencontainers.image.title": "consul",
+          "org.opencontainers.image.url": "https://www.consul.io/",
+          "org.opencontainers.image.vendor": "HashiCorp",
+          "org.opencontainers.image.version": "1.16.1",
+          "version": "1.16.1"
+        },
+        "Volumes": {
+          "/consul/data": {}
+        },
+        "ArgsEscaped": true
+      }
+    }
+  },
+  "Results": [
+    {
+      "Target": "hashicorp/consul (alpine 3.18.2)",
+      "Class": "os-pkgs",
+      "Type": "alpine"
+    }
+  ]
+}

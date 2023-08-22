@@ -1,0 +1,180 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "amazonlinux",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "OS": {
+      "Family": "amazon",
+      "Name": "2023 (Amazon Linux)"
+    },
+    "ImageID": "sha256:98074abb13ad21c0ebd761619623f42107b2f82ff3c58d2ce03cb84c24453834",
+    "DiffIDs": [
+      "sha256:08000fa1492b1b5de9aa8d0b1525b02c6b3eb10d8d4f6ba987da94f9cbb7d2b0"
+    ],
+    "RepoTags": [
+      "amazonlinux:latest"
+    ],
+    "RepoDigests": [
+      "amazonlinux@sha256:2abc7d4cf0938b9c6cc72de4b477576b40c7577e882dce9a26d7639ab79f9703"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "container": "f1e691db47449468e21bed67cc6eda91a46b56d9624fce75459961b03bf0ab3a",
+      "created": "2023-08-07T19:58:55.448443035Z",
+      "docker_version": "20.10.23",
+      "history": [
+        {
+          "created": "2023-08-07T19:58:54Z",
+          "created_by": "/bin/sh -c #(nop) COPY dir:1f2861cb5cb66982b608640300c5c9fa18eb5f3b855ebdd670700b8f8998b047 in / "
+        },
+        {
+          "created": "2023-08-07T19:58:55Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/bash\"]",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:08000fa1492b1b5de9aa8d0b1525b02c6b3eb10d8d4f6ba987da94f9cbb7d2b0"
+        ]
+      },
+      "config": {
+        "Cmd": [
+          "/bin/bash"
+        ],
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+        ],
+        "Image": "sha256:db01f2b4ca32f84d9c5b8f02510ba97a20f236d96a8c6a72858190f83d209aba"
+      }
+    }
+  },
+  "Results": [
+    {
+      "Target": "amazonlinux (amazon 2023 (Amazon Linux))",
+      "Class": "os-pkgs",
+      "Type": "amazon",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2023-35945",
+          "PkgID": "libnghttp2@1.51.0-1.amzn2023.x86_64",
+          "PkgName": "libnghttp2",
+          "InstalledVersion": "1.51.0-1.amzn2023",
+          "FixedVersion": "1.55.1-1.amzn2023.0.1",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:08000fa1492b1b5de9aa8d0b1525b02c6b3eb10d8d4f6ba987da94f9cbb7d2b0"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-35945",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Title": "HTTP/2 memory leak in nghttp2 codec",
+          "Description": "Envoy is a cloud-native high-performance edge/middle/service proxy. Envoy’s HTTP/2 codec may leak a header map and bookkeeping structures upon receiving `RST_STREAM` immediately followed by the `GOAWAY` frames from an upstream server. In nghttp2, cleanup of pending requests due to receipt of the `GOAWAY` frame skips de-allocation of the bookkeeping structure and pending compressed header. The error return [code path] is taken if connection is already marked for not sending more requests due to `GOAWAY` frame. The clean-up code is right after the return statement, causing memory leak. Denial of service through memory exhaustion. This vulnerability was patched in versions(s) 1.26.3, 1.25.8, 1.24.9, 1.23.11.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-459"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2023-35945",
+            "https://github.com/envoyproxy/envoy/security/advisories/GHSA-jfxv-29pc-x22r",
+            "https://github.com/nghttp2/nghttp2/blob/e7f59406556c80904b81b593d38508591bb7523a/lib/nghttp2_session.c#L3346",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-35945",
+            "https://www.cve.org/CVERecord?id=CVE-2023-35945"
+          ],
+          "PublishedDate": "2023-07-13T21:15:00Z",
+          "LastModifiedDate": "2023-07-25T18:36:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-41409",
+          "PkgID": "pcre2@10.40-1.amzn2023.0.2.x86_64",
+          "PkgName": "pcre2",
+          "InstalledVersion": "10.40-1.amzn2023.0.2",
+          "FixedVersion": "10.40-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:08000fa1492b1b5de9aa8d0b1525b02c6b3eb10d8d4f6ba987da94f9cbb7d2b0"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-41409",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Title": "Integer overflow vulnerability in pcre2test before 10.41 allows attack ...",
+          "Description": "Integer overflow vulnerability in pcre2test before 10.41 allows attackers to cause a denial of service or other unspecified impacts via negative input.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://github.com/PCRE2Project/pcre2/commit/94e1c001761373b7d9450768aa15d04c25547a35",
+            "https://github.com/PCRE2Project/pcre2/issues/141",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-41409"
+          ],
+          "PublishedDate": "2023-07-18T14:15:00Z",
+          "LastModifiedDate": "2023-07-27T03:46:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-41409",
+          "PkgID": "pcre2-syntax@10.40-1.amzn2023.0.2.noarch",
+          "PkgName": "pcre2-syntax",
+          "InstalledVersion": "10.40-1.amzn2023.0.2",
+          "FixedVersion": "10.40-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:08000fa1492b1b5de9aa8d0b1525b02c6b3eb10d8d4f6ba987da94f9cbb7d2b0"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-41409",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Title": "Integer overflow vulnerability in pcre2test before 10.41 allows attack ...",
+          "Description": "Integer overflow vulnerability in pcre2test before 10.41 allows attackers to cause a denial of service or other unspecified impacts via negative input.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://github.com/PCRE2Project/pcre2/commit/94e1c001761373b7d9450768aa15d04c25547a35",
+            "https://github.com/PCRE2Project/pcre2/issues/141",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-41409"
+          ],
+          "PublishedDate": "2023-07-18T14:15:00Z",
+          "LastModifiedDate": "2023-07-27T03:46:00Z"
+        }
+      ]
+    }
+  ]
+}

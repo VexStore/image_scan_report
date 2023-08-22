@@ -1,0 +1,930 @@
+{
+ "matches": [
+  {
+   "vulnerability": {
+    "id": "ALAS-2023-278",
+    "dataSource": "https://alas.aws.amazon.com/AL2023/ALAS-2023-278.html",
+    "namespace": "amazon:distro:amazonlinux:2023",
+    "severity": "High",
+    "urls": [
+     "https://alas.aws.amazon.com/AL2023/ALAS-2023-278.html"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "1.55.1-1.amzn2023.0.1"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2023-35945",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-35945",
+     "namespace": "nvd:cpe",
+     "severity": "High",
+     "urls": [
+      "https://github.com/envoyproxy/envoy/security/advisories/GHSA-jfxv-29pc-x22r",
+      "https://github.com/nghttp2/nghttp2/blob/e7f59406556c80904b81b593d38508591bb7523a/lib/nghttp2_session.c#L3346"
+     ],
+     "description": "Envoy is a cloud-native high-performance edge/middle/service proxy. Envoy’s HTTP/2 codec may leak a header map and bookkeeping structures upon receiving `RST_STREAM` immediately followed by the `GOAWAY` frames from an upstream server. In nghttp2, cleanup of pending requests due to receipt of the `GOAWAY` frame skips de-allocation of the bookkeeping structure and pending compressed header. The error return [code path] is taken if connection is already marked for not sending more requests due to `GOAWAY` frame. The clean-up code is right after the return statement, causing memory leak. Denial of service through memory exhaustion. This vulnerability was patched in versions(s) 1.26.3, 1.25.8, 1.24.9, 1.23.11.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "security-advisories@github.com",
+       "type": "Secondary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "rpm-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "amazonlinux",
+       "version": "2023"
+      },
+      "namespace": "amazon:distro:amazonlinux:2023",
+      "package": {
+       "name": "nghttp2",
+       "version": "1.51.0-1.amzn2023"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 1.55.1-1.amzn2023.0.1 (rpm)",
+      "vulnerabilityID": "ALAS-2023-278"
+     }
+    },
+    {
+     "type": "exact-direct-match",
+     "matcher": "rpm-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "amazonlinux",
+       "version": "2023"
+      },
+      "namespace": "amazon:distro:amazonlinux:2023",
+      "package": {
+       "name": "libnghttp2",
+       "version": "0:1.51.0-1.amzn2023"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 1.55.1-1.amzn2023.0.1 (rpm)",
+      "vulnerabilityID": "ALAS-2023-278"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "ca2107c46ebf41f8",
+    "name": "libnghttp2",
+    "version": "1.51.0-1.amzn2023",
+    "type": "rpm",
+    "locations": [
+     {
+      "path": "/var/lib/rpm/rpmdb.sqlite",
+      "layerID": "sha256:08000fa1492b1b5de9aa8d0b1525b02c6b3eb10d8d4f6ba987da94f9cbb7d2b0"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "MIT"
+    ],
+    "cpes": [
+     "cpe:2.3:a:amazonlinux:libnghttp2:1.51.0-1.amzn2023:*:*:*:*:*:*:*",
+     "cpe:2.3:a:libnghttp2:libnghttp2:1.51.0-1.amzn2023:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:rpm/amzn/libnghttp2@1.51.0-1.amzn2023?arch=x86_64&upstream=nghttp2-1.51.0-1.amzn2023.src.rpm&distro=amzn-2023",
+    "upstreams": [
+     {
+      "name": "nghttp2",
+      "version": "1.51.0-1.amzn2023"
+     }
+    ],
+    "metadataType": "RpmMetadata",
+    "metadata": {
+     "epoch": null,
+     "modularityLabel": ""
+    }
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "ALAS-2023-286",
+    "dataSource": "https://alas.aws.amazon.com/AL2023/ALAS-2023-286.html",
+    "namespace": "amazon:distro:amazonlinux:2023",
+    "severity": "Low",
+    "urls": [
+     "https://alas.aws.amazon.com/AL2023/ALAS-2023-286.html"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "10.40-1.amzn2023.0.3"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-41409",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-41409",
+     "namespace": "nvd:cpe",
+     "severity": "High",
+     "urls": [
+      "https://github.com/PCRE2Project/pcre2/commit/94e1c001761373b7d9450768aa15d04c25547a35",
+      "https://github.com/PCRE2Project/pcre2/issues/141"
+     ],
+     "description": "Integer overflow vulnerability in pcre2test before 10.41 allows attackers to cause a denial of service or other unspecified impacts via negative input.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "rpm-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "amazonlinux",
+       "version": "2023"
+      },
+      "namespace": "amazon:distro:amazonlinux:2023",
+      "package": {
+       "name": "pcre2",
+       "version": "0:10.40-1.amzn2023.0.2"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 10.40-1.amzn2023.0.3 (rpm)",
+      "vulnerabilityID": "ALAS-2023-286"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "9b97824fee7e0d46",
+    "name": "pcre2",
+    "version": "10.40-1.amzn2023.0.2",
+    "type": "rpm",
+    "locations": [
+     {
+      "path": "/var/lib/rpm/rpmdb.sqlite",
+      "layerID": "sha256:08000fa1492b1b5de9aa8d0b1525b02c6b3eb10d8d4f6ba987da94f9cbb7d2b0"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "BSD"
+    ],
+    "cpes": [
+     "cpe:2.3:a:amazonlinux:pcre2:10.40-1.amzn2023.0.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pcre2:pcre2:10.40-1.amzn2023.0.2:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:rpm/amzn/pcre2@10.40-1.amzn2023.0.2?arch=x86_64&upstream=pcre2-10.40-1.amzn2023.0.2.src.rpm&distro=amzn-2023",
+    "upstreams": [],
+    "metadataType": "RpmMetadata",
+    "metadata": {
+     "epoch": null,
+     "modularityLabel": ""
+    }
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "ALAS-2023-286",
+    "dataSource": "https://alas.aws.amazon.com/AL2023/ALAS-2023-286.html",
+    "namespace": "amazon:distro:amazonlinux:2023",
+    "severity": "Low",
+    "urls": [
+     "https://alas.aws.amazon.com/AL2023/ALAS-2023-286.html"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "10.40-1.amzn2023.0.3"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-41409",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-41409",
+     "namespace": "nvd:cpe",
+     "severity": "High",
+     "urls": [
+      "https://github.com/PCRE2Project/pcre2/commit/94e1c001761373b7d9450768aa15d04c25547a35",
+      "https://github.com/PCRE2Project/pcre2/issues/141"
+     ],
+     "description": "Integer overflow vulnerability in pcre2test before 10.41 allows attackers to cause a denial of service or other unspecified impacts via negative input.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "rpm-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "amazonlinux",
+       "version": "2023"
+      },
+      "namespace": "amazon:distro:amazonlinux:2023",
+      "package": {
+       "name": "pcre2",
+       "version": "10.40-1.amzn2023.0.2"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 10.40-1.amzn2023.0.3 (rpm)",
+      "vulnerabilityID": "ALAS-2023-286"
+     }
+    },
+    {
+     "type": "exact-direct-match",
+     "matcher": "rpm-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "amazonlinux",
+       "version": "2023"
+      },
+      "namespace": "amazon:distro:amazonlinux:2023",
+      "package": {
+       "name": "pcre2-syntax",
+       "version": "0:10.40-1.amzn2023.0.2"
+      }
+     },
+     "found": {
+      "versionConstraint": "< 10.40-1.amzn2023.0.3 (rpm)",
+      "vulnerabilityID": "ALAS-2023-286"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "388a4ffb438d31df",
+    "name": "pcre2-syntax",
+    "version": "10.40-1.amzn2023.0.2",
+    "type": "rpm",
+    "locations": [
+     {
+      "path": "/var/lib/rpm/rpmdb.sqlite",
+      "layerID": "sha256:08000fa1492b1b5de9aa8d0b1525b02c6b3eb10d8d4f6ba987da94f9cbb7d2b0"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "BSD"
+    ],
+    "cpes": [
+     "cpe:2.3:a:pcre2-syntax:pcre2-syntax:10.40-1.amzn2023.0.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pcre2-syntax:pcre2_syntax:10.40-1.amzn2023.0.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pcre2_syntax:pcre2-syntax:10.40-1.amzn2023.0.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pcre2_syntax:pcre2_syntax:10.40-1.amzn2023.0.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:amazonlinux:pcre2-syntax:10.40-1.amzn2023.0.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:amazonlinux:pcre2_syntax:10.40-1.amzn2023.0.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pcre2:pcre2-syntax:10.40-1.amzn2023.0.2:*:*:*:*:*:*:*",
+     "cpe:2.3:a:pcre2:pcre2_syntax:10.40-1.amzn2023.0.2:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:rpm/amzn/pcre2-syntax@10.40-1.amzn2023.0.2?arch=noarch&upstream=pcre2-10.40-1.amzn2023.0.2.src.rpm&distro=amzn-2023",
+    "upstreams": [
+     {
+      "name": "pcre2",
+      "version": "10.40-1.amzn2023.0.2"
+     }
+    ],
+    "metadataType": "RpmMetadata",
+    "metadata": {
+     "epoch": null,
+     "modularityLabel": ""
+    }
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2021-35939",
+    "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2021-35939",
+    "namespace": "nvd:cpe",
+    "severity": "Medium",
+    "urls": [
+     "https://access.redhat.com/security/cve/CVE-2021-35939",
+     "https://bugzilla.redhat.com/show_bug.cgi?id=1964129",
+     "https://github.com/rpm-software-management/rpm/commit/96ec957e281220f8e137a2d5eb23b83a6377d556",
+     "https://github.com/rpm-software-management/rpm/pull/1919",
+     "https://rpm.org/wiki/Releases/4.18.0",
+     "https://security.gentoo.org/glsa/202210-22"
+    ],
+    "description": "It was found that the fix for CVE-2017-7500 and CVE-2017-7501 was incomplete: the check was only implemented for the parent directory of the file to be created. A local unprivileged user who owns another ancestor directory could potentially use this flaw to gain root privileges. The highest threat from this vulnerability is to data confidentiality and integrity as well as system availability.",
+    "cvss": [
+     {
+      "source": "nvd@nist.gov",
+      "type": "Primary",
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "metrics": {
+       "baseScore": 6.7,
+       "exploitabilityScore": 0.8,
+       "impactScore": 5.9
+      },
+      "vendorMetadata": {}
+     }
+    ],
+    "fix": {
+     "versions": [],
+     "state": "unknown"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [],
+   "matchDetails": [
+    {
+     "type": "cpe-match",
+     "matcher": "python-matcher",
+     "searchedBy": {
+      "namespace": "nvd:cpe",
+      "cpes": [
+       "cpe:2.3:a:rpm:rpm:4.16.1.3:*:*:*:*:*:*:*"
+      ],
+      "Package": {
+       "name": "rpm",
+       "version": "4.16.1.3"
+      }
+     },
+     "found": {
+      "vulnerabilityID": "CVE-2021-35939",
+      "versionConstraint": "< 4.18 (unknown)",
+      "cpes": [
+       "cpe:2.3:a:rpm:rpm:*:*:*:*:*:*:*:*"
+      ]
+     }
+    }
+   ],
+   "artifact": {
+    "id": "fe2bdc1302ea8c10",
+    "name": "rpm",
+    "version": "4.16.1.3",
+    "type": "python",
+    "locations": [
+     {
+      "path": "/usr/lib64/python3.9/site-packages/rpm-4.16.1.3-py3.9.egg-info",
+      "layerID": "sha256:08000fa1492b1b5de9aa8d0b1525b02c6b3eb10d8d4f6ba987da94f9cbb7d2b0"
+     }
+    ],
+    "language": "python",
+    "licenses": [
+     "GNU General Public License v2"
+    ],
+    "cpes": [
+     "cpe:2.3:a:rpm_maint_project:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maint_project:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maintproject:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maintproject:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown_project:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown_project:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknownproject:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknownproject:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-rpm:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-rpm:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_rpm:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_rpm:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maint_project:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm-maint:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm-maint:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maint:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maint:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maintproject:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown_project:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknownproject:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-rpm:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_rpm:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm-maint:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maint:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm:rpm:4.16.1.3:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:pypi/rpm@4.16.1.3",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2021-35938",
+    "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2021-35938",
+    "namespace": "nvd:cpe",
+    "severity": "Medium",
+    "urls": [
+     "https://access.redhat.com/security/cve/CVE-2021-35938",
+     "https://bugzilla.redhat.com/show_bug.cgi?id=1964114",
+     "https://bugzilla.suse.com/show_bug.cgi?id=1157880",
+     "https://github.com/rpm-software-management/rpm/commit/25a435e90844ea98fe5eb7bef22c1aecf3a9c033",
+     "https://github.com/rpm-software-management/rpm/pull/1919",
+     "https://rpm.org/wiki/Releases/4.18.0",
+     "https://security.gentoo.org/glsa/202210-22"
+    ],
+    "description": "A symbolic link issue was found in rpm. It occurs when rpm sets the desired permissions and credentials after installing a file. A local unprivileged user could use this flaw to exchange the original file with a symbolic link to a security-critical file and escalate their privileges on the system. The highest threat from this vulnerability is to data confidentiality and integrity as well as system availability.",
+    "cvss": [
+     {
+      "source": "nvd@nist.gov",
+      "type": "Primary",
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "metrics": {
+       "baseScore": 6.7,
+       "exploitabilityScore": 0.8,
+       "impactScore": 5.9
+      },
+      "vendorMetadata": {}
+     }
+    ],
+    "fix": {
+     "versions": [],
+     "state": "unknown"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [],
+   "matchDetails": [
+    {
+     "type": "cpe-match",
+     "matcher": "python-matcher",
+     "searchedBy": {
+      "namespace": "nvd:cpe",
+      "cpes": [
+       "cpe:2.3:a:rpm:rpm:4.16.1.3:*:*:*:*:*:*:*"
+      ],
+      "Package": {
+       "name": "rpm",
+       "version": "4.16.1.3"
+      }
+     },
+     "found": {
+      "vulnerabilityID": "CVE-2021-35938",
+      "versionConstraint": "< 4.18.0 (unknown)",
+      "cpes": [
+       "cpe:2.3:a:rpm:rpm:*:*:*:*:*:*:*:*"
+      ]
+     }
+    }
+   ],
+   "artifact": {
+    "id": "fe2bdc1302ea8c10",
+    "name": "rpm",
+    "version": "4.16.1.3",
+    "type": "python",
+    "locations": [
+     {
+      "path": "/usr/lib64/python3.9/site-packages/rpm-4.16.1.3-py3.9.egg-info",
+      "layerID": "sha256:08000fa1492b1b5de9aa8d0b1525b02c6b3eb10d8d4f6ba987da94f9cbb7d2b0"
+     }
+    ],
+    "language": "python",
+    "licenses": [
+     "GNU General Public License v2"
+    ],
+    "cpes": [
+     "cpe:2.3:a:rpm_maint_project:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maint_project:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maintproject:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maintproject:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown_project:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown_project:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknownproject:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknownproject:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-rpm:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-rpm:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_rpm:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_rpm:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maint_project:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm-maint:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm-maint:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maint:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maint:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maintproject:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown_project:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknownproject:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-rpm:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_rpm:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm-maint:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maint:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm:rpm:4.16.1.3:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:pypi/rpm@4.16.1.3",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2021-35937",
+    "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2021-35937",
+    "namespace": "nvd:cpe",
+    "severity": "Medium",
+    "urls": [
+     "https://access.redhat.com/security/cve/CVE-2021-35937",
+     "https://bugzilla.redhat.com/show_bug.cgi?id=1964125",
+     "https://rpm.org/wiki/Releases/4.18.0",
+     "https://security.gentoo.org/glsa/202210-22",
+     "https://www.usenix.org/legacy/event/sec05/tech/full_papers/borisov/borisov.pdf"
+    ],
+    "description": "A race condition vulnerability was found in rpm. A local unprivileged user could use this flaw to bypass the checks that were introduced in response to CVE-2017-7500 and CVE-2017-7501, potentially gaining root privileges. The highest threat from this vulnerability is to data confidentiality and integrity as well as system availability.",
+    "cvss": [
+     {
+      "source": "nvd@nist.gov",
+      "type": "Primary",
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "metrics": {
+       "baseScore": 6.4,
+       "exploitabilityScore": 0.5,
+       "impactScore": 5.9
+      },
+      "vendorMetadata": {}
+     }
+    ],
+    "fix": {
+     "versions": [],
+     "state": "unknown"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [],
+   "matchDetails": [
+    {
+     "type": "cpe-match",
+     "matcher": "python-matcher",
+     "searchedBy": {
+      "namespace": "nvd:cpe",
+      "cpes": [
+       "cpe:2.3:a:rpm:rpm:4.16.1.3:*:*:*:*:*:*:*"
+      ],
+      "Package": {
+       "name": "rpm",
+       "version": "4.16.1.3"
+      }
+     },
+     "found": {
+      "vulnerabilityID": "CVE-2021-35937",
+      "versionConstraint": "< 4.18.0 (unknown)",
+      "cpes": [
+       "cpe:2.3:a:rpm:rpm:*:*:*:*:*:*:*:*"
+      ]
+     }
+    }
+   ],
+   "artifact": {
+    "id": "fe2bdc1302ea8c10",
+    "name": "rpm",
+    "version": "4.16.1.3",
+    "type": "python",
+    "locations": [
+     {
+      "path": "/usr/lib64/python3.9/site-packages/rpm-4.16.1.3-py3.9.egg-info",
+      "layerID": "sha256:08000fa1492b1b5de9aa8d0b1525b02c6b3eb10d8d4f6ba987da94f9cbb7d2b0"
+     }
+    ],
+    "language": "python",
+    "licenses": [
+     "GNU General Public License v2"
+    ],
+    "cpes": [
+     "cpe:2.3:a:rpm_maint_project:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maint_project:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maintproject:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maintproject:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown_project:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown_project:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknownproject:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknownproject:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-rpm:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-rpm:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_rpm:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_rpm:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maint_project:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm-maint:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm-maint:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maint:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maint:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maintproject:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown_project:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknownproject:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-rpm:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_rpm:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm-maint:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maint:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm:rpm:4.16.1.3:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:pypi/rpm@4.16.1.3",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2021-3521",
+    "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2021-3521",
+    "namespace": "nvd:cpe",
+    "severity": "Medium",
+    "urls": [
+     "https://access.redhat.com/security/cve/CVE-2021-3521",
+     "https://bugzilla.redhat.com/show_bug.cgi?id=1941098",
+     "https://github.com/rpm-software-management/rpm/commit/bd36c5dc9fb6d90c46fbfed8c2d67516fc571ec8",
+     "https://github.com/rpm-software-management/rpm/pull/1795/",
+     "https://security.gentoo.org/glsa/202210-22"
+    ],
+    "description": "There is a flaw in RPM's signature functionality. OpenPGP subkeys are associated with a primary key via a \"binding signature.\" RPM does not check the binding signature of subkeys prior to importing them. If an attacker is able to add or socially engineer another party to add a malicious subkey to a legitimate public key, RPM could wrongly trust a malicious signature. The greatest impact of this flaw is to data integrity. To exploit this flaw, an attacker must either compromise an RPM repository or convince an administrator to install an untrusted RPM or public key. It is strongly recommended to only use RPMs and public keys from trusted sources.",
+    "cvss": [
+     {
+      "source": "nvd@nist.gov",
+      "type": "Primary",
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:N/I:H/A:N",
+      "metrics": {
+       "baseScore": 4.7,
+       "exploitabilityScore": 1,
+       "impactScore": 3.6
+      },
+      "vendorMetadata": {}
+     }
+    ],
+    "fix": {
+     "versions": [],
+     "state": "unknown"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [],
+   "matchDetails": [
+    {
+     "type": "cpe-match",
+     "matcher": "python-matcher",
+     "searchedBy": {
+      "namespace": "nvd:cpe",
+      "cpes": [
+       "cpe:2.3:a:rpm:rpm:4.16.1.3:*:*:*:*:*:*:*"
+      ],
+      "Package": {
+       "name": "rpm",
+       "version": "4.16.1.3"
+      }
+     },
+     "found": {
+      "vulnerabilityID": "CVE-2021-3521",
+      "versionConstraint": "< 4.17.1 (unknown)",
+      "cpes": [
+       "cpe:2.3:a:rpm:rpm:*:*:*:*:*:*:*:*"
+      ]
+     }
+    }
+   ],
+   "artifact": {
+    "id": "fe2bdc1302ea8c10",
+    "name": "rpm",
+    "version": "4.16.1.3",
+    "type": "python",
+    "locations": [
+     {
+      "path": "/usr/lib64/python3.9/site-packages/rpm-4.16.1.3-py3.9.egg-info",
+      "layerID": "sha256:08000fa1492b1b5de9aa8d0b1525b02c6b3eb10d8d4f6ba987da94f9cbb7d2b0"
+     }
+    ],
+    "language": "python",
+    "licenses": [
+     "GNU General Public License v2"
+    ],
+    "cpes": [
+     "cpe:2.3:a:rpm_maint_project:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maint_project:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maintproject:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maintproject:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown_project:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown_project:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknownproject:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknownproject:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-rpm:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-rpm:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_rpm:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_rpm:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maint_project:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm-maint:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm-maint:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maint:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maint:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maintproject:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown_project:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknownproject:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-rpm:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_rpm:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm:python-rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm:python_rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm-maint:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm_maint:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:unknown:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:rpm:4.16.1.3:*:*:*:*:*:*:*",
+     "cpe:2.3:a:rpm:rpm:4.16.1.3:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:pypi/rpm@4.16.1.3",
+    "upstreams": []
+   }
+  }
+ ],
+ "source": {
+  "type": "image",
+  "target": {
+   "userInput": "amazonlinux",
+   "imageID": "sha256:98074abb13ad21c0ebd761619623f42107b2f82ff3c58d2ce03cb84c24453834",
+   "manifestDigest": "sha256:604127ddcc2b8d97f770c56d116cdf7e708ce10ff4b53b9720507faa858ded3e",
+   "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+   "tags": [
+    "amazonlinux:latest"
+   ],
+   "imageSize": 143633753,
+   "layers": [
+    {
+     "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+     "digest": "sha256:08000fa1492b1b5de9aa8d0b1525b02c6b3eb10d8d4f6ba987da94f9cbb7d2b0",
+     "size": 143633753
+    }
+   ],
+   "manifest": "eyJzY2hlbWFWZXJzaW9uIjoyLCJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmRpc3RyaWJ1dGlvbi5tYW5pZmVzdC52Mitqc29uIiwiY29uZmlnIjp7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuY29udGFpbmVyLmltYWdlLnYxK2pzb24iLCJzaXplIjoxNDc4LCJkaWdlc3QiOiJzaGEyNTY6OTgwNzRhYmIxM2FkMjFjMGViZDc2MTYxOTYyM2Y0MjEwN2IyZjgyZmYzYzU4ZDJjZTAzY2I4NGMyNDQ1MzgzNCJ9LCJsYXllcnMiOlt7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuaW1hZ2Uucm9vdGZzLmRpZmYudGFyLmd6aXAiLCJzaXplIjoxNDkyNTQ2NTYsImRpZ2VzdCI6InNoYTI1NjowODAwMGZhMTQ5MmIxYjVkZTlhYThkMGIxNTI1YjAyYzZiM2ViMTBkOGQ0ZjZiYTk4N2RhOTRmOWNiYjdkMmIwIn1dfQ==",
+   "config": "eyJhcmNoaXRlY3R1cmUiOiJhbWQ2NCIsImNvbmZpZyI6eyJIb3N0bmFtZSI6IiIsIkRvbWFpbm5hbWUiOiIiLCJVc2VyIjoiIiwiQXR0YWNoU3RkaW4iOmZhbHNlLCJBdHRhY2hTdGRvdXQiOmZhbHNlLCJBdHRhY2hTdGRlcnIiOmZhbHNlLCJUdHkiOmZhbHNlLCJPcGVuU3RkaW4iOmZhbHNlLCJTdGRpbk9uY2UiOmZhbHNlLCJFbnYiOlsiUEFUSD0vdXNyL2xvY2FsL3NiaW46L3Vzci9sb2NhbC9iaW46L3Vzci9zYmluOi91c3IvYmluOi9zYmluOi9iaW4iXSwiQ21kIjpbIi9iaW4vYmFzaCJdLCJJbWFnZSI6InNoYTI1NjpkYjAxZjJiNGNhMzJmODRkOWM1YjhmMDI1MTBiYTk3YTIwZjIzNmQ5NmE4YzZhNzI4NTgxOTBmODNkMjA5YWJhIiwiVm9sdW1lcyI6bnVsbCwiV29ya2luZ0RpciI6IiIsIkVudHJ5cG9pbnQiOm51bGwsIk9uQnVpbGQiOm51bGwsIkxhYmVscyI6bnVsbH0sImNvbnRhaW5lciI6ImYxZTY5MWRiNDc0NDk0NjhlMjFiZWQ2N2NjNmVkYTkxYTQ2YjU2ZDk2MjRmY2U3NTQ1OTk2MWIwM2JmMGFiM2EiLCJjb250YWluZXJfY29uZmlnIjp7Ikhvc3RuYW1lIjoiZjFlNjkxZGI0NzQ0IiwiRG9tYWlubmFtZSI6IiIsIlVzZXIiOiIiLCJBdHRhY2hTdGRpbiI6ZmFsc2UsIkF0dGFjaFN0ZG91dCI6ZmFsc2UsIkF0dGFjaFN0ZGVyciI6ZmFsc2UsIlR0eSI6ZmFsc2UsIk9wZW5TdGRpbiI6ZmFsc2UsIlN0ZGluT25jZSI6ZmFsc2UsIkVudiI6WyJQQVRIPS91c3IvbG9jYWwvc2JpbjovdXNyL2xvY2FsL2JpbjovdXNyL3NiaW46L3Vzci9iaW46L3NiaW46L2JpbiJdLCJDbWQiOlsiL2Jpbi9zaCIsIi1jIiwiIyhub3ApICIsIkNNRCBbXCIvYmluL2Jhc2hcIl0iXSwiSW1hZ2UiOiJzaGEyNTY6ZGIwMWYyYjRjYTMyZjg0ZDljNWI4ZjAyNTEwYmE5N2EyMGYyMzZkOTZhOGM2YTcyODU4MTkwZjgzZDIwOWFiYSIsIlZvbHVtZXMiOm51bGwsIldvcmtpbmdEaXIiOiIiLCJFbnRyeXBvaW50IjpudWxsLCJPbkJ1aWxkIjpudWxsLCJMYWJlbHMiOnt9fSwiY3JlYXRlZCI6IjIwMjMtMDgtMDdUMTk6NTg6NTUuNDQ4NDQzMDM1WiIsImRvY2tlcl92ZXJzaW9uIjoiMjAuMTAuMjMiLCJoaXN0b3J5IjpbeyJjcmVhdGVkIjoiMjAyMy0wOC0wN1QxOTo1ODo1NC45NjY1NzM4NjJaIiwiY3JlYXRlZF9ieSI6Ii9iaW4vc2ggLWMgIyhub3ApIENPUFkgZGlyOjFmMjg2MWNiNWNiNjY5ODJiNjA4NjQwMzAwYzVjOWZhMThlYjVmM2I4NTVlYmRkNjcwNzAwYjhmODk5OGIwNDcgaW4gLyAifSx7ImNyZWF0ZWQiOiIyMDIzLTA4LTA3VDE5OjU4OjU1LjQ0ODQ0MzAzNVoiLCJjcmVhdGVkX2J5IjoiL2Jpbi9zaCAtYyAjKG5vcCkgIENNRCBbXCIvYmluL2Jhc2hcIl0iLCJlbXB0eV9sYXllciI6dHJ1ZX1dLCJvcyI6ImxpbnV4Iiwicm9vdGZzIjp7InR5cGUiOiJsYXllcnMiLCJkaWZmX2lkcyI6WyJzaGEyNTY6MDgwMDBmYTE0OTJiMWI1ZGU5YWE4ZDBiMTUyNWIwMmM2YjNlYjEwZDhkNGY2YmE5ODdkYTk0ZjljYmI3ZDJiMCJdfX0=",
+   "repoDigests": [
+    "amazonlinux@sha256:2abc7d4cf0938b9c6cc72de4b477576b40c7577e882dce9a26d7639ab79f9703"
+   ],
+   "architecture": "amd64",
+   "os": "linux"
+  }
+ },
+ "distro": {
+  "name": "amazonlinux",
+  "version": "2023",
+  "idLike": [
+   "fedora"
+  ]
+ },
+ "descriptor": {
+  "name": "grype",
+  "version": "0.65.2",
+  "configuration": {
+   "configPath": "",
+   "verbosity": 0,
+   "output": [
+    "json"
+   ],
+   "file": "/tmp/grype-624283900.json",
+   "distro": "",
+   "add-cpes-if-none": true,
+   "output-template-file": "",
+   "quiet": true,
+   "check-for-app-update": true,
+   "only-fixed": false,
+   "only-notfixed": false,
+   "platform": "",
+   "search": {
+    "scope": "AllLayers",
+    "unindexed-archives": false,
+    "indexed-archives": true
+   },
+   "ignore": null,
+   "exclude": [],
+   "db": {
+    "cache-dir": "/home/codespace/.cache/grype/db",
+    "update-url": "https://toolbox-data.anchore.io/grype/databases/listing.json",
+    "ca-cert": "",
+    "auto-update": true,
+    "validate-by-hash-on-start": false,
+    "validate-age": true,
+    "max-allowed-built-age": 432000000000000
+   },
+   "externalSources": {
+    "enable": false,
+    "maven": {
+     "searchUpstreamBySha1": true,
+     "baseUrl": "https://search.maven.org/solrsearch/select"
+    }
+   },
+   "match": {
+    "java": {
+     "using-cpes": true
+    },
+    "dotnet": {
+     "using-cpes": true
+    },
+    "golang": {
+     "using-cpes": true
+    },
+    "javascript": {
+     "using-cpes": false
+    },
+    "python": {
+     "using-cpes": true
+    },
+    "ruby": {
+     "using-cpes": true
+    },
+    "stock": {
+     "using-cpes": true
+    }
+   },
+   "dev": {
+    "profile-cpu": false,
+    "profile-mem": false
+   },
+   "fail-on-severity": "",
+   "registry": {
+    "insecure-skip-tls-verify": false,
+    "insecure-use-http": false,
+    "auth": []
+   },
+   "log": {
+    "structured": false,
+    "level": "",
+    "file": ""
+   },
+   "show-suppressed": false,
+   "by-cve": false,
+   "name": "",
+   "default-image-pull-source": ""
+  },
+  "db": {
+   "built": "2023-08-22T01:27:17Z",
+   "schemaVersion": 5,
+   "location": "/home/codespace/.cache/grype/db/5",
+   "checksum": "sha256:3f9e5487d50a65483aabb892c936a81c9d58b5986c81ac090c845c8dc3b941e0",
+   "error": null
+  },
+  "timestamp": "2023-08-22T10:30:08.8498713Z"
+ }
+}

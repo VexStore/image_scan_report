@@ -1,0 +1,3262 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "mongo-express",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "OS": {
+      "Family": "alpine",
+      "Name": "3.11.12",
+      "EOSL": true
+    },
+    "ImageID": "sha256:2d2fb2cabc8fa6b894bd7c82158dd7a9dd5815d240f75a93db0d853f008cfd20",
+    "DiffIDs": [
+      "sha256:39982b2a789afc156fff00c707d0ff1c6ab4af8f1666a8df4787714059ce24e7",
+      "sha256:707aac92eb1ffc591948cc1a551ee30a35b6a8f15ee9c5dedb95caa12eb3c577",
+      "sha256:2be6b9c41e8eb2a7f3f13cb617fd73e7d903fdef0c3a5ebd041abb9e044aba78",
+      "sha256:51babfb9c20f440181f1443ab018f22c890cb7881217d0f295643427a22c1975",
+      "sha256:2dad51e6c967bde1f86b54f80f2dcebc037e772a13ac44b7a038192488af9bbf",
+      "sha256:d7f356d1240024df43c91945a0f89fe03027209d13c4b18e08ead3799dc86f75",
+      "sha256:22c519f222b3a86864369d8fb20308fdb5926352283f0f737f55ce5e7fd26a74",
+      "sha256:e1b82edaa4484ccd9080ce003d79f6f75177cd1df1bce2e81c6fc420a55ae377"
+    ],
+    "RepoTags": [
+      "mongo-express:latest"
+    ],
+    "RepoDigests": [
+      "mongo-express@sha256:dcfcf89bf91238ff129469a5a94523b3025913dcc41597d72d4d5f4a0339cc7d"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "container": "de2d9ff4225a1ad07d7e847fb7ec03254db4901c734353829d1f627582c3c4b3",
+      "created": "2021-10-22T21:11:30.919438897Z",
+      "docker_version": "20.10.7",
+      "history": [
+        {
+          "created": "2021-08-31T23:18:31Z",
+          "created_by": "/bin/sh -c #(nop) ADD file:9d14b11183983923090d9e6d15cc51ee210466296e913bfefbfd580b3de59c95 in / "
+        },
+        {
+          "created": "2021-08-31T23:18:31Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/sh\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-10-13T05:52:55Z",
+          "created_by": "/bin/sh -c #(nop)  ENV NODE_VERSION=12.22.7",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-10-13T05:53:02Z",
+          "created_by": "/bin/sh -c addgroup -g 1000 node     \u0026\u0026 adduser -u 1000 -G node -s /bin/sh -D node     \u0026\u0026 apk add --no-cache         libstdc++     \u0026\u0026 apk add --no-cache --virtual .build-deps         curl     \u0026\u0026 ARCH= \u0026\u0026 alpineArch=\"$(apk --print-arch)\"       \u0026\u0026 case \"${alpineArch##*-}\" in         x86_64)           ARCH='x64'           CHECKSUM=\"c8672a664087e96b4e2804caf77a0aaa8c1375ae6b378edb220a678155383a81\"           ;;         *) ;;       esac   \u0026\u0026 if [ -n \"${CHECKSUM}\" ]; then     set -eu;     curl -fsSLO --compressed \"https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz\";     echo \"$CHECKSUM  node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz\" | sha256sum -c -       \u0026\u0026 tar -xJf \"node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz\" -C /usr/local --strip-components=1 --no-same-owner       \u0026\u0026 ln -s /usr/local/bin/node /usr/local/bin/nodejs;   else     echo \"Building from source\"     \u0026\u0026 apk add --no-cache --virtual .build-deps-full         binutils-gold         g++         gcc         gnupg         libgcc         linux-headers         make         python2     \u0026\u0026 for key in       4ED778F539E3634C779C87C6D7062848A1AB005C       94AE36675C464D64BAFA68DD7434390BDBE9B9C5       74F12602B6F1C4E913FAA37AD3A89613643B6201       71DCFD284A79C3B38668286BC97EC7A07EDE3FC1       8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600       C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8       C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C       DD8F2338BAE7501E3DD5AC78C273792F7D83545D       A48C2BEE680E841632CD4E44F07496B3EB3C1762       108F52B48DB57BB0CC439B2997B01419BD92F80A       B9E2F5981AA6E0CD28160D9FF13993A75599653C     ; do       gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys \"$key\" ||       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys \"$key\" ;     done     \u0026\u0026 curl -fsSLO --compressed \"https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.xz\"     \u0026\u0026 curl -fsSLO --compressed \"https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc\"     \u0026\u0026 gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc     \u0026\u0026 grep \" node-v$NODE_VERSION.tar.xz\\$\" SHASUMS256.txt | sha256sum -c -     \u0026\u0026 tar -xf \"node-v$NODE_VERSION.tar.xz\"     \u0026\u0026 cd \"node-v$NODE_VERSION\"     \u0026\u0026 ./configure     \u0026\u0026 make -j$(getconf _NPROCESSORS_ONLN) V=     \u0026\u0026 make install     \u0026\u0026 apk del .build-deps-full     \u0026\u0026 cd ..     \u0026\u0026 rm -Rf \"node-v$NODE_VERSION\"     \u0026\u0026 rm \"node-v$NODE_VERSION.tar.xz\" SHASUMS256.txt.asc SHASUMS256.txt;   fi   \u0026\u0026 rm -f \"node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz\"   \u0026\u0026 apk del .build-deps   \u0026\u0026 node --version   \u0026\u0026 npm --version"
+        },
+        {
+          "created": "2021-10-13T05:53:03Z",
+          "created_by": "/bin/sh -c #(nop)  ENV YARN_VERSION=1.22.15",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-10-13T05:53:08Z",
+          "created_by": "/bin/sh -c apk add --no-cache --virtual .build-deps-yarn curl gnupg tar   \u0026\u0026 for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys \"$key\" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys \"$key\" ;   done   \u0026\u0026 curl -fsSLO --compressed \"https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz\"   \u0026\u0026 curl -fsSLO --compressed \"https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc\"   \u0026\u0026 gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   \u0026\u0026 mkdir -p /opt   \u0026\u0026 tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   \u0026\u0026 ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   \u0026\u0026 ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   \u0026\u0026 rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   \u0026\u0026 apk del .build-deps-yarn   \u0026\u0026 yarn --version"
+        },
+        {
+          "created": "2021-10-22T18:56:01Z",
+          "created_by": "/bin/sh -c #(nop) COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/ "
+        },
+        {
+          "created": "2021-10-22T18:56:01Z",
+          "created_by": "/bin/sh -c #(nop)  ENTRYPOINT [\"docker-entrypoint.sh\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-10-22T18:56:02Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"node\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-10-22T21:11:01Z",
+          "created_by": "/bin/sh -c apk add --no-cache bash tini"
+        },
+        {
+          "created": "2021-10-22T21:11:01Z",
+          "created_by": "/bin/sh -c #(nop)  EXPOSE 8081",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-10-22T21:11:02Z",
+          "created_by": "/bin/sh -c #(nop)  ENV ME_CONFIG_EDITORTHEME=default ME_CONFIG_MONGODB_URL=mongodb://mongo:27017 ME_CONFIG_MONGODB_ENABLE_ADMIN=true ME_CONFIG_BASICAUTH_USERNAME= ME_CONFIG_BASICAUTH_PASSWORD= VCAP_APP_HOST=0.0.0.0",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-10-22T21:11:02Z",
+          "created_by": "/bin/sh -c #(nop)  ENV MONGO_EXPRESS=1.0.0-alpha.4",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-10-22T21:11:28Z",
+          "created_by": "/bin/sh -c set -eux; \tapk add --no-cache --virtual .me-install-deps git; \tnpm install mongo-express@$MONGO_EXPRESS; \tapk del --no-network .me-install-deps"
+        },
+        {
+          "created": "2021-10-22T21:11:29Z",
+          "created_by": "/bin/sh -c #(nop) COPY file:4835df10525ec6f18e6339ce0c331b087391dd3279d964040c96a41ba7bf90b7 in / "
+        },
+        {
+          "created": "2021-10-22T21:11:29Z",
+          "created_by": "/bin/sh -c #(nop) WORKDIR /node_modules/mongo-express",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-10-22T21:11:30Z",
+          "created_by": "/bin/sh -c cp config.default.js config.js"
+        },
+        {
+          "created": "2021-10-22T21:11:30Z",
+          "created_by": "/bin/sh -c #(nop)  ENTRYPOINT [\"tini\" \"--\" \"/docker-entrypoint.sh\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-10-22T21:11:30Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"mongo-express\"]",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:39982b2a789afc156fff00c707d0ff1c6ab4af8f1666a8df4787714059ce24e7",
+          "sha256:707aac92eb1ffc591948cc1a551ee30a35b6a8f15ee9c5dedb95caa12eb3c577",
+          "sha256:2be6b9c41e8eb2a7f3f13cb617fd73e7d903fdef0c3a5ebd041abb9e044aba78",
+          "sha256:51babfb9c20f440181f1443ab018f22c890cb7881217d0f295643427a22c1975",
+          "sha256:2dad51e6c967bde1f86b54f80f2dcebc037e772a13ac44b7a038192488af9bbf",
+          "sha256:d7f356d1240024df43c91945a0f89fe03027209d13c4b18e08ead3799dc86f75",
+          "sha256:22c519f222b3a86864369d8fb20308fdb5926352283f0f737f55ce5e7fd26a74",
+          "sha256:e1b82edaa4484ccd9080ce003d79f6f75177cd1df1bce2e81c6fc420a55ae377"
+        ]
+      },
+      "config": {
+        "Cmd": [
+          "mongo-express"
+        ],
+        "Entrypoint": [
+          "tini",
+          "--",
+          "/docker-entrypoint.sh"
+        ],
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "NODE_VERSION=12.22.7",
+          "YARN_VERSION=1.22.15",
+          "ME_CONFIG_EDITORTHEME=default",
+          "ME_CONFIG_MONGODB_URL=mongodb://mongo:27017",
+          "ME_CONFIG_MONGODB_ENABLE_ADMIN=true",
+          "ME_CONFIG_BASICAUTH_USERNAME=",
+          "ME_CONFIG_BASICAUTH_PASSWORD=",
+          "VCAP_APP_HOST=0.0.0.0",
+          "MONGO_EXPRESS=1.0.0-alpha.4"
+        ],
+        "Image": "sha256:8515ec279864e6066e934f452a3c26ef07fee52d08b0606cea328025563020bd",
+        "WorkingDir": "/node_modules/mongo-express"
+      }
+    }
+  },
+  "Results": [
+    {
+      "Target": "mongo-express (alpine 3.11.12)",
+      "Class": "os-pkgs",
+      "Type": "alpine",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2021-42378",
+          "PkgID": "busybox@1.31.1-r10",
+          "PkgName": "busybox",
+          "InstalledVersion": "1.31.1-r10",
+          "FixedVersion": "1.31.1-r11",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:39982b2a789afc156fff00c707d0ff1c6ab4af8f1666a8df4787714059ce24e7"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42378",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the getvar_i()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the getvar_i function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42378",
+            "https://claroty.com/team82/research/unboxing-busybox-14-vulnerabilities-uncovered-by-claroty-jfrog",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42378",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42378",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-42378"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2023-04-25T21:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42379",
+          "PkgID": "busybox@1.31.1-r10",
+          "PkgName": "busybox",
+          "InstalledVersion": "1.31.1-r10",
+          "FixedVersion": "1.31.1-r11",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:39982b2a789afc156fff00c707d0ff1c6ab4af8f1666a8df4787714059ce24e7"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42379",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the next_input_file()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the next_input_file function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42379",
+            "https://claroty.com/team82/research/unboxing-busybox-14-vulnerabilities-uncovered-by-claroty-jfrog",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42379",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42379",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-42379"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2023-04-25T21:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42380",
+          "PkgID": "busybox@1.31.1-r10",
+          "PkgName": "busybox",
+          "InstalledVersion": "1.31.1-r10",
+          "FixedVersion": "1.31.1-r11",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:39982b2a789afc156fff00c707d0ff1c6ab4af8f1666a8df4787714059ce24e7"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42380",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the clrvar()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the clrvar function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42380",
+            "https://claroty.com/team82/research/unboxing-busybox-14-vulnerabilities-uncovered-by-claroty-jfrog",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42380",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42380",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-42380"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2023-04-25T22:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42381",
+          "PkgID": "busybox@1.31.1-r10",
+          "PkgName": "busybox",
+          "InstalledVersion": "1.31.1-r10",
+          "FixedVersion": "1.31.1-r11",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:39982b2a789afc156fff00c707d0ff1c6ab4af8f1666a8df4787714059ce24e7"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42381",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the hash_init()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the hash_init function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42381",
+            "https://claroty.com/team82/research/unboxing-busybox-14-vulnerabilities-uncovered-by-claroty-jfrog",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42381",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42381",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-42381"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2023-04-25T22:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42382",
+          "PkgID": "busybox@1.31.1-r10",
+          "PkgName": "busybox",
+          "InstalledVersion": "1.31.1-r10",
+          "FixedVersion": "1.31.1-r11",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:39982b2a789afc156fff00c707d0ff1c6ab4af8f1666a8df4787714059ce24e7"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42382",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the getvar_s()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the getvar_s function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42382",
+            "https://claroty.com/team82/research/unboxing-busybox-14-vulnerabilities-uncovered-by-claroty-jfrog",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42382",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42382",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-42382"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2023-04-25T22:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42383",
+          "PkgID": "busybox@1.31.1-r10",
+          "PkgName": "busybox",
+          "InstalledVersion": "1.31.1-r10",
+          "FixedVersion": "1.31.1-r11",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:39982b2a789afc156fff00c707d0ff1c6ab4af8f1666a8df4787714059ce24e7"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42383",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the evaluate()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the evaluate function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42383",
+            "https://claroty.com/team82/research/unboxing-busybox-14-vulnerabilities-uncovered-by-claroty-jfrog",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42383",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://www.cve.org/CVERecord?id=CVE-2021-42383"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2023-04-25T22:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42384",
+          "PkgID": "busybox@1.31.1-r10",
+          "PkgName": "busybox",
+          "InstalledVersion": "1.31.1-r10",
+          "FixedVersion": "1.31.1-r11",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:39982b2a789afc156fff00c707d0ff1c6ab4af8f1666a8df4787714059ce24e7"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42384",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the handle_special()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the handle_special function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42384",
+            "https://claroty.com/team82/research/unboxing-busybox-14-vulnerabilities-uncovered-by-claroty-jfrog",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42384",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42384",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-42384"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2023-04-25T22:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42385",
+          "PkgID": "busybox@1.31.1-r10",
+          "PkgName": "busybox",
+          "InstalledVersion": "1.31.1-r10",
+          "FixedVersion": "1.31.1-r11",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:39982b2a789afc156fff00c707d0ff1c6ab4af8f1666a8df4787714059ce24e7"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42385",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the evaluate()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the evaluate function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42385",
+            "https://claroty.com/team82/research/unboxing-busybox-14-vulnerabilities-uncovered-by-claroty-jfrog",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42385",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42385",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-42385"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2023-04-25T22:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42386",
+          "PkgID": "busybox@1.31.1-r10",
+          "PkgName": "busybox",
+          "InstalledVersion": "1.31.1-r10",
+          "FixedVersion": "1.31.1-r11",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:39982b2a789afc156fff00c707d0ff1c6ab4af8f1666a8df4787714059ce24e7"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42386",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the nvalloc()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the nvalloc function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42386",
+            "https://claroty.com/team82/research/unboxing-busybox-14-vulnerabilities-uncovered-by-claroty-jfrog",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42386",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42386",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-42386"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2023-04-25T22:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42374",
+          "PkgID": "busybox@1.31.1-r10",
+          "PkgName": "busybox",
+          "InstalledVersion": "1.31.1-r10",
+          "FixedVersion": "1.31.1-r11",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:39982b2a789afc156fff00c707d0ff1c6ab4af8f1666a8df4787714059ce24e7"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42374",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "out-of-bounds read in unlzma applet leads to information leak and denial of service when crafted LZMA-compressed input is decompressed",
+          "Description": "An out-of-bounds heap read in Busybox's unlzma applet leads to information leak and denial of service when crafted LZMA-compressed input is decompressed. This can be triggered by any applet/format that",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:L/AC:M/Au:N/C:P/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:H",
+              "V2Score": 3.3,
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:H",
+              "V3Score": 5.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42374",
+            "https://claroty.com/team82/research/unboxing-busybox-14-vulnerabilities-uncovered-by-claroty-jfrog",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42374",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42374",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-42374"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2023-04-25T21:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42378",
+          "PkgID": "ssl_client@1.31.1-r10",
+          "PkgName": "ssl_client",
+          "InstalledVersion": "1.31.1-r10",
+          "FixedVersion": "1.31.1-r11",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:39982b2a789afc156fff00c707d0ff1c6ab4af8f1666a8df4787714059ce24e7"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42378",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the getvar_i()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the getvar_i function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42378",
+            "https://claroty.com/team82/research/unboxing-busybox-14-vulnerabilities-uncovered-by-claroty-jfrog",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42378",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42378",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-42378"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2023-04-25T21:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42379",
+          "PkgID": "ssl_client@1.31.1-r10",
+          "PkgName": "ssl_client",
+          "InstalledVersion": "1.31.1-r10",
+          "FixedVersion": "1.31.1-r11",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:39982b2a789afc156fff00c707d0ff1c6ab4af8f1666a8df4787714059ce24e7"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42379",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the next_input_file()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the next_input_file function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42379",
+            "https://claroty.com/team82/research/unboxing-busybox-14-vulnerabilities-uncovered-by-claroty-jfrog",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42379",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42379",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-42379"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2023-04-25T21:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42380",
+          "PkgID": "ssl_client@1.31.1-r10",
+          "PkgName": "ssl_client",
+          "InstalledVersion": "1.31.1-r10",
+          "FixedVersion": "1.31.1-r11",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:39982b2a789afc156fff00c707d0ff1c6ab4af8f1666a8df4787714059ce24e7"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42380",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the clrvar()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the clrvar function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42380",
+            "https://claroty.com/team82/research/unboxing-busybox-14-vulnerabilities-uncovered-by-claroty-jfrog",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42380",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42380",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-42380"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2023-04-25T22:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42381",
+          "PkgID": "ssl_client@1.31.1-r10",
+          "PkgName": "ssl_client",
+          "InstalledVersion": "1.31.1-r10",
+          "FixedVersion": "1.31.1-r11",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:39982b2a789afc156fff00c707d0ff1c6ab4af8f1666a8df4787714059ce24e7"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42381",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the hash_init()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the hash_init function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42381",
+            "https://claroty.com/team82/research/unboxing-busybox-14-vulnerabilities-uncovered-by-claroty-jfrog",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42381",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42381",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-42381"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2023-04-25T22:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42382",
+          "PkgID": "ssl_client@1.31.1-r10",
+          "PkgName": "ssl_client",
+          "InstalledVersion": "1.31.1-r10",
+          "FixedVersion": "1.31.1-r11",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:39982b2a789afc156fff00c707d0ff1c6ab4af8f1666a8df4787714059ce24e7"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42382",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the getvar_s()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the getvar_s function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42382",
+            "https://claroty.com/team82/research/unboxing-busybox-14-vulnerabilities-uncovered-by-claroty-jfrog",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42382",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42382",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-42382"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2023-04-25T22:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42383",
+          "PkgID": "ssl_client@1.31.1-r10",
+          "PkgName": "ssl_client",
+          "InstalledVersion": "1.31.1-r10",
+          "FixedVersion": "1.31.1-r11",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:39982b2a789afc156fff00c707d0ff1c6ab4af8f1666a8df4787714059ce24e7"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42383",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the evaluate()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the evaluate function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42383",
+            "https://claroty.com/team82/research/unboxing-busybox-14-vulnerabilities-uncovered-by-claroty-jfrog",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42383",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://www.cve.org/CVERecord?id=CVE-2021-42383"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2023-04-25T22:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42384",
+          "PkgID": "ssl_client@1.31.1-r10",
+          "PkgName": "ssl_client",
+          "InstalledVersion": "1.31.1-r10",
+          "FixedVersion": "1.31.1-r11",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:39982b2a789afc156fff00c707d0ff1c6ab4af8f1666a8df4787714059ce24e7"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42384",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the handle_special()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the handle_special function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42384",
+            "https://claroty.com/team82/research/unboxing-busybox-14-vulnerabilities-uncovered-by-claroty-jfrog",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42384",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42384",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-42384"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2023-04-25T22:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42385",
+          "PkgID": "ssl_client@1.31.1-r10",
+          "PkgName": "ssl_client",
+          "InstalledVersion": "1.31.1-r10",
+          "FixedVersion": "1.31.1-r11",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:39982b2a789afc156fff00c707d0ff1c6ab4af8f1666a8df4787714059ce24e7"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42385",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the evaluate()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the evaluate function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42385",
+            "https://claroty.com/team82/research/unboxing-busybox-14-vulnerabilities-uncovered-by-claroty-jfrog",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42385",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42385",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-42385"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2023-04-25T22:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42386",
+          "PkgID": "ssl_client@1.31.1-r10",
+          "PkgName": "ssl_client",
+          "InstalledVersion": "1.31.1-r10",
+          "FixedVersion": "1.31.1-r11",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:39982b2a789afc156fff00c707d0ff1c6ab4af8f1666a8df4787714059ce24e7"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42386",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the nvalloc()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the nvalloc function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42386",
+            "https://claroty.com/team82/research/unboxing-busybox-14-vulnerabilities-uncovered-by-claroty-jfrog",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42386",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42386",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-42386"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2023-04-25T22:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42374",
+          "PkgID": "ssl_client@1.31.1-r10",
+          "PkgName": "ssl_client",
+          "InstalledVersion": "1.31.1-r10",
+          "FixedVersion": "1.31.1-r11",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:39982b2a789afc156fff00c707d0ff1c6ab4af8f1666a8df4787714059ce24e7"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42374",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "out-of-bounds read in unlzma applet leads to information leak and denial of service when crafted LZMA-compressed input is decompressed",
+          "Description": "An out-of-bounds heap read in Busybox's unlzma applet leads to information leak and denial of service when crafted LZMA-compressed input is decompressed. This can be triggered by any applet/format that",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:L/AC:M/Au:N/C:P/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:H",
+              "V2Score": 3.3,
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:H",
+              "V3Score": 5.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42374",
+            "https://claroty.com/team82/research/unboxing-busybox-14-vulnerabilities-uncovered-by-claroty-jfrog",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42374",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42374",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-42374"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2023-04-25T21:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-37434",
+          "PkgID": "zlib@1.2.11-r3",
+          "PkgName": "zlib",
+          "InstalledVersion": "1.2.11-r3",
+          "FixedVersion": "1.2.11-r4",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:39982b2a789afc156fff00c707d0ff1c6ab4af8f1666a8df4787714059ce24e7"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-37434",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "heap-based buffer over-read and overflow in inflate() in inflate.c via a large gzip header extra field",
+          "Description": "zlib through 1.2.12 has a heap-based buffer over-read or buffer overflow in inflate in inflate.c via a large gzip header extra field. NOTE: only applications that call inflateGetHeader are affected. Some common applications bundle the affected zlib source code but may be unable to call inflateGetHeader (e.g., see the nodejs/node reference).",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "http://seclists.org/fulldisclosure/2022/Oct/37",
+            "http://seclists.org/fulldisclosure/2022/Oct/38",
+            "http://seclists.org/fulldisclosure/2022/Oct/41",
+            "http://seclists.org/fulldisclosure/2022/Oct/42",
+            "http://www.openwall.com/lists/oss-security/2022/08/05/2",
+            "http://www.openwall.com/lists/oss-security/2022/08/09/1",
+            "https://access.redhat.com/errata/RHSA-2022:8291",
+            "https://access.redhat.com/security/cve/CVE-2022-37434",
+            "https://bugzilla.redhat.com/2116639",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2043753",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2116639",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-37434",
+            "https://errata.almalinux.org/9/ALSA-2022-8291.html",
+            "https://errata.rockylinux.org/RLSA-2022:7793",
+            "https://github.com/curl/curl/issues/9271",
+            "https://github.com/ivd38/zlib_overflow",
+            "https://github.com/madler/zlib/blob/21767c654d31d2dccdde4330529775c6c5fd5389/zlib.h#L1062-L1063",
+            "https://github.com/madler/zlib/commit/eff308af425b67093bab25f80f1ae950166bece1",
+            "https://github.com/nodejs/node/blob/75b68c6e4db515f76df73af476eccf382bbcb00a/deps/zlib/inflate.c#L762-L764",
+            "https://linux.oracle.com/cve/CVE-2022-37434.html",
+            "https://linux.oracle.com/errata/ELSA-2023-1095.html",
+            "https://lists.debian.org/debian-lts-announce/2022/09/msg00012.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/JWN4VE3JQR4O2SOUS5TXNLANRPMHWV4I/",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/NMBOJ77A7T7PQCARMDUK75TE6LLESZ3O/",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/PAVPQNCG3XRLCLNSQRM3KAN5ZFMVXVTY/",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/X5U7OTKZSHY2I3ZFJSR2SHFHW72RKGDK/",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/YRQAI7H4M4RQZ2IWZUEEXECBE5D56BH2/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-37434",
+            "https://security.netapp.com/advisory/ntap-20220901-0005/",
+            "https://security.netapp.com/advisory/ntap-20230427-0007/",
+            "https://support.apple.com/kb/HT213488",
+            "https://support.apple.com/kb/HT213489",
+            "https://support.apple.com/kb/HT213490",
+            "https://support.apple.com/kb/HT213491",
+            "https://support.apple.com/kb/HT213493",
+            "https://support.apple.com/kb/HT213494",
+            "https://ubuntu.com/security/notices/USN-5570-1",
+            "https://ubuntu.com/security/notices/USN-5570-2",
+            "https://ubuntu.com/security/notices/USN-5573-1",
+            "https://www.cve.org/CVERecord?id=CVE-2022-37434",
+            "https://www.debian.org/security/2022/dsa-5218"
+          ],
+          "PublishedDate": "2022-08-05T07:15:00Z",
+          "LastModifiedDate": "2023-07-19T00:56:00Z"
+        }
+      ]
+    },
+    {
+      "Target": "Node.js",
+      "Class": "lang-pkgs",
+      "Type": "node-pkg",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2021-3807",
+          "PkgID": "ansi-regex@3.0.0",
+          "PkgName": "ansi-regex",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/string-width/node_modules/ansi-regex/package.json",
+          "InstalledVersion": "3.0.0",
+          "FixedVersion": "3.0.1, 4.1.1, 5.0.1, 6.0.1",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:707aac92eb1ffc591948cc1a551ee30a35b6a8f15ee9c5dedb95caa12eb3c577"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-3807",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "Regular expression denial of service (ReDoS) matching ANSI escape codes",
+          "Description": "ansi-regex is vulnerable to Inefficient Regular Expression Complexity",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-1333"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 7.8,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2022:6595",
+            "https://access.redhat.com/security/cve/CVE-2021-3807",
+            "https://app.snyk.io/vuln/SNYK-JS-ANSIREGEX-1583908",
+            "https://bugzilla.redhat.com/1907444",
+            "https://bugzilla.redhat.com/1945459",
+            "https://bugzilla.redhat.com/1964461",
+            "https://bugzilla.redhat.com/2007557",
+            "https://bugzilla.redhat.com/2098556",
+            "https://bugzilla.redhat.com/2102001",
+            "https://bugzilla.redhat.com/2105422",
+            "https://bugzilla.redhat.com/2105426",
+            "https://bugzilla.redhat.com/2105428",
+            "https://bugzilla.redhat.com/2105430",
+            "https://errata.almalinux.org/9/ALSA-2022-6595.html",
+            "https://github.com/advisories/GHSA-93q8-gq69-wqmw",
+            "https://github.com/chalk/ansi-regex/commit/419250fa510bf31b4cc672e76537a64f9332e1f1",
+            "https://github.com/chalk/ansi-regex/commit/75a657da7af875b2e2724fd6331bf0a4b23d3c9a",
+            "https://github.com/chalk/ansi-regex/commit/8d1d7cdb586269882c4bdc1b7325d0c58c8f76f9",
+            "https://github.com/chalk/ansi-regex/commit/c3c0b3f2736b9c01feec0fef33980c43720dcde8",
+            "https://github.com/chalk/ansi-regex/issues/38#issuecomment-924086311",
+            "https://github.com/chalk/ansi-regex/issues/38#issuecomment-925924774",
+            "https://github.com/chalk/ansi-regex/releases/tag/v6.0.1",
+            "https://huntr.dev/bounties/5b3cf33b-ede0-4398-9974-800876dfd994",
+            "https://linux.oracle.com/cve/CVE-2021-3807.html",
+            "https://linux.oracle.com/errata/ELSA-2022-6595.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-3807",
+            "https://security.netapp.com/advisory/ntap-20221014-0002/",
+            "https://www.cve.org/CVERecord?id=CVE-2021-3807",
+            "https://www.oracle.com/security-alerts/cpuapr2022.html"
+          ],
+          "PublishedDate": "2021-09-17T07:15:00Z",
+          "LastModifiedDate": "2023-07-10T19:01:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-3807",
+          "PkgID": "ansi-regex@4.1.0",
+          "PkgName": "ansi-regex",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/cliui/node_modules/ansi-regex/package.json",
+          "InstalledVersion": "4.1.0",
+          "FixedVersion": "3.0.1, 4.1.1, 5.0.1, 6.0.1",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:707aac92eb1ffc591948cc1a551ee30a35b6a8f15ee9c5dedb95caa12eb3c577"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-3807",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "Regular expression denial of service (ReDoS) matching ANSI escape codes",
+          "Description": "ansi-regex is vulnerable to Inefficient Regular Expression Complexity",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-1333"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 7.8,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2022:6595",
+            "https://access.redhat.com/security/cve/CVE-2021-3807",
+            "https://app.snyk.io/vuln/SNYK-JS-ANSIREGEX-1583908",
+            "https://bugzilla.redhat.com/1907444",
+            "https://bugzilla.redhat.com/1945459",
+            "https://bugzilla.redhat.com/1964461",
+            "https://bugzilla.redhat.com/2007557",
+            "https://bugzilla.redhat.com/2098556",
+            "https://bugzilla.redhat.com/2102001",
+            "https://bugzilla.redhat.com/2105422",
+            "https://bugzilla.redhat.com/2105426",
+            "https://bugzilla.redhat.com/2105428",
+            "https://bugzilla.redhat.com/2105430",
+            "https://errata.almalinux.org/9/ALSA-2022-6595.html",
+            "https://github.com/advisories/GHSA-93q8-gq69-wqmw",
+            "https://github.com/chalk/ansi-regex/commit/419250fa510bf31b4cc672e76537a64f9332e1f1",
+            "https://github.com/chalk/ansi-regex/commit/75a657da7af875b2e2724fd6331bf0a4b23d3c9a",
+            "https://github.com/chalk/ansi-regex/commit/8d1d7cdb586269882c4bdc1b7325d0c58c8f76f9",
+            "https://github.com/chalk/ansi-regex/commit/c3c0b3f2736b9c01feec0fef33980c43720dcde8",
+            "https://github.com/chalk/ansi-regex/issues/38#issuecomment-924086311",
+            "https://github.com/chalk/ansi-regex/issues/38#issuecomment-925924774",
+            "https://github.com/chalk/ansi-regex/releases/tag/v6.0.1",
+            "https://huntr.dev/bounties/5b3cf33b-ede0-4398-9974-800876dfd994",
+            "https://linux.oracle.com/cve/CVE-2021-3807.html",
+            "https://linux.oracle.com/errata/ELSA-2022-6595.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-3807",
+            "https://security.netapp.com/advisory/ntap-20221014-0002/",
+            "https://www.cve.org/CVERecord?id=CVE-2021-3807",
+            "https://www.oracle.com/security-alerts/cpuapr2022.html"
+          ],
+          "PublishedDate": "2021-09-17T07:15:00Z",
+          "LastModifiedDate": "2023-07-10T19:01:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-3807",
+          "PkgID": "ansi-regex@4.1.0",
+          "PkgName": "ansi-regex",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/wrap-ansi/node_modules/ansi-regex/package.json",
+          "InstalledVersion": "4.1.0",
+          "FixedVersion": "3.0.1, 4.1.1, 5.0.1, 6.0.1",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:707aac92eb1ffc591948cc1a551ee30a35b6a8f15ee9c5dedb95caa12eb3c577"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-3807",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "Regular expression denial of service (ReDoS) matching ANSI escape codes",
+          "Description": "ansi-regex is vulnerable to Inefficient Regular Expression Complexity",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-1333"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 7.8,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2022:6595",
+            "https://access.redhat.com/security/cve/CVE-2021-3807",
+            "https://app.snyk.io/vuln/SNYK-JS-ANSIREGEX-1583908",
+            "https://bugzilla.redhat.com/1907444",
+            "https://bugzilla.redhat.com/1945459",
+            "https://bugzilla.redhat.com/1964461",
+            "https://bugzilla.redhat.com/2007557",
+            "https://bugzilla.redhat.com/2098556",
+            "https://bugzilla.redhat.com/2102001",
+            "https://bugzilla.redhat.com/2105422",
+            "https://bugzilla.redhat.com/2105426",
+            "https://bugzilla.redhat.com/2105428",
+            "https://bugzilla.redhat.com/2105430",
+            "https://errata.almalinux.org/9/ALSA-2022-6595.html",
+            "https://github.com/advisories/GHSA-93q8-gq69-wqmw",
+            "https://github.com/chalk/ansi-regex/commit/419250fa510bf31b4cc672e76537a64f9332e1f1",
+            "https://github.com/chalk/ansi-regex/commit/75a657da7af875b2e2724fd6331bf0a4b23d3c9a",
+            "https://github.com/chalk/ansi-regex/commit/8d1d7cdb586269882c4bdc1b7325d0c58c8f76f9",
+            "https://github.com/chalk/ansi-regex/commit/c3c0b3f2736b9c01feec0fef33980c43720dcde8",
+            "https://github.com/chalk/ansi-regex/issues/38#issuecomment-924086311",
+            "https://github.com/chalk/ansi-regex/issues/38#issuecomment-925924774",
+            "https://github.com/chalk/ansi-regex/releases/tag/v6.0.1",
+            "https://huntr.dev/bounties/5b3cf33b-ede0-4398-9974-800876dfd994",
+            "https://linux.oracle.com/cve/CVE-2021-3807.html",
+            "https://linux.oracle.com/errata/ELSA-2022-6595.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-3807",
+            "https://security.netapp.com/advisory/ntap-20221014-0002/",
+            "https://www.cve.org/CVERecord?id=CVE-2021-3807",
+            "https://www.oracle.com/security-alerts/cpuapr2022.html"
+          ],
+          "PublishedDate": "2021-09-17T07:15:00Z",
+          "LastModifiedDate": "2023-07-10T19:01:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-3807",
+          "PkgID": "ansi-regex@4.1.0",
+          "PkgName": "ansi-regex",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/yargs/node_modules/ansi-regex/package.json",
+          "InstalledVersion": "4.1.0",
+          "FixedVersion": "3.0.1, 4.1.1, 5.0.1, 6.0.1",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:707aac92eb1ffc591948cc1a551ee30a35b6a8f15ee9c5dedb95caa12eb3c577"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-3807",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "Regular expression denial of service (ReDoS) matching ANSI escape codes",
+          "Description": "ansi-regex is vulnerable to Inefficient Regular Expression Complexity",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-1333"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 7.8,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2022:6595",
+            "https://access.redhat.com/security/cve/CVE-2021-3807",
+            "https://app.snyk.io/vuln/SNYK-JS-ANSIREGEX-1583908",
+            "https://bugzilla.redhat.com/1907444",
+            "https://bugzilla.redhat.com/1945459",
+            "https://bugzilla.redhat.com/1964461",
+            "https://bugzilla.redhat.com/2007557",
+            "https://bugzilla.redhat.com/2098556",
+            "https://bugzilla.redhat.com/2102001",
+            "https://bugzilla.redhat.com/2105422",
+            "https://bugzilla.redhat.com/2105426",
+            "https://bugzilla.redhat.com/2105428",
+            "https://bugzilla.redhat.com/2105430",
+            "https://errata.almalinux.org/9/ALSA-2022-6595.html",
+            "https://github.com/advisories/GHSA-93q8-gq69-wqmw",
+            "https://github.com/chalk/ansi-regex/commit/419250fa510bf31b4cc672e76537a64f9332e1f1",
+            "https://github.com/chalk/ansi-regex/commit/75a657da7af875b2e2724fd6331bf0a4b23d3c9a",
+            "https://github.com/chalk/ansi-regex/commit/8d1d7cdb586269882c4bdc1b7325d0c58c8f76f9",
+            "https://github.com/chalk/ansi-regex/commit/c3c0b3f2736b9c01feec0fef33980c43720dcde8",
+            "https://github.com/chalk/ansi-regex/issues/38#issuecomment-924086311",
+            "https://github.com/chalk/ansi-regex/issues/38#issuecomment-925924774",
+            "https://github.com/chalk/ansi-regex/releases/tag/v6.0.1",
+            "https://huntr.dev/bounties/5b3cf33b-ede0-4398-9974-800876dfd994",
+            "https://linux.oracle.com/cve/CVE-2021-3807.html",
+            "https://linux.oracle.com/errata/ELSA-2022-6595.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-3807",
+            "https://security.netapp.com/advisory/ntap-20221014-0002/",
+            "https://www.cve.org/CVERecord?id=CVE-2021-3807",
+            "https://www.oracle.com/security-alerts/cpuapr2022.html"
+          ],
+          "PublishedDate": "2021-09-17T07:15:00Z",
+          "LastModifiedDate": "2023-07-10T19:01:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-43138",
+          "PkgID": "async@3.2.1",
+          "PkgName": "async",
+          "PkgPath": "node_modules/async/package.json",
+          "InstalledVersion": "3.2.1",
+          "FixedVersion": "2.6.4, 3.2.2",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d7f356d1240024df43c91945a0f89fe03027209d13c4b18e08ead3799dc86f75"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-43138",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "Prototype Pollution in async",
+          "Description": "In Async before 2.6.4 and 3.x before 3.2.2, a malicious user can obtain privileges via the mapValues() method, aka lib/internal/iterator.js createObjectIterator prototype pollution.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-1321"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V2Score": 6.8,
+              "V3Score": 7.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-43138",
+            "https://github.com/advisories/GHSA-fwr7-v2mv-hh25",
+            "https://github.com/caolan/async/blob/master/lib/internal/iterator.js",
+            "https://github.com/caolan/async/blob/master/lib/mapValuesLimit.js",
+            "https://github.com/caolan/async/blob/v2.6.4/CHANGELOG.md#v264",
+            "https://github.com/caolan/async/commit/8f7f90342a6571ba1c197d747ebed30c368096d2",
+            "https://github.com/caolan/async/commit/e1ecdbf79264f9ab488c7799f4c76996d5dca66d",
+            "https://github.com/caolan/async/compare/v2.6.3...v2.6.4",
+            "https://github.com/caolan/async/pull/1828",
+            "https://jsfiddle.net/oz5twjd9/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MTEUUTNIEBHGKUKKLNUZSV7IEP6IP3Q3/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UM6XJ73Q3NAM5KSGCOKJ2ZIA6GUWUJLK/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-43138",
+            "https://www.cve.org/CVERecord?id=CVE-2021-43138"
+          ],
+          "PublishedDate": "2022-04-06T17:15:00Z",
+          "LastModifiedDate": "2023-02-23T20:20:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-38900",
+          "PkgID": "decode-uri-component@0.2.0",
+          "PkgName": "decode-uri-component",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/decode-uri-component/package.json",
+          "InstalledVersion": "0.2.0",
+          "FixedVersion": "0.2.1",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:707aac92eb1ffc591948cc1a551ee30a35b6a8f15ee9c5dedb95caa12eb3c577"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-38900",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "improper input validation resulting in DoS",
+          "Description": "decode-uri-component 0.2.0 is vulnerable to Improper Input Validation resulting in DoS.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-20"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:1743",
+            "https://access.redhat.com/security/cve/CVE-2022-38900",
+            "https://bugzilla.redhat.com/2134609",
+            "https://bugzilla.redhat.com/2156324",
+            "https://bugzilla.redhat.com/2165824",
+            "https://bugzilla.redhat.com/2168631",
+            "https://bugzilla.redhat.com/2170644",
+            "https://bugzilla.redhat.com/2171935",
+            "https://bugzilla.redhat.com/2172217",
+            "https://errata.almalinux.org/8/ALSA-2023-1743.html",
+            "https://github.com/SamVerschueren/decode-uri-component/commit/746ca5dcb6667c5d364e782d53c542830e4c10b9",
+            "https://github.com/SamVerschueren/decode-uri-component/issues/5",
+            "https://github.com/SamVerschueren/decode-uri-component/releases/tag/v0.2.1",
+            "https://github.com/advisories/GHSA-w573-4hg7-7wgq",
+            "https://github.com/sindresorhus/query-string/issues/345",
+            "https://linux.oracle.com/cve/CVE-2022-38900.html",
+            "https://linux.oracle.com/errata/ELSA-2023-1743.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ERN6YE3DS7NBW7UH44SCJBMNC2NWQ7SM/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KAC5KQ2SEWAMQ6UZAUBZ5KXKEOESH375/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QABOUA2I542UTANVZIVFKWMRYVHLV32D/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UW4SCMT3SEUFVIL7YIADQ5K36GJEO6I5/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VNV2GNZXOTEDAJRFH3ZYWRUBGIVL7BSU/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-38900",
+            "https://www.cve.org/CVERecord?id=CVE-2022-38900"
+          ],
+          "PublishedDate": "2022-11-28T13:15:00Z",
+          "LastModifiedDate": "2023-07-01T06:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-24434",
+          "PkgID": "dicer@0.2.5",
+          "PkgName": "dicer",
+          "PkgPath": "node_modules/dicer/package.json",
+          "InstalledVersion": "0.2.5",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:d7f356d1240024df43c91945a0f89fe03027209d13c4b18e08ead3799dc86f75"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-24434",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "nodejs service crash by sending a crafted payload",
+          "Description": "This affects all versions of package dicer. A malicious attacker can send a modified form to server, and crash the nodejs service. An attacker could sent the payload again and again so that the service continuously crashes.",
+          "Severity": "HIGH",
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-24434",
+            "https://github.com/advisories/GHSA-wm7h-9275-46v2",
+            "https://github.com/mscdex/busboy/issues/250",
+            "https://github.com/mscdex/dicer/commit/b7fca2e93e8e9d4439d8acc5c02f5e54a0112dac",
+            "https://github.com/mscdex/dicer/pull/22",
+            "https://github.com/mscdex/dicer/pull/22/commits/b7fca2e93e8e9d4439d8acc5c02f5e54a0112dac",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-24434",
+            "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-2838865",
+            "https://snyk.io/vuln/SNYK-JS-DICER-2311764",
+            "https://www.cve.org/CVERecord?id=CVE-2022-24434"
+          ],
+          "PublishedDate": "2022-05-20T20:15:00Z",
+          "LastModifiedDate": "2022-06-07T02:04:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2020-8116",
+          "PkgID": "dot-prop@3.0.0",
+          "PkgName": "dot-prop",
+          "PkgPath": "node_modules/dot-prop/package.json",
+          "InstalledVersion": "3.0.0",
+          "FixedVersion": "5.1.1, 4.2.1",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d7f356d1240024df43c91945a0f89fe03027209d13c4b18e08ead3799dc86f75"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2020-8116",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "nodejs-dot-prop: prototype pollution",
+          "Description": "Prototype pollution vulnerability in dot-prop npm package versions before 4.2.1 and versions 5.x before 5.1.1 allows an attacker to add arbitrary properties to JavaScript language constructs such as objects.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-1321"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+              "V3Score": 7.3
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+              "V2Score": 7.5,
+              "V3Score": 7.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+              "V3Score": 7.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2020-8116",
+            "https://errata.almalinux.org/8/ALSA-2021-0548.html",
+            "https://github.com/advisories/GHSA-ff7x-qrg7-qggm",
+            "https://github.com/sindresorhus/dot-prop/commit/3039c8c07f6fdaa8b595ec869ae0895686a7a0f2",
+            "https://github.com/sindresorhus/dot-prop/commit/c914124f418f55edea27928e89c94d931babe587",
+            "https://github.com/sindresorhus/dot-prop/issues/63",
+            "https://github.com/sindresorhus/dot-prop/tree/v4",
+            "https://hackerone.com/reports/719856",
+            "https://linux.oracle.com/cve/CVE-2020-8116.html",
+            "https://linux.oracle.com/errata/ELSA-2021-0548.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-8116",
+            "https://www.cve.org/CVERecord?id=CVE-2020-8116"
+          ],
+          "PublishedDate": "2020-02-04T20:15:00Z",
+          "LastModifiedDate": "2022-08-05T19:32:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2020-7699",
+          "PkgID": "express-fileupload@0.4.0",
+          "PkgName": "express-fileupload",
+          "PkgPath": "node_modules/express-fileupload/package.json",
+          "InstalledVersion": "0.4.0",
+          "FixedVersion": "1.1.9",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d7f356d1240024df43c91945a0f89fe03027209d13c4b18e08ead3799dc86f75"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2020-7699",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "Prototype Pollution in express-fileupload",
+          "Description": "This affects the package express-fileupload before 1.1.8. If the parseNested option is enabled, sending a corrupt HTTP request can lead to denial of service or arbitrary code execution.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-1321"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "https://github.com/advisories/GHSA-9wcg-jrwf-8gg7",
+            "https://github.com/richardgirges/express-fileupload/commit/db495357d7557ceb5c034de91a7a574bd12f9b9f",
+            "https://github.com/richardgirges/express-fileupload/issues/236",
+            "https://github.com/richardgirges/express-fileupload/pull/237",
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-7699",
+            "https://security.netapp.com/advisory/ntap-20200821-0003/",
+            "https://snyk.io/vuln/SNYK-JS-EXPRESSFILEUPLOAD-595969"
+          ],
+          "PublishedDate": "2020-07-30T09:15:00Z",
+          "LastModifiedDate": "2022-12-02T19:56:00Z"
+        },
+        {
+          "VulnerabilityID": "GHSA-q3w9-g74q-vp5f",
+          "PkgID": "express-fileupload@0.4.0",
+          "PkgName": "express-fileupload",
+          "PkgPath": "node_modules/express-fileupload/package.json",
+          "InstalledVersion": "0.4.0",
+          "FixedVersion": "1.1.6-alpha.6, 1.1.6-alpha.6, 1.1.6-alpha.6, 1.1.6-alpha.6, 1.1.6-alpha.6",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d7f356d1240024df43c91945a0f89fe03027209d13c4b18e08ead3799dc86f75"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://github.com/advisories/GHSA-q3w9-g74q-vp5f",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "Denial of Service in express-fileupload",
+          "Description": "Versions of `express-fileupload` prior to 1.1.6-alpha.6 are vulnerable to Denial of Service. The package causes server responses to be delayed (up to 30s in internal testing) if the request contains a large `filename` of `.` characters.\n\n\n\n\n## Recommendation\n\nUpgrade to version 1.1.6-alpha.6 or later.",
+          "Severity": "LOW",
+          "References": [
+            "https://github.com/advisories/GHSA-q3w9-g74q-vp5f",
+            "https://www.npmjs.com/advisories/1216"
+          ]
+        },
+        {
+          "VulnerabilityID": "CVE-2020-36632",
+          "PkgID": "flat@2.0.2",
+          "PkgName": "flat",
+          "PkgPath": "node_modules/flat/package.json",
+          "InstalledVersion": "2.0.2",
+          "FixedVersion": "5.0.1",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d7f356d1240024df43c91945a0f89fe03027209d13c4b18e08ead3799dc86f75"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2020-36632",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "flat vulnerable to Prototype Pollution",
+          "Description": "A vulnerability, which was classified as critical, was found in hughsk flat up to 5.0.0. This affects the function unflatten of the file index.js. The manipulation leads to improperly controlled modification of object prototype attributes ('prototype pollution'). It is possible to initiate the attack remotely. Upgrading to version 5.0.1 is able to address this issue. The name of the patch is 20ef0ef55dfa028caddaedbcb33efbdb04d18e13. It is recommended to upgrade the affected component. The identifier VDB-216777 was assigned to this vulnerability.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-1321"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "https://github.com/advisories/GHSA-2j2x-2gpw-g8fm",
+            "https://github.com/hughsk/flat/commit/20ef0ef55dfa028caddaedbcb33efbdb04d18e13",
+            "https://github.com/hughsk/flat/issues/105",
+            "https://github.com/hughsk/flat/pull/106",
+            "https://github.com/hughsk/flat/releases/tag/5.0.1",
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-36632",
+            "https://vuldb.com/?ctiid.216777",
+            "https://vuldb.com/?id.216777"
+          ],
+          "PublishedDate": "2022-12-25T20:15:00Z",
+          "LastModifiedDate": "2023-01-05T02:05:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2020-36632",
+          "PkgID": "flat@4.1.1",
+          "PkgName": "flat",
+          "PkgPath": "node_modules/json2csv/node_modules/flat/package.json",
+          "InstalledVersion": "4.1.1",
+          "FixedVersion": "5.0.1",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d7f356d1240024df43c91945a0f89fe03027209d13c4b18e08ead3799dc86f75"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2020-36632",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "flat vulnerable to Prototype Pollution",
+          "Description": "A vulnerability, which was classified as critical, was found in hughsk flat up to 5.0.0. This affects the function unflatten of the file index.js. The manipulation leads to improperly controlled modification of object prototype attributes ('prototype pollution'). It is possible to initiate the attack remotely. Upgrading to version 5.0.1 is able to address this issue. The name of the patch is 20ef0ef55dfa028caddaedbcb33efbdb04d18e13. It is recommended to upgrade the affected component. The identifier VDB-216777 was assigned to this vulnerability.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-1321"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "https://github.com/advisories/GHSA-2j2x-2gpw-g8fm",
+            "https://github.com/hughsk/flat/commit/20ef0ef55dfa028caddaedbcb33efbdb04d18e13",
+            "https://github.com/hughsk/flat/issues/105",
+            "https://github.com/hughsk/flat/pull/106",
+            "https://github.com/hughsk/flat/releases/tag/5.0.1",
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-36632",
+            "https://vuldb.com/?ctiid.216777",
+            "https://vuldb.com/?id.216777"
+          ],
+          "PublishedDate": "2022-12-25T20:15:00Z",
+          "LastModifiedDate": "2023-01-05T02:05:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-33987",
+          "PkgID": "got@5.7.1",
+          "PkgName": "got",
+          "PkgPath": "node_modules/got/package.json",
+          "InstalledVersion": "5.7.1",
+          "FixedVersion": "11.8.5, 12.1.0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d7f356d1240024df43c91945a0f89fe03027209d13c4b18e08ead3799dc86f75"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-33987",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "missing verification of requested URLs allows redirects to UNIX sockets",
+          "Description": "The got package before 12.1.0 (also fixed in 11.8.5) for Node.js allows a redirect to a UNIX socket.",
+          "Severity": "MEDIUM",
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 5.3
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V2Score": 5,
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2022:6595",
+            "https://access.redhat.com/security/cve/CVE-2022-33987",
+            "https://bugzilla.redhat.com/1907444",
+            "https://bugzilla.redhat.com/1945459",
+            "https://bugzilla.redhat.com/1964461",
+            "https://bugzilla.redhat.com/2007557",
+            "https://bugzilla.redhat.com/2098556",
+            "https://bugzilla.redhat.com/2102001",
+            "https://bugzilla.redhat.com/2105422",
+            "https://bugzilla.redhat.com/2105426",
+            "https://bugzilla.redhat.com/2105428",
+            "https://bugzilla.redhat.com/2105430",
+            "https://errata.almalinux.org/9/ALSA-2022-6595.html",
+            "https://github.com/advisories/GHSA-pfrx-2q88-qq97",
+            "https://github.com/sindresorhus/got/commit/861ccd9ac2237df762a9e2beed7edd88c60782dc",
+            "https://github.com/sindresorhus/got/compare/v12.0.3...v12.1.0",
+            "https://github.com/sindresorhus/got/pull/2047",
+            "https://github.com/sindresorhus/got/releases/tag/v11.8.5",
+            "https://github.com/sindresorhus/got/releases/tag/v12.1.0",
+            "https://linux.oracle.com/cve/CVE-2022-33987.html",
+            "https://linux.oracle.com/errata/ELSA-2022-6595.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-33987",
+            "https://www.cve.org/CVERecord?id=CVE-2022-33987"
+          ],
+          "PublishedDate": "2022-06-18T21:15:00Z",
+          "LastModifiedDate": "2022-06-28T16:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-33987",
+          "PkgID": "got@6.7.1",
+          "PkgName": "got",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/got/package.json",
+          "InstalledVersion": "6.7.1",
+          "FixedVersion": "11.8.5, 12.1.0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:707aac92eb1ffc591948cc1a551ee30a35b6a8f15ee9c5dedb95caa12eb3c577"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-33987",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "missing verification of requested URLs allows redirects to UNIX sockets",
+          "Description": "The got package before 12.1.0 (also fixed in 11.8.5) for Node.js allows a redirect to a UNIX socket.",
+          "Severity": "MEDIUM",
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 5.3
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V2Score": 5,
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2022:6595",
+            "https://access.redhat.com/security/cve/CVE-2022-33987",
+            "https://bugzilla.redhat.com/1907444",
+            "https://bugzilla.redhat.com/1945459",
+            "https://bugzilla.redhat.com/1964461",
+            "https://bugzilla.redhat.com/2007557",
+            "https://bugzilla.redhat.com/2098556",
+            "https://bugzilla.redhat.com/2102001",
+            "https://bugzilla.redhat.com/2105422",
+            "https://bugzilla.redhat.com/2105426",
+            "https://bugzilla.redhat.com/2105428",
+            "https://bugzilla.redhat.com/2105430",
+            "https://errata.almalinux.org/9/ALSA-2022-6595.html",
+            "https://github.com/advisories/GHSA-pfrx-2q88-qq97",
+            "https://github.com/sindresorhus/got/commit/861ccd9ac2237df762a9e2beed7edd88c60782dc",
+            "https://github.com/sindresorhus/got/compare/v12.0.3...v12.1.0",
+            "https://github.com/sindresorhus/got/pull/2047",
+            "https://github.com/sindresorhus/got/releases/tag/v11.8.5",
+            "https://github.com/sindresorhus/got/releases/tag/v12.1.0",
+            "https://linux.oracle.com/cve/CVE-2022-33987.html",
+            "https://linux.oracle.com/errata/ELSA-2022-6595.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-33987",
+            "https://www.cve.org/CVERecord?id=CVE-2022-33987"
+          ],
+          "PublishedDate": "2022-06-18T21:15:00Z",
+          "LastModifiedDate": "2022-06-28T16:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-25881",
+          "PkgID": "http-cache-semantics@3.8.1",
+          "PkgName": "http-cache-semantics",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/http-cache-semantics/package.json",
+          "InstalledVersion": "3.8.1",
+          "FixedVersion": "4.1.1",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:707aac92eb1ffc591948cc1a551ee30a35b6a8f15ee9c5dedb95caa12eb3c577"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-25881",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "Regular Expression Denial of Service (ReDoS) vulnerability",
+          "Description": "This affects versions of the package http-cache-semantics before 4.1.1. The issue can be exploited via malicious request header values sent to a server, when that server reads the cache policy from the request using this library.\r\r",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-1333"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:2655",
+            "https://access.redhat.com/security/cve/CVE-2022-25881",
+            "https://bugzilla.redhat.com/2165824",
+            "https://bugzilla.redhat.com/2168631",
+            "https://bugzilla.redhat.com/2171935",
+            "https://bugzilla.redhat.com/2172190",
+            "https://bugzilla.redhat.com/2172204",
+            "https://bugzilla.redhat.com/2172217",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2165824",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2168631",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2171935",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2172190",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2172204",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2172217",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2178076",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25881",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4904",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-23918",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-23920",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-23936",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-24807",
+            "https://errata.almalinux.org/9/ALSA-2023-2655.html",
+            "https://errata.rockylinux.org/RLSA-2023:2655",
+            "https://github.com/advisories/GHSA-rc47-6667-2j5j",
+            "https://github.com/kornelski/http-cache-semantics/blob/master/index.js%23L83",
+            "https://github.com/kornelski/http-cache-semantics/commit/560b2d8ef452bbba20ffed69dc155d63ac757b74",
+            "https://linux.oracle.com/cve/CVE-2022-25881.html",
+            "https://linux.oracle.com/errata/ELSA-2023-2655.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-25881",
+            "https://security.netapp.com/advisory/ntap-20230622-0008/",
+            "https://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-3253332",
+            "https://security.snyk.io/vuln/SNYK-JS-HTTPCACHESEMANTICS-3248783",
+            "https://www.cve.org/CVERecord?id=CVE-2022-25881"
+          ],
+          "PublishedDate": "2023-01-31T05:15:00Z",
+          "LastModifiedDate": "2023-06-22T15:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-3918",
+          "PkgID": "json-schema@0.2.3",
+          "PkgName": "json-schema",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/json-schema/package.json",
+          "InstalledVersion": "0.2.3",
+          "FixedVersion": "0.4.0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:707aac92eb1ffc591948cc1a551ee30a35b6a8f15ee9c5dedb95caa12eb3c577"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-3918",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "Prototype pollution vulnerability",
+          "Description": "json-schema is vulnerable to Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-1321"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-3918",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3918",
+            "https://errata.almalinux.org/8/ALSA-2022-0350.html",
+            "https://github.com/advisories/GHSA-896r-f27r-55mw",
+            "https://github.com/kriszyp/json-schema/commit/22f146111f541d9737e832823699ad3528ca7741",
+            "https://github.com/kriszyp/json-schema/commit/22f146111f541d9737e832823699ad3528ca7741 (v0.4.0)",
+            "https://github.com/kriszyp/json-schema/commit/b62f1da1ff5442f23443d6be6a92d00e65cba93a",
+            "https://github.com/kriszyp/json-schema/commit/f6f6a3b02d667aa4ba2d5d50cc19208c4462abfa",
+            "https://huntr.dev/bounties/bb6ccd63-f505-4e3a-b55f-cd2662c261a9",
+            "https://linux.oracle.com/cve/CVE-2021-3918.html",
+            "https://linux.oracle.com/errata/ELSA-2022-0350.html",
+            "https://lists.debian.org/debian-lts-announce/2022/12/msg00013.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-3918",
+            "https://ubuntu.com/security/notices/USN-6103-1",
+            "https://www.cve.org/CVERecord?id=CVE-2021-3918"
+          ],
+          "PublishedDate": "2021-11-13T09:15:00Z",
+          "LastModifiedDate": "2023-02-03T19:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-3517",
+          "PkgID": "minimatch@3.0.4",
+          "PkgName": "minimatch",
+          "PkgPath": "node_modules/minimatch/package.json",
+          "InstalledVersion": "3.0.4",
+          "FixedVersion": "3.0.5",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d7f356d1240024df43c91945a0f89fe03027209d13c4b18e08ead3799dc86f75"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-3517",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "ReDoS via the braceExpand function",
+          "Description": "A vulnerability was found in the minimatch package. This flaw allows a Regular Expression Denial of Service (ReDoS) when calling the braceExpand function with specific arguments, resulting in a Denial of Service.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-1333"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:0321",
+            "https://access.redhat.com/security/cve/CVE-2022-3517",
+            "https://bugzilla.redhat.com/2066009",
+            "https://bugzilla.redhat.com/2130518",
+            "https://bugzilla.redhat.com/2134609",
+            "https://bugzilla.redhat.com/2140911",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2066009",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2130518",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2134609",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2140911",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2142808",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44906",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-3517",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-35256",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-43548",
+            "https://errata.almalinux.org/9/ALSA-2023-0321.html",
+            "https://errata.rockylinux.org/RLSA-2023:0321",
+            "https://github.com/advisories/GHSA-f8q6-p94x-37v3",
+            "https://github.com/grafana/grafana-image-renderer/issues/329",
+            "https://github.com/isaacs/minimatch/commit/a8763f4388e51956be62dc6025cec1126beeb5e6",
+            "https://github.com/isaacs/minimatch/commit/a8763f4388e51956be62dc6025cec1126beeb5e6 (v3.0.5)",
+            "https://github.com/nodejs/node/issues/42510",
+            "https://linux.oracle.com/cve/CVE-2022-3517.html",
+            "https://linux.oracle.com/errata/ELSA-2023-1743.html",
+            "https://lists.debian.org/debian-lts-announce/2023/01/msg00011.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MTEUUTNIEBHGKUKKLNUZSV7IEP6IP3Q3/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UM6XJ73Q3NAM5KSGCOKJ2ZIA6GUWUJLK/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-3517",
+            "https://ubuntu.com/security/notices/USN-6086-1",
+            "https://www.cve.org/CVERecord?id=CVE-2022-3517"
+          ],
+          "PublishedDate": "2022-10-17T20:15:00Z",
+          "LastModifiedDate": "2023-07-21T21:04:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-3517",
+          "PkgID": "minimatch@3.0.4",
+          "PkgName": "minimatch",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/minimatch/package.json",
+          "InstalledVersion": "3.0.4",
+          "FixedVersion": "3.0.5",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:707aac92eb1ffc591948cc1a551ee30a35b6a8f15ee9c5dedb95caa12eb3c577"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-3517",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "ReDoS via the braceExpand function",
+          "Description": "A vulnerability was found in the minimatch package. This flaw allows a Regular Expression Denial of Service (ReDoS) when calling the braceExpand function with specific arguments, resulting in a Denial of Service.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-1333"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:0321",
+            "https://access.redhat.com/security/cve/CVE-2022-3517",
+            "https://bugzilla.redhat.com/2066009",
+            "https://bugzilla.redhat.com/2130518",
+            "https://bugzilla.redhat.com/2134609",
+            "https://bugzilla.redhat.com/2140911",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2066009",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2130518",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2134609",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2140911",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2142808",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44906",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-3517",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-35256",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-43548",
+            "https://errata.almalinux.org/9/ALSA-2023-0321.html",
+            "https://errata.rockylinux.org/RLSA-2023:0321",
+            "https://github.com/advisories/GHSA-f8q6-p94x-37v3",
+            "https://github.com/grafana/grafana-image-renderer/issues/329",
+            "https://github.com/isaacs/minimatch/commit/a8763f4388e51956be62dc6025cec1126beeb5e6",
+            "https://github.com/isaacs/minimatch/commit/a8763f4388e51956be62dc6025cec1126beeb5e6 (v3.0.5)",
+            "https://github.com/nodejs/node/issues/42510",
+            "https://linux.oracle.com/cve/CVE-2022-3517.html",
+            "https://linux.oracle.com/errata/ELSA-2023-1743.html",
+            "https://lists.debian.org/debian-lts-announce/2023/01/msg00011.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MTEUUTNIEBHGKUKKLNUZSV7IEP6IP3Q3/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UM6XJ73Q3NAM5KSGCOKJ2ZIA6GUWUJLK/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-3517",
+            "https://ubuntu.com/security/notices/USN-6086-1",
+            "https://www.cve.org/CVERecord?id=CVE-2022-3517"
+          ],
+          "PublishedDate": "2022-10-17T20:15:00Z",
+          "LastModifiedDate": "2023-07-21T21:04:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-44906",
+          "PkgID": "minimist@0.0.10",
+          "PkgName": "minimist",
+          "PkgPath": "node_modules/optimist/node_modules/minimist/package.json",
+          "InstalledVersion": "0.0.10",
+          "FixedVersion": "0.2.4, 1.2.6",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d7f356d1240024df43c91945a0f89fe03027209d13c4b18e08ead3799dc86f75"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-44906",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "prototype pollution",
+          "Description": "Minimist \u003c=1.2.5 is vulnerable to Prototype Pollution via file index.js, function setKey() (lines 69-95).",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-1321"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:0321",
+            "https://access.redhat.com/security/cve/CVE-2021-44906",
+            "https://bugzilla.redhat.com/2066009",
+            "https://bugzilla.redhat.com/2130518",
+            "https://bugzilla.redhat.com/2134609",
+            "https://bugzilla.redhat.com/2140911",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2066009",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2130518",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2134609",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2140911",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2142808",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44906",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-3517",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-35256",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-43548",
+            "https://errata.almalinux.org/9/ALSA-2023-0321.html",
+            "https://errata.rockylinux.org/RLSA-2023:0321",
+            "https://github.com/Marynk/JavaScript-vulnerability-detection/blob/main/minimist%20PoC.zip",
+            "https://github.com/advisories/GHSA-xvch-5gv4-984h",
+            "https://github.com/minimistjs/minimist/commit/34e20b8461118608703d6485326abbb8e35e1703",
+            "https://github.com/minimistjs/minimist/commit/bc8ecee43875261f4f17eb20b1243d3ed15e70eb",
+            "https://github.com/minimistjs/minimist/commit/c2b981977fa834b223b408cfb860f933c9811e4d",
+            "https://github.com/minimistjs/minimist/commit/ef9153fc52b6cea0744b2239921c5dcae4697f11",
+            "https://github.com/minimistjs/minimist/commits/v0.2.4",
+            "https://github.com/minimistjs/minimist/issues/11",
+            "https://github.com/minimistjs/minimist/pull/24",
+            "https://github.com/substack/minimist/blob/master/index.js#L69",
+            "https://github.com/substack/minimist/issues/164",
+            "https://linux.oracle.com/cve/CVE-2021-44906.html",
+            "https://linux.oracle.com/errata/ELSA-2023-0321.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-44906",
+            "https://snyk.io/vuln/SNYK-JS-MINIMIST-559764",
+            "https://stackoverflow.com/questions/8588563/adding-custom-properties-to-a-function/20278068#20278068",
+            "https://www.cve.org/CVERecord?id=CVE-2021-44906"
+          ],
+          "PublishedDate": "2022-03-17T16:15:00Z",
+          "LastModifiedDate": "2022-04-12T16:52:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2020-7598",
+          "PkgID": "minimist@0.0.10",
+          "PkgName": "minimist",
+          "PkgPath": "node_modules/optimist/node_modules/minimist/package.json",
+          "InstalledVersion": "0.0.10",
+          "FixedVersion": "1.2.3, 0.2.1",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d7f356d1240024df43c91945a0f89fe03027209d13c4b18e08ead3799dc86f75"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2020-7598",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "nodejs-minimist: prototype pollution allows adding or modifying properties of Object.prototype using a constructor or __proto__ payload",
+          "Description": "minimist before 1.2.2 could be tricked into adding or modifying properties of Object.prototype using a \"constructor\" or \"__proto__\" payload.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-1321"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
+              "V3Score": 5.6
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
+              "V2Score": 6.8,
+              "V3Score": 5.6
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
+              "V3Score": 5.6
+            }
+          },
+          "References": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-06/msg00024.html",
+            "https://access.redhat.com/security/cve/CVE-2020-7598",
+            "https://errata.almalinux.org/8/ALSA-2020-2852.html",
+            "https://github.com/advisories/GHSA-vh95-rmgr-6w4m",
+            "https://github.com/minimistjs/minimist/commit/10bd4cdf49d9686d48214be9d579a9cdfda37c68",
+            "https://github.com/minimistjs/minimist/commit/38a4d1caead72ef99e824bb420a2528eec03d9ab",
+            "https://github.com/minimistjs/minimist/commit/4cf1354839cb972e38496d35e12f806eea92c11f#diff-a1e0ee62c91705696ddb71aa30ad4f95",
+            "https://github.com/minimistjs/minimist/commit/63e7ed05aa4b1889ec2f3b196426db4500cbda94",
+            "https://linux.oracle.com/cve/CVE-2020-7598.html",
+            "https://linux.oracle.com/errata/ELSA-2020-2852.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-7598",
+            "https://snyk.io/vuln/SNYK-JS-MINIMIST-559764",
+            "https://www.cve.org/CVERecord?id=CVE-2020-7598",
+            "https://www.npmjs.com/advisories/1179"
+          ],
+          "PublishedDate": "2020-03-11T23:15:00Z",
+          "LastModifiedDate": "2022-04-22T19:02:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-44906",
+          "PkgID": "minimist@1.2.5",
+          "PkgName": "minimist",
+          "PkgPath": "node_modules/minimist/package.json",
+          "InstalledVersion": "1.2.5",
+          "FixedVersion": "0.2.4, 1.2.6",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d7f356d1240024df43c91945a0f89fe03027209d13c4b18e08ead3799dc86f75"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-44906",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "prototype pollution",
+          "Description": "Minimist \u003c=1.2.5 is vulnerable to Prototype Pollution via file index.js, function setKey() (lines 69-95).",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-1321"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:0321",
+            "https://access.redhat.com/security/cve/CVE-2021-44906",
+            "https://bugzilla.redhat.com/2066009",
+            "https://bugzilla.redhat.com/2130518",
+            "https://bugzilla.redhat.com/2134609",
+            "https://bugzilla.redhat.com/2140911",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2066009",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2130518",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2134609",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2140911",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2142808",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44906",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-3517",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-35256",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-43548",
+            "https://errata.almalinux.org/9/ALSA-2023-0321.html",
+            "https://errata.rockylinux.org/RLSA-2023:0321",
+            "https://github.com/Marynk/JavaScript-vulnerability-detection/blob/main/minimist%20PoC.zip",
+            "https://github.com/advisories/GHSA-xvch-5gv4-984h",
+            "https://github.com/minimistjs/minimist/commit/34e20b8461118608703d6485326abbb8e35e1703",
+            "https://github.com/minimistjs/minimist/commit/bc8ecee43875261f4f17eb20b1243d3ed15e70eb",
+            "https://github.com/minimistjs/minimist/commit/c2b981977fa834b223b408cfb860f933c9811e4d",
+            "https://github.com/minimistjs/minimist/commit/ef9153fc52b6cea0744b2239921c5dcae4697f11",
+            "https://github.com/minimistjs/minimist/commits/v0.2.4",
+            "https://github.com/minimistjs/minimist/issues/11",
+            "https://github.com/minimistjs/minimist/pull/24",
+            "https://github.com/substack/minimist/blob/master/index.js#L69",
+            "https://github.com/substack/minimist/issues/164",
+            "https://linux.oracle.com/cve/CVE-2021-44906.html",
+            "https://linux.oracle.com/errata/ELSA-2023-0321.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-44906",
+            "https://snyk.io/vuln/SNYK-JS-MINIMIST-559764",
+            "https://stackoverflow.com/questions/8588563/adding-custom-properties-to-a-function/20278068#20278068",
+            "https://www.cve.org/CVERecord?id=CVE-2021-44906"
+          ],
+          "PublishedDate": "2022-03-17T16:15:00Z",
+          "LastModifiedDate": "2022-04-12T16:52:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-44906",
+          "PkgID": "minimist@1.2.5",
+          "PkgName": "minimist",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/minimist/package.json",
+          "InstalledVersion": "1.2.5",
+          "FixedVersion": "0.2.4, 1.2.6",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:707aac92eb1ffc591948cc1a551ee30a35b6a8f15ee9c5dedb95caa12eb3c577"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-44906",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "prototype pollution",
+          "Description": "Minimist \u003c=1.2.5 is vulnerable to Prototype Pollution via file index.js, function setKey() (lines 69-95).",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-1321"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:0321",
+            "https://access.redhat.com/security/cve/CVE-2021-44906",
+            "https://bugzilla.redhat.com/2066009",
+            "https://bugzilla.redhat.com/2130518",
+            "https://bugzilla.redhat.com/2134609",
+            "https://bugzilla.redhat.com/2140911",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2066009",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2130518",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2134609",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2140911",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2142808",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44906",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-3517",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-35256",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-43548",
+            "https://errata.almalinux.org/9/ALSA-2023-0321.html",
+            "https://errata.rockylinux.org/RLSA-2023:0321",
+            "https://github.com/Marynk/JavaScript-vulnerability-detection/blob/main/minimist%20PoC.zip",
+            "https://github.com/advisories/GHSA-xvch-5gv4-984h",
+            "https://github.com/minimistjs/minimist/commit/34e20b8461118608703d6485326abbb8e35e1703",
+            "https://github.com/minimistjs/minimist/commit/bc8ecee43875261f4f17eb20b1243d3ed15e70eb",
+            "https://github.com/minimistjs/minimist/commit/c2b981977fa834b223b408cfb860f933c9811e4d",
+            "https://github.com/minimistjs/minimist/commit/ef9153fc52b6cea0744b2239921c5dcae4697f11",
+            "https://github.com/minimistjs/minimist/commits/v0.2.4",
+            "https://github.com/minimistjs/minimist/issues/11",
+            "https://github.com/minimistjs/minimist/pull/24",
+            "https://github.com/substack/minimist/blob/master/index.js#L69",
+            "https://github.com/substack/minimist/issues/164",
+            "https://linux.oracle.com/cve/CVE-2021-44906.html",
+            "https://linux.oracle.com/errata/ELSA-2023-0321.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-44906",
+            "https://snyk.io/vuln/SNYK-JS-MINIMIST-559764",
+            "https://stackoverflow.com/questions/8588563/adding-custom-properties-to-a-function/20278068#20278068",
+            "https://www.cve.org/CVERecord?id=CVE-2021-44906"
+          ],
+          "PublishedDate": "2022-03-17T16:15:00Z",
+          "LastModifiedDate": "2022-04-12T16:52:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-44906",
+          "PkgID": "minimist@1.2.5",
+          "PkgName": "minimist",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/mkdirp/node_modules/minimist/package.json",
+          "InstalledVersion": "1.2.5",
+          "FixedVersion": "0.2.4, 1.2.6",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:707aac92eb1ffc591948cc1a551ee30a35b6a8f15ee9c5dedb95caa12eb3c577"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-44906",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "prototype pollution",
+          "Description": "Minimist \u003c=1.2.5 is vulnerable to Prototype Pollution via file index.js, function setKey() (lines 69-95).",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-1321"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:0321",
+            "https://access.redhat.com/security/cve/CVE-2021-44906",
+            "https://bugzilla.redhat.com/2066009",
+            "https://bugzilla.redhat.com/2130518",
+            "https://bugzilla.redhat.com/2134609",
+            "https://bugzilla.redhat.com/2140911",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2066009",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2130518",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2134609",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2140911",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2142808",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44906",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-3517",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-35256",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-43548",
+            "https://errata.almalinux.org/9/ALSA-2023-0321.html",
+            "https://errata.rockylinux.org/RLSA-2023:0321",
+            "https://github.com/Marynk/JavaScript-vulnerability-detection/blob/main/minimist%20PoC.zip",
+            "https://github.com/advisories/GHSA-xvch-5gv4-984h",
+            "https://github.com/minimistjs/minimist/commit/34e20b8461118608703d6485326abbb8e35e1703",
+            "https://github.com/minimistjs/minimist/commit/bc8ecee43875261f4f17eb20b1243d3ed15e70eb",
+            "https://github.com/minimistjs/minimist/commit/c2b981977fa834b223b408cfb860f933c9811e4d",
+            "https://github.com/minimistjs/minimist/commit/ef9153fc52b6cea0744b2239921c5dcae4697f11",
+            "https://github.com/minimistjs/minimist/commits/v0.2.4",
+            "https://github.com/minimistjs/minimist/issues/11",
+            "https://github.com/minimistjs/minimist/pull/24",
+            "https://github.com/substack/minimist/blob/master/index.js#L69",
+            "https://github.com/substack/minimist/issues/164",
+            "https://linux.oracle.com/cve/CVE-2021-44906.html",
+            "https://linux.oracle.com/errata/ELSA-2023-0321.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-44906",
+            "https://snyk.io/vuln/SNYK-JS-MINIMIST-559764",
+            "https://stackoverflow.com/questions/8588563/adding-custom-properties-to-a-function/20278068#20278068",
+            "https://www.cve.org/CVERecord?id=CVE-2021-44906"
+          ],
+          "PublishedDate": "2022-03-17T16:15:00Z",
+          "LastModifiedDate": "2022-04-12T16:52:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-24785",
+          "PkgID": "moment@2.29.1",
+          "PkgName": "moment",
+          "PkgPath": "node_modules/moment/package.json",
+          "InstalledVersion": "2.29.1",
+          "FixedVersion": "2.29.2",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d7f356d1240024df43c91945a0f89fe03027209d13c4b18e08ead3799dc86f75"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-24785",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "Path traversal  in moment.locale",
+          "Description": "Moment.js is a JavaScript date library for parsing, validating, manipulating, and formatting dates. A path traversal vulnerability impacts npm (server) users of Moment.js between versions 1.0.1 and 2.29.1, especially if a user-provided locale string is directly used to switch moment locale. This problem is patched in 2.29.2, and the patch can be applied to all affected versions. As a workaround, sanitize the user-provided locale name before passing it to Moment.js.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-22",
+            "CWE-27"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-24785",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24785",
+            "https://github.com/advisories/GHSA-8hfj-j24r-96c4",
+            "https://github.com/moment/moment/commit/4211bfc8f15746be4019bba557e29a7ba83d54c5",
+            "https://github.com/moment/moment/security/advisories/GHSA-8hfj-j24r-96c4",
+            "https://lists.debian.org/debian-lts-announce/2023/01/msg00035.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6QIO6YNLTK2T7SPKDS4JEL45FANLNC2Q/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ORJX2LF6KMPIHP6B2P6KZIVKMLE3LVJ5/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-24785",
+            "https://security.netapp.com/advisory/ntap-20220513-0006/",
+            "https://ubuntu.com/security/notices/USN-5559-1",
+            "https://www.cve.org/CVERecord?id=CVE-2022-24785",
+            "https://www.tenable.com/security/tns-2022-09"
+          ],
+          "PublishedDate": "2022-04-04T17:15:00Z",
+          "LastModifiedDate": "2023-02-16T19:27:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-31129",
+          "PkgID": "moment@2.29.1",
+          "PkgName": "moment",
+          "PkgPath": "node_modules/moment/package.json",
+          "InstalledVersion": "2.29.1",
+          "FixedVersion": "2.29.4",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d7f356d1240024df43c91945a0f89fe03027209d13c4b18e08ead3799dc86f75"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-31129",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "inefficient parsing algorithm resulting in DoS",
+          "Description": "moment is a JavaScript date library for parsing, validating, manipulating, and formatting dates. Affected versions of moment were found to use an inefficient parsing algorithm. Specifically using string-to-date parsing in moment (more specifically rfc2822 parsing, which is tried by default) has quadratic (N^2) complexity on specific inputs. Users may notice a noticeable slowdown is observed with inputs above 10k characters. Users who pass user-provided strings without sanity length checks to moment constructor are vulnerable to (Re)DoS attacks. The problem is patched in 2.29.4, the patch can be applied to all affected versions with minimal tweaking. Users are advised to upgrade. Users unable to upgrade should consider limiting date lengths accepted from user input.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-1333"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-31129",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-31129",
+            "https://github.com/advisories/GHSA-wc69-rhjr-hc9g",
+            "https://github.com/moment/moment/commit/9a3b5894f3d5d602948ac8a02e4ee528a49ca3a3",
+            "https://github.com/moment/moment/pull/6015#issuecomment-1152961973",
+            "https://github.com/moment/moment/pull/6015/commits/4bbb9f3ccbe231de40207503f344fe5ce97584f4",
+            "https://github.com/moment/moment/pull/6015/commits/bfd4f2375d5c1a2106246721d693a9611dddfbfe",
+            "https://github.com/moment/moment/pull/6015/commits/dc0d180e90d8a84f7ff13572363330a22b3ea504",
+            "https://github.com/moment/moment/security/advisories/GHSA-wc69-rhjr-hc9g",
+            "https://huntr.dev/bounties/f0952b67-f2ff-44a9-a9cd-99e0a87cb633/",
+            "https://lists.debian.org/debian-lts-announce/2023/01/msg00035.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6QIO6YNLTK2T7SPKDS4JEL45FANLNC2Q/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IWY24RJA3SBJGA5N4CU4VBPHJPPPJL5O/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ORJX2LF6KMPIHP6B2P6KZIVKMLE3LVJ5/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZMX5YHELQVCGKKQVFXIYOTBMN23YYSRO/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-31129",
+            "https://security.netapp.com/advisory/ntap-20221014-0003/",
+            "https://ubuntu.com/security/notices/USN-5559-1",
+            "https://www.cve.org/CVERecord?id=CVE-2022-31129"
+          ],
+          "PublishedDate": "2022-07-06T18:15:00Z",
+          "LastModifiedDate": "2023-07-24T13:16:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-24999",
+          "PkgID": "qs@6.5.2",
+          "PkgName": "qs",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/qs/package.json",
+          "InstalledVersion": "6.5.2",
+          "FixedVersion": "6.2.4, 6.3.3, 6.4.1, 6.5.3, 6.6.1, 6.7.3, 6.8.3, 6.9.7, 6.10.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:707aac92eb1ffc591948cc1a551ee30a35b6a8f15ee9c5dedb95caa12eb3c577"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-24999",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "\"qs\" prototype poisoning causes the hang of the node process",
+          "Description": "qs before 6.10.3, as used in Express before 4.17.3 and other products, allows attackers to cause a Node process hang for an Express application because an __ proto__ key can be used. In many typical Express use cases, an unauthenticated remote attacker can place the attack payload in the query string of the URL that is used to visit the application, such as a[__proto__]=b\u0026a[__proto__]\u0026a[length]=100000000. The fix was backported to qs 6.9.7, 6.8.3, 6.7.3, 6.6.1, 6.5.3, 6.4.1, 6.3.3, and 6.2.4 (and therefore Express 4.17.3, which has \"deps: qs@6.9.7\" in its release description, is not vulnerable).",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-1321"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:0050",
+            "https://access.redhat.com/security/cve/CVE-2022-24999",
+            "https://bugzilla.redhat.com/2044591",
+            "https://bugzilla.redhat.com/2066009",
+            "https://bugzilla.redhat.com/2134609",
+            "https://bugzilla.redhat.com/2140911",
+            "https://bugzilla.redhat.com/2150323",
+            "https://errata.almalinux.org/8/ALSA-2023-0050.html",
+            "https://github.com/advisories/GHSA-hrpp-h998-j3pp",
+            "https://github.com/expressjs/express/releases/tag/4.17.3",
+            "https://github.com/ljharb/qs/commit/4310742efbd8c03f6495f07906b45213da0a32ec",
+            "https://github.com/ljharb/qs/commit/727ef5d34605108acb3513f72d5435972ed15b68",
+            "https://github.com/ljharb/qs/commit/73205259936317b40f447c5cdb71c5b341848e1b",
+            "https://github.com/ljharb/qs/commit/8b4cc14cda94a5c89341b77e5fe435ec6c41be2d",
+            "https://github.com/ljharb/qs/commit/ba24e74dd17931f825adb52f5633e48293b584e1",
+            "https://github.com/ljharb/qs/commit/e799ba57e573a30c14b67c1889c7c04d508b9105",
+            "https://github.com/ljharb/qs/commit/ed0f5dcbef4b168a8ae299d78b1e4a2e9b1baf1f",
+            "https://github.com/ljharb/qs/commit/f945393cfe442fe8c6e62b4156fd35452c0686ee",
+            "https://github.com/ljharb/qs/commit/fc3682776670524a42e19709ec4a8138d0d7afda",
+            "https://github.com/ljharb/qs/pull/428",
+            "https://github.com/n8tz/CVE-2022-24999",
+            "https://linux.oracle.com/cve/CVE-2022-24999.html",
+            "https://linux.oracle.com/errata/ELSA-2023-0050.html",
+            "https://lists.debian.org/debian-lts-announce/2023/01/msg00039.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-24999",
+            "https://www.cve.org/CVERecord?id=CVE-2022-24999"
+          ],
+          "PublishedDate": "2022-11-26T22:15:00Z",
+          "LastModifiedDate": "2023-02-16T19:19:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-24999",
+          "PkgID": "qs@6.7.0",
+          "PkgName": "qs",
+          "PkgPath": "node_modules/qs/package.json",
+          "InstalledVersion": "6.7.0",
+          "FixedVersion": "6.2.4, 6.3.3, 6.4.1, 6.5.3, 6.6.1, 6.7.3, 6.8.3, 6.9.7, 6.10.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d7f356d1240024df43c91945a0f89fe03027209d13c4b18e08ead3799dc86f75"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-24999",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "\"qs\" prototype poisoning causes the hang of the node process",
+          "Description": "qs before 6.10.3, as used in Express before 4.17.3 and other products, allows attackers to cause a Node process hang for an Express application because an __ proto__ key can be used. In many typical Express use cases, an unauthenticated remote attacker can place the attack payload in the query string of the URL that is used to visit the application, such as a[__proto__]=b\u0026a[__proto__]\u0026a[length]=100000000. The fix was backported to qs 6.9.7, 6.8.3, 6.7.3, 6.6.1, 6.5.3, 6.4.1, 6.3.3, and 6.2.4 (and therefore Express 4.17.3, which has \"deps: qs@6.9.7\" in its release description, is not vulnerable).",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-1321"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2023:0050",
+            "https://access.redhat.com/security/cve/CVE-2022-24999",
+            "https://bugzilla.redhat.com/2044591",
+            "https://bugzilla.redhat.com/2066009",
+            "https://bugzilla.redhat.com/2134609",
+            "https://bugzilla.redhat.com/2140911",
+            "https://bugzilla.redhat.com/2150323",
+            "https://errata.almalinux.org/8/ALSA-2023-0050.html",
+            "https://github.com/advisories/GHSA-hrpp-h998-j3pp",
+            "https://github.com/expressjs/express/releases/tag/4.17.3",
+            "https://github.com/ljharb/qs/commit/4310742efbd8c03f6495f07906b45213da0a32ec",
+            "https://github.com/ljharb/qs/commit/727ef5d34605108acb3513f72d5435972ed15b68",
+            "https://github.com/ljharb/qs/commit/73205259936317b40f447c5cdb71c5b341848e1b",
+            "https://github.com/ljharb/qs/commit/8b4cc14cda94a5c89341b77e5fe435ec6c41be2d",
+            "https://github.com/ljharb/qs/commit/ba24e74dd17931f825adb52f5633e48293b584e1",
+            "https://github.com/ljharb/qs/commit/e799ba57e573a30c14b67c1889c7c04d508b9105",
+            "https://github.com/ljharb/qs/commit/ed0f5dcbef4b168a8ae299d78b1e4a2e9b1baf1f",
+            "https://github.com/ljharb/qs/commit/f945393cfe442fe8c6e62b4156fd35452c0686ee",
+            "https://github.com/ljharb/qs/commit/fc3682776670524a42e19709ec4a8138d0d7afda",
+            "https://github.com/ljharb/qs/pull/428",
+            "https://github.com/n8tz/CVE-2022-24999",
+            "https://linux.oracle.com/cve/CVE-2022-24999.html",
+            "https://linux.oracle.com/errata/ELSA-2023-0050.html",
+            "https://lists.debian.org/debian-lts-announce/2023/01/msg00039.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-24999",
+            "https://www.cve.org/CVERecord?id=CVE-2022-24999"
+          ],
+          "PublishedDate": "2022-11-26T22:15:00Z",
+          "LastModifiedDate": "2023-02-16T19:19:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-28155",
+          "PkgID": "request@2.88.0",
+          "PkgName": "request",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/request/package.json",
+          "InstalledVersion": "2.88.0",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:707aac92eb1ffc591948cc1a551ee30a35b6a8f15ee9c5dedb95caa12eb3c577"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-28155",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "The Request package through 2.88.1 for Node.js allows a bypass of SSRF ...",
+          "Description": "** UNSUPPORTED WHEN ASSIGNED ** The Request package through 2.88.1 for Node.js allows a bypass of SSRF mitigations via an attacker-controller server that does a cross-protocol redirect (HTTP to HTTPS, or HTTPS to HTTP). NOTE: This vulnerability only affects products that are no longer supported by the maintainer.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-918"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+              "V3Score": 6.1
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+              "V3Score": 6.1
+            }
+          },
+          "References": [
+            "https://doyensec.com/resources/Doyensec_Advisory_RequestSSRF_Q12023.pdf",
+            "https://github.com/advisories/GHSA-p8p7-x288-28g6",
+            "https://github.com/cypress-io/request/blob/master/lib/redirect.js#L116",
+            "https://github.com/cypress-io/request/commit/c5bcf21d40fb61feaff21a0e5a2b3934a440024f",
+            "https://github.com/cypress-io/request/pull/28",
+            "https://github.com/cypress-io/request/releases/tag/v3.0.0",
+            "https://github.com/github/advisory-database/pull/2500",
+            "https://github.com/request/request/blob/master/lib/redirect.js#L111",
+            "https://github.com/request/request/issues/3442",
+            "https://github.com/request/request/pull/3444",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-28155",
+            "https://security.netapp.com/advisory/ntap-20230413-0007/"
+          ],
+          "PublishedDate": "2023-03-16T15:15:00Z",
+          "LastModifiedDate": "2023-04-13T17:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-25883",
+          "PkgID": "semver@5.7.1",
+          "PkgName": "semver",
+          "PkgPath": "node_modules/semver/package.json",
+          "InstalledVersion": "5.7.1",
+          "FixedVersion": "5.7.2, 6.3.1, 7.5.2",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d7f356d1240024df43c91945a0f89fe03027209d13c4b18e08ead3799dc86f75"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-25883",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "Regular expression denial of service",
+          "Description": "Versions of the package semver before 7.5.2 are vulnerable to Regular Expression Denial of Service (ReDoS) via the function new Range, when untrusted user data is provided as a range.\r\r\r",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-1333"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-25883",
+            "https://github.com/advisories/GHSA-c2qf-rxjj-qqgw",
+            "https://github.com/npm/node-semver/blob/main/classes/range.js#L97-L104",
+            "https://github.com/npm/node-semver/blob/main/classes/range.js%23L97-L104",
+            "https://github.com/npm/node-semver/blob/main/internal/re.js#L138",
+            "https://github.com/npm/node-semver/blob/main/internal/re.js#L160",
+            "https://github.com/npm/node-semver/blob/main/internal/re.js%23L138",
+            "https://github.com/npm/node-semver/blob/main/internal/re.js%23L160",
+            "https://github.com/npm/node-semver/commit/2f8fd41487acf380194579ecb6f8b1bbfe116be0",
+            "https://github.com/npm/node-semver/commit/717534ee353682f3bcf33e60a8af4292626d4441",
+            "https://github.com/npm/node-semver/commit/928e56d21150da0413a3333a3148b20e741a920c",
+            "https://github.com/npm/node-semver/pull/564",
+            "https://github.com/npm/node-semver/pull/585",
+            "https://github.com/npm/node-semver/pull/593",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-25883",
+            "https://security.snyk.io/vuln/SNYK-JS-SEMVER-3247795",
+            "https://www.cve.org/CVERecord?id=CVE-2022-25883"
+          ],
+          "PublishedDate": "2023-06-21T05:15:00Z",
+          "LastModifiedDate": "2023-07-12T00:53:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-25883",
+          "PkgID": "semver@5.7.1",
+          "PkgName": "semver",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/semver/package.json",
+          "InstalledVersion": "5.7.1",
+          "FixedVersion": "5.7.2, 6.3.1, 7.5.2",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:707aac92eb1ffc591948cc1a551ee30a35b6a8f15ee9c5dedb95caa12eb3c577"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-25883",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "Regular expression denial of service",
+          "Description": "Versions of the package semver before 7.5.2 are vulnerable to Regular Expression Denial of Service (ReDoS) via the function new Range, when untrusted user data is provided as a range.\r\r\r",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-1333"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-25883",
+            "https://github.com/advisories/GHSA-c2qf-rxjj-qqgw",
+            "https://github.com/npm/node-semver/blob/main/classes/range.js#L97-L104",
+            "https://github.com/npm/node-semver/blob/main/classes/range.js%23L97-L104",
+            "https://github.com/npm/node-semver/blob/main/internal/re.js#L138",
+            "https://github.com/npm/node-semver/blob/main/internal/re.js#L160",
+            "https://github.com/npm/node-semver/blob/main/internal/re.js%23L138",
+            "https://github.com/npm/node-semver/blob/main/internal/re.js%23L160",
+            "https://github.com/npm/node-semver/commit/2f8fd41487acf380194579ecb6f8b1bbfe116be0",
+            "https://github.com/npm/node-semver/commit/717534ee353682f3bcf33e60a8af4292626d4441",
+            "https://github.com/npm/node-semver/commit/928e56d21150da0413a3333a3148b20e741a920c",
+            "https://github.com/npm/node-semver/pull/564",
+            "https://github.com/npm/node-semver/pull/585",
+            "https://github.com/npm/node-semver/pull/593",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-25883",
+            "https://security.snyk.io/vuln/SNYK-JS-SEMVER-3247795",
+            "https://www.cve.org/CVERecord?id=CVE-2022-25883"
+          ],
+          "PublishedDate": "2023-06-21T05:15:00Z",
+          "LastModifiedDate": "2023-07-12T00:53:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-25345",
+          "PkgID": "swig-templates@2.0.3",
+          "PkgName": "swig-templates",
+          "PkgPath": "node_modules/swig-templates/package.json",
+          "InstalledVersion": "2.0.3",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:d7f356d1240024df43c91945a0f89fe03027209d13c4b18e08ead3799dc86f75"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-25345",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "Arbitrary local file read vulnerability during template rendering ",
+          "Description": "Directory traversal vulnerability in swig-templates thru 2.0.4 and swig thru 1.4.2, allows attackers to read arbitrary files via the include or extends tags.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-22"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://github.com/advisories/GHSA-2rq5-699j-x7p6",
+            "https://github.com/node-swig/swig-templates/issues/88",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-25345"
+          ],
+          "PublishedDate": "2023-03-15T20:15:00Z",
+          "LastModifiedDate": "2023-03-18T03:50:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-26136",
+          "PkgID": "tough-cookie@2.4.3",
+          "PkgName": "tough-cookie",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/tough-cookie/package.json",
+          "InstalledVersion": "2.4.3",
+          "FixedVersion": "4.1.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:707aac92eb1ffc591948cc1a551ee30a35b6a8f15ee9c5dedb95caa12eb3c577"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-26136",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "prototype pollution in cookie memstore",
+          "Description": "Versions of the package tough-cookie before 4.1.3 are vulnerable to Prototype Pollution due to improper handling of Cookies when using CookieJar in rejectPublicSuffixes=false mode. This issue arises from the manner in which the objects are initialized.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-1321"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 6.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2023-26136",
+            "https://github.com/advisories/GHSA-72xf-g2v4-qvf3",
+            "https://github.com/salesforce/tough-cookie/commit/12d474791bb856004e858fdb1c47b7608d09cf6e",
+            "https://github.com/salesforce/tough-cookie/issues/282",
+            "https://github.com/salesforce/tough-cookie/releases/tag/v4.1.3",
+            "https://lists.debian.org/debian-lts-announce/2023/07/msg00010.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-26136",
+            "https://security.snyk.io/vuln/SNYK-JS-TOUGHCOOKIE-5672873",
+            "https://www.cve.org/CVERecord?id=CVE-2023-26136"
+          ],
+          "PublishedDate": "2023-07-01T05:15:00Z",
+          "LastModifiedDate": "2023-07-10T23:15:00Z"
+        }
+      ]
+    }
+  ]
+}
