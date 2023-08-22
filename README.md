@@ -12,9 +12,9 @@ Behind the scenes this script uses [vimp](https://github.com/mchmarny/vimp). So 
 
 The scanners need to be installed too.
 
-[Installing Snyk](https://docs.snyk.io/snyk-cli/install-or-update-the-snyk-cli)
-[Installing Trivy](https://github.com/aquasecurity/trivy#quick-start)
-[Installing Grype](https://github.com/anchore/grype#installation)
+- [Installing Snyk](https://docs.snyk.io/snyk-cli/install-or-update-the-snyk-cli)
+- [Installing Trivy](https://github.com/aquasecurity/trivy#quick-start)
+- [Installing Grype](https://github.com/anchore/grype#installation)
 
 Simply run the command:
 
